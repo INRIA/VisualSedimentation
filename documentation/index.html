@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<title>Visual Sedimentation - Documentation</title>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-30706693-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<style>
+@import url(../css/fan-of-mike-style.css);
+</style>
+
+<div id="body">
+
+<header>‍
+	<a style="margin-left:1em;" href="../index.html">Overview</a>
+	<a style="margin-left:1em;" href="../examples/index.html">Examples</a>
+	<b><a style="margin-left:1em;" >Documentation</a></b>
+	<a style="margin-left:1em;" href="https://github.com/INRIA/VisualSedimentation" target="_blank">Source</a>
+	<a style="margin-left:1em;" href="https://groups.google.com/forum/?fromgroups#!forum/visualsedimentation" target="_blank">Contact / Feedback</a>
+</header>
+
+<h1>Visual Sedimentation</h1>
+
+<script src="../js/lib/d3/d3.v2.js"></script>
+
+
+<!-- <p><aside>See <a href="examples.html">more examples</a>.</aside> -->
+
+
+
+<p><b>Download the beta:</b></p>
+<ul>
+	<li>Library: <a href="../js/min/vs.0.1.min.js">visualsedimentation.js</a> v0.1 (includes jQuery.js (v1.4.2), D3.js (v2), Box2DWeb.js (v2.1.a.3).
+	<li>Source code: <a href="https://github.com/INRIA/VisualSedimentation">GitHub repository</a>
+ </ul>
+<p><b>Reseach Project:</b></p>
+
+<p>This library is part of <a href="http://www.aviz.fr/Research/VisualSedimentation" target="_blank">AVIZ INRIA</a> and
+<a href="http://www.iri.centrepompidou.fr/" target="_blank"> IRI</a> research project. We value any comment and suggestion. So please visit our <a href="http://groups.google.com/group/visualsedimentation/">Google Group</a>. We also need your feedback, please take a couple of minute to fill out <a href="https://github.com/INRIA/VisualSedimentation">our questionnaire.</a></p>
+
+If you want to know more about the design space behind Visual Sedimentation, also read the following paper:
+
+<p><div><b><a href="http://hal.inria.fr/docs/00/73/40/84/PDF/visual-sedimentation-final.pdf" target="_blank">"Towards Visual Sedimentation"</a></b> Samuel Huron, Romain Vuillemot, Jean-Daniel Fekete, <i>Poster at IEEE Infovis, 2012</i></div></p>
+
+<pre><code>
+@article{huron2012towards,
+title={Towards Visual Sedimentation},
+author={Huron, S. and Vuillemot, R. and Fekete, J.D. and others},
+journal={VisWeek 2012 Electronic Conference Proceedings (2012)},
+year={2012}}
+
+</pre></code>
+
+<h2><a name="index" href="#index">#</a>Index</h2>
+<ul>
+	<li><a href="#introduction">Introduction</a></li>
+	<ul>
+		<li><a href="#helloworld"> helloWorld</a></li>
+		<li><a href="#viewport">viewport</a> </li>
+		<li><a href="#chart">chart type and configuration</a> </li>
+		<li><a href="#barchart">bar chart</a> </li>
+		<li><a href="#piechart">pie chart</a> </li>
+		<li><a href="#bubblechart">bubble chart</a> </li>
+		<li><a href="#generativechart">generative chart</a> </li>
+	</ul>
+	
+	<li><a href="#physicalworld">Physical world</a></li>
+    <ul>
+      <li><a href="#gravity">gravity</a></li>
+      <li><a href="#bounderies">add bounderies</a> </li>
+      <li><a href="#customizeTokens">update bounderies</a> </li>
+    </ul>
+	<li><a href="#token">Token</a></li>
+		<ul>
+			<li><a href="#addingTokens">Add token</a></li>
+      		<li><a href="#attributes">Attributes</a> </li>
+      		<li><a href="#callbackTokens">Callback </a> </li>
+			<li><a href="#selectTokens">Select it</a> </li>
+			<li><a href="#customizeTokens">Customize it</a> </li>
+			<li><a href="#incomingPoint">Incoming point</a> </li>
+      		<li><a href="#decayfunction">Decay function</a> </li>
+			<li><a href="#flocculation">Flocculation</a> </li>
+		</ul>
+	<li><a href="#timemultiscale">Time multi scale</a></li>
+	<li><a href="#timemultiscale">Strates</a></li>
+	<ul>
+		<li><a href="#strataDefine">Define</a></li>
+		<li><a href="#strataColor">Color</a></li>
+		<li><a href="#strataTexture">Textures</a></li>
+		<li><a href="#strataShape">Shape</a></li>
+		<li><a href="#stratUpdate">Udpate</a></li>
+		<li><a href="#strataChange">Change</a></li>
+	</ul>
+
+	<li><a href="#interactions">Interactions (Not yet implemented) </a></li>
+	<ul>
+		<li><a href="#filtering">filtering</a></li>
+		<li><a href="#details">Details</a></li>
+		<li><a href="#alignement">Alignement</a></li>
+		<li><a href="#timecontrol">Time control</a></li>
+	</ul>
+
+	<li><a href="#inputData">Input Data (Not yet implemented)</a></li>
+
+</ul>
+
+
+
+<h2><a name="introduction" href="#introduction">#</a>Introduction</h2>
+
+<p>The current version of Visual Sedimentation generates <b>three types of classic visualizations</b> : <a href="../examples/simple/barChart.html">bar chart</a>, <a href="../examples/simple/pieChart.html">pie char</a> and <a href="../examples/simple/bubbleChart.html">bubble chart</a>. In a future version, it will support the generation of any chart.</p>
+
+<p>Visual Sedimentation is best used for continuously updated data (data streams), therefore the overall process of running a visualization is a follows:	
+<ol>
+	<li>New data enter the charts under the state of <a href="#token">token</a> (similar as particles)</li>
+	<li>The token is processed by the physical engine and decay over time</li>
+	<li>Finally the token flocculates (i.e. it disappears) and the chart is updated</li>
+</ol>
+
+<p>Data streams can be Tweets, SVN commits, etc. They can either be coming live, or generated from the dump of a live record. Data can also be a ratio that is reflected by the <a href="http://romain.vuillemot.net/2012/12/09/my-entry-for-the-forbes-graph-makeover-contest/">tokens density</a>.</p>
+
+<h3><a name="helloworld" href="#helloworld">#</a> Hello World</h3>
+
+<p><a href="../examples/simple/helloWorld.html" target="_blank">Hello World</a> is a minimal example to show the library in action. It uses pre-recorded parameters that will be explained later. In the <b>header</b> of the HTML document, add the following:
+
+<pre><code>
+&lt;script type="text/javascript" src="_VisualSedimentation.js"&gt;
+&lt;/script&gt;
+</code></pre>
+
+In the <b>body</b>, create a div <code>myDemo</code> to contain the viz, and init the library with the <i>vs()</i> function as follows:
+<pre><code>
+&lt;div id="myDemo"&gt;Hello World container&lt;/div&gt;
+&lt;script&gt;
+	var scene =  $("#myDemo").vs().data('visualSedimentation');
+&lt;/script&gt;
+</code></pre>
+
+
+<h3><a name="viewport" href="#viewport">#</a> Settings</h3>
+
+<p>To pick up and customize the chart, a parameter object <code>mySettings</code> can be created and added to the library. Below is an overview of the structure of such settings. Look at the <a href="../examples/index.html">examples</a> is the best way to see the possibilities.</p>
+
+<pre><code>
+mySettings = {
+
+	// view port width and height 
+	width:800,
+	height:800,
+
+	// chart position x,y, width and height
+	chart:{
+		x:500,      // chart.x on the schema
+		y:206,      // chart.y on the schema
+		width:300,  // chart.width on the schema
+		height:400  // chart.width on the schema
+	},
+}
+</code></pre>
+
+<p>The following charts shows the position parameters of the chart. For the margin convention of the visualization part itself, see <a href="http://bl.ocks.org/3019563">d3.js margin conventions</a>.</p>
+
+<img src="../img/viewport.png" width="50%"/>
+<br/>
+Look at the source code of the <a href="../examples/simple/viewport_chart.html" target="_blank">following example</a> for more details and see what can be done with the viewport.</p>
+
+
+<h3><a name="chart" href="#Chart">#</a> Chart configuration</h3>
+<p>
+Among the many parameters, the most important one is the <code>chart.type</code> that defines which chart is picked up and its properties. The choice of charts are the following:
+<ul>
+	<li><code>StackedAreaChart</code> for <a href="../examples/simple/barChart.html">bar chart</a>.</li>
+	<li><code>CircleLayout</code> for <a href="../examples/simple/pieChart.html">pie char</a> and <a href="../examples/simple/bubbleChart.html">bubble chart</a>.</li>
+</ul>
+
+<h3><a name="barchart" href="#barchart">#</a> Bar Chart</h3>
+
+The following configuration creates a simple <a href="../examples/simple/barChart.html">bar chart</a> with three bars (as in the default example):
+
+<pre><code>
+chart:{ 
+	type:'StackedAreaChart',
+	colorRange:d3.scale.category10(),
+	scale:d3.scale,
+	spacer:5,
+	wallColor:"rgba(230,230,230,0)",
+	label:true,
+},
+</code></pre>
+
+<h3><a name="piechart" href="#piechart">#</a> Pie Chart</h3>
+<a href="../examples/simple/pieChart.html">Pie chart </a> type is <code>CircleLayout</code>.
+
+<pre><code>
+chart:{ 
+	type:'CircleLayout',
+},
+</code></pre>
+<h3><a name="bubblechart" href="#bubblechart">#</a> Bubble Chart</h3>
+<a href="../examples/simple/bubbleChart.html">Bubble chart</a> type is also <code>CircleLayout</code> with the addition of <code>treeLayout = true</code> to create it.
+<pre><code>
+chart:{ 
+ type:'CircleLayout',
+ treeLayout = true
+ spacer     = 1000      // space between two bubbles
+ column     = 3         // the number of column for the positon setup
+},
+</code></pre>
+<h3><a name="generativechart" href="#generativechart">#</a> Generative Chart (Advanced Users)</h3>
+
+<p>
+You can also create the following cool examples: <a href="../examples/simple/custom_layout/custom_layout.html">heap chart</a>, <a href="../examples/simple/custom_layout/custom_layout_sylo.html">sylo chart</a>, <a href="../examples/simple/custom_layout/custom_layout_line.html">line chart</a>, <a href="../examples/simple/custom_layout/pieChart_without_bounderies.html"> piechart without bounderies</a>.
+
+To do so, the chart layout is setup by a function in the file <i>_vs.chart.[type_name].js</i>, you could make your own file if you want a special physical and visual layout.
+
+This file is defined by three functions: 
+<ul>
+	<li><code>init()</code>: used to init the physical world, you could define the gravity vector, and do some action before setting up the physical world.
+	</li>
+	<li><code>setupChartPhysics()</code>: used to create the physical layout (bouderies, grounds, incomming point ...).
+	</li>
+	<li><code>token()</code>: the default setup token version.
+	</li>
+</ul>
+
+</p>
+<pre><code>
+chart:{ 
+	type:'StackedAreaChart',
+				// - CircleLayout,
+				// - StackedAreaChart,
+	colorRange:d3.scale.category10(),
+	scale:d3.scale,
+	spacer:5,
+	wallColor:"rgba(230,230,230,0)",
+	label:true,
+},
+</code></pre>
+
+
+
+
+<!--
+<h3><a name="allparameters" href="#allparameters">#</a> All parameters </h3>
+<p><todo>..And now complete examples with all the parameters</todo></p>
+
+<h2><a name="physicalworld" href="#physicalworld">#</a> Physical world</h2>
+<todo>Not implemented yet, How can we change this parameters? Example of interesting settings..</todo>
+
+<h3><a name="gravity" href="#gravity">#</a>Gravity</h3>
+<todo>Not implemented yet, ....</todo>
+
+<h3><a name="bounderies" href="#bounderies">#</a>Add Bounderies</h3>
+<todo>Not implemented yet, ....</todo>
+
+<h3><a name="bounderies" href="#bounderies">#</a>Update Bounderies</h3>
+<todo>Not implemented yet, ....</todo>
+
+
+<h2><a name="token" href="#token">#</a>Token</h2>
+-->
+
+<h3><a name="addingTokens" href="#addingTokens">#</a> Adding Tokens</h3>
+
+In the previous examples, the tokens were added automatically. To manually add tokens, the following settings are to be used  :
+
+<pre><code>
+scene.addToken({
+   impulse:{
+    angle:95,
+    power:10,
+    },
+   texture:{
+    src:'http://images.toocharger.com/img/graphiques/icones/sport/football/football/ballon_de_foot.10450.gif'
+    },
+   size:30,
+   categorie:1
+})
+</code></pre>
+<p>Below with the d3.js style:</p>
+<pre><code>
+scene.addToken({categorie:0})
+	.attr("x", d3.select("#data1").attr("x"))
+	.attr("y", d3.select("#data1").attr("y"))
+	.attr("radius", 10)
+	.attr("texture", "img/twitter_face.jpg")      
+	.attr("strokeStyle", "red")
+</code></pre>
+
+<a href="../examples/simple/add_token_parametrized.html">examples are avilable</a>
+
+<h3><a name="incommingPoint" href="#incomingPoint">#</a> Incoming Point</h3>
+
+<p>Incoming points are location from which the tokens appear.</p>
+
+<!--
+<p>There are already pre-defined strategies that automatically take care of finding the best spot:</p>
+<pre><code>
+  sedimentation.incoming.strategy=1; // 1 = one element by one, more = by Groupe  
+</code></pre>
+-->
+<p>OThey can be customized dimension by dimension (here, three):</p>
+
+<pre><code>sedimentation.incoming.point:[{x:50,y:0},
+                              {x:100,y:0},
+                              {x:150,y:0}]}
+
+</code></pre>
+
+<p>Or into tokens x, y, <a href"#attributes">attributes</a>.</p>
+
+<!--
+<h4>Variable incoming point as column's label</h4>
+
+<pre><code>
+sedimentation.incoming.point.map(function(d, i) {
+  var el = d3.select("#col_"+i); 
+  return {x:el.attr("x"),y:el.attr("y")};
+});
+</code></pre>
+<h4>One single for all the dimensions</h4>
+<todo>TODO. For example from the chart's title.</todo>
+<h4>Others</h4>
+<todo>From outside, inside, relative to the bottom, etc.</todo>
+
+<p>Tokens use existing incoming points (for example data labels, or counters of incoming elements).</p>
+<pre><code>
+scene.addToken("token:data1")
+	.attr("x", d3.select("#data1_label").attr("x"))
+	.attr("y", d3.select("#data1_label").attr("y"))
+</code></pre>
+
+-->
+
+
+<h3><a name="attributes" href="#attributes">#</a> Attributes</h3>
+
+
+To customize a token, use the following parameters (defaults are in <i>_vs.token.js</i>):
+<pre><code>
+	categorie:0,            // Corresponding to the datamodel (wich column in the data set)
+	x:50,y:50,              // Incoming positions of token 
+
+	// Graphical  
+	size:10,                // Size (diameter) of the token 
+	fillStyle:'#000000',    // FillStyle as an HTML5 canvas Property
+	strokeStyle:'#000000',  // StrokeStyle as an HTML5 canvas Property
+	lineWidth:0,            // LineWidth as an HTML5 canvas Property
+	texture:{src:"URL"},    // Texture     
+	shape:'round',          // Not implemented yet
+	timestamp:null,         // Not implemented yet
+	userdata:{},            // Add some personal information 
+	callback:{},            // Interactions callbacks 
+
+	// Physical 
+	phy:{ density:10,friction:0,restitution:0},
+	targets:[/*{x:null,y:null}*/], // use to a box2d elastic join 
+	elbow:{/*x:null,y:null*/} // Not implemented yet 
+</code></pre>
+
+<h3><a name="callbackTokens" href="#callbackTokens">#</a>Callback for token</h3>
+
+<p>Callbacks are automatically executed functions, depending on the state of the token. Six callbacks are triggered :
+<br/><a href="../examples/simple/add_token_callback.html">Exemples are available here.</a>
+<ul>
+	<li>suspension()</li>
+	<li>accumulation()</li>
+	<li>flocculation()</li>
+	<li>draw()</li>
+	<li>mouseover()</li>
+	<li>onclick()</li>
+</ul>
+
+
+</p>
+<pre><code>
+{
+"model":[{label:"Column A"}],
+"token":[{
+   timestamp:1, 
+   categorie:1,
+   value: 1,
+   userdata:{},
+   callback:{
+    suspension:function(){},
+    accumulation:function(){},
+    floculation:function(){}
+   }
+  }]
+}
+</code></pre>
+
+<!--
+<p>It allows event-based generation of tokens, such as using mouse moves.</p>
+
+<pre><code>
+      .attr("x", d3.event.clientX)
+      .attr("y", d3.event.clientY)
+</code></pre>
+-->
+<h3><a name="selectTokens" href="#selectTokens">#</a> Select tokens</h3>
+
+To select one or multiple tokens, a selector function is provided:
+<pre><code>
+var myToken = barChart.select('key','value');
+</code></pre>
+
+Examples are available here for :
+<a href="../examples/simple/select_token.html" traget="_blank">select a group </a>,and here for  <a href="../examples/simple/select_token_and_change_it.html" traget="_blank">selectAll</a>.
+
+<h3><a name="customizeTokens" href="#customizeTokens">#</a> Easy customization</h3>
+
+You can easily customize every single token.
+
+<pre><code>
+.attr("radius", 10)
+.attr("texture", "img/twitter_face.jpg")      
+.attr("strokeStyle", "red")
+</code></pre>
+
+
+
+<!--
+<pre><code>
+    .transition()
+      .duration(2000)
+      .ease(Math.sqrt)
+      .attr("radius", 10)
+      .attr("strokeStyle", "white")
+      // add timestamp/function data to the aggregated data!
+      -> data += d
+      // update chart
+      .remove();
+</code></pre>
+-->
+
+
+<h3><a name="decayfunction" href="#decayfunction">#</a>Decay Function</h3>
+<p>The decay function is null by default. It could be setup at the initialisation of the chart in the settings : </p>
+<pre><code>
+{
+	sedimentation:{
+		suspension:{
+			decay:{power:1.01}
+		}
+	}
+}
+</code></pre>
+
+<p>The decay function could also be change with the globalDecay(): </p>
+<pre><code>
+.globalDecay()    // to get the decay power (return a float or null)
+.globalDecay(1.09)// to setup the decay function at 1.09
+.globalDecay(null)   // no decay
+</code></pre>
+
+</p>
+
+
+
+<h3><a name="flocculation" href="#flocculation">#</a>Flocculation</h3>
+Flocculation is when a token change state to become a part of the agregated area or to change.
+The physical body presenting the object is deleted.
+Flocculation is usually automatic du to the decay and the <i>token.size.minimum</i> parameter.
+But you can also do a flocculation of token selection by yourself with the function <i>flocculate()</i>. 
+Exemple : 
+<pre><code>
+tokens = chart.selectAll("categorie",1) //select all token from categorie 1
+tokens.flocculate()
+</code></pre>
+<p>Example: <a href="../examples/sediclock/sediclock.html">sediClock</a></p>
+
+
+
+<h2><a name="streamingdata" href="#streamingdata">#</a>Strata</h2>
+
+<p>Strata compress aggregated data into a finite set of layers. Each layer represents a temporal interval. For instance, it can be the count of data during the last 30 seconds or last 5 minutes. Therefore the strata value is usually a function rather a fixed number.</p>
+
+<pre><code>
+	"strata":[
+	[
+		{value: 10, 
+		 text: "first strata", 
+		 texture: {url:"../..", size:1}, 
+		 color: ..
+		},
+		...
+	], [
+</code></pre>
+
+
+
+<p>The <code>text</code>, <code>textures</code> and <code>color</code> are settings for each strata. Texture images are any image file provided as a <code>url</code> to be mapped to each layer as a tile, and scale according to the <code>size</code> factor. </p>
+
+
+<footer>
+	<DIV>Released under French Free Software license, compatible with the GNU GPL : <a href="license/">LICENSE CeCILL-B</a>.</DIV>
+	Copyright 2012 
+	<a href="http://www.cybunk.com/"  target="_blank">Samuel Huron </a> and 
+	<a href="http://romain.vuillemot.net/"  target="_blank">Romain Vuillemot</a><br/>
+	<br/> Forged at  : 
+	<a href="http://www.aviz.fr/" target="_blank">Aviz Inria</a>,
+	<a href="http://www.iri.centrepompidou.fr/"  target="_blank">IRI / Pompidou Center</a>
+ </br>Funded by : 
+	<a href="http://www.agence-nationale-recherche.fr/" target="_blank">ANR</a>, 
+	<a href="http://www.iri.centrepompidou.fr/projets/eulalie-2-en/?lang=en_us" target="_blank">Eulalie</a>, 
+	<a href="http://www.iri.centrepompidou.fr/projets/periplus-2/?lang=en_us" target="_blank">Periplus</a>, and
+	<a href="http://www.anrt.asso.fr" target="_blank">ANRT</a>
+</footer>
+
+</div>
+
+<script src="../js/lib/highlight.v0.min.js"></script>
+<a href="https://github.com/INRIA/VisualSedimentation"><img style="position:absolute;top:0;right:0;border:0;" width="149" height="149" src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub"></a>
+</body>
+</html>

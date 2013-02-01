@@ -1,0 +1,127 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Select token and change it  | Visual Sedimentation</title>
+    <script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-30706693-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+    <script type="text/javascript" src="../../js/min/vs.0.1-min.js"></script>
+    <style>@import url(../../css/fan-of-mike-style.css);</style>
+   </head>
+   <body>
+      <!-- div menu -->
+    <header>‍
+    <a href="../../">Overview</a>
+    <b><a style="margin-left:1em;" href="../index.html"> Examples</a></b>
+    <a style="margin-left:1em;" href="../../documentation/index.html">Documentation</a></b>
+    <a style="margin-left:1em;" href="https://github.com/INRIA/VisualSedimentation" target="_blank">Source</a>
+    <a style="margin-left:1em;" href="" target="_blank">Contact / Feedback</a>
+  </header>
+
+
+      <h1>Select token(s) and change it</h1>
+
+      <!-- div container -->
+      <div id="myDemo">Select token and change it </div>
+      
+      <!-- Create my visual sedimentation -->
+      <script type="text/javascript">
+        
+      mySettings = {
+          width:300,
+          height:300,
+          data:{
+                "model":
+                        [
+                          {label:"Column A"},
+                          {label:"Column B"},
+                          {label:"Column C"},
+                        ],
+                "strata":[
+                          [
+                            {value: 10, label: "Strata 1 col A"},
+                            {value: 15, label: "Strata 2 col A"},
+                            {value: 10, label: "Strata 3 col A"}
+                          ],[
+                            {value: 55, label: "Strata 1 col B"},
+                            {value: 5, label: "Strata 2 col B"},
+                          ],[
+                            {value: 20, label: "Strata 2 col C"}
+                          ]      
+                        ],
+                stream:{ provider:'generator',refresh:1000000000/6}
+              },
+          sedimentation:{
+            token:{
+              size:{original:5,minimum:3}
+            }
+          },
+          options:{
+            layout:false
+          }
+        }
+
+      var barChart = $("#myDemo").vs(mySettings).data('visualSedimentation');
+
+      // add token with ID
+      barChart.addToken({
+               id:"myId",
+               size:30,
+               categorie:0,
+               name:"George"
+             })
+
+      // add token with class field
+      barChart.addToken({
+               class:"myClass",
+               size:10,
+               categorie:1,
+               name:"Test 1"
+             })
+
+      barChart.addToken({
+               class:"myClass",
+               size:10,
+               categorie:0,
+               name:"Test 2"
+             })
+
+      // select token by id
+      var selectToken = barChart.select('id','myId');
+
+      // select ->  object 
+      console.log("selectToken by id : ",selectToken)
+
+      // get a value from a  token 
+      console.log("fillStyle :",selectToken.attr('fillStyle'))
+
+      // set a value for a token and a attribute 
+      selectToken.attr('fillStyle','rgba(0,0,100,0.6)')
+      console.log("fillStyle :",selectToken)
+
+      // chain it 
+      selectToken.attr('strokeStyle','rgba(100,0,0,0.5)').attr('lineWidth',10)
+
+      // TEXTURE SETTER DON'T WOKR YET       
+      selectToken.attr('texture','img/ball.png')
+      
+      // selectAll -> 
+      var selectToken = barChart.select('class','myClass');
+
+
+
+      </script>
+      <!-- end -->
+
+  </body>   
+</html>

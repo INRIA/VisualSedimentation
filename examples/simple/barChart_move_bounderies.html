@@ -1,0 +1,78 @@
+<html>
+  <head>
+    <title>Bar Chart by Visual Sedimentation</title>
+    <script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-30706693-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+    <script type="text/javascript" src="../../js/min/vs.0.1-min.js"></script>
+    
+   </head>
+   <body>
+      <!-- div container -->
+      <div id="myDemo"> bar chart move boundaries</div>
+      
+      <!-- Create my visual sedimentation -->
+      <script type="text/javascript">
+        
+      mySettings = {
+          width:300,
+          height:300,
+          //width:800,
+          //height:800,
+          data:{
+                "model":
+                        [
+                          {label:"Column A"},
+                          {label:"Column B"},
+                          {label:"Column C"},
+                        ],
+                "strata":[
+                          [
+                            {value: 10, label: "Strata 1 col A"},
+                            {value: 15, label: "Strata 2 col A"},
+                            {value: 10, label: "Str1ta 3 col A"}
+                          ],[
+                            {value: 55, label: "Strata 1 col B"},
+                            {value: 5, label: "Strata 2 col B"},
+                          ],[
+                            {value: 0, label: "Strata 2 col C"}
+                          ]      
+                        ],
+                stream:{ provider:'generator',refresh:10000/6}
+              },
+          sedimentation:{
+            token:{
+              size:{original:5,minimum:3}
+            },
+            aggregation:{height:100}
+          },
+          options:{
+            layout:true,
+            debugaggregate:true,
+          },
+          chart:{
+          //  x:50,
+          //  y:100,
+          //  width:300,
+          //  height:300
+          }
+        }
+      // intialise the sedimentation
+      var barChart = $("#myDemo").vs(mySettings).data('visualSedimentation');
+      barChart.chartUpdate(0,100)
+      barChart.chartUpdate(1,50)
+      barChart.chartUpdate(2,0)
+
+      </script>
+  </body>   
+</html>

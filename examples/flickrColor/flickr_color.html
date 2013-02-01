@@ -1,0 +1,123 @@
+<html>
+  <head>
+    <title>Bar Chart by Visual Sedimentation</title>
+    <script>var _vsDirectory    = "../../js/"; </script> 
+    <script>var _vsCustomlayout = "_vs.chart.heapchart.js"; </script> 
+    <script type="text/javascript" src="../../js/_VisualSedimentation.js"></script>
+    
+   </head>
+   <body>
+      <!-- div container -->
+      <div id="myDemo">Visual sedimentation custom layout heap chart exemple</div>
+      
+      <!-- Create my visual sedimentation -->
+      <script type="text/javascript">
+        
+      mySettings = {
+          width:800,
+          height:300,
+          chart:{
+              type:"heapchart"
+          },
+          data:{
+                "model":
+                        [
+                          {label:"Column A"},
+                          {label:"Column B"},
+                          {label:"Column C"},
+                        ],
+                "strata":[
+                          [
+                            {value: 10, label: "Strata 1 col A"},
+                            {value: 15, label: "Strata 2 col A"},
+                            {value: 10, label: "Strata 3 col A"}
+                          ],[
+                            {value: 55, label: "Strata 1 col B"},
+                            {value: 5, label: "Strata 2 col B"},
+                          ],[
+                            {value: 20, label: "Strata 2 col C"}
+                          ]      
+                        ],
+                stream:{provider:'generator',refresh:10000/6}
+              },
+          sedimentation:{
+            token:{
+              size:{original:15,minimum:3}
+            }
+          },
+          options:{
+            layout:false,
+            debugaggregate:true,
+          }
+        }
+      var heatchart = $("#myDemo").vs(mySettings).data('visualSedimentation');
+
+
+// LOAD JSON LAST pictures from flick r with the obama tag and add it inside the first column
+$.getJSON("http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?",
+  {
+    tags: "blue",
+    tagmode: "any",
+    format: "json"
+  },
+  function(data) {
+    $.each(data.items, function(i,item){
+       heatchart.addToken({
+                    categorie:0,
+                    size:20,
+                    texture:{src:item.media.m},
+                  })
+      //$("<img/>").attr("src", item.media.m).appendTo("#images");
+      //if ( i == 3 ) return false;
+    });
+  });
+
+
+// LOAD JSON LAST pictures from flick r with the obama tag and add it inside the first column
+$.getJSON("http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?",
+  {
+    tags: "orange",
+    tagmode: "any",
+    format: "json"
+  },
+  function(data) {
+    $.each(data.items, function(i,item){
+       heatchart.addToken({
+                    timestamp:1,
+                    categorie:1,
+                    size:20,
+                    texture:{src:item.media.m},
+                  })
+      //$("<img/>").attr("src", item.media.m).appendTo("#images");
+      //if ( i == 3 ) return false;
+    });
+  });
+
+
+// LOAD JSON LAST pictures from flick r with the obama tag and add it inside the first column
+$.getJSON("http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?",
+  {
+    tags: "green",
+    tagmode: "any",
+    format: "json"
+  },
+  function(data) {
+    $.each(data.items, function(i,item){
+       heatchart.addToken({
+                    categorie:2,
+                    size:20,
+                    texture:{src:item.media.m},
+                  })
+      //$("<img/>").attr("src", item.media.m).appendTo("#images");
+      //if ( i == 3 ) return false;
+    });
+  });
+
+
+
+
+      </script>
+      <!-- end -->
+
+  </body>   
+</html>

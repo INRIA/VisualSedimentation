@@ -1,0 +1,137 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Viewport and layout | Visual Sedimentation</title>
+    <script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-30706693-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+    <script type="text/javascript" src="../../js/min/vs.0.1-min.js"></script>
+    <style>@import url(../../css/fan-of-mike-style.css);</style>
+   </head>
+   <body>
+      <!-- div menu -->
+    <header>‍
+    <a href="../../">Overview</a>
+    <b><a style="margin-left:1em;" href="../index.html"> Examples</a></b>
+    <a style="margin-left:1em;" href="../../documentation/index.html">Documentation</a></b>
+    <a style="margin-left:1em;" href="https://github.com/INRIA/VisualSedimentation" target="_blank">Source</a>
+    <a style="margin-left:1em;" href="" target="_blank">Contact / Feedback</a>
+  </header>
+
+
+      <h1>View port</h1>
+
+      <!-- div container -->
+      <div id="myDemo"></div>
+    
+
+      <!-- Create my visual sedimentation -->
+      <script type="text/javascript">
+      
+      // Setting normal chart 
+      mySettings = {
+
+          // view port width and height 
+          width:800,
+          height:600,
+
+          // chart position x,y, width and height
+          chart:{
+            x:500,
+            y:206,
+            width:300,
+            height:400
+          },
+          
+          data:{
+                "model":
+                        [
+                          {label:"Column A"},
+                          {label:"Column B"},
+                        ],
+                "strata":[
+                          [
+                            {value: 20, label: "Strata 1 col A"},
+                          ],[
+                            {value: 5, label: "Strata 1 col B"},
+                          ]    
+                        ],
+                stream:{ provider:'generator',refresh:10000/6}
+              },
+          sedimentation:{
+            token:{
+              size:{original:5,minimum:3}
+            }
+          },
+          options:{
+            layout:true,
+            //debugaggregate:true
+          }
+        }
+
+
+    // Test on pie chart , uncommet following lines :
+    //mySettings.options.debugaggregate =true
+    //mySettings.chart.type   ='CircleLayout'
+    //mySettings.chart.x =100
+    //mySettings.chart.spacer =2
+    //mySettings.chart.radius =50
+
+
+
+    // Test on bubble chart, uncomment following lines :
+    // mySettings.chart.type      ='CircleLayout'
+    // mySettings.options.debugaggregate =true
+    // mySettings.chart.treeLayout = true
+    // mySettings.chart.spacer     = 100
+    // mySettings.chart.column     = 3
+    // mySettings.options.layout   = true
+
+
+
+      // create the chart 
+      var chart = $("#myDemo").vs(mySettings).data('visualSedimentation');
+
+      // Add a token with inpulse 
+      var myImpulseToken = chart.addToken({
+                    x:50,
+                    y:150,
+                    impulse:{
+                            angle:359,
+                            power:8,
+                            },
+                    texture:{
+                            src:'http://images.toocharger.com/img/graphiques/icones/sport/football/football/ballon_de_foot.10450.gif'
+                          },
+                    size:30,
+                    categorie:0
+                  })
+
+       var myImpulseToken = chart.addToken({
+               impulse:{
+                       angle:110,
+                       power:1,
+                       },
+               texture:{
+                       src:'http://www.pogotte.fr/wp-content/uploads/2011/03/ballon-basket-64x64.jpg'
+                     },
+               size:30,
+               categorie:1
+             })
+
+
+      </script>
+      <!-- end -->
+
+  </body>   
+</html>
