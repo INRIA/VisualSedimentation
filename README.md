@@ -10,6 +10,10 @@ Visual sedimentation is a novel design metaphor that progressively generates and
 * [Api references](http://www.visualsedimentation.org/documentation/) 
 * [Mailing liste](https://groups.google.com/forum/?fromgroups#!forum/visualsedimentation)
 
+## Browser Support 
+Visual Sedimentation is under developement process, actually we are not focus on a production version.
+The library work on last version of chrome and firefox.
+
 ## Installing
 
 Download the latest version here:
