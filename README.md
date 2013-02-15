@@ -23,19 +23,21 @@ Once this is running, go to <http://localhost:8888/>.
 
 
 ## Dependancy
-* Includes jquery.js
+
+Already included :
+* jquery.js
 http://jquery.com/
 Copyright 2010, John Resig
 Released under Dual licensed under the MIT or GPL Version 2 licenses.
-* Includes d3.js
+* d3.js
 http://d3js.org/
 Copyright 2012, Michael Bostock
 Released under BSD licenses.
-* Includes Box2DWeb
+* Box2DWeb
 http://www.gphysics.com
 Copyright 2006, Erin Catto 
 Released under zlib License.
-* Includes Sizzle.js
+* Sizzle.js
 http://sizzlejs.com/
 Copyright 2010, The Dojo Foundation
 
