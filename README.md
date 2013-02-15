@@ -46,5 +46,5 @@ Copyright 2010, The Dojo Foundation
 Visual Sedimentation is under CeCILL-B licence.
 Copyright 2013, by Samuel Huron & Romain Vuillemot
 "B" means BSD :
-Licence texte in french: <http://www.cecill.info/licences/Licence_CeCILL-B_V1-fr.txt>
-Licence texte in english: <http://www.cecill.info/licences/Licence_CeCILL-B_V1-en.txt>
+* Licence texte in french: <http://www.cecill.info/licences/Licence_CeCILL-B_V1-fr.txt>
+* Licence texte in english: <http://www.cecill.info/licences/Licence_CeCILL-B_V1-en.txt>
