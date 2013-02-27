@@ -1,0 +1,91 @@
+<html>
+  <head>
+    <title>All Charts by Visual Sedimentation</title>
+    <script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-30706693-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+    <script type="text/javascript" src="../../js/min/vs.0.1-min.js"></script>
+  </head>
+  <body>
+
+      <h1>Pie,Bar,Bubbles Charts by Visual Sedimentation</h1>
+
+      <!-- div container -->
+
+      <div id="pieChart" style="position:relative;float:left;"></div>
+      <div id="piechart2" style="position:relative;float:left;"></div>
+      <div id="piechart3" style="position:relative;float:left;"></div>
+
+      <!-- Create my visual sedimentation -->
+      <script type="text/javascript">
+        
+      mySettings = {
+          width:300,
+          height:300,
+          data:{
+                model:
+                      [
+                        {label:"Column A"},
+                        {label:"Column B"},
+                        {label:"Column C"},
+                      ],
+                strata:[
+                          [
+                            {value: 10, label: "Strata 1 col A"},
+                          ],[
+                            {value: 5, label: "Strata 1 col B"},
+                          ],[
+                            {value: 20, label: "Strata 2 col C"}
+                          ]      
+                        ],
+                stream:{
+                  provider:'generator',
+                  refresh:10000/6
+                }
+              },
+          sedimentation:{
+            token:{
+              size:{original:8,minimum:2}
+            }
+          },
+          chart:{
+                 type:'CircleLayout',
+                 spacer:2,
+                 radius:50,
+                },
+          options:{
+            layout:false
+          }
+        }
+      
+      var myPieChart = $("#pieChart").vs(mySettings).data('visualSedimentation');
+
+      // Create a bar chart on the same model 
+      mySettings.chart.type='StackedAreaChart';
+      var myBarChart = $("#piechart2").vs(mySettings).data('visualSedimentation');
+
+      // Create a Bubble chart on the same model 
+      mySettings.chart.type='CircleLayout';
+      mySettings.chart.treeLayout=true;
+      mySettings.chart.column = 3
+      mySettings.chart.spacer = 100
+
+      var myBubbleChart = $("#piechart3").vs(mySettings).data('visualSedimentation');
+
+      
+
+      </script>
+      <!-- end -->
+
+  </body>   
+</html>

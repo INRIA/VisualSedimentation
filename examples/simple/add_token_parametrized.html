@@ -1,0 +1,111 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Token chaining by Visual Sedimentation</title>
+    <script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-30706693-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+    <script type="text/javascript" src="../../js/min/vs.0.1-min.js"></script>
+    <style>@import url(../../css/fan-of-mike-style.css);</style>
+   </head>
+   <body>
+      <!-- div menu -->
+    <header>‍
+    <a href="./">Overview</a>
+    <b><a style="margin-left:1em;" href="../index.html"> Examples</a></b>
+    <a style="margin-left:1em;" href="../../documentation/index.html">Documentation</a></b>
+    <a style="margin-left:1em;" href="https://github.com/INRIA/VisualSedimentation" target="_blank">Source</a>
+    <a style="margin-left:1em;" href="" target="_blank">Contact / Feedback</a>
+  </header>
+
+
+      <h1>Token chaining parameter</h1>
+
+      <div id="myDemo"></div>
+      
+      <!-- Create my visual sedimentation -->
+      <script type="text/javascript">
+      
+      // Setting normal chart 
+      mySettings = {
+          width:300,
+          height:300,
+          chart:{
+            width:300,
+            height:300
+          },
+          data:{
+                "model":
+                        [
+                          {label:"Column A"},
+                          {label:"Column B"},
+                          {label:"Column C"},
+                        ],
+                "strata":[
+                          [
+                            {value: 10, label: "Strata 1 col A"},
+                            {value: 15, label: "Strata 2 col A"},
+                            {value: 10, label: "Strata 3 col A"}
+                          ],[
+                            {value: 55, label: "Strata 1 col B"},
+                            {value: 5, label: "Strata 2 col B"},
+                          ],[
+                            {value: 20, label: "Strata 2 col C"}
+                          ]      
+                        ],
+                stream:{ provider:'generator',refresh:10000/6}
+              },
+          sedimentation:{
+            token:{
+              size:{original:12,minimum:8}
+            },
+            flocculate:{
+              number:5,
+              bufferSize:10
+            },
+          },
+          options:{
+            layout:false
+          }
+        }
+
+      // Create the chart 
+      var barChart = $("#myDemo").vs(mySettings).data('visualSedimentation');
+
+      // Add a token with texture 
+      var myObamaToken = barChart.addToken()
+
+      console.log("myObamaToken",myObamaToken)
+      myObamaToken.attr("categorie",0)
+        .attr("size",20) // work 
+        .attr("texture",'http://i.forbesimg.com/media/lists/people/barack-obama_50x50.jpg')
+        .attr("fillStyle","red")
+        .attr("strokeStyle","red")
+
+      var t2 = barChart.addToken().attr("categorie",0).attr("size",10).attr("fillStyle","yellow")
+
+      myObamaToken.attr("size",30)
+      myObamaToken.attr("id","testID")
+      t2.attr("size",40)
+
+
+      barChart.addToken()
+      barChart.addToken()
+      barChart.addToken()
+
+
+      </script>
+      <!-- end -->
+
+  </body>   
+</html>

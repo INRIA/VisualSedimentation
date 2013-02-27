@@ -1,0 +1,62 @@
+body{
+  font-family: Helvetica, Arial, "MS Trebuchet", sans-serif;
+  font-size: 12px;
+  color:#463E41;
+}
+
+.demo { margin-left: 500px; width:200px; padding:10px; !important; background-color:grey; }
+a{
+    color:#463E41;
+}
+a:hover{
+    color:#FF00FF;
+    font-style: italic;
+}
+h1{
+  margin:0px;
+  padding: 0px 0px 0px 0px;
+}
+
+/* custom Css */
+.exemples{
+        border: 1px solid #999;
+        margin:2px;
+        opacity:0.8;
+        filter:alpha(opacity=80); /* For IE8 and earlier */
+        }
+.exemples:hover{
+        border: 2px solid #000;
+        opacity:1;
+        filter:alpha(opacity=100); /* For IE8 and earlier */
+}
+.exempleContainer{
+        text-align: left;
+}
+.exemplesMini{
+        border: 2px solid #999;
+        margin:2px;
+        opacity:0.8;
+        filter:alpha(opacity=80); /* For IE8 and earlier */
+        width:20px;
+        }
+.exemplesMini:hover{
+        border: 2px solid #000;
+        opacity:1;
+        filter:alpha(opacity=100); /* For IE8 and earlier */
+}
+#boxsediviz{
+        z-index:9;
+        position: absolute;
+}
+#sediviz{
+        border: 2px solid #999;
+        width:500px;
+        height:550px;
+        overflow:hidden;
+        background-image: none;
+}
+.panelMini{
+    position:relative;
+    width:500px;
+    margin: 00px 0px 5px 0px;
+}
