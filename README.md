@@ -1,7 +1,11 @@
 VisualSedimentation
 ===================
 
-Visual sedimentation is a novel design metaphor that progressively generates and updates visualizations of streaming data, inspired by the process of physical sedimentation. This process is the result of objects falling due to gravity forces, that aggregate into compact layers over time. The process is well understood since our environment is shaped by sedimentation: mountains, hills or rivers are the visible result of this long process.
+
+Visual sedimentation is a javascript visualizations library for streaming data, inspired by the process of physical sedimentation. This process is the result of objects falling due to gravity forces, that aggregate into compact layers over time. The process is well understood since our environment is shaped by sedimentation: mountains, hills or rivers are the visible result of this long process.
+![Bar chart](https://raw.github.com/INRIA/VisualSedimentation/master/img/barchart.png)
+![Pie chart](https://raw.github.com/INRIA/VisualSedimentation/master/img/sediviz-piechart.png)
+![Bubble chart](https://raw.github.com/INRIA/VisualSedimentation/master/img/bubblechart.png)
 
 ## Ressources
 
@@ -26,7 +30,7 @@ Or, from the command line:
 git clone git://github.com/INRIA/VisualSedimentation.git
 ```
 
-When developing locally, note that your browser may enforce strict permissions for reading files out of the local file system. **If you use [d3.xhr](wiki/Requests) locally (including d3.json et al.), you must have a local web server.** For example, you can run Python's built-in server:
+When developing locally, note that your browser may enforce strict permissions for reading files out of the local file system.  For example, you can run Python's built-in server:
 
     python -m SimpleHTTPServer 8888 &
 
