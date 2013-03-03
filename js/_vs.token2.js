@@ -1,5 +1,4 @@
 (function ($) {
-//console.log("stream is loaded ")
 $.fn._vs.token = {
 
     // alias for d3 color scale D3
@@ -10,7 +9,10 @@ $.fn._vs.token = {
       // todo shape management
       this.colorRange = _this.settings.chart.colorRange
     },
-
+    ID:function(_this){
+      _this.settings.data.tokenPast+=1
+      return _this.settings.data.tokenPast
+    },
     selectAll:function(_this,key,value){
       // DRAFT VERSION writing select All ...... 
       var result = []
@@ -43,13 +45,7 @@ $.fn._vs.token = {
           result.push(_this.tokens[i])
        }
       }
-
-      if(typeof(result[0])=="undefined"){
-        return false
-      }else{
         return result;
-      }
-
     },
 
     select:function(_this,key,value){
@@ -76,20 +72,31 @@ $.fn._vs.token = {
      //default token setting  
      var defaultTokenSetting ={
         x:50,y:50, // positions
+        t:null,    // time 
+        category:1,// data category 
+        state:0,   // state 
+        /*
+         0 = Not Enter in the stage,
+         1 = suspension,
+         2 = floculation,
+         2 + n = _this.strata.list[n]
+        */
+
         // Graphic Parameter
         size:10,   fillStyle:'#000000',  strokeStyle:'#000000', lineWidth:0, texture:undefined,
         shape:'round', // square, round, ?? svg path with json serialisation {}
-        // Data 
-        timestamp:null,
-        categorie:1,
+        
         userdata:{},
+
         // Interactions callbacks 
         callback:{}, 
-        // Physical 
+        
+        // Physical parameters
         phy:{ density:10,friction:0,restitution:0},
         targets:[/*{x:null,y:null}*/],
         elbow:{/*x:null,y:null*/}
      }
+
      var result = null;
      var myobj = null
      var token = function (){}
@@ -97,15 +104,19 @@ $.fn._vs.token = {
      //console.log(element)
      if(typeof(element)=='undefined'){
         token.setting = defaultTokenSetting
+        token.setting.ID = this.ID(_this)
      } else {
         token.setting   = element
         if(typeof(token.setting.phy)    =='undefined') {token.setting.phy    = defaultTokenSetting.phy}
-        if(typeof(token.setting.x)      =='undefined') {token.setting.x      = _this.settings.sedimentation.incoming.point[element.categorie].x+(Math.random()*2)}
-        if(typeof(token.setting.y)      =='undefined') {token.setting.y      = _this.settings.sedimentation.incoming.point[element.categorie].y+(Math.random()*2)}
+        if(typeof(token.setting.t)      =='undefined') {token.setting.t      = _this.settings.stream.now}
+        if(typeof(token.setting.x)      =='undefined') {token.setting.x      = _this.settings.sedimentation.incoming.point[element.category].x+(Math.random()*2)}
+        if(typeof(token.setting.y)      =='undefined') {token.setting.y      = _this.settings.sedimentation.incoming.point[element.category].y+(Math.random()*2)}
         if(typeof(token.setting.size)   =='undefined') {token.setting.size   = _this.settings.sedimentation.token.size.original}
         if(typeof(token.setting.targets)=='undefined') {token.setting.targets=[]}
+        token.setting.ID = token.setting.ID = this.ID(_this)
+        if(typeof(token.setting.state)   =='undefined') {token.setting.state = 0}
       }
-      token.myobj =  this.create(_this,token.setting)    
+      token.myobj =  this.create(_this,token.setting)
       //console.log("token.myobj",token.myobj)
 
           token.flocculate = function(){
@@ -142,7 +153,8 @@ $.fn._vs.token = {
           }
           
           token.size = function(value){
-            if(this.myobj!=null){
+            //console.log(this.attr('state'))
+            if(this.myobj!=null && this.attr('state')<2){
               if (!arguments.length){return this.myobj.m_shape.m_radius*this.myobj.m_userData.scale;}
                 this.myobj.m_shape.m_radius = value/this.myobj.m_userData.scale
             }
@@ -159,6 +171,15 @@ $.fn._vs.token = {
       //console.log("token",token)
       _this.tokens.push(token)
       _this.decay.tokens.push(token)
+
+      // Execute suspension callback 
+      if(typeof(this.myobj.m_userData.callback)!="undefined"){
+        if(typeof(this.myobj.m_userData.callback.suspension)=="function"){
+           var t = _this.select('ID',token.setting.ID)
+           this.myobj.m_userData.callback.suspension(t)         
+        }
+      }
+
      return token
     },
 
@@ -195,8 +216,8 @@ $.fn._vs.token = {
         this.applyImpulse(this.myobj,token.impulse.angle,token.impulse.power);
       }
 
-      if(typeof(token.fillStyle) =="undefined"){   token.fillStyle  = this.colorRange(token.categorie) }
-      if(typeof(token.stokeStyle)=="undefined"){   token.stokeStyle = this.colorRange(token.categorie) }
+      if(typeof(token.fillStyle) =="undefined"){   token.fillStyle  = this.colorRange(token.category) }
+      if(typeof(token.stokeStyle)=="undefined"){   token.stokeStyle = this.colorRange(token.category) }
       if(typeof(token.lineWidth) =="undefined"){   token.lineWidth  = 0 }
       if(typeof(token.callback)  =="undefined"){   
         token.callback = {}
@@ -217,18 +238,12 @@ $.fn._vs.token = {
       this.myobj.m_userData.mouse.down        = false;
       this.myobj.m_userData.mouse.dragging    = false;
       this.myobj.m_userData.mouse.statebefore = false;
-
-      // Execute suspension callback 
-      if(typeof(this.myobj.m_userData.callback)!="undefined"){
-        if(typeof(this.myobj.m_userData.callback.suspension)=="function"){
-           this.myobj.m_userData.callback.suspension(this.myobj.m_userData)         
-        }
-      }
+      this.myobj.m_userData.state = 1;  // now in the world
 
       if(token.targets.length==0 && _this.settings.chart.type=="CircleLayout"){
         token.targets[0]={
-                         x: _this.settings.sedimentation.incoming.target[token.categorie].x,
-                         y: _this.settings.sedimentation.incoming.target[token.categorie].y
+                         x: _this.settings.sedimentation.incoming.target[token.category].x,
+                         y: _this.settings.sedimentation.incoming.target[token.category].y
                   }
       }
 
@@ -246,9 +261,9 @@ $.fn._vs.token = {
       }
 
       // ADD INFO IN OBJECT
-      //categories[family].value+=1;
+      //categorys[family].value+=1;
       //setTimeout(function(){mouseJoint.SetTarget(chart.position.x/scale, chart.position.y/scale)},1000);
-      //categories[family].joins.push(mouseJoint); 
+      //categorys[family].joins.push(mouseJoint); 
     
       return this.myobj;
     },
@@ -353,13 +368,11 @@ $.fn._vs.token = {
       
     },
     createBigBall:function (world, x, y) { 
-      var fixDef       = new Box2D.Dynamics.b2FixtureDef;
+      var fixDef           = new Box2D.Dynamics.b2FixtureDef;
         fixDef.density     = 1000000.0;
         fixDef.friction    = 0.5;
         fixDef.restitution = 0.2;
-        fixDef.shape     = new Box2D.Collision.Shapes.b2CircleShape(
-      20/30
-        );
+        fixDef.shape       = new Box2D.Collision.Shapes.b2CircleShape(20/30);
     
         var bodyDef      = new Box2D.Dynamics.b2BodyDef;
       bodyDef.type     = Box2D.Dynamics.b2Body.b2_dynamicBody;
@@ -466,17 +479,17 @@ $.fn._vs.token = {
     
       // ADD INFO IN OBJECT
       myobj.m_userData  = {type:"PieBall",familyID:family,fillColor:colorScale(family)}
-      categories[family].value+=1;
+      categorys[family].value+=1;
       //setTimeout(function(){mouseJoint.SetTarget(chart.position.x/scale, chart.position.y/scale)},1000);
-      categories[family].joins.push(mouseJoint); 
+      categorys[family].joins.push(mouseJoint); 
     
       return myobj;
     },
     
     createDataBallPie:function (world,target, x, y,size,family) {
       console.log(target)
-      var xPos = categories[family].incomingPoint.x/scale+(Math.random()*2/scale);
-      var yPos = categories[family].incomingPoint.y/scale;
+      var xPos = categorys[family].incomingPoint.x/scale+(Math.random()*2/scale);
+      var yPos = categorys[family].incomingPoint.y/scale;
     
       // CREATE BALL
       var fixDef           = new Box2D.Dynamics.b2FixtureDef;
@@ -493,7 +506,7 @@ $.fn._vs.token = {
     
       // I need a distinct list with bodies (and not fixtures)
       var myo = world.CreateBody(bodyDef);
-        myo.m_userData={type:"PieBall",familyID:family,fillColor:categories[family].color}
+        myo.m_userData={type:"PieBall",familyID:family,fillColor:categorys[family].color}
         
         listBodies.push(myo);
       var myobj = myo.CreateFixture(fixDef);
@@ -511,7 +524,7 @@ $.fn._vs.token = {
       
       // ADD INFO IN OBJECT
       myobj.m_userData={type:"PieBall",familyID:family,fillColor:colorScale(family)}
-      categories[family].value+=1;
+      categorys[family].value+=1;
       //setTimeout(function(){mouseJoint.SetTarget(chart.position.x/scale, chart.position.y/scale)},1000);
     
       return myobj;
@@ -538,9 +551,6 @@ $.fn._vs.token = {
       return myobj;
     },
 
-    getToken:function (){
-
-    }
 }
 
 })(jQuery);

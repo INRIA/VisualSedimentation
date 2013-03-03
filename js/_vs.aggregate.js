@@ -36,9 +36,9 @@
 			},
 
       init:function (_this){
-				
 
-				if(typeof(_this.settings.data.strata)=='undefined' || _this.settings.data.strata.length==0  || _this.settings.data.strata[0].length==0) // Skip layers if no strata is defined
+      	// Skip layers if no strata is defined
+				if(typeof(_this.settings.data.strata)=='undefined' || _this.settings.data.strata.length==0  || _this.settings.data.strata[0].length==0)
 					return;
 
 				var color = _this.token.colorRange; 
@@ -50,11 +50,15 @@
             h = _this.settings.sedimentation.aggregation.height;
 
         var vis = d3.select("#"+_this.settings.DOMelement.id)
-					.append("div", ":first-child")
+					//.insert("div", ":first-child")
+					.append("div")
 						.attr("class", "vis")
+					//	.style("position", "relative")
+						.style("z-index", 10)
           .append("svg")
             .attr("width", _this.settings.width)
             .attr("height", _this.settings.height)
+
 					.append("g")
 						.attr("transform", "translate(" + _this.settings.chart.x + "," + _this.settings.chart.y + ")");
 
@@ -142,11 +146,11 @@
 					
 				// strata
         var svg = d3.select("#"+_this.settings.DOMelement.id)
-					.append("div")
-						.attr("class", "vis")//.style("margin-top", "-"+_this.settings.height+"px")
+			.append("div")
+			.attr("class", "vis")//.style("margin-top", "-"+_this.settings.height+"px")
             .attr("width", _this.settings.width)
             .attr("height", _this.settings.height)						
-          .append("svg")
+            .append("svg")
             .attr("width", _this.settings.width)
             .attr("height", _this.settings.height);					
 										
@@ -155,17 +159,11 @@
 
 					for(var i=0; i<_this.settings.data.model.length; i++) {
 						var data =_this.settings.data.strata[i];   
-							 var color = function(s) { return _this.token.colorRange(i)};
-							 // _this.settings.chart.radius/
+						 var color = function(s) { return _this.token.colorRange(i)};
+						_this.aggregate.create_pie_chart(_this, data, svg, data[0].value, color,
+						 ((i+1/2))*_this.settings.chart.width/(_this.settings.data.model.length)+_this.settings.chart.x,
+						  _this.settings.chart.y+_this.settings.chart.height/6);
 
-							 // Sam change for Viewport position 
-							_this.aggregate.create_pie_chart(_this, data, svg, data[0].value, color,
-							 ((i+1/2))*_this.settings.chart.width/(_this.settings.data.model.length)+_this.settings.chart.x,
-							  _this.settings.chart.y+_this.settings.chart.height/6);
-							
-							// Romain version : 
-							//_this.aggregate.create_pie_chart(_this, data, svg, data[0].value, color, ((i+1/2))*_this.settings.width/(_this.settings.data.model.length), _this.settings.height/6);
-					
 						}
 
 					} else {
@@ -444,6 +442,7 @@
 				
 		var vis = d3.select("svg");
     var g = vis.selectAll(".gcol");
+    
 		g.data(_this.settings.data.strata, function(d,i) { return [d];});
 					
     var gpath = g.selectAll(".gpath")

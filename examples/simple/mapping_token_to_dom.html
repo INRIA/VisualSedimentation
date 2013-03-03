@@ -15,7 +15,7 @@
   })();
 
 </script>
-    <script type="text/javascript" src="../../js/min/vs.0.1-min.js"></script>
+    <script type="text/javascript" src="../../js/_VisualSedimentation.js"></script>
     <style>@import url(../../css/fan-of-mike-style.css);</style>
    </head>
    <body>
@@ -51,15 +51,15 @@
                         ],
                 "strata":[
                           [
-                            {value: 100, label: "Strata 1 col A"},
-                            {value: 15, label: "Strata 2 col A"},
+                            {initValue: 100,label: "Strata 1 col A"},
+                            {initValue: 15, label: "Strata 2 col A"},
                           ],[
-                            {value: 55, label: "Strata 1 col B"},
-                            {value: 55, label: "Strata 1 col B"},
-                            {value: 55, label: "Strata 1 col B"},
-                            {value: 55, label: "Strata 1 col B"},
-                            {value: 55, label: "Strata 1 col B"},
-                            {value: 5, label: "Strata 2 col B"},
+                            {initValue: 55, label: "Strata 1 col B"},
+                            {initValue: 50, label: "Strata 1 col B"},
+                            {initValue: 30, label: "Strata 1 col B"},
+                            {initValue: 10, label: "Strata 1 col B"},
+                            {initValue: 55, label: "Strata 1 col B"},
+                            {initValue: 5,  label: "Strata 2 col B"},
                           ]    
                         ],
                 stream:{ provider:'generator',refresh:10000/6}
@@ -67,6 +67,11 @@
           sedimentation:{
             token:{
               size:{original:5,minimum:3}
+            },
+            aggregation:{
+              height:100,
+              maxData:100
+              //strataType:"log"
             }
           },
           options:{
@@ -80,7 +85,7 @@
       // create a token 
       var myImpulseToken = barChart.addToken({
                size:30,
-               categorie:0,
+               category:0,
                mappingElement:"myElement",
                fillStyle:"rgba(255,0,0,1)",
                strokeStyle:"rgba(255,0,0,0.2)",
@@ -88,10 +93,10 @@
                name:"balloon",
                callback:{
                   // when the token is draw update the div position 
-                  draw:function(userdata){
-                    var myDomElement=document.getElementById(userdata.mappingElement)
-                    myDomElement.style.left = userdata.x+30+"px";
-                    myDomElement.style.top  = userdata.y+130+"px";
+                  draw:function(token){
+                    var myDomElement=document.getElementById(token.attr('mappingElement'))
+                    myDomElement.style.left = token.attr('x')+30+"px";
+                    myDomElement.style.top  = token.attr('y')+130+"px";
                   },
                 },
              })

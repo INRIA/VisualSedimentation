@@ -15,7 +15,7 @@
   })();
 
 </script>
-    <script type="text/javascript" src="../../js/min/vs.0.1-min.js"></script>
+    <script type="text/javascript" src="../../js/_VisualSedimentation.js"></script>
     <style>@import url(../../css/fan-of-mike-style.css);</style>
    </head>
    <body>
@@ -28,13 +28,11 @@
     <a style="margin-left:1em;" href="" target="_blank">Contact / Feedback</a>
   </header>
 
-
-      <h1>View port</h1>
+      <h1>Viewport</h1>
 
       <!-- div container -->
       <div id="myDemo"></div>
     
-
       <!-- Create my visual sedimentation -->
       <script type="text/javascript">
       
@@ -61,9 +59,9 @@
                         ],
                 "strata":[
                           [
-                            {value: 20, label: "Strata 1 col A"},
+                            {initValue: 20, label: "Strata 1 col A"},
                           ],[
-                            {value: 5, label: "Strata 1 col B"},
+                            {initValue: 5, label: "Strata 1 col B"},
                           ]    
                         ],
                 stream:{ provider:'generator',refresh:10000/6}
@@ -71,11 +69,14 @@
           sedimentation:{
             token:{
               size:{original:5,minimum:3}
+            },
+            aggregation:{
+              height:100,
+              max_date:3
             }
           },
           options:{
             layout:true,
-            //debugaggregate:true
           }
         }
 
@@ -114,7 +115,7 @@
                             src:'http://images.toocharger.com/img/graphiques/icones/sport/football/football/ballon_de_foot.10450.gif'
                           },
                     size:30,
-                    categorie:0
+                    category:0
                   })
 
        var myImpulseToken = chart.addToken({
@@ -126,7 +127,7 @@
                        src:'http://www.pogotte.fr/wp-content/uploads/2011/03/ballon-basket-64x64.jpg'
                      },
                size:30,
-               categorie:1
+               category:1
              })
 
 

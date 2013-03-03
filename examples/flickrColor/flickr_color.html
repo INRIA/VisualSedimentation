@@ -63,7 +63,7 @@ $.getJSON("http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?
   function(data) {
     $.each(data.items, function(i,item){
        heatchart.addToken({
-                    categorie:0,
+                    category:0,
                     size:20,
                     texture:{src:item.media.m},
                   })
@@ -84,7 +84,7 @@ $.getJSON("http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?
     $.each(data.items, function(i,item){
        heatchart.addToken({
                     timestamp:1,
-                    categorie:1,
+                    category:1,
                     size:20,
                     texture:{src:item.media.m},
                   })
@@ -104,7 +104,7 @@ $.getJSON("http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?
   function(data) {
     $.each(data.items, function(i,item){
        heatchart.addToken({
-                    categorie:2,
+                    category:2,
                     size:20,
                     texture:{src:item.media.m},
                   })

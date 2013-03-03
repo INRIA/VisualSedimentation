@@ -87,10 +87,12 @@ $.fn._vs.draw = {
     s.m_userData.x  = b.GetWorldCenter().x*scale
     s.m_userData.y  = b.GetWorldCenter().y*scale
 
+    //
     // Call back draw 
     if(typeof(s.m_userData.callback)!="undefined"){
         if(typeof(s.m_userData.callback.draw)=="function"){
-               s.m_userData.callback.draw(s.m_userData)  
+               var t = _this.select('ID',s.m_userData.ID)
+               s.m_userData.callback.draw(t)  
         }
     }
 

@@ -1,12 +1,12 @@
 (function ($) {
-console.log("flocullate loaded")
+//console.log("flocullate loaded")
 $.fn._vs.flocculate = {
 
     buffer:[], 
 
     init:function(_this){
       console.log("init flocculate",_this)
-      // create one buffer by data model (categories)
+      // create one buffer by data model (categorys)
       for (var i =0; i<_this.settings.data.model.length; i++) {
         this.buffer[i] = []
         console.log(i)
@@ -16,7 +16,7 @@ $.fn._vs.flocculate = {
 
     // OLD STUFF NOT USED  
     addtobuffer:function(_this,token){
-      c = token.attr("categorie")
+      c = token.attr("category")
       bufferSize =_this.settings.sedimentation.flocculate.bufferSize
       this.buffer[c].push(token)
       _this.decay.tokens.splice(_this.decay.tokens.indexOf(token),1)
@@ -30,15 +30,13 @@ $.fn._vs.flocculate = {
     },
 
     destroyIt:function(_this,token){
-      //call back 
-      //console.log(token.attr("categorie"))
-      //console.log(_this.settings.data.strata[token.attr("categorie")].value)
-      //_this.tokens.splice(_this.tokens.indexOf(token),1)
-      _this.decay.tokens.splice(_this.decay.tokens.indexOf(token),1)
-      token.attr("callback","flocculation",token.m_userData)           // callback 
-      _this.settings.data.strata[token.attr("categorie")][0].value+=1; // update data 
-      _this.aggregate.update(_this)                                    // update strate
-      return _this.world.DestroyBody(token.myobj.GetBody());
+      token.attr("callback","flocculation",token) // callback 
+      token.attr("state",2)                       // flocullating state
+      //token.myobj=null
+     // console.log(token.attr('ID'))
+      var del = _this.world.DestroyBody(token.myobj.GetBody());
+      
+      return del
     },
 
     update:function(_this,c,nbtokens) {
@@ -48,7 +46,6 @@ $.fn._vs.flocculate = {
          this.destroyIt(_this,token)
        }
       }else {
-
         while(this.buffer[c].length > _this.settings.sedimentation.flocculate.number) {
            var token = this.buffer[c].shift();
            this.destroyIt(_this,token)
@@ -69,7 +66,6 @@ $.fn._vs.flocculate = {
       // TODO destroy all 
       console.log(_this.settings.data)
       for (var i = _this.decay.tokens - 1; i >= 0; i--) {
-
         console.log(_this.decay.tokens)
         this.update(_this,i,_this.tokens.length);      
       };

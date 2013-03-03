@@ -50,11 +50,11 @@
                         ],
                 "strata":[
                           [
-                            {value: 1, label: "Strata 1 col A"},
+                            {initValue: 1, label: "Strata 1 col A"},
                           ],[
-                            {value: 1, label: "Strata 1 col B"},
+                            {initValue: 2, label: "Strata 1 col B"},
                           ],[
-                            {value: 1, label: "Strata 2 col C"}
+                            {initValue: 3, label: "Strata 2 col C"}
                           ]      
                         ],
                 stream:{ provider:'generator',refresh:1000000000/6}
@@ -67,7 +67,8 @@
               decay:{power:1.01},
             },
             aggregation:{
-              height:300
+              height:100,
+              max_date:100
             }
           },
           options:{
@@ -80,7 +81,7 @@
       barChart.addToken({
                id:"myId",
                size:30,
-               categorie:0,
+               category:0,
                name:"George"
              })
 
@@ -88,14 +89,14 @@
       barChart.addToken({
                class:"myClass",
                size:30,
-               categorie:1,
+               category:1,
                name:"Obama"
              })
 
       barChart.addToken({
                class:"myClass",
                size:30,
-               categorie:0,
+               category:0,
                name:"Rhomney"
              })
 
@@ -130,9 +131,9 @@
       </script>
       <!-- end -->
       <div>
-      <button  type="button" onclick="barChart.addToken({id:'myId',size:30,categorie:0})" accesskey="b">  ↓ id="myId" </button>
-      <button  type="button" onclick="barChart.addToken({class:'myClass',size:20,categorie:1})" accesskey="n">↓  class="myClass" </button>
-      <button  type="button" onclick="barChart.addToken({size:10,categorie:2,name:'Obama'})" accesskey="m"> ↓ no name</button>
+      <button  type="button" onclick="barChart.addToken({id:'myId',size:30,category:0})" accesskey="b">  ↓ id="myId" </button>
+      <button  type="button" onclick="barChart.addToken({class:'myClass',size:20,category:1})" accesskey="n">↓  class="myClass" </button>
+      <button  type="button" onclick="barChart.addToken({size:10,category:2,name:'Obama'})" accesskey="m"> ↓ no name</button>
     </div>
       <div>
       <button  type="button" onclick="testSelect('id','myId')" accesskey="b">

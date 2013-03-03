@@ -37,9 +37,8 @@
       function fstrata() {
         var a = Array();
 
-        for(var s=0; s<mySettings.data.model.length; s++) {
+        for(var s=0; s<mySettings.data.model.length; s++)
           a.push(fstratum(s));
-        }
         return a;
       }
 
@@ -52,30 +51,29 @@
           var tk = mySettings.data.tokens[k];
           if(tk.l == a) {
             if(tk.t > mySettings.current_t()-2)
-              b[0].push(tk)
+              b[4].push(tk)
             else if(tk.t > mySettings.current_t()-5)
-              b[1].push(tk)
+              b[3].push(tk)
             else if(tk.t > mySettings.current_t()-10)
               b[2].push(tk)
             else if(tk.t > mySettings.current_t()-20)
-              b[3].push(tk)
+              b[1].push(tk)
             else
-              b[4].push(tk)
+              b[0].push(tk)
           }
         }
         var res = Array();
-        for(var j=0; j<3; j++) {
-          res.push({value: b[j].length, label:"Strata "+j})
+        for(var j=0; j<NB_STRATA; j++) {
+          var val = b[j].length;
+          res.push({value: function() { return val; }, label:"Strata "+j, category:a}) // b[j].length
         }
         return res;
       }
 
-      var mySettings = {};
-
-      mySettings = {
+      var mySettings = {
           width:300,
           height:300,
-          data:{
+          data: {
                 "model":
                         [
                           {label:"Column A"},
@@ -83,27 +81,28 @@
                           {label:"Column C"},
                         ],
                 "tokens":[
-                            {t: 0, l:0, value: "Strata 1 col A"},
-                            {t: 1, l:0, value: "Strata 2 col A"},
-                            {t: 2, l:0, value: "Str1ta 3 col A"},
-                            {t: 3, l:0, value: "Strata 1 col A"},
+                            {t: 0, l:1, value: "Strata 1 col A"},
+                            {t: 1, l:1, value: "Strata 2 col A"},
+                            {t: 0, l:0, value: "Str1ta 3 col A"},
+                            {t: 2, l:0, value: "Strata 1 col A"},
                             {t: 4, l:0, value: "Strata 2 col A"},
-                            {t: 5, l:0, value: "Strata 1 col A"},
+                            {t: 5, l:1, value: "Strata 1 col A"},
                             {t: 6, l:0, value: "Strata 2 col A"},
                             {t: 7, l:0, value: "Str1ta 3 col A"},
                             {t: 8, l:0, value: "Strata 1 col A"},
-                            {t: 9, l:0, value: "Strata 2 col A"},
-                            {t: 10, l:0, value: "Strata 3 col A"},
+                            {t: 9, l:1, value: "Strata 2 col A"},
+                            {t: 10, l:1, value: "Strata 3 col A"},
                             {t: 1, l:1, label: "Strata 1 col B"},
                             {t: 2, l:1, label: "Strata 2 col B"}
                         ],
-               
-                stream:{provider:'generator', refresh:10000/8}
+                "stream":{provider:'direct', refresh:1000}
               },
-          current_t: function() { return d3.max(mySettings.data.tokens, function(d) {return d.t;})},
+          current_t: function() { 
+            return d3.max(mySettings.data.tokens, function(d) {return d.t;})
+          },
           sedimentation:{
             token:{
-              size:{original:6,minimum:2}
+              size:{original:6,minimum:0}
             },
             aggregation:{height:100}
           },
@@ -114,12 +113,30 @@
           }
         }
 
-      mySettings.data.strata = fstrata(this);
+      mySettings.data.strata = function() { return fstrata(this)};
       // Init the sedimentation
       var barChart = $("#myDemo").vs(mySettings).data('visualSedimentation');
-			barChart.aggregate.update(barChart);
+			//barChart.aggregate.update(barChart);
 
-      setInterval(function() {barChart.aggregate.update(barChart)}, 100)
+      setInterval(function() {
+
+        mySettings.data.tokens.push({t: mySettings.current_t()+1, l:2, value: "Strata 1 col A"});
+        mySettings.data.strata = fstrata();
+
+        barChart.addToken({
+              tid:5,
+              category: 0 ,
+              x:mySettings.width*5/6,
+              y:0,
+              size: 2,
+              userdata:{nameofmytoken:""},
+              callback:{}});
+
+        barChart.strata.update(barChart)
+
+        //barChart.aggregate.update(barChart)}
+
+        }, 500)
 
       </script>
   </body>   

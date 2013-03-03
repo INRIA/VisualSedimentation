@@ -15,7 +15,7 @@
   })();
 
 </script>
-    <script type="text/javascript" src="../../js/min/vs.0.1-min.js"></script>
+    <script type="text/javascript" src="../../js/_VisualSedimentation.js"></script>
     <style>@import url(../../css/fan-of-mike-style.css);</style>
    </head>
    <body>
@@ -41,42 +41,44 @@
       mySettings = {
           width:600,
           height:400,
-					chart:{ width:600,height:200,y:200},
+				//	chart:{ width:600,height:200,y:200},
           data:{
-                "model":
+                model:
                         [
                           {label:"Column A"},
                           {label:"Column B"},
                           {label:"Column C"},
                         ],
-                "strata":[
+                strata:[
                           [
-                            {value: 10, label: "Strata 1 col A"},
-                            {value: 15, label: "Strata 2 col A"},
-                            {value: 10, label: "Strata 3 col A"}
+                            {initValue: 10, label: "Strata 1 col A"},
                           ],[
-                            {value: 55, label: "Strata 1 col B"},
-                            {value: 5, label: "Strata 2 col B"},
+                            {initValue: 55, label: "Strata 1 col B"},
+                            {initValue: 5, label: "Strata 2 col B"},
                           ],[
-                            {value: 20, label: "Strata 2 col C"}
+                            {initValue: 20, label: "Strata 2 col C"}
                           ]      
                         ],
                 stream:{ provider:'generator',refresh:10000/6}
               },
-
+<<<<<<< .mine
+ 
+=======
+>>>>>>> .r11599
           sedimentation:{
             token:{
               size:{original:5,minimum:3}
+            },
+            aggregation:{
+              height:100,
+              maxData:55,
+              strataType:"log"
             }
           },
           options:{
-            layout:true
+            layout:false
           }
         }
-
-				
-			mySettings.sedimentation.aggregation = {};
- 			mySettings.sedimentation.aggregation.strataType = "log";
 
       // create the chart 
       var barChart = $("#myDemo").vs(mySettings).data('visualSedimentation');
@@ -86,31 +88,32 @@
       // add a token with texture 
       var myImpulseToken = barChart.addToken({
                     impulse:{
-                            angle:95,
-                            power:9,
+                            angle:90,
+                            power:1,
                             },
-                    texture:{
-                            src:'http://images.toocharger.com/img/graphiques/icones/sport/football/football/ballon_de_foot.10450.gif'
-                          },
-                    size:30,
-                    categorie:1
+                    category:1
                   })
+
+      myImpulseToken.attr('size',20)
+      myImpulseToken.texture('http://images.toocharger.com/img/graphiques/icones/sport/football/football/ballon_de_foot.10450.gif')
+
 
        var myImpulseToken = barChart.addToken({
                impulse:{
                        angle:100,
-                       power:10,
+                       power:8,
                        },
                texture:{
                        src:'http://images.toocharger.com/img/graphiques/icones/sport/football/football/ballon_de_foot.10450.gif'
                      },
                size:30,
-               categorie:0
+               category:0
              })
 
 
       </script>
       <!-- end -->
+      test
 
   </body>   
 </html>

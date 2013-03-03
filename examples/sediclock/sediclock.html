@@ -3,7 +3,6 @@
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
     <title>A Clock by Visual Sedimentation</title>
     <script type="text/javascript" src="../../js/_VisualSedimentation.js"></script>
-    <script type="text/javascript" src="time.js"></script>
     <style>@import url(../../css/fan-of-mike-style.css);</style>
 	</head>
    <body>
@@ -14,144 +13,11 @@
     	<a style="margin-left:1em;" href="https://github.com/INRIA/VisualSedimentation" target="_blank">Source</a>
     	<a style="margin-left:1em;" href="" target="_blank">Contact / Feedback</a>
 	</header>
-
 		<h1>SediClock</h1>
 		<p>Last udpate: <label id="current_time" style="color:gray">Refreshing..</label></p>
-		<div id="sediClock"></div>
+		<div id="sediclock"></div>
 		<p>Built with <a href="http://visualsedimentation.org">Visual Sedimentation</a><br/> 
 		Inspired by <a href="http://bl.ocks.org/1096355">PolarClock</a></p>
-		<script type="text/javascript">
-			mySettings = {};
-			mySettings.width=200;
-			mySettings.height=400;
-			mySettings.chart = {};
-			mySettings.chart.x=0;
-			mySettings.chart.y=0;			
-			mySettings.chart.width=200;
-			mySettings.chart.height=400;			
-			mySettings.data = {};      
-			mySettings.data.model = [];      
-			mySettings.data.model.push({label:"Time"});      
-			mySettings.data.strata = fstrata();
-			mySettings.data.stream = {};
-			mySettings.data.stream.provider = 'direct';
-			mySettings.sedimentation = {};
-			mySettings.sedimentation.aggregation = {};
-			mySettings.sedimentation.aggregation.strataType = "";
-			mySettings.sedimentation.aggregation.height = 200;
-			mySettings.sedimentation.token = {};
-			mySettings.sedimentation.token.size = {};
-			mySettings.sedimentation.token.size.original = 5;
-			mySettings.sedimentation.token.size.minimum = 5;
-			mySettings.options = {};
-			mySettings.options.layout = false;
-
-			
-			var colorRange = d3.scale.category10();
-			
-			function fstrata() {
-							
-				var d = new Date;
-
-				var fsec = d3.time.format("%S s"),
-						fmin = d3.time.format("%M m"),
-						fhou = d3.time.format("%H h"),
-						fwee = d3.time.format("%a"),
-						fdat = d3.time.format("%d d"),
-						fmon = d3.time.format("%b");  
-							
-				function days() {
-					return 32 - new Date(d.getYear(), d.getMonth(), 32).getDate();
-				}					
-
-				var second = (d.getSeconds() + d.getMilliseconds() / 1000) / 60,
-					minute = (d.getMinutes() + second) / 60,
-					hour = (d.getHours() + minute) / 24,
-					weekday = (d.getDay() + hour) / 7,
-					date = (d.getDate() - 1 + hour) / days(),
-					month = (d.getMonth() + date) / 12;		
-
-				d3.selectAll("text")
-						.attr("x", function(d, i) { return d3.selectAll(".layer_"+i).node().getBBox().width/2; })
-						.attr("y", function(d, i) { return d3.selectAll(".layer_"+i).node().getBBox().y; })
-						.attr("dx", function(d, i) { return d3.selectAll(".layer_"+i).node().getBBox().x; })
-						.attr("dy",  function(d, i) { return d3.selectAll(".layer_"+i).node().getBBox().height/2; })
-						.attr("text-anchor", "middle")
-						.attr("class", "gtext")
-						.attr("fill", "white")
-						.text(function(d, i) {
-							return mySettings.data.strata[0][i].text;
-						});  
-						
-				return [
-					[{value: month, text: fmon(d)},
-					{value: date, text: fdat(d)},
-					{value: weekday, text: fwee(d)},
-					{value: hour, text: fhou(d)},
-					{value: minute, text: fmin(d)},
-					{value: second, text: fsec(d)}    
-				]];
-			};
-	
-			function initSeconds() {
-				var _d = new Date;
-				var _second = _d.getSeconds();
-				for(var i=0; i<_second; i++)
-					add_token(.5, colorRange(0), _d);
-					
-				d3.selectAll(".gpath").append("text")
-						.attr("x", function(d, i) { return d3.selectAll(".layer_"+i).node().getBBox().width/2; })
-						.attr("y", function(d, i) { return d3.selectAll(".layer_"+i).node().getBBox().y; })
-						.attr("dx", function(d, i) { return d3.selectAll(".layer_"+i).node().getBBox().x; })
-						.attr("dy",  function(d, i) { return d3.selectAll(".layer_"+i).node().getBBox().height/2; })
-						.attr("text-anchor", "middle")
-						.attr("class", "gtext")
-						.attr("fill", "white")
-						.text(function(d, i) {
-							return mySettings.data.strata[0][i].text;
-						});  				
-			}		
-
-			nb_updates = 0;
-
-			function update() {
-				nb_updates++;
-				d = new Date;
-				mySettings.data.strata = fstrata();
-				d3.select("#current_time").text(d);
-				var _second = d.getSeconds(), _millisecond = d.getMilliseconds();		
-				if(_second==0) {
-					// remove all tokens
-					sediClock.flocculate.all(sediClock);
-					// update layers
-				}
-					
-				if(nb_updates%5==0) { // 1second
-					add_token(.5, colorRange(0), d);
-				} else { // 200ms
-					add_token(3, colorRange(0), d);
-				}
-				
-				d3.selectAll(".gtext").text(function(d, i) { return mySettings.data.strata[0][i].text;});  		
-				sediClock.aggregate.update(sediClock);
-			}
-			
-			function add_token(scale, fs, data) {
-
-				sediClock.addToken({
-									categorie:0,
-									x:mySettings.width/2,
-									fillStyle: fs,
-									y:0,
-									size: mySettings.sedimentation.token.size.original/scale,
-									userdata:{nameofmytoken:""},
-									callback:{}});
-			}
-			
-			var sediClock = $("#sediClock").vs(mySettings).data('visualSedimentation');
-			sediClock.decay.update = function(a) { return; }; // prevent decay 
-			setTimeout(initSeconds, 200);
-			setInterval(update, 200);
-		</script>
-  </body>   
+    <script type="text/javascript" src="sediclock.js"></script>
+  </body> 
 </html>

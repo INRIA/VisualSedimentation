@@ -15,7 +15,7 @@
   })();
 
 </script>
-    <script type="text/javascript" src="../../js/min/vs.0.1-min.js"></script>
+    <script type="text/javascript" src="../../js/_VisualSedimentation.js"></script>
     <style>@import url(../../css/fan-of-mike-style.css);</style>
    </head>
    <body>
@@ -42,18 +42,20 @@
           width:500,
           height:500,
           data:{
-                "model":
-                        [
+                model:  [
                           {label:"Column A"},
                           {label:"Column B"},
                           {label:"Column C"},
                         ],
-                "strata":[
-                          [{value: 0.1, label: "Strata 1 col A"},
-                          ],[{value: 0.1, label: "Strata 1 col B"},
-                          ],[{value: 0.1, label: "Strata 2 col C"}]      
+                strata:[
+                          [{initValue: 1, label: "Strata 1 col A"}],
+                          [{initValue: 2, label: "Strata 1 col B"}],
+                          [{initValue: 3, label: "Strata 2 col C"}]      
                         ],
-                stream:{ provider:'generator',refresh:10000/6}
+                stream: { 
+                          provider:'none',
+                          refresh:10000/6
+                        }
               },
           sedimentation:{
             token:{
@@ -74,7 +76,7 @@
       // add a token with texture 
       var myObamaToken = barChart.addToken({
                     timestamp:1,
-                    categorie:2,
+                    category:2,
                     value: 30,
                     size:20,
                     texture:{src:'http://i.forbesimg.com/media/lists/people/barack-obama_50x50.jpg'},
@@ -84,7 +86,7 @@
 
       var myObama2Token = barChart.addToken({
                     timestamp:1,
-                    categorie:2,
+                    category:2,
                     value: 40,
                     size:20,
                     texture:{src:'http://www.france24.com/fr/files_fr/video/obama-50_27.jpg'},
@@ -94,7 +96,7 @@
 
       var myObama3Token = barChart.addToken({
                     timestamp:1,
-                    categorie:2,
+                    category:2,
                     value: 50,
                     size:40,
                     texture:{src:'http://images.politico.com/global/v5/2012/candidates/obama-50x50.jpg'},
@@ -104,7 +106,7 @@
 
       var myObama4Token = barChart.addToken({
                     timestamp:1,
-                    categorie:2,
+                    category:2,
                     value: 90,
                     size:30,
                     texture:{src:'http://img.ehowcdn.com/other-people/ehow/images/a04/gb/op/have-swagger-like-barack-obama-180x180.jpg'},
@@ -116,7 +118,7 @@
     // Work also with base 64 encoded image  
     var myRomneyToken = barChart.addToken({
                     timestamp:1,
-                    categorie:1,
+                    category:1,
                     value: 30,
                     size:25,
                     texture:{src:'data:image/jpeg;base64,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'},
@@ -126,7 +128,7 @@
 
     var myRomneyToken = barChart.addToken({
                     timestamp:1,
-                    categorie:1,
+                    category:1,
                     value: 40,
                     size:30,
                     texture:{src:'http://polltracker.talkingpointsmemo.com/images/candidate/romney.png'},
@@ -136,7 +138,7 @@
 
       var myRomneyToken = barChart.addToken({
                     timestamp:1,
-                    categorie:1,
+                    category:1,
                     value: 50,
                     size:70,
                     texture:{src:'http://usatweets.files.wordpress.com/2011/11/romney-2012-twitteravatar_normal.jpg?w=48'},
@@ -146,7 +148,7 @@
 
       var myRomneyToken = barChart.addToken({
                     timestamp:1,
-                    categorie:1,
+                    category:1,
                     value: 80,
                     size:40,
                     texture:{src:'http://nation.foxnews.com/sites/nation.foxnews.com/files/styles/avatar/public/60_083112_Greta_romney.jpg'},
@@ -166,8 +168,9 @@ $.getJSON("http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?
   function(data) {
     $.each(data.items, function(i,item){
        barChart.addToken({
+                    y:75,
                     timestamp:1,
-                    categorie:0,
+                    category:0,
                     value: 80,
                     size:20,
                     texture:{src:item.media.m},

@@ -9,7 +9,7 @@ $.fn._vs.chart.StackedAreaChart = function(_this,fn,options) {
     _this.world.m_gravity   = gravity;
     _this.chartPhySetup     = {grounds:[],wall:[]}
     this.setupChartPhysics(_this);
-    //dataFlow(categories);
+    //dataFlow(categorys);
   };
   
   this.setupChartPhysics = function(_this){
@@ -75,21 +75,15 @@ $.fn._vs.chart.StackedAreaChart = function(_this,fn,options) {
 
           // Move Lift to data
           // based on scale (data / all data * height )
+          /*
           if(_this.settings.data.model[i].value>=0){
             // ?????
             var liftPosition = (_this.settings.data.model[i].value/tdv*(_this.settings.chart.height-_this.settings.sedimentation.aggregation.height))
-
-            //(_this.settings.data.model[i].value/tdv)+agreHeight+_this.settings.chart.y
-            //(_this.settings.chart.height+agreHeight)
-             // console.log(liftPosition)
-             // console.log(_this.settings.chart.height,_this.settings.chart.y,_this.settings.sedimentation.aggregation.height)
-
           }else{
             var liftPosition = 0          
-          }
-          this.update(_this,{cat:i,y:liftPosition});
+          }*/
+          this.update(_this,{cat:i,y:_this.settings.chart.height});
         }
-
     }
   };
 
@@ -97,12 +91,14 @@ $.fn._vs.chart.StackedAreaChart = function(_this,fn,options) {
     //console.log('token query')
     var i = options;
     var token = {
+              
               x:(_this.settings.sedimentation.incoming.point[i].x+(Math.random()*2)),
               y:(_this.settings.sedimentation.incoming.point[i].y+(Math.random()*1)),
+              t:_this.now(),
               size:_this.settings.sedimentation.token.size.original,
-              categorie:i,
-              targets:[],
+              category:i,
               lineWidth:0,
+            
             }
     return token; 
   }
@@ -116,11 +112,11 @@ $.fn._vs.chart.StackedAreaChart = function(_this,fn,options) {
      
      var bodyDef  = new _this.phy.b2BodyDef;
      //create ground
-     bodyDef.type = _this.phy.b2Body.b2_staticBody;
-     fixDef.shape = new _this.phy.b2PolygonShape;
+     bodyDef.type   = _this.phy.b2Body.b2_staticBody;
+     fixDef.shape   = new _this.phy.b2PolygonShape;
      fixDef.shape.SetAsBox(w/scale, h/scale);
      bodyDef.position.Set(x/scale,y/scale );
-     var box = _this.world.CreateBody(bodyDef).CreateFixture(fixDef);
+     var box        = _this.world.CreateBody(bodyDef).CreateFixture(fixDef);
      box.m_userData = {type:type,fillStyle:color,w:w,h:h,x:x,y:y}
      //console.log(box)
      return box

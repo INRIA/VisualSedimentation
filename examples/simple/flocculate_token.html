@@ -42,19 +42,20 @@
           width:300,
           height:300,
           data:{
-                "model":
+                model:
                         [
                           {label:"Column A"},
                           {label:"Column B"},
                           {label:"Column C"},
                         ],
-                "strata":[
+                strata:[
                           [
-                            {value: 1, label: "Strata 1 col A"},
+                            {initValue: 10, label: "Strata 1 col A"},
                           ],[
-                            {value: 1, label: "Strata 1 col B"},
+                            {initValue: 55, label: "Strata 1 col B"},
+                            {initValue: 5, label: "Strata 2 col B"},
                           ],[
-                            {value: 1, label: "Strata 2 col C"}
+                            {initValue: 20, label: "Strata 2 col C"}
                           ]      
                         ],
                 stream:{ provider:'generator',refresh:1000000000/6}
@@ -66,6 +67,11 @@
             suspension:{
               decay:{power:1.01},
             },
+            aggregation:{
+              height:100,
+              maxData:55,
+              strataType:"log"
+            }
           },
           options:{
             layout:false
@@ -77,7 +83,7 @@
       barChart.addToken({
                id:"myId",
                size:15,
-               categorie:0,
+               category:0,
                name:"George"
              })
 
@@ -85,14 +91,14 @@
       barChart.addToken({
                class:"myClass",
                size:30,
-               categorie:1,
+               category:1,
                name:"Obama"
              })
 
       barChart.addToken({
                class:"myClass",
                size:30,
-               categorie:0,
+               category:0,
                name:"Rhomney"
              })
 
@@ -117,16 +123,16 @@
         
         // and make it bigger
         selectMyClassTokens.flocculate()
-
+        barChart.strata.update(barChart);
       }
 
 
       </script>
       <!-- end -->
       <div>
-      <button  type="button" onclick="barChart.addToken({id:'myId',size:30,categorie:0})" accesskey="b">  ↓ id="myId" </button>
-      <button  type="button" onclick="barChart.addToken({class:'myClass',size:20,categorie:1})" accesskey="n">↓  class="myClass" </button>
-      <button  type="button" onclick="barChart.addToken({size:10,categorie:2,name:'Obama'})" accesskey="m"> ↓ no name</button>
+      <button  type="button" onclick="barChart.addToken({id:'myId',size:30,category:0})" accesskey="b">  ↓ id="myId" </button>
+      <button  type="button" onclick="barChart.addToken({class:'myClass',size:20,category:1})" accesskey="n">↓  class="myClass" </button>
+      <button  type="button" onclick="barChart.addToken({size:10,category:2,name:'Obama'})" accesskey="m"> ↓ no name</button>
     </div>
       <div>
       <button  type="button" onclick="testSelect('id','myId')" accesskey="b">

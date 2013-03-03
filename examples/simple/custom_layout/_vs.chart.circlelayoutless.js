@@ -20,13 +20,19 @@ $.fn._vs.chart.CircleLayoutLess = function(_this,fn,options) {
 
     // process data distribution to form layout
     for (var i = 0; i <_this.settings.data.model.length; i++) { 
-      //console.log("-->",_this.settings.data.model[i])
+
       _this.settings.data.model[i].value=0
-      for (var j = 0; j <_this.settings.data.strata[i].length; j++) { 
-         //console.log("-->",_this.settings.data.strata[i][j].value)
-        _this.settings.data.model[i].value += _this.settings.data.strata[i][j].value
+
+      if(typeof(_this.settings.data.strata)!="undefined"){
+
+        for (var j = 0; j <_this.settings.data.strata[i].length; j++) { 
+          _this.settings.data.model[i].value += _this.settings.data.strata[i][j].initValue
+        }
+
+      } else {
+      
       }
-      //console.log("-->",_this.settings.data.model[i].value)
+
       initValue.push(_this.settings.data.model[i].value)
       tdv += _this.settings.data.model[i].value
     }
@@ -128,7 +134,7 @@ $.fn._vs.chart.CircleLayoutLess = function(_this,fn,options) {
               x:(_this.settings.sedimentation.incoming.point[i].x+(Math.random()*2)),
               y:(_this.settings.sedimentation.incoming.point[i].y+(Math.random()*1)),
               size:_this.settings.sedimentation.token.size.original,
-              categorie:i,
+              category:i,
               phy:{
                   density:10,
                   friction:0,
@@ -299,8 +305,8 @@ function updatePivotFixPosition(x,y,id){
 
 }
 function setPivotPosition(x,y,id){
-    for( var i = 0 ; i<categories[id].joins.length; i++) {
-      categories[id].joins[i].SetTarget(new b2Vec2(x/scale, y/scale));
+    for( var i = 0 ; i<categorys[id].joins.length; i++) {
+      categorys[id].joins[i].SetTarget(new b2Vec2(x/scale, y/scale));
     }
 }
 function setPivotRadius(r,id){

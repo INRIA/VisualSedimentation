@@ -18,6 +18,10 @@ $.fn._vs.chart.CircleLayout = function(_this,fn,options) {
     _this.chartPhySetup     = {grounds:[],wall:[]}
     this.treeLayout         = _this.settings.chart.treeLayout;
 
+            for (var i=0; i<_this.settings.data.model.length; i++) {
+            _this.settings.data.strata[i][0].value = _this.settings.data.strata[i][0].initValue;
+            }
+
     // process data distribution to form layout
     for (var i = 0; i <_this.settings.data.model.length; i++) { 
       //console.log("-->",_this.settings.data.model[i])
@@ -129,8 +133,9 @@ $.fn._vs.chart.CircleLayout = function(_this,fn,options) {
     var token = {
               x:(_this.settings.sedimentation.incoming.point[i].x+(Math.random()*2)),
               y:(_this.settings.sedimentation.incoming.point[i].y+(Math.random()*1)),
+              t:_this.now(),
               size:_this.settings.sedimentation.token.size.original,
-              categorie:i,
+              category:i,
               phy:{
                   density:10,
                   friction:0,
@@ -301,8 +306,8 @@ function updatePivotFixPosition(x,y,id){
 
 }
 function setPivotPosition(x,y,id){
-    for( var i = 0 ; i<categories[id].joins.length; i++) {
-      categories[id].joins[i].SetTarget(new b2Vec2(x/scale, y/scale));
+    for( var i = 0 ; i<categorys[id].joins.length; i++) {
+      categorys[id].joins[i].SetTarget(new b2Vec2(x/scale, y/scale));
     }
 }
 function setPivotRadius(r,id){
