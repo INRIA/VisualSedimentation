@@ -63,3 +63,10 @@ Copyright 2013, by Samuel Huron & Romain Vuillemot
 "B" means BSD :
 * Licence texte in french: <http://www.cecill.info/licences/Licence_CeCILL-B_V1-fr.txt>
 * Licence texte in english: <http://www.cecill.info/licences/Licence_CeCILL-B_V1-en.txt>
+
+## Forging 
+
+Visual sedimentation was forging inside : 
+* INRIA AVIZ team <http://aviz.fr/>
+* IRI Centre Pompidou team <http://www.iri.centrepompidou.fr/>
+
