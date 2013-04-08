@@ -19,12 +19,19 @@ includeJS(_vsDirectory+'_vs.draw.js');
 includeJS(_vsDirectory+'_vs.token2.js');
 includeJS(_vsDirectory+'_vs.stream.js');
 includeJS(_vsDirectory+'_vs.decay.js');
+includeJS(_vsDirectory+'_vs.strata.js');
+
+
 includeJS(_vsDirectory+'_vs.flocculate.js');
 includeJS(_vsDirectory+'_vs.aggregate.js');
 
 // js by C_vsDirectory+' type 
 includeJS(_vsDirectory+'_vs.chart.stackedareachart.js');
 includeJS(_vsDirectory+'_vs.chart.circlelayout.js');
+
+//console.log("stratas",$.fn._vs.strata)
+
+
 if(typeof(_vsCustomlayout)!="undefined"){
     includeJS(_vsCustomlayout);
     console.log("custom layout")

@@ -15,7 +15,7 @@
   })();
 
 </script>
-    <script type="text/javascript" src="../../js/min/vs.0.1-min.js"></script>
+    <script type="text/javascript" src="../../js/_VisualSedimentation.js"></script>
     <style>@import url(../../css/fan-of-mike-style.css);</style>
    </head>
    <body>
@@ -49,14 +49,13 @@
                         ],
                 "strata":[
                           [
-                            {value: 10, label: "Strata 1 col A"},
-                            {value: 15, label: "Strata 2 col A"},
-                            {value: 10, label: "Strata 3 col A"}
+                            {initValue: 1, label: "Strata 1 col A"},
+                            {initValue: 1, label: "Strata 1 col A"},
+                            {initValue: 1, label: "Strata 1 col A"},
                           ],[
-                            {value: 55, label: "Strata 1 col B"},
-                            {value: 5, label: "Strata 2 col B"},
+                            {initValue: 2, label: "Strata 1 col B"},
                           ],[
-                            {value: 20, label: "Strata 2 col C"}
+                            {initValue: 3, label: "Strata 2 col C"}
                           ]      
                         ],
                 stream:{ provider:'generator',refresh:1000000000/6}
@@ -64,7 +63,12 @@
           sedimentation:{
             token:{
               size:{original:5,minimum:3}
+            },
+            aggregation:{
+              height:100,
+              max_date:3
             }
+
           },
           options:{
             layout:false
@@ -77,7 +81,7 @@
       barChart.addToken({
                id:"myId",
                size:30,
-               categorie:0,
+               category:0,
                name:"George"
              })
 
@@ -85,14 +89,14 @@
       barChart.addToken({
                class:"myClass",
                size:10,
-               categorie:1,
+               category:1,
                name:"Test 1"
              })
 
       barChart.addToken({
                class:"myClass",
                size:10,
-               categorie:0,
+               category:0,
                name:"Test 2"
              })
 

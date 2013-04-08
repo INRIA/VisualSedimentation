@@ -16,6 +16,13 @@
 </script>
 <style>
 @import url(../css/fan-of-mike-style.css);
+li{
+	width:140px;
+	vertical-align: top;
+}
+td{
+	vertical-align:top;
+}
 </style>
 
 <div id="body">
@@ -32,64 +39,86 @@
 
 <script src="../js/lib/d3/d3.v2.js"></script>
 
+<h2><a name="index" href="#index">#</a>Documentation : </h2>
 
-<!-- <p><aside>See <a href="examples.html">more examples</a>.</aside> -->
+<table>
+	<tr>
+		<td >
+			<h3><a name="index" href="#index">#</a> Introduction :</h3>
+			<ul>
+				<li><a href="#introduction">Introduction</a></li>
+				<li><a href="#helloworld"> Hello world</a></li>
+				<li><a href="#barchart">bar chart</a> </li>
+				<li><a href="#piechart">pie chart</a> </li>
+				<li><a href="#bubblechart">bubble chart</a> </li>
+				<li><a href="#generativechart">generative chart</a> </li>
+			</ul>
+		</td>
+		<td>
+			<h3><a name="Setting" href="#Setting">#</a> Setting :</h3>
+			<ul>
+				<li><a href="#viewport">Chart and viewport</a> </li>
+				<li><a href="#chart">Chart configuration</a> </li>
+				<li><a href="#dataModel">Data</a></li>
+				<li><a href="streamClock.html">Stream Clock</a> </li>
+				<li><a href="#sediConfig">Sedimentation configuration</a> </li>
+				<li><a href="#layoutApi">Layout API </a> </li>
+			</ul>
+		</td>
+		<td>
+			<h3><a href="#token">#</a> Token</h3>
+			<ul>
+				<li><a href="token.html">Token - addToken()</a></li>
+				<li><a href="token.selectAll.html">Select - selectAll()</a></li>
+	      		<li><a href="token.attr.html">Attributes - attr()</a> </li>
+	      		<li><a href="#callbackTokens">Callback - callback:{} </a> </li>
+				<li><a href="#selectTokens">Select one - select()</a> </li>
+				<li><a href="#stateModel">State model - state()</a> </li>
+				<li><a href="#stateModel">Flocullate - flocullate()</a> </li>
+				<li><a href="#customizeTokens">Customize it</a> </li>
+				<li><a href="#incomingPoint">Incoming point</a> </li>
+	      		<li><a href="#decayfunction">Decay function</a> </li>
+				<li><a href="#flocculation">Flocculation</a> </li>
+			</ul>
+		</td>
+		<td>
+			<h3><a href="#strata">#</a> Strata</h3>
+			<ul>
+				<li><a href="#stratadatamodel">Data Model</a></li>
+				<li><a href="#strataupdate">Update()</a></li>
+				<li><a href="#strataselectall">SelectAll()</a></li>
+				<!--
+				<li><a href="token.html">texture</a></li>
+				<li><a href="token.html">color</a></li>
+				<li><a href="token.html">...</a></li> -->
 
+			</ul>
+		</td>
 
+	</tr>
+	<tr>
+		<td >
+			<h3><a href="#physicalworld"># </a>Layout API</h3>
+		    <ul>
+		      <li><a href="#gravity">gravity</a></li>
+		      <li><a href="#bounderies">add bounderies</a> </li>
+		      <li><a href="#customizeTokens">update bounderies</a> </li>
+		    </ul>
 
-<p><b>Download the beta:</b></p>
+		</td>
+		<td>
+		</td>
+		<td>
+		</td>
+		<td>
+		</td>
+	</tr>
+</table>
+
+<!--
 <ul>
-	<li>Library: <a href="../js/min/vs.0.1.min.js">visualsedimentation.js</a> v0.1 (includes jQuery.js (v1.4.2), D3.js (v2), Box2DWeb.js (v2.1.a.3).
-	<li>Source code: <a href="https://github.com/INRIA/VisualSedimentation">GitHub repository</a>
- </ul>
-<p><b>Reseach Project:</b></p>
 
-<p>This library is part of <a href="http://www.aviz.fr/Research/VisualSedimentation" target="_blank">AVIZ INRIA</a> and
-<a href="http://www.iri.centrepompidou.fr/" target="_blank"> IRI</a> research project. We value any comment and suggestion. So please visit our <a href="http://groups.google.com/group/visualsedimentation/">Google Group</a>. We also need your feedback, please take a couple of minute to fill out <a href="https://github.com/INRIA/VisualSedimentation">our questionnaire.</a></p>
 
-If you want to know more about the design space behind Visual Sedimentation, also read the following paper:
-
-<p><div><b><a href="http://hal.inria.fr/docs/00/73/40/84/PDF/visual-sedimentation-final.pdf" target="_blank">"Towards Visual Sedimentation"</a></b> Samuel Huron, Romain Vuillemot, Jean-Daniel Fekete, <i>Poster at IEEE Infovis, 2012</i></div></p>
-
-<pre><code>
-@article{huron2012towards,
-title={Towards Visual Sedimentation},
-author={Huron, S. and Vuillemot, R. and Fekete, J.D. and others},
-journal={VisWeek 2012 Electronic Conference Proceedings (2012)},
-year={2012}}
-
-</pre></code>
-
-<h2><a name="index" href="#index">#</a>Index</h2>
-<ul>
-	<li><a href="#introduction">Introduction</a></li>
-	<ul>
-		<li><a href="#helloworld"> helloWorld</a></li>
-		<li><a href="#viewport">viewport</a> </li>
-		<li><a href="#chart">chart type and configuration</a> </li>
-		<li><a href="#barchart">bar chart</a> </li>
-		<li><a href="#piechart">pie chart</a> </li>
-		<li><a href="#bubblechart">bubble chart</a> </li>
-		<li><a href="#generativechart">generative chart</a> </li>
-	</ul>
-	
-	<li><a href="#physicalworld">Physical world</a></li>
-    <ul>
-      <li><a href="#gravity">gravity</a></li>
-      <li><a href="#bounderies">add bounderies</a> </li>
-      <li><a href="#customizeTokens">update bounderies</a> </li>
-    </ul>
-	<li><a href="#token">Token</a></li>
-		<ul>
-			<li><a href="#addingTokens">Add token</a></li>
-      		<li><a href="#attributes">Attributes</a> </li>
-      		<li><a href="#callbackTokens">Callback </a> </li>
-			<li><a href="#selectTokens">Select it</a> </li>
-			<li><a href="#customizeTokens">Customize it</a> </li>
-			<li><a href="#incomingPoint">Incoming point</a> </li>
-      		<li><a href="#decayfunction">Decay function</a> </li>
-			<li><a href="#flocculation">Flocculation</a> </li>
-		</ul>
 	<li><a href="#timemultiscale">Time multi scale</a></li>
 	<li><a href="#timemultiscale">Strates</a></li>
 	<ul>
@@ -112,62 +141,73 @@ year={2012}}
 	<li><a href="#inputData">Input Data (Not yet implemented)</a></li>
 
 </ul>
-
+-->
 
 
 <h2><a name="introduction" href="#introduction">#</a>Introduction</h2>
 
-<p>The current version of Visual Sedimentation generates <b>three types of classic visualizations</b> : <a href="../examples/simple/barChart.html">bar chart</a>, <a href="../examples/simple/pieChart.html">pie char</a> and <a href="../examples/simple/bubbleChart.html">bubble chart</a>. In a future version, it will support the generation of any chart.</p>
+<p>The current version of Visual Sedimentation generates <i>three</i> types of classic visualizations: <a href="../examples/simple/barChart.html">bar chart</a>, <a href="../examples/simple/pieChart.html">pie char</a> and <a href="../examples/simple/bubbleChart.html">bubble chart</a>. In a future version, it will support the generation of any area chart.</p>
 
-<p>Visual Sedimentation is best used for continuously updated data (data streams), therefore the overall process of running a visualization is a follows:	
+<p>Visual Sedimentation is best used for continuously updated data (data streams). Therefore the overall process of running a visualization is a follows:	
 <ol>
 	<li>New data enter the charts under the state of <a href="#token">token</a> (similar as particles)</li>
 	<li>The token is processed by the physical engine and decay over time</li>
-	<li>Finally the token flocculates (i.e. it disappears) and the chart is updated</li>
+	<li>Finally the token flocculates (i.e. it disappears) and the chart is updated accordingly</li>
 </ol>
 
-<p>Data streams can be Tweets, SVN commits, etc. They can either be coming live, or generated from the dump of a live record. Data can also be a ratio that is reflected by the <a href="http://romain.vuillemot.net/2012/12/09/my-entry-for-the-forbes-graph-makeover-contest/">tokens density</a>.</p>
+<p>Data streams can be Tweets, SVN commits, RSS feeds, Email, etc. They can either be coming live, or generated from the dump of timestamped data. Data can also be a ratio that is reflected by the <a href="http://romain.vuillemot.net/2012/12/09/my-entry-for-the-forbes-graph-makeover-contest/">tokens flow density</a>.</p>
 
 <h3><a name="helloworld" href="#helloworld">#</a> Hello World</h3>
 
-<p><a href="../examples/simple/helloWorld.html" target="_blank">Hello World</a> is a minimal example to show the library in action. It uses pre-recorded parameters that will be explained later. In the <b>header</b> of the HTML document, add the following:
+<p><a href="../examples/simple/helloWorld.html" target="_blank">Hello World</a> is a minimal example to show the library in action. It uses pre-recorded parameters that will be explained later. To generate this visualization, add the following in the <b>header</b> of the HTML document:
 
 <pre><code>
-&lt;script type="text/javascript" src="_VisualSedimentation.js"&gt;
+&lt;script type="text/javascript" src="visualsedimentation.js"&gt;
 &lt;/script&gt;
 </code></pre>
 
-In the <b>body</b>, create a div <code>myDemo</code> to contain the viz, and init the library with the <i>vs()</i> function as follows:
+In the <b>body</b>, create a div <code>myDemo</code> that will contain the visualization. Then initialize the library and start the rendering with the <code>vs()</code> function as follows:
 <pre><code>
 &lt;div id="myDemo"&gt;Hello World container&lt;/div&gt;
 &lt;script&gt;
-	var scene =  $("#myDemo").vs().data('visualSedimentation');
+  var scene =  $("#myDemo").vs().data('visualSedimentation');
 &lt;/script&gt;
 </code></pre>
 
+<h3><a name="stream" href="#stream">#</a> Streaming Data Generator</h3>
 
-<h3><a name="viewport" href="#viewport">#</a> Settings</h3>
-
-<p>To pick up and customize the chart, a parameter object <code>mySettings</code> can be created and added to the library. Below is an overview of the structure of such settings. Look at the <a href="../examples/index.html">examples</a> is the best way to see the possibilities.</p>
-
+<p>The library includes a data stream generator that will generate tokens at a <code>refresh</code>. This generator provides synthetic data mostly for testing the visualization, we'll see later that tokens can be added individually.</p>
 <pre><code>
 mySettings = {
-
-	// view port width and height 
-	width:800,
-	height:800,
-
-	// chart position x,y, width and height
-	chart:{
-		x:500,      // chart.x on the schema
-		y:206,      // chart.y on the schema
-		width:300,  // chart.width on the schema
-		height:400  // chart.width on the schema
-	},
+  stream:{
+    provider:"tokens", // token / generator 
+    refresh:1000,	  // delay to execute the function
+    now:0 			  // time of the visualization, is increasing by one each refresh time
+  }
 }
 </code></pre>
 
-<p>The following charts shows the position parameters of the chart. For the margin convention of the visualization part itself, see <a href="http://bl.ocks.org/3019563">d3.js margin conventions</a>.</p>
+<h3><a name="viewport" href="#viewport">#</a> Settings</h3>
+
+<p>To pick up and customize the chart, a parameter object <code>mySettings</code> can be created and added to the library. Below is an overview of the structure of such a setting element. Look at the <a href="../examples/index.html">examples</a> is the best way to see the possibilities (not all documented, yet).</p>
+
+<pre><code>
+mySettings = {
+  // view port width and height 
+  width:800,
+  height:800,
+
+  // chart position x,y, width and height
+  chart:{
+    x:500,      // chart.x on the schema
+    y:206,      // chart.y on the schema
+    width:300,  // chart.width on the schema
+    height:400  // chart.width on the schema
+  },
+}
+</code></pre>
+
+<p>The following diagram indicates the position parameters of the chart. For the margin convention of the visualization part itself, see <a href="http://bl.ocks.org/3019563">d3.js margin conventions</a>.</p>
 
 <img src="../img/viewport.png" width="50%"/>
 <br/>
@@ -215,12 +255,12 @@ chart:{
  column     = 3         // the number of column for the positon setup
 },
 </code></pre>
-<h3><a name="generativechart" href="#generativechart">#</a> Generative Chart (Advanced Users)</h3>
+<h3><a name="generativechart" href="#generativechart">#</a> Generative Chart (Experimental features)</h3>
 
 <p>
-You can also create the following cool examples: <a href="../examples/simple/custom_layout/custom_layout.html">heap chart</a>, <a href="../examples/simple/custom_layout/custom_layout_sylo.html">sylo chart</a>, <a href="../examples/simple/custom_layout/custom_layout_line.html">line chart</a>, <a href="../examples/simple/custom_layout/pieChart_without_bounderies.html"> piechart without bounderies</a>.
+You can also create the following cool examples: <a href="../examples/simple/custom_layout/custom_layout.html">heap chart</a>, <a href="../examples/simple/custom_layout/custom_layout_sylo.html">sylo chart</a>, <a href="../examples/simple/custom_layout/custom_layout_line.html">line chart</a>, <a href="../examples/simple/custom_layout/pieChart_without_bounderies.html"> piechart without bounderies</a>.</p>
 
-To do so, the chart layout is setup by a function in the file <i>_vs.chart.[type_name].js</i>, you could make your own file if you want a special physical and visual layout.
+<p>To do so, the chart layout is setup by a function in the file <code>_vs.chart.[type_name].js</code>, you could make your own file if you want a custom physical and visual layout.</p>
 
 This file is defined by three functions: 
 <ul>
@@ -248,109 +288,24 @@ chart:{
 
 
 
+<h3><a name="Tokens" href="#Tokens">#</a> Tokens</h3>
+A token is the minimal unit of represented data, according to the data flow type it's could be one tweet, one article entry, or a mail or others. Tokens have several attributes : 
 
-<!--
-<h3><a name="allparameters" href="#allparameters">#</a> All parameters </h3>
-<p><todo>..And now complete examples with all the parameters</todo></p>
-
-<h2><a name="physicalworld" href="#physicalworld">#</a> Physical world</h2>
-<todo>Not implemented yet, How can we change this parameters? Example of interesting settings..</todo>
-
-<h3><a name="gravity" href="#gravity">#</a>Gravity</h3>
-<todo>Not implemented yet, ....</todo>
-
-<h3><a name="bounderies" href="#bounderies">#</a>Add Bounderies</h3>
-<todo>Not implemented yet, ....</todo>
-
-<h3><a name="bounderies" href="#bounderies">#</a>Update Bounderies</h3>
-<todo>Not implemented yet, ....</todo>
-
-
-<h2><a name="token" href="#token">#</a>Token</h2>
--->
-
-<h3><a name="addingTokens" href="#addingTokens">#</a> Adding Tokens</h3>
-
-In the previous examples, the tokens were added automatically. To manually add tokens, the following settings are to be used  :
-
-<pre><code>
-scene.addToken({
-   impulse:{
-    angle:95,
-    power:10,
-    },
-   texture:{
-    src:'http://images.toocharger.com/img/graphiques/icones/sport/football/football/ballon_de_foot.10450.gif'
-    },
-   size:30,
-   categorie:1
-})
-</code></pre>
-<p>Below with the d3.js style:</p>
-<pre><code>
-scene.addToken({categorie:0})
-	.attr("x", d3.select("#data1").attr("x"))
-	.attr("y", d3.select("#data1").attr("y"))
-	.attr("radius", 10)
-	.attr("texture", "img/twitter_face.jpg")      
-	.attr("strokeStyle", "red")
-</code></pre>
-
-<a href="../examples/simple/add_token_parametrized.html">examples are avilable</a>
-
-<h3><a name="incommingPoint" href="#incomingPoint">#</a> Incoming Point</h3>
-
-<p>Incoming points are location from which the tokens appear.</p>
-
-<!--
-<p>There are already pre-defined strategies that automatically take care of finding the best spot:</p>
-<pre><code>
-  sedimentation.incoming.strategy=1; // 1 = one element by one, more = by Groupe  
-</code></pre>
--->
-<p>OThey can be customized dimension by dimension (here, three):</p>
-
-<pre><code>sedimentation.incoming.point:[{x:50,y:0},
-                              {x:100,y:0},
-                              {x:150,y:0}]}
-
-</code></pre>
-
-<p>Or into tokens x, y, <a href"#attributes">attributes</a>.</p>
-
-<!--
-<h4>Variable incoming point as column's label</h4>
-
-<pre><code>
-sedimentation.incoming.point.map(function(d, i) {
-  var el = d3.select("#col_"+i); 
-  return {x:el.attr("x"),y:el.attr("y")};
-});
-</code></pre>
-<h4>One single for all the dimensions</h4>
-<todo>TODO. For example from the chart's title.</todo>
-<h4>Others</h4>
-<todo>From outside, inside, relative to the bottom, etc.</todo>
-
-<p>Tokens use existing incoming points (for example data labels, or counters of incoming elements).</p>
-<pre><code>
-scene.addToken("token:data1")
-	.attr("x", d3.select("#data1_label").attr("x"))
-	.attr("y", d3.select("#data1_label").attr("y"))
-</code></pre>
-
--->
 
 
 <h3><a name="attributes" href="#attributes">#</a> Attributes</h3>
 
+To customize a token, use the following parameters (defaults are in <code>_vs.token.js</code>):
 
-To customize a token, use the following parameters (defaults are in <i>_vs.token.js</i>):
 <pre><code>
-	categorie:0,            // Corresponding to the datamodel (wich column in the data set)
-	x:50,y:50,              // Incoming positions of token 
 
-	// Graphical  
+	// NEEDED
+	category:0,             // Corresponding to the datamodel (wich column in the data set)
+	x:50,					// Incoming positions of token, if not define use incomming point of the category
+	y:50,              		// same than previous
+	t:1360164350473,		// timestamp, if not define use now time by default 
+
+	// GRAPHICAL  
 	size:10,                // Size (diameter) of the token 
 	fillStyle:'#000000',    // FillStyle as an HTML5 canvas Property
 	strokeStyle:'#000000',  // StrokeStyle as an HTML5 canvas Property
@@ -360,34 +315,89 @@ To customize a token, use the following parameters (defaults are in <i>_vs.token
 	timestamp:null,         // Not implemented yet
 	userdata:{},            // Add some personal information 
 	callback:{},            // Interactions callbacks 
+   	texture:{				// image fill in the token (only url are allowed)
+    	src:'http://images.toocharger.com/img/graphiques/icones/sport/football/football/ballon_de_foot.10450.gif'
+    },				 	  
 
-	// Physical 
-	phy:{ density:10,friction:0,restitution:0},
-	targets:[/*{x:null,y:null}*/], // use to a box2d elastic join 
-	elbow:{/*x:null,y:null*/} // Not implemented yet 
+
+	// PHYSICAL 
+	phy:{					// physical parameters
+		density:10,
+		friction:0,
+		restitution:0
+	},
+	impulse:{				
+    	angle:95,			// angle 
+    	power:10,			// throw force
+    },
+	targets:[ 				// Not implemented yet 
+		/*{x:null,y:null}*/
+		], 
+	elbow:{					// Not implemented yet	 
+		/*x:null,
+		y:null*/
+	},
 </code></pre>
+
+<h3><a name="addingTokens" href="#addingTokens">#</a> Adding Tokens</h3>
+
+<p>In the previous examples, the tokens were added automatically. To manually add tokens, the following function is to be used:</p>
+<pre><code>
+scene.addToken({
+   size:30,				   // size of your token 
+   category:1,			   // category of your token
+   t:1360164350473 // milliseconde number form 1970 first january (Date.getTime())
+})
+</code></pre>
+<p>Below with the d3.js style:</p>
+<pre><code>
+scene.addToken({category:0})
+	.attr("x", d3.select("#data1").attr("x"))
+	.attr("y", d3.select("#data1").attr("y"))
+	.attr("radius", 10)
+	.attr("texture", "img/twitter_face.jpg")      
+	.attr("strokeStyle", "red")
+</code></pre>
+
+
+<p>See this <a href="../examples/simple/add_token_parametrized.html">example</a> for a roundup of all parameters.
+
+<h3><a name="incommingPoint" href="#incomingPoint">#</a> Incoming Point</h3>
+
+<p>Incoming points are location from which the tokens enter the scene and the physical forces start to be applied on it.</p>
+<p>They can be customized separately, for each of the dimensions (e.g. for each bar of the chart):</p>
+
+<pre><code>
+sedimentation.incoming.point:[
+  {x:50,y:0},
+  {x:100,y:0},
+  {x:150,y:0}
+]
+</code></pre>
+
+<!-- <p>Or into tokens x, y, <a href"#attributes">attributes</a>.</p> -->
 
 <h3><a name="callbackTokens" href="#callbackTokens">#</a>Callback for token</h3>
 
-<p>Callbacks are automatically executed functions, depending on the state of the token. Six callbacks are triggered :
-<br/><a href="../examples/simple/add_token_callback.html">Exemples are available here.</a>
+<p>Callbacks are triggered depending on the state of the token. Six sates/callback are available:</p>
+
 <ul>
-	<li>suspension()</li>
-	<li>accumulation()</li>
-	<li>flocculation()</li>
-	<li>draw()</li>
-	<li>mouseover()</li>
-	<li>onclick()</li>
+	<li><code>suspension()</code></li>
+	<li><code>accumulation()</code></li>
+	<li><code>flocculation()</code></li>
+	<li><code>draw()</code></li>
+	<li><code>mouseover()</code></li>
+	<li><code>onclick()</code></li>
 </ul>
 
+<p>Some callback <a href="../examples/simple/add_token_callback.html">exemples</a> are available here. Below is the configuration file of a token that contains the callbacks:</p>
 
-</p>
 <pre><code>
 {
 "model":[{label:"Column A"}],
 "token":[{
    timestamp:1, 
-   categorie:1,
+   category:1,
    value: 1,
    userdata:{},
    callback:{
@@ -407,27 +417,28 @@ To customize a token, use the following parameters (defaults are in <i>_vs.token
       .attr("y", d3.event.clientY)
 </code></pre>
 -->
-<h3><a name="selectTokens" href="#selectTokens">#</a> Select tokens</h3>
 
-To select one or multiple tokens, a selector function is provided:
+<h3><a name="selectTokens" href="#selectTokens">#</a> Selecting tokens</h3>
+
+<p>To select one or multiple tokens, a selector function is provided:</p>
+
 <pre><code>
-var myToken = barChart.select('key','value');
+  var myToken = barChart.select('key','value');
 </code></pre>
 
-Examples are available here for :
-<a href="../examples/simple/select_token.html" traget="_blank">select a group </a>,and here for  <a href="../examples/simple/select_token_and_change_it.html" traget="_blank">selectAll</a>.
+<p>Examples are available here for:
+<a href="../examples/simple/select_token.html" traget="_blank">select a group </a>, or everything <a href="../examples/simple/select_token_and_change_it.html" traget="_blank">selectAll</a>.</p>
+
 
 <h3><a name="customizeTokens" href="#customizeTokens">#</a> Easy customization</h3>
 
-You can easily customize every single token.
+<p>You can easily customize every single token.</p>
 
 <pre><code>
-.attr("radius", 10)
-.attr("texture", "img/twitter_face.jpg")      
-.attr("strokeStyle", "red")
+  .attr("radius", 10)
+  .attr("texture", "img/twitter_face.jpg")      
+  .attr("strokeStyle", "red")
 </code></pre>
-
-
 
 <!--
 <pre><code>
@@ -443,64 +454,112 @@ You can easily customize every single token.
 </code></pre>
 -->
 
-
 <h3><a name="decayfunction" href="#decayfunction">#</a>Decay Function</h3>
-<p>The decay function is null by default. It could be setup at the initialisation of the chart in the settings : </p>
+
+<p>The decay function is in charge of shrinking tokens over time. It is <code>null</code> by default. It can be setup at the initialization of the chart in the settings:</p>
+
 <pre><code>
 {
-	sedimentation:{
-		suspension:{
-			decay:{power:1.01}
-		}
-	}
+  sedimentation:{ 
+    suspension:{
+      decay:{power:1.01}
+    } 
+  }
 }
 </code></pre>
 
-<p>The decay function could also be change with the globalDecay(): </p>
+<p>The decay function could also be change with the <code>globalDecay()</code>:</p>
+
 <pre><code>
-.globalDecay()    // to get the decay power (return a float or null)
-.globalDecay(1.09)// to setup the decay function at 1.09
-.globalDecay(null)   // no decay
+  .globalDecay()    // to get the decay power (return a float or null)
+  .globalDecay(1.09)// to setup the decay function at 1.09
+  .globalDecay(null)   // no decay
 </code></pre>
-
-</p>
-
 
 
 <h3><a name="flocculation" href="#flocculation">#</a>Flocculation</h3>
-Flocculation is when a token change state to become a part of the agregated area or to change.
-The physical body presenting the object is deleted.
-Flocculation is usually automatic du to the decay and the <i>token.size.minimum</i> parameter.
-But you can also do a flocculation of token selection by yourself with the function <i>flocculate()</i>. 
-Exemple : 
-<pre><code>
-tokens = chart.selectAll("categorie",1) //select all token from categorie 1
-tokens.flocculate()
-</code></pre>
-<p>Example: <a href="../examples/sediclock/sediclock.html">sediClock</a></p>
 
+<p>Flocculation is when a token disappears to be part of the aggregated area or just to be removed. The function remove the physical body representing the object.</p>
 
+<p>Flocculation function is triggered once a token reaches <code>token.size.minimum</code> size. It can also be manully triggered with the <code>flocculate()</code> function applied to a set of tokens. 
 
-<h2><a name="streamingdata" href="#streamingdata">#</a>Strata</h2>
-
-<p>Strata compress aggregated data into a finite set of layers. Each layer represents a temporal interval. For instance, it can be the count of data during the last 30 seconds or last 5 minutes. Therefore the strata value is usually a function rather a fixed number.</p>
+<p>Exemple:</p> 
 
 <pre><code>
-	"strata":[
-	[
-		{value: 10, 
-		 text: "first strata", 
-		 texture: {url:"../..", size:1}, 
-		 color: ..
-		},
-		...
-	], [
+  tokens = chart.selectAll("category",1) //select all token from category 1
+  tokens.flocculate()
 </code></pre>
 
+<p>As a further example, <a href="../examples/sediclock/sediclock.html">sediClock</a> flocculates tokens every minutes (each token representing a second).</p>
+
+<h2><a name="strata" href="#strata">#</a> Strata</h2>
+
+<p>Strata are stacked layers that appear in the aggregated area of a chart (for now, only works with <code>chart.type</code> <code>StackedAreaChart</code>). Each layer is proportionnal to the number of flocculated token during a temporal interval. For instance, it can be the count of the flocculated tokens during the last 30 seconds or last 5 minutes. In any case, the sum of the strata is scaled up to fit into the max height of each bin which is pre-defined in <code>settings.sedimentation.aggregation.height</code>.</p>
+
+<h3><a name="stratadatamodel" href="#stratadatamodel">#</a> Strata Data Model</h3>
+
+<p>By default, if the stratra object is not set, no strata is created (i.e. no bar chart in case of a bar chart).</p>
+
+<p>Example: <a href="../examples/simple/barChart_no_strata.html">Bar chart without strata</a>.</p>
+
+<pre><code>
+  "strata":[]
+</code></pre>
+
+<p>If a strata object is initialized in the settings, but empty, then a strata represent a bart chart with <code>settings.sedimentation.aggregation.height</code> as the maximal height, and the others dimensions at relative height compared to the max value (linear scale). Each bar will be updated once a token flocculates and will be added to its count.<p>
+
+<p>Example: <a href="../examples/simple/barChart_default_strata.html">Bar chart with default strata</a>.</p>
+
+<pre><code>
+  "strata":[[], []]
+</code></pre>
+
+<p>If we want a bar chart with pre-defined height, they set the <code>init_value</code> values. Please note that this only works when there is one strata layer. If you want to have init values and multiple layers, then you have to generate the strata object yourself (see next paragraph).</p>
+
+<p>Example: <a href="../examples/simple/barChart_init_strata.html">Bar chart with init values as default strata</a>.</p>
+
+<pre><code>
+  "strata":[[{init_value:3}], [{init_value:5}]]
+</code></pre>
+
+<p>Finally, to generate complex strata objects, then an array of objects have to be generated as below. Among the many parameters, the most important one is the <code>value()</code> function used to create each layer. As example, below are the default layers created if no strata object is specified (i.e. <code>  "strata":[]</code>) for each layer (empty strata). This can serve as a model for creating strata functions.</p>
+
+<p>Example: <a href="../examples/simple/barChart_function_strata.html">Bar chart with function strata</a>.</p>
+
+<pre><code>
+"strata":[
+  [        // First bar
+    {
+      category: 0,  // First layer
+      label: "Strata 0",
+      value: function() { return 0;}
+    }, {
+      category: 0,  // Second layer
+      label: "Strata 1",
+      value: function() { return 0;}
+    }
+    ...
+  ], [ // Second bar
+</code></pre>
+
+<p>Here is an example of a strata function. First, define the strata object as a function returning the strata function <code>"strata": function() { return [fstrata()]},</code>. It will enable the dynamic rendering of the strata. Then define the strata function <code>fstrata()</code> that returns the strata object detailed above.</p>
 
 
-<p>The <code>text</code>, <code>textures</code> and <code>color</code> are settings for each strata. Texture images are any image file provided as a <code>url</code> to be mapped to each layer as a tile, and scale according to the <code>size</code> factor. </p>
+<h3><a name="strataupdate" href="#strataupdate">#</a> Strata Update</h3>
 
+<p>Strata are automatically updated every unit of time (depending on the clock frequency), and every time a token flocculates (which can be arbitrary requested by a user). This approaches enables to preserve the visual continuity between tokens and aggregated areas.</p>
+
+<p>However, if the user wants to manually cal the update, a call to the function <code>barChart.strata.update(barChart)</code> (with the chart object itself as a parameter) can be performed and the strata will be immediatly updated with the latest <code>value()</code> for each strata.</p>
+
+<h3><a name="strataselectall" href="#strataselectall">#</a> Strata SelectAll</h3>
+
+<p>A <code>selectAll</code> selector returns the latest update of the strata object. Usage: <code>barChart.strata.selectAll()<code><p>
+<!--
+<h3><a name="flocculation" href="#strataselectall">#</a> Strata Decoration</h3>
+
+<p>The <code>text</code>, <code>textures</code> and <code>color</code> are visual ettings for each strata. Texture images are any image file provided as a <code>url</code> to be mapped to each layer as a tile, and scale according to the <code>size</code> factor. </p>
+
+-->
 
 <footer>
 	<DIV>Released under French Free Software license, compatible with the GNU GPL : <a href="license/">LICENSE CeCILL-B</a>.</DIV>

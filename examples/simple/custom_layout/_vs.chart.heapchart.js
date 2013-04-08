@@ -20,7 +20,9 @@ $.fn._vs.chart.heapchart = function(_this,fn,options) {
 
     var colSize       = (_this.settings.chart.width/_this.settings.data.model.length)    
     for( var i = 0 ; i<_this.settings.data.model.length+1 ; i++) {
+        
         var colXpos   = _this.settings.chart.x+(i*colSize);
+
         // Define incomming points for tokens 
         if(i<_this.settings.data.model.length){
           _this.settings.sedimentation.incoming.point[i]={
@@ -28,6 +30,7 @@ $.fn._vs.chart.heapchart = function(_this,fn,options) {
                                                     y:_this.settings.y+_this.settings.height/2
                                                     }
         }
+        
     }
   };
 
@@ -38,7 +41,7 @@ $.fn._vs.chart.heapchart = function(_this,fn,options) {
               x:(_this.settings.sedimentation.incoming.point[i].x+(Math.random()*2)),
               y:(_this.settings.sedimentation.incoming.point[i].y+(Math.random()*1)),
               size:_this.settings.sedimentation.token.size.original,
-              categorie:i,
+              category:i,
               targets:[]
             }
     return token; 

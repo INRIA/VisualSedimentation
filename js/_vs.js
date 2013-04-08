@@ -3,11 +3,7 @@
 // ....................................................................
 
 // TODO : 
-// - callback on interaction (rollover, click, out ...)
-// - update strate 
-// - home exemple javascript
-// - documentation
-// - horloge
+// - callback on rollOut
 
 (function($){
 
@@ -23,21 +19,23 @@ $.fn._vs.chart      = {}
 $.fn._vs.phy        = {}
 $.fn._vs.decay      = {}
 $.fn._vs.flocculate = {}
+$.fn._vs.strata     = {}
 $.fn._vs.aggregate  = {}
 
 
 // Core Classe 
 var VisualSedimentation = function(element,options){
 
-  // attach objects
+  // Attach objects
   this.token        = $.fn._vs.token
   this.draw         = $.fn._vs.draw
   this.stream       = $.fn._vs.stream
   this.chart        = $.fn._vs.chart
   this.phy          = $.fn._vs.phy 
   this.decay        = $.fn._vs.decay 
-  this.flocculate   = $.fn._vs.flocculate 
-  this.aggregate    = $.fn._vs.aggregate 
+  this.flocculate   = $.fn._vs.flocculate
+  this.strata       = $.fn._vs.strata
+//  this.aggregate    = $.fn._vs.aggregate 
   this.requestAnimFrame;
   
 
@@ -48,8 +46,6 @@ var VisualSedimentation = function(element,options){
   this.mouse.isMouseDragging = false
   this.mouse.isMouseDown     = false
   this.mouse.selectedBody    = null
-
-
 
 
   // Variables 
@@ -104,30 +100,29 @@ var VisualSedimentation = function(element,options){
                         {label:"Column B"},
                         {label:"Column C"},
                       ],
-              strata:[ 
-                        [
-                          {value: 1, label: "Strata 1 col A"},
-                          //{value: 1, label: "Strata 2 col A"}
-                        ],[
-                          {value: 1, label: "Strata 1 col B"},
-                        ],[
-                          {value: 1, label: "Strata 1 col C"},
-                          //{value: 1, label: "Strata 2 col C"},
-                          //{value: 0, label: "Strata 2 col C"}
-                        ]      
+              strata:[
+                      [
+                        {initValue: 100, label: "Strata 1 col A"}
+                      ],[
+                        {initValue: 20, label: "Strata 1 col B"}
+                      ],[
+                        {initValue: 175, label: "Strata 2 col C"}
+                      ]      
                       ],
               token:[
                        {
                          timestamp:1,
-                         categorie:1,
+                         category:1,
                          value: 1,
                          userdata:{},
                          callback:{}
                        }
                       ],
+              tokenPast:0,
           		stream:{
                       provider:'generator',
-          				    refresh:10000/8
+          				    refresh:10000/8,
+                      now:0
       					},
           		}
           ,
@@ -159,20 +154,25 @@ var VisualSedimentation = function(element,options){
               suspension:{
                           height:null,      // pourcent,adaptative
                           incomming:'top',
-                          decay:{power:null},
+                          decay:{power:1.001}, // null
                           refresh:200
                          },
               accumulation:{height:null},   // pourcent ,adaptative
-              aggregation:{height:0},       // pourcent ,adaptative
+              aggregation:{height:0, maxData:0, invertStrata:false},       // pourcent ,adaptative
           },
           options:{
                   refresh:1000/25,
                   panel:false,
                   scale:30,
                   layout:false,
+                  canvasFirst:true
                   }
           }
 
+
+    this.now = function(){
+      return(new Date().getTime())
+    }
 
      // get Box2d World 
      this.globalDecay = function (value){
@@ -190,7 +190,7 @@ var VisualSedimentation = function(element,options){
 
      this.chartUpdate = function (cat,y){
       var options = {cat:cat,y:y}
-      var tokens = this.chart[this.settings.chart.type](self,'update',options)
+      this.chart[this.settings.chart.type](self,'update',options)
      }
 
      // Todo  ...... 
@@ -219,13 +219,13 @@ var VisualSedimentation = function(element,options){
       return this.token.select(self,key,value);
      }
 
-     // update a categorier in the chart
+     // update a categoryr in the chart
      this.updateAll = function (values){
       var tokens = this.chart.updateAll(self,key,value)
       return tokens;
      }
 
-     // update a categorier in the chart
+     // update a category in the chart
      this.update = function (key,value){
       var tokens = this.chart.update(self,key,value)
       return tokens;
@@ -233,26 +233,14 @@ var VisualSedimentation = function(element,options){
 
 
     /// Settings without 
-    function modelToStrata (model){
-      console.log("modelToStrata",model)
-      var tmpstrata = null
-      if(typeof(model[0])!="array"){
-        console.log("is not an array ")
-        for (var i = model.length - 1; i >= 0; i--) {
-          tmpstrata = model[i]
-          model[i]  = [tmpstrata]
-        };
-      }
-      console.log(model)
-      return model
-    } 
 
-    //////////////////////////// TOFIX
+
+    //////////////////////////////////////////////////////// TO CLEAN
     // SAM @ROM1 : are you sure you need that ? extend doing it well normally
   	// Merge options with defaults
     // http://stackoverflow.com/questions/171251/how-can-i-merge-properties-of-two-javascript-objects-dynamically
     
-    console.log("////////")
+    //console.log("////////")
     //options.model = modelToStrata(options.data.model)
 
     function merge_options(obj1,obj2){
@@ -266,18 +254,40 @@ var VisualSedimentation = function(element,options){
      if(options.data!=undefined)
      defaultSettings.data = options.data;
      
-     ////////////////////////////
+     ////////////////////////////////////////////////////////////////////////////////////
      // Merge option and add the DOMelement to setting
      //this.settings = $.extend(defaultSettings, options || {});
      this.settings = $.extend(true,defaultSettings, options);
      this.settings.DOMelement = element
      //console.log('settings after extend',this.settings)
 
-     // simple setup / if the chart pposition and size is not define use the  viewport position and size by default
+     // -----------------------------------------------
+     // SIMPLE DEFAULT SETTING FOR RETRO COMPATIBILITY 
+     //
      if(typeof(this.settings.chart.width) =="undefined"){this.settings.chart.width = this.settings.width}
      if(typeof(this.settings.chart.x)     =="undefined")this.settings.chart.x=0
      if(typeof(this.settings.chart.y)     =="undefined")this.settings.chart.y=0
      if(typeof(this.settings.chart.height)=="undefined")this.settings.chart.height=this.settings.height
+     if(typeof(this.settings.stream)      =="undefined"){this.settings.stream={}}
+     if(typeof(this.settings.stream.now)  =="undefined"){this.settings.stream.now=0}     
+     if(typeof(this.settings.stream.provider)=="undefined"){this.settings.stream.provider='generator'}
+     if(typeof(this.settings.stream.refresh)=="undefined"){this.settings.stream.refresh=1000}
+     if(typeof(this.settings.data.tokenPast)=="undefined"){this.settings.data.tokenPast=0}
+     if(typeof(this.settings.data.tokens)=="undefined"){this.settings.data.tokens=[]}
+
+     // FOR ROM1 setting by default aggregation : 
+     if(typeof(this.settings.data.strata) !="undefined" && this.settings.data.strata.length!=0){
+       if(typeof(this.settings.sedimentation.aggregation) =="undefined"){
+          this.settings.sedimentation.aggregation = {}
+        }
+       if(typeof(this.settings.sedimentation.aggregation.height) =="undefined"){
+          this.settings.sedimentation.aggregation.height = this.settings.chart.height/2
+       }
+      if(typeof(this.settings.sedimentation.aggregation.maxData) =="undefined"){
+          this.settings.sedimentation.aggregation.maxData = 10
+       }
+     }
+     // END
 
 
      // Initialisation - Private method 
@@ -296,7 +306,7 @@ var VisualSedimentation = function(element,options){
        })();
 
         //console.log(this.settings)
-        console.log('Initialisation');
+        //console.log('Initialisation');
         
         // Create the physical simulation 
    		   this.world = new this.phy.b2World(
@@ -320,28 +330,29 @@ var VisualSedimentation = function(element,options){
 		    canvas.height = this.settings.height;
         canvas.style.position = "absolute"
 
-        console.log(this.settings.width,this.settings.height)
+        //console.log(this.settings.width,this.settings.height)
         this.ctx = canvas.getContext("2d");  
 
        // Construct the Chart
        this.chart[this.settings.chart.type](self,'init')
-       // Initiatlise tokens 
-       this.token.init(self)
+
+
        // Draw d3
-       if(typeof(this.settings.options.debugaggregate)=="undefined"){
-        this.aggregate.init(self);
-       }
-       // Initiatlise tokens 
+       //if(typeof(this.settings.options.debugaggregate)=="undefined"){
+       // this.aggregate.init(self);
+       //}
+       // Initiatlise stream 
        this.stream.init(self)
        // Initiatlise decay
        this.flocculate.init(self)
        // Update stream 
        this.stream.update(self);
 
-
+       // Initiatlise tokens 
+       this.token.init(self)
 
        //FORCE UPDATE CHART due to  (bug positionnement ) @rom1
-      // this.aggregate.update(this)
+      this.strata.init(this)
 
    		 // Update the physical simulation 
   		 window.setInterval(
@@ -360,7 +371,7 @@ var VisualSedimentation = function(element,options){
        );
        //this.decay.update(self);
 
-
+      self.strata.update(self)
 
 
  // MOUSE PART 
@@ -369,11 +380,12 @@ var VisualSedimentation = function(element,options){
  // --------------------------
    this.getBodyAtMouse=function (_this) {
 
-      var x = _this.mouse.x/_this.settings.options.scale
-      var y =_this.mouse.y/_this.settings.options.scale
+      var x         = _this.mouse.x/_this.settings.options.scale
+      var y         =_this.mouse.y/_this.settings.options.scale
       var mousePVec = new _this.phy.b2Vec2(x,y);
-      var aabb  = new _this.phy.b2AABB();
-      var area = 0.1
+      var aabb      = new _this.phy.b2AABB();
+      var area      = 0.001
+
       //console.log(_this.mouse.x,_this.mouse.y)
       aabb.lowerBound.Set(x - area, y - area);
       aabb.upperBound.Set(x + area, y + area);
@@ -394,26 +406,31 @@ var VisualSedimentation = function(element,options){
    function getBodyCB(fixture,_this,mousePVec) {
        //console.log("phy",phy)
       //console.log("fixture",fixture.m_userData.type,fixture)
+      //_this.mouse.elementpoi = fixture.GetBody()
+      _this.mouse.selectedToken = fixture;
 
       if(fixture.GetBody().GetType() != _this.phy.b2Body.b2_staticBody) {
-         //if(fixture.GetShape().TestPoint(fixture.GetBody().GetTransform(), mousePVec)) {
+         if(fixture.GetShape().TestPoint(fixture.GetBody().GetTransform(), mousePVec)) {
             _this.mouse.selectedToken = fixture;
             return false;
-         //}
+         }
       }
       return true;
    }
 
     this.handleMouseMove = function(e,_this) {
-       canvasPosition   = {}
-       canvasPosition.y = _this.settings.DOMelement.offsetTop
-       canvasPosition.x = _this.settings.DOMelement.offsetLeft
-      _this.mouse.x = (e.clientX - canvasPosition.x);
-      _this.mouse.y = (e.clientY - canvasPosition.y);
+       canvasPosition   = DOMabsOffset(_this.settings.DOMelement)
+       _this.mouse.x = (e.clientX - (canvasPosition.offsetLeft- this.getScrollPosition()[0]));
+       _this.mouse.y = (e.clientY - (canvasPosition.offsetTop- this.getScrollPosition()[1]));
+      //if( _this.mouse.isMouseDown){  console.log(_this.mouse.y,canvasPosition.y)}
       //console.log("mouse",e.clientX,e.clientY )
       //console.log("mouse",canvasPosition.x,canvasPosition.y )
       //console.log("=",_this.mouse.x,_this.mouse.y)
-   };   
+   };
+   // from 
+   this.getScrollPosition= function(){
+    return Array((document.documentElement && document.documentElement.scrollLeft) || window.pageXOffset || self.pageXOffset || document.body.scrollLeft,(document.documentElement && document.documentElement.scrollTop) || window.pageYOffset || self.pageYOffset || document.body.scrollTop);
+    }
 
    document.addEventListener("mousemove",   function (e){onDocumentMouseMove(e,self)});
    document.addEventListener("mouseup",   function (e){onDocumentMouseUp(e,self)});
@@ -422,14 +439,48 @@ var VisualSedimentation = function(element,options){
 
 
    function onDocumentMouseOver(e,_this) {
-     var s = _this.getBodyAtMouse(_this);
-     //console.log(s)
-
+     var s = _this.getBodyAtMouse(_this);   
+     //console.log(s)  
         if(s!=null){
           if(typeof(s.m_userData)!="undefined"){
            if(typeof(s.m_userData.callback)!="undefined"){
             if(typeof(s.m_userData.callback.mouseover)=="function"){
-                 s.m_userData.callback.mouseover(s.m_userData)  
+                var t = _this.select('ID',s.m_userData.ID)
+                s.m_userData.callback.mouseover(t)                
+            }
+
+            if(typeof(s.m_userData.callback.mouseout)=="function"){
+                //console.log("mouseout exist")
+                var t = _this.select('ID',s.m_userData.ID)
+                var mouseoutTrigger 
+                var rollOut = function(){
+                      var mt  = mouseoutTrigger
+                      var tt  = t
+                      var ici = _this
+                      var ss  = s
+                      return function(){
+                           var s = ici.getBodyAtMouse(ici);
+                           var mo = false;
+                           if(s!=null){
+                              if(typeof(s.m_userData)!="undefined"){
+                                  if(s.m_userData.ID==tt.attr('ID')){
+                                      mo=false
+                                  }else{
+                                    mo=true
+                                  }
+                              }else{
+                                mo=true
+                              }
+                           }else{
+                            mo=true;
+                           }
+                           if(mo){
+                            ss.m_userData.callback.mouseout(tt)
+                            clearInterval(mouseoutTrigger)
+                           }
+                      }
+                };
+                mouseoutTrigger = window.setInterval(rollOut(),100)
             }
            }
           }
@@ -446,7 +497,8 @@ var VisualSedimentation = function(element,options){
       if(typeof(s.m_userData)!="undefined"){
         if(typeof(s.m_userData.callback)!="undefined"){
           if(typeof(s.m_userData.callback.onclick)=="function"){
-              s.m_userData.callback.onclick(s.m_userData)  
+               var t = _this.select('ID',s.m_userData.ID)
+              s.m_userData.callback.onclick(t)  
          }
         }
       }
@@ -523,6 +575,19 @@ var VisualSedimentation = function(element,options){
 		 console.log("draw Init ")
      }
 
+
+     var DOMabsOffset = function(target){
+        var top = target.offsetTop;
+        var left = target.offsetLeft;
+         
+        while(target = target.offsetParent) {
+          top += target.offsetTop;
+          left += target.offsetLeft;
+        }
+         
+        return {offsetLeft:left, offsetTop:top};
+      };
+
     // GUID generator from : 
     // http://stackoverflow.com/questions/105034/how-to-create-a-guid-uuid-in-javascript
     var GUID = function(){
@@ -542,15 +607,29 @@ var VisualSedimentation = function(element,options){
             );
     }
 
+    // clone object 
+    // http://stackoverflow.com/questions/728360/copying-an-object-in-javascript
+    function clone(obj) {
+      if (null == obj || "object" != typeof obj) return obj;
+      var copy = obj.constructor();
+      for (var attr in obj) {
+          if (obj.hasOwnProperty(attr)) copy[attr] = obj[attr];
+      }
+      return copy;
+    }
+    this.utile       = {}
+    this.utile.GUID  = GUID
+    this.utile.clone = clone
+
     this.settings = $.extend(this.settings, {} || {});
-    console.log("ici",this.settings)
+    //console.log("ici",this.settings)
     this.init();
      
  };
 
 $.fn.vs  = function(options){
   if (!arguments.length){var options={}}
-  console.log('$.fn.vs settings',options)
+  //console.log('$.fn.vs settings',options)
      return this.each(function(){
          var element = $(this);
          // Return early if this element already has a plugin instance

@@ -11,26 +11,26 @@ $.fn._vs.stream = {
     speed:10000/6,
     strategy:null,
     type:null,
-    _vs:null,
+
     init:function(_this){
       this.speed = _this.settings.data.stream.refresh
-      this._vs   = _this
-      //console.log('stream',_this)
       type       = _this.settings.data.stream.provider
     },
+
     push:function(elements){
       console.log(elements)
       for (var i = elements.length - 1; i >= 0; i--) {
         buffer.push(elements)
       };
     },
+
     update:function (_this){
       if(type=='generator'){
         for(var i = 0 ; i<_this.settings.data.model.length ; i++) {
-        // Start stream data
          _this.dataFlow[i] = setInterval(
                             (function(i,_this){
                               return function() { 
+                                _this.settings.data.stream.now++
                                 // find the element inside the chart conf files
                                 var token = _this.chart[_this.settings.chart.type](_this,'token',i)
                                 _this.addToken(token);
@@ -38,8 +38,26 @@ $.fn._vs.stream = {
                             })(i,_this)
                             ,this.speed);
         }
-      }else if (type=='buffer'){
-        console.log('buffer')
+
+      }else if (type=='tokens'){
+
+        _this.dataFlow[0] = setInterval(
+                            (function(i,_this){
+                              return function() { 
+
+                                _this.settings.data.stream.now++
+                                //if(){
+                                  //console.log('tokens',_this.settings.stream.now)
+                                  for(var i = 0 ; i<_this.settings.data.tokens.length ; i++) {
+                                     if(_this.settings.data.tokens[i].t==_this.settings.data.stream.now){
+                                        _this.addToken(_this.settings.data.tokens[i]);
+                                     }
+                                  }
+                                //}
+                              }
+                            })(i,_this)
+                            ,this.speed);
+
       }else{
         //console.log('direct no stream')
       }
@@ -63,11 +81,11 @@ $.fn._vs.stream = {
     },
     setSpeed:function(_this,speed){
       speedFlow  = speed;
-      for( var i = 0 ; i<categories.length ; i++) {
+      for( var i = 0 ; i<categorys.length ; i++) {
         window.clearInterval(dataFlow[i]);
       }
       window.clearInterval(decayFlow);
-      dataFlow(categories);
+      dataFlow(categorys);
     }
 }
 

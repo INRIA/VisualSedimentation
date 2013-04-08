@@ -52,16 +52,16 @@
                         ],
                 "strata":[
                           [
-                            {value: 100, label: "Strata 1 col A"},
-                            {value: 15, label: "Strata 2 col A"},
+                            {initValue: 100, label: "Strata 1 col A"},
+                            {initValue: 15, label: "Strata 2 col A"},
                           ],[
-                            {value: 55, label: "Strata 1 col B"},
-                            {value: 55, label: "Strata 1 col B"},
-                            {value: 55, label: "Strata 1 col B"},
-                            {value: 55, label: "Strata 1 col B"},
-                            {value: 55, label: "Strata 1 col B"},
-                            {value: 5, label: "Strata 2 col B"},
-                          ]    
+                            {initValue: 55, label: "Strata 1 col B"},
+                            {initValue: 5, label: "Strata 2 col B"},
+                          ] ,
+                          [
+                            {initValue: 5, label: "Strata 2 col B"},
+
+                          ] 
                         ],
                 stream:{ provider:'generator',refresh:10000000000/6}
               },
@@ -82,17 +82,19 @@
       var myImpulseToken = barChart.addToken({
                callback:{
                   // when the token arrive in the physical world
-                  suspension:function(userdata){alert("Hello, my token name is "+userdata.name+" I'm now in suspension, I'm entering in the physical world ")},
+                  suspension:function(token){
+                    alert("Hello, my token name is "+userdata.name+" I'm now in suspension, I'm entering in the physical world ")
+                  },
 
                   // when the token move 
-                  draw:function(userdata){
+                  draw:function(token){
                    // console.log("Draw this at, x:"
                    //             + userdata.x
                    //             +" y:"+userdata.y)
                   },
 
                   //accumulation:function(userdata){alert("I'm in accumulation state")},
-                  flocculation:function(userdata){
+                  flocculation:function(token){
                     alert("I'm in floculation, byby this world, welcome to agregation state")
                   },
 
@@ -109,20 +111,15 @@
                   },*/
 
                   // MOUSEOVER :when the mouse rollhover the token 
-                  mouseover:function(userdata){
+                  mouseover:function(token){
                     alert("Don't touche me, bro !- rollOver")
                   },
-                  /* mouseout DOESN'T IMPLEMENTED YET  when the mouse rollOut  the token 
-                  mouseout:function(userdata){
-                    alert("Be cool man !- rollOut")
-                  },*/
-                  // CLICK : when the user click on the token 
-                  onclick:function(userdata){
+                  onclick:function(token){
                     alert("Hey what's up bro !- click")
                   },
                 },
                size:30,
-               categorie:0,
+               category:0,
                name:"balloon"
              })
 

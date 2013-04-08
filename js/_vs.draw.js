@@ -90,7 +90,8 @@ $.fn._vs.draw = {
     // Call back draw 
     if(typeof(s.m_userData.callback)!="undefined"){
         if(typeof(s.m_userData.callback.draw)=="function"){
-               s.m_userData.callback.draw(s.m_userData)  
+               var t = _this.select('ID',s.m_userData.ID)
+               s.m_userData.callback.draw(t)  
         }
     }
 
@@ -116,12 +117,19 @@ $.fn._vs.draw = {
           _this.ctx.rotate(angle);  
           _this.ctx.beginPath();
           var h = (radius/radiusCoefMax*radiusCoef)*scale
+          
+          //console.log(s.m_userData.strokeStyle)
+          if(typeof(s.m_userData.strokeStyle)!="undefined"){
+            _this.ctx.strokeStyle = s.m_userData.strokeStyle
+          } else{ 
+            _this.ctx.strokeStyle = "rgba(0,0,0,0)"
+          }
 
-          if(typeof(s.m_userData.fillStyle)!="undefined")   _this.ctx.fillStyle   = s.m_userData.fillStyle
-          if(typeof(s.m_userData.strokeStyle)!="undefined"){ _this.ctx.strokeStyle = s.m_userData.strokeStyle
-          } else{   _this.ctx.strokeStyle = s.m_userData.fillStyle}
-          if(typeof(s.m_userData.lineWidth)!="undefined"){  _this.ctx.lineWidth   = s.m_userData.lineWidth 
-          } else{   _this.ctx.lineWidth = 0}
+          if(typeof(s.m_userData.lineWidth)!="undefined"){
+            _this.ctx.lineWidth   = s.m_userData.lineWidth 
+          } else { 
+            _this.ctx.lineWidth = 0
+          }
           
           _this.ctx.arc(0, 0,h, 0, Math.PI*2, true); 
 
@@ -150,8 +158,8 @@ $.fn._vs.draw = {
       break
       case 1: // vertice (polygon and squares ...)
 
-
-
+        //if(s.m_userData.type != "wall" && s.m_userData.type != "lift")console.log("draw",s.m_userData)
+        
         switch (s.m_userData){
           case null:
             _this.ctx.fillStyle = "rgba(255,0,0,1)";  
@@ -167,10 +175,19 @@ $.fn._vs.draw = {
         var posy = position.y*scale-s.m_shape.m_vertices[0].y*scale
         
         _this.ctx.save();
-
         _this.ctx.translate(position.x*scale, position.y*scale); 
         _this.ctx.rotate(angle);
         _this.ctx.beginPath();
+
+        //if(s.m_userData.ID==1 ){ console.log(s.m_userData.lineWidth) }
+        //if(typeof(s.m_userData.fillStyle)!="undefined")   _this.ctx.fillStyle   = s.m_userData.fillStyle
+        if(typeof(s.m_userData.strokeStyle)!="undefined"){ _this.ctx.strokeStyle = s.m_userData.strokeStyle
+        } else{   _this.ctx.strokeStyle = s.m_userData.fillStyle}
+
+        if(typeof(s.m_userData.lineWidth)!="undefined"){  _this.ctx.lineWidth   = s.m_userData.lineWidth 
+        } else{   _this.ctx.lineWidth = 0}
+
+
         for (var i = 0; i < s.m_shape.m_vertices.length; i++) {
           var points = s.m_shape.m_vertices;
           //var this = {x:0,y:0}
@@ -187,6 +204,20 @@ $.fn._vs.draw = {
         if(_this.settings.options.layout==true){
           _this.ctx.lineWidth   = 0.1;
           _this.ctx.strokeStyle ="rgb(0,0,0)"
+          _this.ctx.stroke();
+
+          // incomming points Drawer
+          //for (var i = _this.settings.sedimentation.incoming.point.length - 1; i >= 0; i--) {
+            //
+            //_this.settings.sedimentation.incoming.point[i].y
+            // draw green 
+            //_this.ctx.font = '40px Arial';
+            //_this.ctx.fillText("x", _this.settings.sedimentation.incoming.point[i].x, _this.settings.sedimentation.incoming.point[i].y);
+            //_this.ctx.fillStyle = "rgb(0,250,0,0.5)";  
+
+          //};
+
+        }else{
           _this.ctx.stroke();
         }
         _this.ctx.restore();

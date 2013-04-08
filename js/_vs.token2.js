@@ -1,5 +1,4 @@
 (function ($) {
-//console.log("stream is loaded ")
 $.fn._vs.token = {
 
     // alias for d3 color scale D3
@@ -10,7 +9,10 @@ $.fn._vs.token = {
       // todo shape management
       this.colorRange = _this.settings.chart.colorRange
     },
-
+    ID:function(_this){
+      _this.settings.data.tokenPast+=1
+      return _this.settings.data.tokenPast
+    },
     selectAll:function(_this,key,value){
       // DRAFT VERSION writing select All ...... 
       var result = []
@@ -33,6 +35,17 @@ $.fn._vs.token = {
         })
         return r
       }
+      
+      result.b2dObj  = function(key,value,param){
+        var r=[]
+        result.forEach(function(i){
+          //console.log(key,value,param)
+          q = i.myobj
+          //console.log("q",q)
+          r.push(q)
+        })
+        return r
+      }
 
       if(typeof(value) == "undefined" && typeof(key) == "undefined"){ 
         all =true
@@ -43,13 +56,7 @@ $.fn._vs.token = {
           result.push(_this.tokens[i])
        }
       }
-
-      if(typeof(result[0])=="undefined"){
-        return false
-      }else{
         return result;
-      }
-
     },
 
     select:function(_this,key,value){
@@ -76,20 +83,31 @@ $.fn._vs.token = {
      //default token setting  
      var defaultTokenSetting ={
         x:50,y:50, // positions
+        t:null,    // time 
+        category:1,// data category 
+        state:0,   // state 
+        /*
+         0 = Not Enter in the stage,
+         1 = suspension,
+         2 = floculation,
+         2 + n = _this.strata.list[n]
+        */
+
         // Graphic Parameter
-        size:10,   fillStyle:'#000000',  strokeStyle:'#000000', lineWidth:0, texture:undefined,
-        shape:'round', // square, round, ?? svg path with json serialisation {}
-        // Data 
-        timestamp:null,
-        categorie:1,
+        size:10,   fillStyle:'###',  strokeStyle:'rgba(0,0,0,0)', lineWidth:0, texture:undefined,
+        shape:{type:'round'}, // vertice, box, round, ?? svg path with json serialisation {}
+        
         userdata:{},
+
         // Interactions callbacks 
         callback:{}, 
-        // Physical 
+        
+        // Physical parameters
         phy:{ density:10,friction:0,restitution:0},
         targets:[/*{x:null,y:null}*/],
         elbow:{/*x:null,y:null*/}
      }
+
      var result = null;
      var myobj = null
      var token = function (){}
@@ -97,15 +115,21 @@ $.fn._vs.token = {
      //console.log(element)
      if(typeof(element)=='undefined'){
         token.setting = defaultTokenSetting
+        token.setting.ID = this.ID(_this)
      } else {
         token.setting   = element
         if(typeof(token.setting.phy)    =='undefined') {token.setting.phy    = defaultTokenSetting.phy}
-        if(typeof(token.setting.x)      =='undefined') {token.setting.x      = _this.settings.sedimentation.incoming.point[element.categorie].x+(Math.random()*2)}
-        if(typeof(token.setting.y)      =='undefined') {token.setting.y      = _this.settings.sedimentation.incoming.point[element.categorie].y+(Math.random()*2)}
+        if(typeof(token.setting.t)      =='undefined') {token.setting.t      = _this.settings.stream.now}
+        if(typeof(token.setting.x)      =='undefined') {token.setting.x      = _this.settings.sedimentation.incoming.point[element.category].x+(Math.random()*2)}
+        if(typeof(token.setting.y)      =='undefined') {token.setting.y      = _this.settings.sedimentation.incoming.point[element.category].y+(Math.random()*2)}
         if(typeof(token.setting.size)   =='undefined') {token.setting.size   = _this.settings.sedimentation.token.size.original}
         if(typeof(token.setting.targets)=='undefined') {token.setting.targets=[]}
+        token.setting.ID = token.setting.ID = this.ID(_this)
+        if(typeof(token.setting.state)  =='undefined') {token.setting.state  = 0}
+        if(typeof(token.setting.shape)  =='undefined') {token.setting.shape  = defaultTokenSetting.shape }
       }
-      token.myobj =  this.create(_this,token.setting)    
+
+      token.myobj =  this.create(_this,token.setting)
       //console.log("token.myobj",token.myobj)
 
           token.flocculate = function(){
@@ -142,10 +166,16 @@ $.fn._vs.token = {
           }
           
           token.size = function(value){
-            if(this.myobj!=null){
+            //console.log(this.attr('state'))
+            if(this.myobj!=null && this.attr('state')<2){
               if (!arguments.length){return this.myobj.m_shape.m_radius*this.myobj.m_userData.scale;}
                 this.myobj.m_shape.m_radius = value/this.myobj.m_userData.scale
             }
+          }
+          token.b2dObj = function(){
+              if(this.myobj!=null && this.attr('state')<2){
+                return this.myobj
+              }
           }
       
           token.texture = function(value){
@@ -159,6 +189,15 @@ $.fn._vs.token = {
       //console.log("token",token)
       _this.tokens.push(token)
       _this.decay.tokens.push(token)
+
+      // Execute suspension callback 
+      if(typeof(this.myobj.m_userData.callback)!="undefined"){
+        if(typeof(this.myobj.m_userData.callback.suspension)=="function"){
+           var t = _this.select('ID',token.setting.ID)
+           this.myobj.m_userData.callback.suspension(t)         
+        }
+      }
+
      return token
     },
 
@@ -177,7 +216,20 @@ $.fn._vs.token = {
         fixDef.density      = 0.1;
         fixDef.friction     = 0.0;
         fixDef.restitution  = 0.0;
-        fixDef.shape        = new Box2D.Collision.Shapes.b2CircleShape(token.size/scale);
+        //console.log(token)
+
+        // round
+        if(token.shape.type == "round"){
+          fixDef.shape      = new Box2D.Collision.Shapes.b2CircleShape(token.size/scale);
+        // or polygon
+        }else if(token.shape.type == "polygons"){
+          //fixDef.shape      = new Box2D.Collision.Shapes.b2PolygonShape;
+          fixDef            = this.setPolygons(_this,token,fixDef)
+        }else if(token.shape.type == "box"){
+          fixDef.shape      = new Box2D.Collision.Shapes.b2PolygonShape;
+          //console.log(fixDef)
+          fixDef.shape.SetAsBox(token.shape.width/scale,token.shape.height/scale)
+        }
 
       var bodyDef           = new Box2D.Dynamics.b2BodyDef;
         bodyDef.type        = Box2D.Dynamics.b2Body.b2_dynamicBody;
@@ -195,9 +247,10 @@ $.fn._vs.token = {
         this.applyImpulse(this.myobj,token.impulse.angle,token.impulse.power);
       }
 
-      if(typeof(token.fillStyle) =="undefined"){   token.fillStyle  = this.colorRange(token.categorie) }
-      if(typeof(token.stokeStyle)=="undefined"){   token.stokeStyle = this.colorRange(token.categorie) }
+      if(typeof(token.fillStyle) =="undefined"){   token.fillStyle  = this.colorRange(token.category) }
+      //if(typeof(token.stokeStyle)=="undefined"){   token.stokeStyle = "#000"}//"rgba(0,0,0,0.5)" }
       if(typeof(token.lineWidth) =="undefined"){   token.lineWidth  = 0 }
+      if(typeof(token.type)  =="undefined"){       token.type="token"   }
       if(typeof(token.callback)  =="undefined"){   
         token.callback = {}
                    // {
@@ -217,18 +270,12 @@ $.fn._vs.token = {
       this.myobj.m_userData.mouse.down        = false;
       this.myobj.m_userData.mouse.dragging    = false;
       this.myobj.m_userData.mouse.statebefore = false;
-
-      // Execute suspension callback 
-      if(typeof(this.myobj.m_userData.callback)!="undefined"){
-        if(typeof(this.myobj.m_userData.callback.suspension)=="function"){
-           this.myobj.m_userData.callback.suspension(this.myobj.m_userData)         
-        }
-      }
+      this.myobj.m_userData.state = 1;  // now in the world
 
       if(token.targets.length==0 && _this.settings.chart.type=="CircleLayout"){
         token.targets[0]={
-                         x: _this.settings.sedimentation.incoming.target[token.categorie].x,
-                         y: _this.settings.sedimentation.incoming.target[token.categorie].y
+                         x: _this.settings.sedimentation.incoming.target[token.category].x,
+                         y: _this.settings.sedimentation.incoming.target[token.category].y
                   }
       }
 
@@ -246,9 +293,9 @@ $.fn._vs.token = {
       }
 
       // ADD INFO IN OBJECT
-      //categories[family].value+=1;
+      //categorys[family].value+=1;
       //setTimeout(function(){mouseJoint.SetTarget(chart.position.x/scale, chart.position.y/scale)},1000);
-      //categories[family].joins.push(mouseJoint); 
+      //categorys[family].joins.push(mouseJoint); 
     
       return this.myobj;
     },
@@ -259,6 +306,26 @@ $.fn._vs.token = {
                                  Math.sin(degrees * (Math.PI / 180)) * power),
                                  body.GetWorldCenter());
     },
+    
+
+    setPolygons:function (_this,token,fixDef){
+
+      fixDef.shape    = new Box2D.Collision.Shapes.b2PolygonShape;
+
+      if(token.shape.points==null){
+         token.shape.points = [{x: -1, y: -1}, {x: 1, y: -1}, {x: -1, y:-1},{x: 1, y:-1}]
+      };
+    
+      for (var i = 0; i < token.shape.points.length; i++) {
+          var vec = new Box2D.Common.Math.b2Vec2();
+          vec.Set(token.shape.points[i].x/scale, token.shape.points[i].y/scale);
+          token.shape.points[i] = vec;
+      }  
+
+      fixDef.shape.SetAsArray(token.shape.points, token.shape.points.length);
+      return fixDef;    
+    },
+
 
     createDataBarBall:function (_this, x, y,size,family) { 
       //console.log(Math.round(family)) ;
@@ -282,8 +349,23 @@ $.fn._vs.token = {
     },
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     // ....................................................................
-    // Physicals elements 
+    // OLD OLD OLD  Physicals elements 
     // !!!!!!!!!!!!!!!!!!   Have to clean 
     // ....................................................................
 
@@ -353,13 +435,11 @@ $.fn._vs.token = {
       
     },
     createBigBall:function (world, x, y) { 
-      var fixDef       = new Box2D.Dynamics.b2FixtureDef;
+      var fixDef           = new Box2D.Dynamics.b2FixtureDef;
         fixDef.density     = 1000000.0;
         fixDef.friction    = 0.5;
         fixDef.restitution = 0.2;
-        fixDef.shape     = new Box2D.Collision.Shapes.b2CircleShape(
-      20/30
-        );
+        fixDef.shape       = new Box2D.Collision.Shapes.b2CircleShape(20/30);
     
         var bodyDef      = new Box2D.Dynamics.b2BodyDef;
       bodyDef.type     = Box2D.Dynamics.b2Body.b2_dynamicBody;
@@ -411,31 +491,6 @@ $.fn._vs.token = {
      return b;
     
     },
-     
-    createPolygon:function (world,x,y,points,rotation,color){
-      
-      var bodyDef     = new b2BodyDef();
-      var fixDef      = new b2FixtureDef();
-        fixDef.density    = 0.1;
-        fixDef.friction   = 0.0;
-        fixDef.restitution  = 0.0;
-      if(points==null){var points = [{x: 0, y: 0}, {x: 1, y: 0}, {x: 0, y:2}]};
-    
-      for (var i = 0; i < points.length; i++) {
-          var vec = new b2Vec2();
-          vec.Set(points[i].x/scale, points[i].y/scale);
-          points[i] = vec;
-      }
-      
-      fixDef.shape    = new b2PolygonShape;
-      fixDef.shape.SetAsArray(points, points.length);
-      bodyDef.position.x  = x/scale;
-      bodyDef.position.y  = y/scale;
-      var myobj       = world.CreateBody(bodyDef).CreateFixture(fixDef);
-      myobj.m_userData  = {type:"Polygon",familyID:null,fillColor:color}
-      return bodyDef;
-    
-    },
 
     createDataBallTarget:function (world,targetX,targetY, x, y,size,family) {
       //console.log("DBT")
@@ -466,17 +521,17 @@ $.fn._vs.token = {
     
       // ADD INFO IN OBJECT
       myobj.m_userData  = {type:"PieBall",familyID:family,fillColor:colorScale(family)}
-      categories[family].value+=1;
+      categorys[family].value+=1;
       //setTimeout(function(){mouseJoint.SetTarget(chart.position.x/scale, chart.position.y/scale)},1000);
-      categories[family].joins.push(mouseJoint); 
+      categorys[family].joins.push(mouseJoint); 
     
       return myobj;
     },
     
     createDataBallPie:function (world,target, x, y,size,family) {
       console.log(target)
-      var xPos = categories[family].incomingPoint.x/scale+(Math.random()*2/scale);
-      var yPos = categories[family].incomingPoint.y/scale;
+      var xPos = categorys[family].incomingPoint.x/scale+(Math.random()*2/scale);
+      var yPos = categorys[family].incomingPoint.y/scale;
     
       // CREATE BALL
       var fixDef           = new Box2D.Dynamics.b2FixtureDef;
@@ -493,7 +548,7 @@ $.fn._vs.token = {
     
       // I need a distinct list with bodies (and not fixtures)
       var myo = world.CreateBody(bodyDef);
-        myo.m_userData={type:"PieBall",familyID:family,fillColor:categories[family].color}
+        myo.m_userData={type:"PieBall",familyID:family,fillColor:categorys[family].color}
         
         listBodies.push(myo);
       var myobj = myo.CreateFixture(fixDef);
@@ -511,7 +566,7 @@ $.fn._vs.token = {
       
       // ADD INFO IN OBJECT
       myobj.m_userData={type:"PieBall",familyID:family,fillColor:colorScale(family)}
-      categories[family].value+=1;
+      categorys[family].value+=1;
       //setTimeout(function(){mouseJoint.SetTarget(chart.position.x/scale, chart.position.y/scale)},1000);
     
       return myobj;
@@ -538,9 +593,6 @@ $.fn._vs.token = {
       return myobj;
     },
 
-    getToken:function (){
-
-    }
 }
 
 })(jQuery);

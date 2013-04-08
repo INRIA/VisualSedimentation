@@ -12,6 +12,7 @@ $.fn._vs.decay = {
       var limit                = _this.settings.sedimentation.token.size.minimum
 
       if(power==null){var power = 0}
+        
         for(var b = 0; b < this.tokens.length; b++) {
           var tokenSize  = this.tokens[b].attr("size")
           if(power!=0){
@@ -21,7 +22,8 @@ $.fn._vs.decay = {
                      
           if(tokenSize<=limit){
             if (_this.settings.sedimentation.flocculate.strategy!=null){ 
-              _this.flocculate.destroyIt(_this,this.tokens[b]); 
+              _this.flocculate.destroyIt(_this,this.tokens[b]);
+              _this.strata.update(_this);
             }
           }
         }

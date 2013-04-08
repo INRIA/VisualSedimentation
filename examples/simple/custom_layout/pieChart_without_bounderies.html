@@ -36,21 +36,21 @@
                       ],
                 strata:[
                           [
-                            {value: 10, label: "Strata 1 col A"},
+                            {initValue: 10, label: "Strata 1 col A"},
                           ],[
-                            {value: 5, label: "Strata 1 col B"},
+                            {initValue: 5, label: "Strata 1 col B"},
                           ],[
-                            {value: 20, label: "Strata 2 col C"}
+                            {initValue: 20, label: "Strata 2 col C"}
                           ]      
                         ],
                 stream:{
                   provider:'generator',
-                  refresh:10000/6
+                  refresh:10000/8
                 }
               },
           sedimentation:{
             token:{
-              size:{original:10,minimum:2}
+              size:{original:20,minimum:1}
             },
             suspension:{
               decay:{power:1.01}

@@ -57,7 +57,7 @@ $.fn._vs.chart.sylochart = function(_this,fn,options) {
               x:(_this.settings.sedimentation.incoming.point[i].x+(Math.random()*2)),
               y:(_this.settings.sedimentation.incoming.point[i].y+(Math.random()*1)),
               size:_this.settings.sedimentation.token.size.original,
-              categorie:i,
+              category:i,
               targets:[]
             }
     return token; 
