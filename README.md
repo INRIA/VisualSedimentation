@@ -1,11 +1,11 @@
 VisualSedimentation
 ===================
 
-
-Visual sedimentation is a javascript visualizations library for streaming data, inspired by the process of physical sedimentation. This process is the result of objects falling due to gravity forces, that aggregate into compact layers over time. The process is well understood since our environment is shaped by sedimentation: mountains, hills or rivers are the visible result of this long process.
 ![Bar chart](https://raw.github.com/INRIA/VisualSedimentation/master/img/barchart.png)
 ![Pie chart](https://raw.github.com/INRIA/VisualSedimentation/master/img/sediviz-piechart.png)
 ![Bubble chart](https://raw.github.com/INRIA/VisualSedimentation/master/img/bubblechart.png)
+Visual sedimentation is a javascript visualizations library for streaming data, inspired by the process of physical sedimentation. This process is the result of objects falling due to gravity forces, that aggregate into compact layers over time. The process is well understood since our environment is shaped by sedimentation: mountains, hills or rivers are the visible result of this long process.
+
 
 ## Ressources
 
@@ -13,6 +13,8 @@ Visual sedimentation is a javascript visualizations library for streaming data, 
 * [Exemples](http://www.visualsedimentation.org/examples/) 
 * [Api references](http://www.visualsedimentation.org/documentation/) 
 * [Mailing liste](https://groups.google.com/forum/?fromgroups#!forum/visualsedimentation)
+* [Roadmap and Todo](https://github.com/INRIA/VisualSedimentation/wiki/RoadMap)
+* [News on Twitter feed](https://twitter.com/sediviz)
 
 ## Browser Support 
 Visual Sedimentation is under developement process, actually we are not focus on a production version.
@@ -58,8 +60,14 @@ Copyright 2010, The Dojo Foundation
 
 ## Licences
 
-Visual Sedimentation is under CeCILL-B licence.
-Copyright 2013, by Samuel Huron & Romain Vuillemot
-"B" means BSD :
+Visual Sedimentation is under CeCILL-B licence. "B" means BSD.
+Copyright 2013, by Samuel Huron & Romain Vuillemot :
 * Licence texte in french: <http://www.cecill.info/licences/Licence_CeCILL-B_V1-fr.txt>
 * Licence texte in english: <http://www.cecill.info/licences/Licence_CeCILL-B_V1-en.txt>
+
+## Forging 
+
+Visual sedimentation was forging inside : 
+* INRIA AVIZ team <http://aviz.fr/>
+* IRI Centre Pompidou team <http://www.iri.centrepompidou.fr/>
+
