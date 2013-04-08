@@ -1,0 +1,302 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title> Wikipedia World Wide battle </title>
+    <meta name="author" content="Samuel Huron">
+    <script type="text/javascript" src="../lib/miniBuffer/dataPlayer.js"></script>
+    <script type="text/javascript" src="../lib/miniBuffer/miniBuffer2.js"></script>
+    <script type="text/javascript" src="../lib/utils.js"></script>
+    <!-- http://buckwilson.me/lightboxme/ -->
+    <script type="text/javascript" src="../../js/_VisualSedimentation.js"></script>
+    <script type="text/javascript" src="../lib/jquery.lightbox_me.js"></script>
+
+    <style>
+    @import url(../../css/fan-of-mike-style.css);
+      .label{
+        position:relative;
+        float:left;
+        font-weight: 800;
+        text-align: center;
+      }
+      #headerLabel{
+        height: 24px;
+      }
+      #footerLabel{
+        height: 12px;
+      }
+      #toolTip{
+
+      }
+      /*
+      .wait{
+        position: absolute;
+        background-image:url('../../img/loadingAnimation.gif');
+        background-position:center center;
+        background-repeat: no-repeat;
+        width: 350px;
+        height: 206px;
+      }*/
+      #ttPubDate{
+        clear:both;
+        color: red;
+        font-size:10px;
+        height:10px;
+      }
+      #ttTitle{
+        float: left;
+        margin-bottom: 0em;
+      }
+      #ttAuthor{
+        margin-bottom: 0em;
+        margin-top:1.5em;
+        display: block;
+        float: left;
+      }
+      #bufferlabel{
+        position: relative;
+        float: left;
+      }
+      td{
+        font-family: "Helvetica Neue", Helvetica, sans-serif;
+        margin: 1em auto 4em auto;
+        width: 960px;
+        font-size: 12px;
+      }
+    </style>
+   </head>
+   
+   <body>
+    <!-- div container -->
+    <header>‍
+    <a href="../../">Overview</a>
+    <b><a style="margin-left:1em;" href="../../index.html"> Examples</a></b>
+    <a style="margin-left:1em;" href="../../documentation/index.html">Documentation</a></b>
+    <a style="margin-left:1em;" href="https://github.com/INRIA/VisualSedimentation" target="_blank">Source</a>
+    <a style="margin-left:1em;" href="" target="_blank">Contact / Feedback</a>
+  </header>
+  
+      <h1>Wikipedia live edit activity</h1>
+      
+      <table>
+      <tr>
+      <td>
+          <div style="float:left">Visualization of wikipedia edit in real time</div> <div id="bufferlabel">&nbsp;( n1 time and n2 time) &nbsp;</div> on the top 5 languages version. Languages are sorted by importance according to <a href="http://en.wikipedia.org/wiki/Wikipedia:Multilingual_statistics" target="_blank">wikipedia 2008 statistics</a>.<br>Token size  map the edit length.<br><br>
+      </td>
+      <!-- div container -->
+      <td style="width:920px; text-align: right;">
+
+<!--
+                <a href="https://twitter.com/share" class="twitter-share-button" data-via="cybunk" data-dnt="true">Tweet</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+-->
+       </td></tr>
+     </table>
+      <div id="headerLabel">
+      </div>
+      <div id="chart"></div>
+      <div id="footerLabel"></div>
+
+      <div id="toolTip" >
+          ici
+      </div>
+
+      <div id="test" style="width:920;">
+
+        <h3 id="ttTitle"> </h3> 
+        <div id="ttAuthor"></div>
+        <div id="ttPubDate"></div> 
+        <div style="clear:both"/>
+        <p id="ttsSummary"></p>
+
+      </div>
+      
+      
+      <!-- Create my visual sedimentation -->
+      <script type="text/javascript">
+        
+
+
+        /*
+        var wikipedias =[
+            {label:"English",  value:0, url:"http://en.wikipedia.org/w/index.php?title=Special:RecentChanges&feed=atom", buffer:{}, player:{}},
+            {label:"Deutch",   value:0, url:"http://de.wikipedia.org/w/index.php?title=Special:RecentChanges&feed=atom", buffer:{}, player:{}},
+            {label:"French",   value:0, url:"http://fr.wikipedia.org/w/index.php?title=Special:RecentChanges&feed=atom", buffer:{}, player:{}},
+            {label:"Polish",   value:0, url:"http://pl.wikipedia.org/w/index.php?title=Special:RecentChanges&feed=atom", buffer:{}, player:{}},
+            {label:"Japanese", value:0, url:"http://jp.wikipedia.org/w/index.php?title=Special:RecentChanges&feed=atom", buffer:{}, player:{}},
+        ]
+
+        var bufferSettingTemplate = {
+            // Query configuration
+            queryUrl:"http://rss.dev.fabelier.org/dq",
+            //queryUrl:"http://127.0.0.1:9616/dq",
+            queryParam:{url:null,nobuffer:Math.random()},
+            callback:true,
+            // data model 
+            idTocheck:"guid",
+            objectToBufferize:null,
+            delay:60*1000,    // Refresh, timing  
+            maxElement:1000, // not implemented yet
+            debug:true,
+            callback:{}
+          }
+         */
+        var wikipedias =[
+            {label:"English",  value:0, query:'{"meta.language":"en"}', buffer:{}, player:{}},
+            {label:"Deutch",   value:0, query:'{"meta.language":"de"}', buffer:{}, player:{}},
+            {label:"French",   value:0, query:'{"meta.language":"fr"}', buffer:{}, player:{}},
+            {label:"Polish",   value:0, query:'{"meta.language":"pl"}', buffer:{}, player:{}},
+            {label:"Japanese", value:0, query:'{"meta.language":"ja"}', buffer:{}, player:{}},
+        ]
+
+        //collection=rss_wikipedia'
+        var bufferSettingTemplate = {
+            // Query configuration
+            queryUrl:"http://127.0.0.1:9616/q",
+            //queryUrl:"http://127.0.0.1:9616/dq",
+            queryParam:{query:null,
+                        collection:'rss_wikipedia',
+                        sort:escape('{"timestamp":1}'),
+                        field:escape('{"pubdate":1,'
+                                       +'"author":1,'
+                                       +'"title":1,'
+                                       +'"summary":1,'
+                                       +'"link":1,'
+                                       +'"description":1'
+                                       +'"guid":1}'),
+                        limit:100
+                        },
+
+            callback:true,
+            // data model 
+            idTocheck:"guid",
+            objectToBufferize:null,
+            delay:60*1000,    // Refresh, timing  
+            maxElement:1000, // not implemented yet
+            debug:true,
+            callback:{}
+          }
+
+        function playerSettingTemplate (i) {
+          
+          var template = { 
+            rate:1000,
+            callback:{}
+           } 
+          
+          template.callback = function(e){
+               var size = Math.round(e.description.length/500)
+               //console.log(e.title)
+               scene.addToken({
+                 category:i,
+                 size:size,
+                 author:e.author,
+                 pubdate:e.pubdate,
+                 summary:e.summary,
+                 title:e.title,
+                 link:e.link,
+                 strokeStyle:"rgba(0,0,0,0)",
+                 lineWidth:2,
+                 callback:{
+                  mouseover:function(token){
+                    $("#ttTitle").text(token.attr('title'))
+                    $("#ttPubDate").text(token.attr('pubdate'))
+
+                    $("#ttsSummary").html(token.attr('summary'))
+                    $("#ttAuthor").text(", by "+token.attr('author'))
+                    
+                    if(token.attr('over')!=true){
+                      var fillStyle = token.attr('fillStyle')
+                      var strokeStyle=  token.attr('strokeStyle')
+                      token.attr('over',true)
+                      token.attr('strokeStyle',fillStyle)
+                      token.attr('OLDfillStyle',fillStyle)
+                      token.attr('fillStyle',"#000")
+                    }
+
+                  },
+                  mouseout:function(token){
+                    token.attr('over',false)
+                    var fillStyle = token.attr('fillStyle')
+                    var strokeStyle=  token.attr('strokeStyle')
+                    token.attr('strokeStyle',"#fff")
+                    token.attr('fillStyle',token.attr('OLDfillStyle'))
+                  },
+                  onclick:function(token){
+                    //window.open(token.attr('link'),'Wikipedia article')
+                     $('#test').lightbox_me({centered: true});
+                  }
+                 }
+               })
+               // Update legend
+               //$('#record').text((this.i+1)+" / "+e.length)
+             }
+
+           return template
+        }
+       
+      for (var i = wikipedias.length - 1; i >= 0; i--) {
+        var bufferSetting = jQuery.extend(true, {}, bufferSettingTemplate);
+        bufferSetting.queryParam.query = encodeURIComponent(wikipedias[i].query)
+        var playerSetting = jQuery.extend(true, {}, playerSettingTemplate(i));
+        
+        console.log(i,bufferSetting.queryParam)
+        console.log(i,playerSetting.callback)
+        
+        wikipedias[i].buffer = new MiniBuffer(bufferSetting)  
+        wikipedias[i].player = new DataPlayer(wikipedias[i].buffer.getBuffer(), playerSetting)
+      };
+
+      // Visual Sedimentation Setting 
+      var setting = {
+            width:920,
+            height:500,
+            data:{
+               model:[
+                {label:"English"},
+                {label:"German"},
+                {label:"French"},
+                {label:"Polish"},
+                {label:"Japanese"},
+              ],
+              stream:{
+                provider:'tokens',
+                refresh:1000,
+                now:-1,
+              },
+              sedimentation:{
+                token:{
+                  size:{original:5,
+                    minimum:10}
+                }
+              },
+              tokens:[]
+            },
+          options:{
+           layout:false,
+          }
+      }
+
+      // Initialise it
+      var scene = $("#chart").vs(setting).data('visualSedimentation');
+
+      // Create dynamic Labeling 
+      var labeling =function(setting,container){
+         //$('#'+container).append('<div class="label" style="width:100px;"> &nbsp;</div>');
+         var divWidth = Math.round(setting.width/setting.data.model.length)
+         console.log("divWidth",divWidth)
+         for (var i = 0; i < setting.data.model.length; i++) {
+           $('#'+container).append('<div class="label" style="width:'+divWidth+'px;">'+setting.data.model[i].label+'</div>');
+         }
+      }
+      labeling(setting,"headerLabel")
+      labeling(setting,"footerLabel")
+
+      </script>
+      <a href="https://github.com/INRIA/VisualSedimentation"><img style="position:absolute;top:0;right:0;border:0;" width="149" height="149" src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub"></a>
+
+
+    <div>
+    <!--Author : Samuel Huron-->
+    </div>
+  </body>   
+</html>

@@ -1,0 +1,113 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Bar Chart by Visual Sedimentation</title>
+    <script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-00706690-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+    <script type="text/javascript" src="../../js/_VisualSedimentation.js"></script>
+    <style>@import url(../../css/fan-of-mike-style.css);</style>
+  </head>
+  <body>
+    <!-- div container -->
+    <header>‍
+    <a href="./">Overview</a>
+    <b><a style="margin-left:1em;" href="../index.html"> Examples</a></b>
+    <a style="margin-left:1em;" href="../../documentation/index.html">Documentation</a></b>
+    <a style="margin-left:1em;" href="https://github.com/INRIA/VisualSedimentation" target="_blank">Source</a>
+    <a style="margin-left:1em;" href="" target="_blank">Contact / Feedback</a>
+  </header>
+      <!-- div container -->
+      <h1 id="myDemo">Bar chart</h1>
+      
+      <!-- Create my visual sedimentation -->
+      <script type="text/javascript">
+
+      var mySettings = {
+          width:300,
+          height:300,
+          data:{
+                model:
+                        [
+                          {label:"Column A"},
+                          {label:"Column B"},
+                          {label:"Column C"},
+                        ],
+                tokens:[
+                            {t: 0,  category:1, userdata:{label:'MESSAGE:: 0, 1'}},
+                            {t: 1,  category:2, userdata:{label:'MESSAGE:: 1, 2'}},
+                            {t: 2,  category:2, userdata:{label:'MESSAGE:: 2, 2'}},
+                            {t: 0,  category:2, userdata:{label:'MESSAGE:: 0, 2'}},
+                            {t: 4,  category:0, userdata:{label:'MESSAGE:: 4, 0'}},
+                            {t: 5,  category:0, userdata:{label:'MESSAGE:: 5, 0'}},
+                            {t: 6,  category:0, userdata:{label:'MESSAGE:: 6, 0'}},
+                            {t: 6,  category:0, userdata:{label:'MESSAGE:: 6, 0'}},
+                            {t: 6,  category:1, userdata:{label:'MESSAGE:: 6, 1'}},
+                            {t: 6,  category:2, userdata:{label:'MESSAGE:: 6, 2'}},
+                            {t: 7,  category:1, userdata:{label:'MESSAGE:: 7, 1'}},
+                            {t: 8,  category:1, userdata:{label:'MESSAGE:: 8, 1'}},
+                            {t: 9,  category:1, userdata:{label:'MESSAGE:: 9, 1'}},
+                            {t: 10, category:2, userdata:{label:'MESSAGE:: 10,2'}},
+                            {t: 1,  category:2, userdata:{label:'MESSAGE:: 1, 2'}},
+                            {t: 2,  category:1, userdata:{label:'MESSAGE:: 2, 1'}},
+                            {t: 1,  category:0, userdata:{label:'MESSAGE:: 1, 0'}},
+                            {t: 2,  category:1, userdata:{label:'MESSAGE:: 2, 1'}},
+                            {t: 15, category:2, userdata:{label:'MESSAGE:: 15,2'}},
+                            {t: 16, category:2, userdata:{label:'MESSAGE:: 16,2'}},
+                            {t: 16, category:0, userdata:{label:'MESSAGE:: 16,0'}},
+                            {t: 16, category:1, userdata:{label:'MESSAGE:: 16,1'}},
+                            {t: 17, category:2, userdata:{label:'MESSAGE:: 17,2'}},
+                            {t: 17, category:0, userdata:{label:'MESSAGE:: 17,0'}},
+                            {t: 17, category:1, userdata:{label:'MESSAGE:: 17,1'}},
+                            {t: 17, category:2, userdata:{label:'MESSAGE:: 17,2'}},
+                            {t: 17, category:0, userdata:{label:'MESSAGE:: 17,0'}},
+                            {t: 17, category:1, userdata:{label:'MESSAGE:: 17,1'}},
+                            {t: 18, category:2, userdata:{label:'MESSAGE:: 18,2'}},
+                            {t: 18, category:0, userdata:{label:'MESSAGE:: 18,0'}},
+                            {t: 18, category:1, userdata:{label:'MESSAGE:: 18,1'}},
+                            {t: 18, category:2, userdata:{label:'MESSAGE:: 18,2'}},
+                            {t: 18, category:0, userdata:{label:'MESSAGE:: 18,0'}},
+                            {t: 18, category:1, userdata:{label:'MESSAGE:: 18,1'}},
+                            {t: 18, category:2, userdata:{label:'MESSAGE:: 18,2'}},
+                            {t: 18, category:0, userdata:{label:'MESSAGE:: 18,0'}},
+                            {t: 18, category:1, userdata:{label:'MESSAGE:: 18,1'}},
+                            {t: 18, category:2, userdata:{label:'MESSAGE:: 18,2'}},
+                            {t: 18, category:0, userdata:{label:'MESSAGE:: 18,0'}},
+                            {t: 18, category:1, userdata:{label:'MESSAGE:: 18,1'}},
+                        ],
+                strata: [[{},{}]],
+                stream:{
+                       provider:"tokens",
+                       refresh:1000,
+                       now:0
+                       }
+              },
+          sedimentation:{
+            token:{
+              size:{original:6,minimum:2}
+            },
+            aggregation:{height:100},
+                        suspension:{
+              decay:{power:1.1}
+            }
+          },
+        }
+
+      // Init the sedimentation
+      var barChart = $("#myDemo").vs(mySettings).data('visualSedimentation');
+
+			setInterval(function() { barChart.strata.update(barChart)}, 100);
+
+      </script>
+  </body>   
+</html>

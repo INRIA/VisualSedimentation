@@ -1,0 +1,44 @@
+.command {
+	font-size: 1em;
+	color: transparent; /* Fix for Firefox */
+	/* border-style: none; */
+	/* border-width: 0; */
+	padding: 0 0 0 16px !important; /* Fix for Internet Explorer */
+	text-align: left;
+	width: 26px;
+	height: 26px;
+	line-height: 1 !important;
+	background-image: url(../img/controls.png);
+	overflow: hidden;
+	cursor: pointer;
+}
+.play {
+	background-position: -48px 0px;
+}
+.pause {
+	background-position: -48px -24px;
+}
+.stop {
+	background-position: -72px 0px;
+}
+.fb {
+	background-position: 0px 0px;
+}
+.ff {
+	background-position: -120px 0px;
+}
+.prev {
+	background-position: -24px 0px;
+}
+.next {
+	background-position: -96px 0px;
+}
+.soundon {
+	background-position: -144px 0px;
+}
+.soundoff {
+	background-position: -144px -24px;
+}
+.disabled {
+	opacity:0.5;
+}

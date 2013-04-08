@@ -1,0 +1,123 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Bar Chart by Visual Sedimentation</title>
+    <script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-00706690-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+    <script type="text/javascript" src="../../js/_VisualSedimentation.js"></script>
+    <style>@import url(../../css/fan-of-mike-style.css);</style>
+  </head>
+  <body>
+    <!-- div container -->
+  <header>‍
+    <a href="./">Overview</a>
+    <b><a style="margin-left:1em;" href="../index.html"> Examples</a></b>
+    <a style="margin-left:1em;" href="../../documentation/index.html">Documentation</a></b>
+    <a style="margin-left:1em;" href="https://github.com/INRIA/VisualSedimentation" target="_blank">Source</a>
+    <a style="margin-left:1em;" href="" target="_blank">Contact / Feedback</a>
+  </header>
+      <!-- div container -->
+      <h1 id="myDemo">Bar chart</h1>
+      
+      <!-- Create my visual sedimentation -->
+      <script type="text/javascript">
+      
+
+      var commonCallBack = {
+                            mouseover:function(token){token.attr("fillStyle","#000")},
+                            onclick:function(token){token.attr("fillStyle","red")}
+                          }
+
+      var mySettings = {
+          width:300,
+          height:300,
+          data:{
+                model:
+                        [
+                          {label:"Column A"},
+                          {label:"Column B"},
+                          {label:"Column C"},
+                        ],
+                tokens:[
+                            {t: 0,  category:1, callback:{mouseover:function(token){console.log(token) }}},
+                            {t: 2,  category:2, size:"20", label:"My token TEST label ",callback:{
+                                                          draw:function(t){
+                                                            var size = t.attr('size') 
+                                                            //if(size>5)
+                                                              t.attr('size',size-0.05) 
+                                                          },
+                                                          flocculating:function(t){
+                                                            console.log("ici",t.attr('size'))
+                                                          }
+                                                        },
+                                                      },
+
+                            {t: 0,  category:2, callback:commonCallBack},
+                            {t: 4,  category:0, callback:commonCallBack},
+                            {t: 5,  category:0, callback:commonCallBack},
+                            {t: 6,  category:0, callback:commonCallBack},
+                            {t: 6,  category:0, callback:commonCallBack},
+                            {t: 6,  category:1, callback:commonCallBack},
+                            {t: 6,  category:2, callback:commonCallBack},
+                            {t: 7,  category:1, callback:commonCallBack},
+                            {t: 8,  category:1, callback:commonCallBack},
+                            {t: 9,  category:1, callback:commonCallBack},
+                            {t: 10, category:2, callback:commonCallBack},
+                            {t: 1,  category:2, callback:commonCallBack},
+                            {t: 2,  category:1, callback:commonCallBack},
+                            {t: 1,  category:0, callback:commonCallBack,size:"10"},
+                            {t: 2,  category:1, callback:commonCallBack,size:"15"},
+                            {t: 15, category:2, callback:commonCallBack},
+                            {t: 16, category:2, callback:commonCallBack},
+                            {t: 16, category:0, callback:commonCallBack},
+                            {t: 16, category:1, callback:commonCallBack},
+                            {t: 17, category:2, callback:commonCallBack},
+                            {t: 17, category:0, callback:commonCallBack},
+                            {t: 17, category:1, callback:commonCallBack},
+                            {t: 17, category:2, callback:commonCallBack},
+                            {t: 17, category:0, callback:commonCallBack},
+                            {t: 17, category:1, callback:commonCallBack},
+                            {t: 18, category:2, callback:commonCallBack},
+                            {t: 18, category:0, callback:commonCallBack},
+                            {t: 18, category:1, callback:commonCallBack},
+                            {t: 18, category:2, callback:commonCallBack},
+                            {t: 18, category:0, callback:commonCallBack},
+                            {t: 18, category:1, callback:commonCallBack},
+                            {t: 18, category:2, callback:commonCallBack},
+                            {t: 18, category:0, callback:commonCallBack},
+                            {t: 18, category:1, callback:commonCallBack},
+                            {t: 18, category:2, callback:commonCallBack},
+                            {t: 18, category:0, callback:commonCallBack},
+                            {t: 18, category:1, callback:commonCallBack,size:"20"},
+                        ],
+                stream:{
+                       provider:"tokens",
+                       refresh:1000,
+                       now:0
+                       }
+              },
+          sedimentation:{
+            token:{
+              size:{original:6,minimum:2}
+            },
+            aggregation:{height:200}
+          },
+        }
+
+      // Init the sedimentation
+      var barChart = $("#myDemo").vs(mySettings).data('visualSedimentation');
+
+      </script>
+  </body>   
+</html>

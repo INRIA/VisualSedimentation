@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"> 
+	<head>
+		<title>Basic Stream Player</title>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+		<link rel="stylesheet" type="text/css" href="../css/streamPlayer.css"/>
+		<script type="text/javascript" src="../streamPlayer.js"></script>
+		<script type="text/javascript" src="tweets.json"></script>
+		<style>
+			body {
+			  font-family: "Helvetica Neue", Helvetica, sans-serif;
+			  margin: 1em 10em 4em 10em;
+			  width: 500px;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>Tweets Stream Player</h1>
+		<div id="simple-stream-player">
+			<input type="button" class="command prev" value="prev" title="prev element"/>	
+			<input type="button" class="command fb" value="fb" title="fast backward"/>			
+			<input type="button" class="command stop" value="stop" title="stop"/>		
+			<input type="button" class="command pause" value="pause" title="play/pause"/>
+			<input type="button" class="command ff" value="fb" title="fast forward"/>		
+			<input type="button" class="command next" value="next" title="next element"/>	
+		</div>
+		<br/>
+		<form action="">
+			<input type="radio" name="freq" value="tweetsec" checked>One Tweet/<span id="current-speed">0</span>ms
+		</form>
+		<br/>
+		<div>Current Tweet #: <span id="current-time">0</span>/<span id="max-time">0</span></div>
+		<br/>
+		<div id="tweets-text"></div>
+		<script type="text/javascript">
+
+		// Pre-process Tweets
+		document.getElementById('max-time').innerHTML = tweets.length;
+		tweets.sort(function(a,b) { return new Date(a.created_at).getTime() - new Date(b.created_at).getTime()});
+
+		var sp = new StreamPlayer('simple-stream-player', {
+					current_time: function() { 
+						var div = document.getElementById('tweets-text');
+						return div.childNodes.length;
+					},
+					current_speed: 1000,
+					max_time: tweets.length,
+					updateCallback: function() {
+						var elem = document.createElement('div');
+						elem.innerHTML = tweets[this.current_time()].text;
+						document.getElementById('tweets-text').appendChild(elem);
+					},
+					refreshCallback: function() {
+						document.getElementById('current-time').innerHTML = this.current_time();
+					},
+					playCallback: function() {},
+					pauseCallback: function() {},
+					stopCallback: function() {
+						var div = document.getElementById('tweets-text');
+						while(div.childNodes.length > 0) {
+							var lastChild = div.lastChild;
+							document.getElementById('tweets-text').removeChild(lastChild);
+						}
+					},
+					nextCallback: function(self) {
+						var elem = document.createElement('div');
+						elem.innerHTML = tweets[this.current_time()].text;
+						document.getElementById('tweets-text').appendChild(elem);
+					},
+					previousCallback: function(self) {
+						var div = document.getElementById('tweets-text');
+						if(div.childNodes.length > 0) {
+							var lastChild = div.lastChild;
+							document.getElementById('tweets-text').removeChild(lastChild);
+						}
+					},
+					ffCallback: function() {
+						document.getElementById('current-speed').innerHTML = sp.current_speed;
+					},
+					fbCallback: function() {
+						document.getElementById('current-speed').innerHTML = sp.current_speed;
+					}
+				});
+				document.getElementById('current-speed').innerHTML = sp.current_speed;
+		</script>
+	</body>
+</html>

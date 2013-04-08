@@ -1,0 +1,37 @@
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <title>What is Twitter's favorite M&M's Color?</title>
+
+
+    <script type="text/javascript" src="../../js/_VisualSedimentation.js"></script>
+    <script type="text/javascript" src="jquery.csv-0.71.js"></script>
+    <script>
+
+
+// count lines
+
+
+        url = "https://docs.google.com/spreadsheet/pub?hl=en_GB&hl=en_GB&key=0AgNZbdOQFAhtdFJ0ek9FdHNYcEVZMzFTMU5ESW9IdkE&single=true&gid=82&output=csv";
+
+        $(document).load(url, function(csv) {
+
+            var tmp = $.csv.toArrays(csv, {separator:','});
+
+        	var nb_rows=0;
+        	tmp.forEach(function(o) {
+
+        		console.log(o[3])
+        		var d = new Date(o[3]);
+        		console.log(d)
+        	//	Sun, 13 Jan 2013 21:51:00 +0000
+		//	  o.Year = parseInt(o.Year);
+		//	  o.Length = parseFloat(o.Length);
+				nb_rows++;
+			});
+        	console.log(tmp.length, nb_rows);
+        });
+
+</script>
+  </body>   
+</html>

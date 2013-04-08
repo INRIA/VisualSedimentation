@@ -1,0 +1,1611 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<log>
+<logentry
+   revision="9393">
+<author>chevalie</author>
+<date>2012-04-01T00:55:17.610608Z</date>
+<paths>
+<path
+   kind=""
+   action="M">/articles/hiistograms/technique.tex</path>
+</paths>
+<msg></msg>
+</logentry>
+<logentry
+   revision="9392">
+<author>boukheli</author>
+<date>2012-04-01T00:34:12.273595Z</date>
+<paths>
+<path
+   kind=""
+   action="M">/articles/uncertainLines/infovis2012/studiesDesign.tex</path>
+<path
+   kind=""
+   action="M">/articles/uncertainLines/infovis2012/uncertainty.tex</path>
+</paths>
+<msg></msg>
+</logentry>
+<logentry
+   revision="9391">
+<author>boukheli</author>
+<date>2012-04-01T00:12:53.579586Z</date>
+<paths>
+<path
+   kind=""
+   action="M">/articles/uncertainLines/infovis2012/discussion.tex</path>
+</paths>
+<msg></msg>
+</logentry>
+<logentry
+   revision="9390">
+<author>rvuillemot</author>
+<date>2012-04-01T00:05:29.624909Z</date>
+<paths>
+<path
+   kind=""
+   action="M">/articles/sediviz/infovis12/interaction.tex</path>
+<path
+   kind=""
+   action="M">/articles/sediviz/infovis12/design.tex</path>
+<path
+   kind=""
+   action="M">/articles/sediviz/infovis12/sediviz.tex</path>
+</paths>
+<msg>submitted version to infovis 2012</msg>
+</logentry>
+<logentry
+   revision="9388">
+<author>huron</author>
+<date>2012-03-31T23:56:05.985737Z</date>
+<paths>
+<path
+   kind=""
+   action="M">/articles/sediviz/infovis12/sediviz.tex</path>
+</paths>
+<msg>conclusion</msg>
+</logentry>
+<logentry
+   revision="9386">
+<author>huron</author>
+<date>2012-03-31T23:52:11.127236Z</date>
+<paths>
+<path
+   kind=""
+   action="M">/articles/sediviz/infovis12/sediviz.tex</path>
+</paths>
+<msg>conclusion</msg>
+</logentry>
+<logentry
+   revision="9385">
+<author>huron</author>
+<date>2012-03-31T23:51:39.804249Z</date>
+<paths>
+<path
+   kind=""
+   action="M">/articles/sediviz/infovis12/sediviz.tex</path>
+</paths>
+<msg>conclusion</msg>
+</logentry>
+<logentry
+   revision="9384">
+<author>huron</author>
+<date>2012-03-31T23:50:40.639816Z</date>
+<paths>
+<path
+   kind=""
+   action="M">/articles/sediviz/infovis12/sediviz.tex</path>
+</paths>
+<msg>conclusion</msg>
+</logentry>
+<logentry
+   revision="9383">
+<author>huron</author>
+<date>2012-03-31T23:48:52.076010Z</date>
+<paths>
+<path
+   kind=""
+   action="M">/articles/sediviz/infovis12/sediviz.tex</path>
+</paths>
+<msg>conclusion</msg>
+</logentry>
+<logentry
+   revision="9382">
+<author>anab</author>
+<date>2012-03-31T23:48:11.507420Z</date>
+<paths>
+<path
+   kind=""
+   action="M">/articles/uncertainLines/infovis2012/intuitivnessStudy.tex</path>
+<path
+   kind=""
+   action="M">/articles/uncertainLines/infovis2012/discussion.tex</path>
+</paths>
+<msg></msg>
+</logentry>
+<logentry
+   revision="9377">
+<author>huron</author>
+<date>2012-03-31T23:35:05.599152Z</date>
+<paths>
+<path
+   kind=""
+   action="M">/articles/sediviz/infovis12/sediviz.tex</path>
+</paths>
+<msg>conclusion</msg>
+</logentry>
+<logentry
+   revision="9376">
+<author>rvuillemot</author>
+<date>2012-03-31T23:33:15.693471Z</date>
+<paths>
+<path
+   kind=""
+   action="M">/articles/sediviz/infovis12/cases.tex</path>
+<path
+   kind=""
+   action="M">/articles/sediviz/infovis12/interaction.tex</path>
+<path
+   kind=""
+   action="M">/articles/sediviz/infovis12/introduction.tex</path>
+<path
+   kind=""
+   action="M">/articles/sediviz/infovis12/sedimentation.tex</path>
+<path
+   kind=""
+   action="M">/articles/sediviz/infovis12/exploration.tex</path>
+<path
+   kind=""
+   action="M">/articles/sediviz/infovis12/design.tex</path>
+<path
+   kind=""
+   action="M">/articles/sediviz/infovis12/sediviz.tex</path>
+</paths>
+<msg>update intro, case, design</msg>
+</logentry>
+<logentry
+   revision="9375">
+<author>anab</author>
+<date>2012-03-31T23:32:30.577215Z</date>
+<paths>
+<path
+   kind=""
+   action="M">/articles/uncertainLines/infovis2012/uncertainty.tex</path>
+</paths>
+<msg></msg>
+</logentry>
+<logentry
+   revision="9374">
+<author>anab</author>
+<date>2012-03-31T23:28:17.380193Z</date>
+<paths>
+<path
+   kind=""
+   action="M">/articles/uncertainLines/infovis2012/studiesDesign.tex</path>
+<path
+   kind=""
+   action="M">/articles/uncertainLines/infovis2012/intuitivnessStudy.tex</path>
+<path
+   kind=""
+   action="M">/articles/uncertainLines/infovis2012/levelsStudy.tex</path>
+</paths>
+<msg></msg>
+</logentry>
+<logentry
+   revision="9371">
+<author>isenberg</author>
+<date>2012-03-31T23:14:21.616697Z</date>
+<paths>
+<path
+   kind=""
+   action="M">/articles/uncertainLines/infovis2012/conclusion.tex</path>
+<path
+   kind=""
+   action="M">/articles/uncertainLines/infovis2012/discussion.tex</path>
+<path
+   kind=""
+   action="M">/articles/uncertainLines/infovis2012/uncertainty.tex</path>
+</paths>
+<msg></msg>
+</logentry>
+<logentry
+   revision="9368">
+<author>boukheli</author>
+<date>2012-03-31T22:52:48.311492Z</date>
+<paths>
+<path
+   kind=""
+   action="M">/articles/uncertainLines/infovis2012/preferenceStudy.tex</path>
+<path
+   kind=""
+   action="M">/articles/uncertainLines/infovis2012/intuitivnessStudy.tex</path>
+</paths>
+<msg></msg>
+</logentry>
+<logentry
+   revision="9364">
+<author>rvuillemot</author>
+<date>2012-03-31T22:39:41.462374Z</date>
+<paths>
+<path
+   kind=""
+   action="M">/articles/sediviz/infovis12/introduction.tex</path>
+<path
+   kind=""
+   action="M">/articles/sediviz/infovis12/exploration.tex</path>
+<path
+   kind=""
+   action="M">/articles/sediviz/infovis12/design.tex</path>
+</paths>
+<msg>misc updates</msg>
+</logentry>
+<logentry
+   revision="9363">
+<author>huron</author>
+<date>2012-03-31T22:36:05.582076Z</date>
+<paths>
+<path
+   kind=""
+   action="M">/articles/sediviz/infovis12/sediviz.tex</path>
+</paths>
+<msg>up</msg>
+</logentry>
+<logentry
+   revision="9362">
+<author>anab</author>
+<date>2012-03-31T22:32:01.143888Z</date>
+<paths>
+<path
+   kind=""
+   action="M">/articles/uncertainLines/infovis2012/drawingMethod.tex</path>
+</paths>
+<msg></msg>
+</logentry>
+<logentry
+   revision="9361">
+<author>anab</author>
+<date>2012-03-31T22:28:02.841286Z</date>
+<paths>
+<path
+   kind=""
+   action="M">/articles/uncertainLines/infovis2012/studiesDesign.tex</path>
+<path
+   kind=""
+   action="M">/articles/uncertainLines/infovis2012/drawingMethod.tex</path>
+</paths>
+<msg></msg>
+</logentry>
+<logentry
+   revision="9360">
+<author>isenberg</author>
+<date>2012-03-31T22:23:07.120625Z</date>
+<paths>
+<path
+   kind=""
+   action="M">/articles/uncertainLines/infovis2012/discussion.tex</path>
+</paths>
+<msg></msg>
+</logentry>
+<logentry
+   revision="9359">
+<author>isenberg</author>
+<date>2012-03-31T22:16:10.341869Z</date>
+<paths>
+<path
+   kind=""
+   action="M">/articles/uncertainLines/infovis2012/preferenceStudy.tex</path>
+</paths>
+<msg></msg>
+</logentry>
+<logentry
+   revision="9358">
+<author>anab</author>
+<date>2012-03-31T22:12:57.406291Z</date>
+<paths>
+<path
+   kind=""
+   action="M">/articles/uncertainLines/infovis2012/studiesDesign.tex</path>
+</paths>
+<msg></msg>
+</logentry>
+<logentry
+   revision="9357">
+<author>boukheli</author>
+<date>2012-03-31T22:12:05.347104Z</date>
+<paths>
+<path
+   kind=""
+   action="M">/articles/uncertainLines/infovis2012/uncertainty.tex</path>
+</paths>
+<msg></msg>
+</logentry>
+<logentry
+   revision="9356">
+<author>isenberg</author>
+<date>2012-03-31T22:09:24.721072Z</date>
+<paths>
+<path
+   kind=""
+   action="M">/articles/uncertainLines/infovis2012/preferenceStudy.tex</path>
+</paths>
+<msg></msg>
+</logentry>
+<logentry
+   revision="9355">
+<author>rvuillemot</author>
+<date>2012-03-31T22:07:57.272126Z</date>
+<paths>
+<path
+   kind=""
+   action="M">/articles/sediviz/infovis12/cases.tex</path>
+<path
+   kind=""
+   action="M">/articles/sediviz/infovis12/introduction.tex</path>
+<path
+   kind=""
+   action="M">/articles/sediviz/infovis12/sedimentation.tex</path>
+<path
+   kind=""
+   action="M">/articles/sediviz/infovis12/exploration.tex</path>
+<path
+   kind=""
+   action="M">/articles/sediviz/infovis12/refs/sediviz.bib</path>
+<path
+   kind=""
+   action="M">/articles/sediviz/infovis12/design.tex</path>
+<path
+   kind=""
+   action="M">/articles/sediviz/infovis12/sediviz.tex</path>
+</paths>
+<msg>misc updates</msg>
+</logentry>
+<logentry
+   revision="9353">
+<author>huron</author>
+<date>2012-03-31T22:00:51.027232Z</date>
+<paths>
+<path
+   kind=""
+   action="M">/articles/sediviz/infovis12/design.tex</path>
+</paths>
+<msg>up</msg>
+</logentry>
+<logentry
+   revision="9352">
+<author>huron</author>
+<date>2012-03-31T22:00:00.272087Z</date>
+<paths>
+<path
+   kind=""
+   action="M">/articles/sediviz/infovis12/exploration.tex</path>
+<path
+   kind=""
+   action="M">/articles/sediviz/infovis12/design.tex</path>
+</paths>
+<msg>generative clean</msg>
+</logentry>
+<logentry
+   revision="9351">
+<author>isenberg</author>
+<date>2012-03-31T21:59:00.942303Z</date>
+<paths>
+<path
+   kind=""
+   action="M">/articles/uncertainLines/infovis2012/preferenceStudy.tex</path>
+</paths>
+<msg></msg>
+</logentry>
+<logentry
+   revision="9350">
+<author>boukheli</author>
+<date>2012-03-31T21:57:28.891402Z</date>
+<paths>
+<path
+   kind=""
+   action="M">/articles/uncertainLines/infovis2012/discussion.tex</path>
+</paths>
+<msg></msg>
+</logentry>
+<logentry
+   revision="9349">
+<author>isenberg</author>
+<date>2012-03-31T21:57:17.162051Z</date>
+<paths>
+<path
+   kind=""
+   action="M">/articles/uncertainLines/infovis2012/preferenceStudy.tex</path>
+<path
+   kind=""
+   action="M">/articles/uncertainLines/infovis2012/levelsStudy.tex</path>
+</paths>
+<msg></msg>
+</logentry>
+<logentry
+   revision="9347">
+<author>isenberg</author>
+<date>2012-03-31T21:52:32.321403Z</date>
+<paths>
+<path
+   kind=""
+   action="M">/articles/uncertainLines/infovis2012/preferenceStudy.tex</path>
+<path
+   kind=""
+   action="M">/articles/uncertainLines/infovis2012/intuitivnessStudy.tex</path>
+</paths>
+<msg></msg>
+</logentry>
+<logentry
+   revision="9346">
+<author>isenberg</author>
+<date>2012-03-31T21:41:05.182353Z</date>
+<paths>
+<path
+   kind=""
+   action="M">/articles/uncertainLines/infovis2012/uncertainty.tex</path>
+</paths>
+<msg></msg>
+</logentry>
+<logentry
+   revision="9345">
+<author>rvuillemot</author>
+<date>2012-03-31T21:40:53.697646Z</date>
+<paths>
+<path
+   kind=""
+   action="M">/articles/sediviz/infovis12/cases.tex</path>
+<path
+   kind=""
+   action="M">/articles/sediviz/infovis12/sedimentation.tex</path>
+<path
+   kind=""
+   action="M">/articles/sediviz/infovis12/exploration.tex</path>
+</paths>
+<msg>updates further again</msg>
+</logentry>
+<logentry
+   revision="9344">
+<author>huron</author>
+<date>2012-03-31T21:36:13.234219Z</date>
+<paths>
+<path
+   kind=""
+   action="M">/articles/sediviz/infovis12/refs/sediviz.bib</path>
+<path
+   kind=""
+   action="M">/articles/sediviz/infovis12/design.tex</path>
+<path
+   kind=""
+   action="M">/articles/sediviz/infovis12/img/generative.png</path>
+</paths>
+<msg>generative</msg>
+</logentry>
+<logentry
+   revision="9343">
+<author>isenberg</author>
+<date>2012-03-31T21:35:29.883115Z</date>
+<paths>
+<path
+   kind=""
+   action="M">/articles/uncertainLines/infovis2012/uncertainty.tex</path>
+</paths>
+<msg></msg>
+</logentry>
+<logentry
+   revision="9342">
+<author>anab</author>
+<date>2012-03-31T21:31:23.411825Z</date>
+<paths>
+<path
+   kind=""
+   action="M">/articles/uncertainLines/infovis2012/discussion.tex</path>
+</paths>
+<msg></msg>
+</logentry>
+<logentry
+   revision="9341">
+<author>rvuillemot</author>
+<date>2012-03-31T21:25:06.866071Z</date>
+<paths>
+<path
+   kind=""
+   action="M">/articles/sediviz/infovis12/cases.tex</path>
+<path
+   kind=""
+   action="A">/articles/sediviz/infovis12/img/SediViz-teaser.png</path>
+<path
+   kind=""
+   action="M">/articles/sediviz/infovis12/sedimentation.tex</path>
+<path
+   kind=""
+   action="M">/articles/sediviz/infovis12/exploration.tex</path>
+</paths>
+<msg>updates further</msg>
+</logentry>
+<logentry
+   revision="9340">
+<author>boukheli</author>
+<date>2012-03-31T21:24:29.155038Z</date>
+<paths>
+<path
+   kind=""
+   action="M">/articles/uncertainLines/infovis2012/preferenceStudy.tex</path>
+</paths>
+<msg></msg>
+</logentry>
+<logentry
+   revision="9338">
+<author>boukheli</author>
+<date>2012-03-31T21:19:37.385434Z</date>
+<paths>
+<path
+   kind=""
+   action="M">/articles/uncertainLines/infovis2012/levelsStudy.tex</path>
+</paths>
+<msg></msg>
+</logentry>
+<logentry
+   revision="9337">
+<author>boukheli</author>
+<date>2012-03-31T21:15:14.469511Z</date>
+<paths>
+<path
+   kind=""
+   action="M">/articles/uncertainLines/infovis2012/intuitivnessStudy.tex</path>
+</paths>
+<msg></msg>
+</logentry>
+<logentry
+   revision="9336">
+<author>anab</author>
+<date>2012-03-31T21:10:08.584429Z</date>
+<paths>
+<path
+   kind=""
+   action="M">/articles/uncertainLines/infovis2012/figures/gray-matrix.pdf</path>
+<path
+   kind=""
+   action="M">/articles/uncertainLines/infovis2012/discussion.tex</path>
+<path
+   kind=""
+   action="M">/articles/uncertainLines/infovis2012/uncertainty.tex</path>
+</paths>
+<msg></msg>
+</logentry>
+<logentry
+   revision="9335">
+<author>rvuillemot</author>
+<date>2012-03-31T21:01:35.922376Z</date>
+<paths>
+<path
+   kind=""
+   action="M">/articles/sediviz/infovis12/cases.tex</path>
+<path
+   kind=""
+   action="M">/articles/sediviz/infovis12/sedimentation.tex</path>
+<path
+   kind=""
+   action="M">/articles/sediviz/infovis12/design.tex</path>
+<path
+   kind=""
+   action="M">/articles/sediviz/infovis12/sediviz.tex</path>
+</paths>
+<msg>update design space</msg>
+</logentry>
+<logentry
+   revision="9334">
+<author>boukheli</author>
+<date>2012-03-31T20:58:36.137600Z</date>
+<paths>
+<path
+   kind=""
+   action="M">/articles/uncertainLines/infovis2012/intuitivnessStudy.tex</path>
+</paths>
+<msg></msg>
+</logentry>
+<logentry
+   revision="9333">
+<author>boukheli</author>
+<date>2012-03-31T20:52:57.051849Z</date>
+<paths>
+<path
+   kind=""
+   action="M">/articles/uncertainLines/infovis2012/intuitivnessStudy.tex</path>
+</paths>
+<msg></msg>
+</logentry>
+<logentry
+   revision="9329">
+<author>boukheli</author>
+<date>2012-03-31T20:39:49.866436Z</date>
+<paths>
+<path
+   kind=""
+   action="M">/articles/uncertainLines/infovis2012/uncertainty.tex</path>
+</paths>
+<msg></msg>
+</logentry>
+<logentry
+   revision="9328">
+<author>boukheli</author>
+<date>2012-03-31T20:39:42.794837Z</date>
+<paths>
+<path
+   kind=""
+   action="M">/articles/uncertainLines/infovis2012/studiesDesign.tex</path>
+</paths>
+<msg></msg>
+</logentry>
+<logentry
+   revision="9327">
+<author>boukheli</author>
+<date>2012-03-31T20:39:36.240604Z</date>
+<paths>
+<path
+   kind=""
+   action="M">/articles/uncertainLines/infovis2012/related.tex</path>
+</paths>
+<msg></msg>
+</logentry>
+<logentry
+   revision="9326">
+<author>boukheli</author>
+<date>2012-03-31T20:39:30.343244Z</date>
+<paths>
+<path
+   kind=""
+   action="M">/articles/uncertainLines/infovis2012/drawingMethod.tex</path>
+</paths>
+<msg></msg>
+</logentry>
+<logentry
+   revision="9325">
+<author>anab</author>
+<date>2012-03-31T20:29:18.935821Z</date>
+<paths>
+<path
+   kind=""
+   action="M">/articles/uncertainLines/infovis2012/levelsStudy.tex</path>
+</paths>
+<msg></msg>
+</logentry>
+<logentry
+   revision="9322">
+<author>bbach</author>
+<date>2012-03-31T20:20:42.763189Z</date>
+<paths>
+<path
+   kind=""
+   action="A">/articles/graphapi/infovis2012/TemporalNavigation.mov</path>
+<path
+   kind=""
+   action="A">/articles/graphapi/infovis2012/TemporalNavigation.pdf</path>
+</paths>
+<msg></msg>
+</logentry>
+<logentry
+   revision="9321">
+<author>huron</author>
+<date>2012-03-31T20:17:42.560016Z</date>
+<paths>
+<path
+   kind=""
+   action="M">/articles/sediviz/infovis12/related.tex</path>
+<path
+   kind=""
+   action="M">/articles/sediviz/infovis12/refs/sediviz.bib</path>
+</paths>
+<msg>correction bib</msg>
+</logentry>
+<logentry
+   revision="9320">
+<author>bbach</author>
+<date>2012-03-31T20:14:04.944358Z</date>
+<paths>
+<path
+   kind=""
+   action="M">/articles/graphapi/infovis2012/chapters/design.tex</path>
+<path
+   kind=""
+   action="M">/articles/graphapi/infovis2012/chapters/eva.tex</path>
+<path
+   kind=""
+   action="M">/articles/graphapi/infovis2012/main.tex</path>
+</paths>
+<msg></msg>
+</logentry>
+<logentry
+   revision="9319">
+<author>huron</author>
+<date>2012-03-31T19:51:32.813842Z</date>
+<paths>
+<path
+   kind=""
+   action="M">/articles/sediviz/infovis12/cases.tex</path>
+</paths>
+<msg>up</msg>
+</logentry>
+<logentry
+   revision="9318">
+<author>huron</author>
+<date>2012-03-31T19:49:34.205792Z</date>
+<paths>
+<path
+   kind=""
+   action="M">/articles/sediviz/infovis12/design.tex</path>
+</paths>
+<msg>update illustration</msg>
+</logentry>
+<logentry
+   revision="9317">
+<author>huron</author>
+<date>2012-03-31T19:48:33.673105Z</date>
+<paths>
+<path
+   kind=""
+   action="M">/articles/sediviz/infovis12/img/minibarchart.png</path>
+</paths>
+<msg>update illustration</msg>
+</logentry>
+<logentry
+   revision="9316">
+<author>anab</author>
+<date>2012-03-31T19:47:53.733952Z</date>
+<paths>
+<path
+   kind=""
+   action="A">/articles/WallEncodings-article/submitted-paper213.pdf</path>
+</paths>
+<msg></msg>
+</logentry>
+<logentry
+   revision="9315">
+<author>anab</author>
+<date>2012-03-31T19:46:41.302711Z</date>
+<paths>
+<path
+   kind=""
+   action="M">/articles/WallEncodings-article/WallEncodings-article.tex</path>
+</paths>
+<msg></msg>
+</logentry>
+<logentry
+   revision="9314">
+<author>boukheli</author>
+<date>2012-03-31T19:42:29.690751Z</date>
+<paths>
+<path
+   kind=""
+   action="M">/articles/uncertainLines/infovis2012/discussion.tex</path>
+</paths>
+<msg></msg>
+</logentry>
+<logentry
+   revision="9313">
+<author>anab</author>
+<date>2012-03-31T19:33:44.537426Z</date>
+<paths>
+<path
+   kind=""
+   action="M">/articles/WallEncodings-article/Discussion.tex</path>
+<path
+   kind=""
+   action="M">/articles/WallEncodings-article/RelatedWork.tex</path>
+<path
+   kind=""
+   action="M">/articles/WallEncodings-article/NewStudyResults.tex</path>
+<path
+   kind=""
+   action="M">/articles/WallEncodings-article/NewWalkingStudyAndResults.tex</path>
+<path
+   kind=""
+   action="M">/articles/WallEncodings-article/Study.tex</path>
+<path
+   kind=""
+   action="M">/articles/WallEncodings-article/WallEncodings-article.tex</path>
+</paths>
+<msg></msg>
+</logentry>
+<logentry
+   revision="9311">
+<author>huron</author>
+<date>2012-03-31T19:32:08.902876Z</date>
+<paths>
+<path
+   kind=""
+   action="M">/articles/sediviz/infovis12/img/sediviz-states-design.png</path>
+</paths>
+<msg>update illustration</msg>
+</logentry>
+<logentry
+   revision="9310">
+<author>boukheli</author>
+<date>2012-03-31T19:26:22.080084Z</date>
+<paths>
+<path
+   kind=""
+   action="M">/articles/uncertainLines/infovis2012/conclusion.tex</path>
+<path
+   kind=""
+   action="M">/articles/uncertainLines/infovis2012/discussion.tex</path>
+<path
+   kind=""
+   action="M">/articles/uncertainLines/infovis2012/levelsStudy.tex</path>
+<path
+   kind=""
+   action="M">/articles/uncertainLines/infovis2012/uncertainty.tex</path>
+</paths>
+<msg></msg>
+</logentry>
+<logentry
+   revision="9309">
+<author>huron</author>
+<date>2012-03-31T19:16:36.210089Z</date>
+<paths>
+<path
+   kind=""
+   action="M">/articles/sediviz/infovis12/img/sediviz-states-design.png</path>
+</paths>
+<msg>update illustration</msg>
+</logentry>
+<logentry
+   revision="9308">
+<author>rvuillemot</author>
+<date>2012-03-31T19:15:56.836181Z</date>
+<paths>
+<path
+   kind=""
+   action="M">/articles/sediviz/infovis12/interaction.tex</path>
+<path
+   kind=""
+   action="M">/articles/sediviz/infovis12/sedimentation.tex</path>
+<path
+   kind=""
+   action="M">/articles/sediviz/infovis12/exploration.tex</path>
+<path
+   kind=""
+   action="M">/articles/sediviz/infovis12/vgtc.cls</path>
+<path
+   kind=""
+   action="M">/articles/sediviz/infovis12/implementation.tex</path>
+<path
+   kind=""
+   action="M">/articles/sediviz/infovis12/design.tex</path>
+<path
+   kind=""
+   action="M">/articles/sediviz/infovis12/sediviz.tex</path>
+</paths>
+<msg>misc updates</msg>
+</logentry>
+<logentry
+   revision="9307">
+<author>huron</author>
+<date>2012-03-31T19:07:08.392366Z</date>
+<paths>
+<path
+   kind=""
+   action="M">/articles/sediviz/infovis12/img/generative.png</path>
+</paths>
+<msg>update illustration</msg>
+</logentry>
+<logentry
+   revision="9306">
+<author>huron</author>
+<date>2012-03-31T18:51:18.570764Z</date>
+<paths>
+<path
+   kind=""
+   action="M">/articles/sediviz/infovis12/cases.tex</path>
+<path
+   kind=""
+   action="M">/articles/sediviz/infovis12/refs/sediviz.bib</path>
+</paths>
+<msg>social tv ref</msg>
+</logentry>
+<logentry
+   revision="9305">
+<author>rvuillemot</author>
+<date>2012-03-31T18:38:29.044815Z</date>
+<paths>
+<path
+   kind=""
+   action="M">/articles/sediviz/infovis12/related.tex</path>
+<path
+   kind=""
+   action="A">/articles/sediviz/infovis12/refs/bartram2003moticons.pdf</path>
+<path
+   kind=""
+   action="M">/articles/sediviz/infovis12/vgtc.cls</path>
+<path
+   kind=""
+   action="M">/articles/sediviz/infovis12/design.tex</path>
+<path
+   kind=""
+   action="M">/articles/sediviz/infovis12/sediviz.tex</path>
+</paths>
+<msg>adding last version of vgtc.cls + authors + updates</msg>
+</logentry>
+<logentry
+   revision="9304">
+<author>pisenberg</author>
+<date>2012-03-31T18:35:51.086151Z</date>
+<paths>
+<path
+   kind=""
+   action="A">/articles/WallEncodings-article/figures/LegendHeatMap2_Study2_Dummy.pdf</path>
+<path
+   kind=""
+   action="A">/articles/WallEncodings-article/figures/LegendHeatMap2_Study2_Top.pdf</path>
+<path
+   kind=""
+   action="A">/articles/WallEncodings-article/figures/LegendHeatMap2_Study2_Bottom.pdf</path>
+</paths>
+<msg></msg>
+</logentry>
+<logentry
+   revision="9302">
+<author>huron</author>
+<date>2012-03-31T18:27:19.745983Z</date>
+<paths>
+<path
+   kind=""
+   action="M">/articles/sediviz/infovis12/cases.tex</path>
+</paths>
+<msg>up</msg>
+</logentry>
+<logentry
+   revision="9301">
+<author>huron</author>
+<date>2012-03-31T18:22:21.058910Z</date>
+<paths>
+<path
+   kind=""
+   action="M">/articles/sediviz/infovis12/cases.tex</path>
+</paths>
+<msg>up</msg>
+</logentry>
+<logentry
+   revision="9300">
+<author>rvuillemot</author>
+<date>2012-03-31T18:15:53.154613Z</date>
+<paths>
+<path
+   kind=""
+   action="M">/articles/sediviz/infovis12/img/strate-alignment.png</path>
+<path
+   kind=""
+   action="M">/articles/sediviz/infovis12/interaction.tex</path>
+<path
+   kind=""
+   action="M">/articles/sediviz/infovis12/related.tex</path>
+<path
+   kind=""
+   action="M">/articles/sediviz/infovis12/sedimentation.tex</path>
+<path
+   kind=""
+   action="M">/articles/sediviz/infovis12/exploration.tex</path>
+<path
+   kind=""
+   action="M">/articles/sediviz/infovis12/img/strata-design.png</path>
+<path
+   kind=""
+   action="M">/articles/sediviz/infovis12/implementation.tex</path>
+<path
+   kind=""
+   action="M">/articles/sediviz/infovis12/img/details-context.png</path>
+<path
+   kind=""
+   action="M">/articles/sediviz/infovis12/refs/sediviz.bib</path>
+<path
+   kind=""
+   action="M">/articles/sediviz/infovis12/design.tex</path>
+<path
+   kind=""
+   action="M">/articles/sediviz/infovis12/img/animated-transitions.png</path>
+</paths>
+<msg></msg>
+</logentry>
+<logentry
+   revision="9298">
+<author>huron</author>
+<date>2012-03-31T18:14:45.454059Z</date>
+<paths>
+<path
+   kind=""
+   action="M">/articles/sediviz/infovis12/refs/sediviz.bib</path>
+</paths>
+<msg>cuvier ref</msg>
+</logentry>
+<logentry
+   revision="9297">
+<author>huron</author>
+<date>2012-03-31T18:14:02.592938Z</date>
+<paths>
+<path
+   kind=""
+   action="M">/articles/sediviz/infovis12/refs/sediviz.bib</path>
+</paths>
+<msg>cuvier ref</msg>
+</logentry>
+<logentry
+   revision="9295">
+<author>boukheli</author>
+<date>2012-03-31T18:00:46.442225Z</date>
+<paths>
+<path
+   kind=""
+   action="M">/articles/uncertainLines/infovis2012/intuitivnessStudy.tex</path>
+<path
+   kind=""
+   action="M">/articles/uncertainLines/infovis2012/levelsStudy.tex</path>
+</paths>
+<msg></msg>
+</logentry>
+<logentry
+   revision="9294">
+<author>huron</author>
+<date>2012-03-31T17:58:05.738799Z</date>
+<paths>
+<path
+   kind=""
+   action="M">/articles/sediviz/infovis12/sedimentation.tex</path>
+</paths>
+<msg>up</msg>
+</logentry>
+<logentry
+   revision="9293">
+<author>huron</author>
+<date>2012-03-31T17:52:14.645578Z</date>
+<paths>
+<path
+   kind=""
+   action="M">/articles/sediviz/infovis12/sedimentation.tex</path>
+</paths>
+<msg>up</msg>
+</logentry>
+<logentry
+   revision="9292">
+<author>boukheli</author>
+<date>2012-03-31T17:50:40.135342Z</date>
+<paths>
+<path
+   kind=""
+   action="M">/articles/uncertainLines/infovis2012/studiesDesign.tex</path>
+</paths>
+<msg></msg>
+</logentry>
+<logentry
+   revision="9291">
+<author>boukheli</author>
+<date>2012-03-31T17:50:32.372974Z</date>
+<paths>
+<path
+   kind=""
+   action="M">/articles/uncertainLines/infovis2012/drawingMethod.tex</path>
+</paths>
+<msg></msg>
+</logentry>
+<logentry
+   revision="9290">
+<author>huron</author>
+<date>2012-03-31T17:48:18.791806Z</date>
+<paths>
+<path
+   kind=""
+   action="M">/articles/sediviz/infovis12/design.tex</path>
+</paths>
+<msg>up</msg>
+</logentry>
+<logentry
+   revision="9289">
+<author>boukheli</author>
+<date>2012-03-31T17:41:19.692569Z</date>
+<paths>
+<path
+   kind=""
+   action="M">/articles/uncertainLines/infovis2012/figures/grayscalePlot.png</path>
+</paths>
+<msg></msg>
+</logentry>
+<logentry
+   revision="9288">
+<author>boukheli</author>
+<date>2012-03-31T17:35:19.150149Z</date>
+<paths>
+<path
+   kind=""
+   action="M">/articles/uncertainLines/infovis2012/figures/grayscalePlot.png</path>
+</paths>
+<msg></msg>
+</logentry>
+<logentry
+   revision="9286">
+<author>anab</author>
+<date>2012-03-31T17:30:54.703197Z</date>
+<paths>
+<path
+   kind=""
+   action="M">/articles/uncertainLines/infovis2012/figures/dash-matrix.pdf</path>
+<path
+   kind=""
+   action="M">/articles/uncertainLines/infovis2012/figures/sketch-matrix.pdf</path>
+<path
+   kind=""
+   action="M">/articles/uncertainLines/infovis2012/figures/gray-matrix.pdf</path>
+<path
+   kind=""
+   action="M">/articles/uncertainLines/infovis2012/figures/blur-matrix.pdf</path>
+</paths>
+<msg></msg>
+</logentry>
+<logentry
+   revision="9285">
+<author>boukheli</author>
+<date>2012-03-31T17:27:42.031148Z</date>
+<paths>
+<path
+   kind=""
+   action="M">/articles/uncertainLines/infovis2012/uncertainty.tex</path>
+</paths>
+<msg></msg>
+</logentry>
+<logentry
+   revision="9284">
+<author>boukheli</author>
+<date>2012-03-31T17:27:34.492576Z</date>
+<paths>
+<path
+   kind=""
+   action="M">/articles/uncertainLines/infovis2012/related.tex</path>
+</paths>
+<msg></msg>
+</logentry>
+<logentry
+   revision="9283">
+<author>boukheli</author>
+<date>2012-03-31T17:27:13.698541Z</date>
+<paths>
+<path
+   kind=""
+   action="M">/articles/uncertainLines/infovis2012/intuitivnessStudy.tex</path>
+</paths>
+<msg></msg>
+</logentry>
+<logentry
+   revision="9282">
+<author>isenberg</author>
+<date>2012-03-31T17:24:41.120416Z</date>
+<paths>
+<path
+   kind=""
+   action="M">/articles/uncertainLines/infovis2012/levelsStudy.tex</path>
+</paths>
+<msg></msg>
+</logentry>
+<logentry
+   revision="9281">
+<author>huron</author>
+<date>2012-03-31T17:19:14.882052Z</date>
+<paths>
+<path
+   kind=""
+   action="M">/articles/sediviz/infovis12/cases.tex</path>
+</paths>
+<msg>up</msg>
+</logentry>
+<logentry
+   revision="9280">
+<author>isenberg</author>
+<date>2012-03-31T17:17:52.269879Z</date>
+<paths>
+<path
+   kind=""
+   action="M">/articles/uncertainLines/infovis2012/studiesDesign.tex</path>
+<path
+   kind=""
+   action="M">/articles/uncertainLines/infovis2012/levelsStudy.tex</path>
+</paths>
+<msg></msg>
+</logentry>
+<logentry
+   revision="9279">
+<author>boukheli</author>
+<date>2012-03-31T17:10:13.443106Z</date>
+<paths>
+<path
+   kind=""
+   action="A">/articles/uncertainLines/infovis2012/figures/tree.png</path>
+<path
+   kind=""
+   action="M">/articles/uncertainLines/infovis2012/intuitivnessStudy.tex</path>
+<path
+   kind=""
+   action="M">/articles/uncertainLines/infovis2012/uncertainty.bib</path>
+<path
+   kind=""
+   action="A">/articles/uncertainLines/infovis2012/figures/map.PNG</path>
+</paths>
+<msg></msg>
+</logentry>
+<logentry
+   revision="9278">
+<author>anab</author>
+<date>2012-03-31T17:01:59.134454Z</date>
+<paths>
+<path
+   kind=""
+   action="M">/articles/uncertainLines/infovis2012/preferenceStudy.tex</path>
+<path
+   kind=""
+   action="M">/articles/uncertainLines/infovis2012/discussion.tex</path>
+</paths>
+<msg></msg>
+</logentry>
+<logentry
+   revision="9276">
+<author>huron</author>
+<date>2012-03-31T16:48:23.839867Z</date>
+<paths>
+<path
+   kind=""
+   action="M">/articles/sediviz/infovis12/exploration.tex</path>
+<path
+   kind=""
+   action="M">/articles/sediviz/infovis12/implementation.tex</path>
+<path
+   kind=""
+   action="M">/articles/sediviz/infovis12/design.tex</path>
+</paths>
+<msg>up</msg>
+</logentry>
+<logentry
+   revision="9275">
+<author>isenberg</author>
+<date>2012-03-31T16:21:49.483532Z</date>
+<paths>
+<path
+   kind=""
+   action="M">/articles/uncertainLines/infovis2012/studiesDesign.tex</path>
+</paths>
+<msg></msg>
+</logentry>
+<logentry
+   revision="9274">
+<author>anab</author>
+<date>2012-03-31T16:18:52.988953Z</date>
+<paths>
+<path
+   kind=""
+   action="M">/articles/uncertainLines/infovis2012/levelsStudy.tex</path>
+<path
+   kind=""
+   action="M">/articles/uncertainLines/infovis2012/uncertainty.tex</path>
+</paths>
+<msg></msg>
+</logentry>
+<logentry
+   revision="9273">
+<author>boukheli</author>
+<date>2012-03-31T16:13:07.726051Z</date>
+<paths>
+<path
+   kind=""
+   action="M">/articles/uncertainLines/infovis2012/studiesDesign.tex</path>
+</paths>
+<msg></msg>
+</logentry>
+<logentry
+   revision="9272">
+<author>rvuillemot</author>
+<date>2012-03-31T16:08:49.935994Z</date>
+<paths>
+<path
+   kind=""
+   action="M">/articles/sediviz/infovis12/interaction.tex</path>
+<path
+   kind=""
+   action="M">/articles/sediviz/infovis12/related.tex</path>
+<path
+   kind=""
+   action="M">/articles/sediviz/infovis12/exploration.tex</path>
+<path
+   kind=""
+   action="M">/articles/sediviz/infovis12/refs/sediviz.bib</path>
+<path
+   kind=""
+   action="M">/articles/sediviz/infovis12/sediviz.tex</path>
+</paths>
+<msg>related work updates</msg>
+</logentry>
+<logentry
+   revision="9271">
+<author>huron</author>
+<date>2012-03-31T16:05:00.837439Z</date>
+<paths>
+<path
+   kind=""
+   action="M">/articles/sediviz/infovis12/design.tex</path>
+</paths>
+<msg>adaptation</msg>
+</logentry>
+<logentry
+   revision="9270">
+<author>isenberg</author>
+<date>2012-03-31T16:04:51.458796Z</date>
+<paths>
+<path
+   kind=""
+   action="M">/articles/uncertainLines/infovis2012/drawingMethod.tex</path>
+<path
+   kind=""
+   action="M">/articles/uncertainLines/infovis2012/uncertainty.tex</path>
+</paths>
+<msg></msg>
+</logentry>
+<logentry
+   revision="9269">
+<author>pisenberg</author>
+<date>2012-03-31T16:01:06.613173Z</date>
+<paths>
+<path
+   kind=""
+   action="M">/articles/WallEncodings-article/Discussion.tex</path>
+<path
+   kind=""
+   action="M">/articles/WallEncodings-article/RelatedWork.tex</path>
+<path
+   kind=""
+   action="M">/articles/WallEncodings-article/NewStudyResults.tex</path>
+<path
+   kind=""
+   action="M">/articles/WallEncodings-article/NewWalkingStudyAndResults.tex</path>
+<path
+   kind=""
+   action="M">/articles/WallEncodings-article/WallEncodings.bib</path>
+<path
+   kind=""
+   action="M">/articles/WallEncodings-article/Study.tex</path>
+<path
+   kind=""
+   action="M">/articles/WallEncodings-article/WallEncodings-article.tex</path>
+</paths>
+<msg></msg>
+</logentry>
+<logentry
+   revision="9268">
+<author>huron</author>
+<date>2012-03-31T16:00:54.931797Z</date>
+<paths>
+<path
+   kind=""
+   action="M">/articles/sediviz/infovis12/design.tex</path>
+</paths>
+<msg>adaptation</msg>
+</logentry>
+<logentry
+   revision="9267">
+<author>pisenberg</author>
+<date>2012-03-31T15:35:42.309853Z</date>
+<paths>
+<path
+   kind=""
+   action="M">/articles/WallEncodings-article/Discussion.tex</path>
+<path
+   kind=""
+   action="M">/articles/WallEncodings-article/RelatedWork.tex</path>
+<path
+   kind=""
+   action="M">/articles/WallEncodings-article/NewStudyResults.tex</path>
+<path
+   kind=""
+   action="M">/articles/WallEncodings-article/NewWalkingStudyAndResults.tex</path>
+<path
+   kind=""
+   action="A">/articles/WallEncodings-article/figures/MovingStrategies.pdf</path>
+<path
+   kind=""
+   action="M">/articles/WallEncodings-article/WallEncodings-article.tex</path>
+</paths>
+<msg></msg>
+</logentry>
+<logentry
+   revision="9266">
+<author>boukheli</author>
+<date>2012-03-31T15:30:36.946257Z</date>
+<paths>
+<path
+   kind=""
+   action="M">/articles/uncertainLines/infovis2012/studiesDesign.tex</path>
+<path
+   kind=""
+   action="A">/articles/uncertainLines/infovis2012/figures/scales_old.png</path>
+<path
+   kind=""
+   action="A">/articles/uncertainLines/infovis2012/figures/sketchScale.png</path>
+</paths>
+<msg></msg>
+</logentry>
+<logentry
+   revision="9264">
+<author>boukheli</author>
+<date>2012-03-31T15:20:16.225639Z</date>
+<paths>
+<path
+   kind=""
+   action="M">/articles/uncertainLines/infovis2012/figures/scales.png</path>
+</paths>
+<msg></msg>
+</logentry>
+<logentry
+   revision="9263">
+<author>boukheli</author>
+<date>2012-03-31T15:20:01.208938Z</date>
+<paths>
+<path
+   kind=""
+   action="M">/articles/uncertainLines/infovis2012/drawingMethod.tex</path>
+</paths>
+<msg></msg>
+</logentry>
+<logentry
+   revision="9261">
+<author>fekete</author>
+<date>2012-03-31T15:09:04.598849Z</date>
+<paths>
+<path
+   kind=""
+   action="M">/articles/ProxiVis/infovis2012/tex/improvement.tex</path>
+</paths>
+<msg>fix improvement</msg>
+</logentry>
+<logentry
+   revision="9259">
+<author>fekete</author>
+<date>2012-03-31T15:01:01.849200Z</date>
+<paths>
+<path
+   kind=""
+   action="M">/articles/ProxiVis/infovis2012/tex/design.tex</path>
+<path
+   kind=""
+   action="M">/articles/ProxiVis/infovis2012/tex/conclusion.tex</path>
+<path
+   kind=""
+   action="M">/articles/ProxiVis/infovis2012/tex/background.tex</path>
+<path
+   kind=""
+   action="M">/articles/ProxiVis/infovis2012/tex/introduction.tex</path>
+<path
+   kind=""
+   action="M">/articles/ProxiVis/infovis2012/tex/results.tex</path>
+<path
+   kind=""
+   action="M">/articles/ProxiVis/infovis2012/evalproj.tex</path>
+<path
+   kind=""
+   action="M">/articles/ProxiVis/infovis2012/tex/discussion.tex</path>
+<path
+   kind=""
+   action="M">/articles/ProxiVis/infovis2012/tex/improvement.tex</path>
+</paths>
+<msg>submitted</msg>
+</logentry>
+<logentry
+   revision="9258">
+<author>huron</author>
+<date>2012-03-31T14:46:11.190882Z</date>
+<paths>
+<path
+   kind=""
+   action="M">/articles/sediviz/infovis12/sedimentation.tex</path>
+<path
+   kind=""
+   action="M">/articles/sediviz/infovis12/img/barChartExample-cut.png</path>
+</paths>
+<msg>sedmientation tunning</msg>
+</logentry>
+<logentry
+   revision="9256">
+<author>anab</author>
+<date>2012-03-31T14:38:22.362891Z</date>
+<paths>
+<path
+   kind=""
+   action="M">/articles/uncertainLines/infovis2012/intuitivnessStudy.tex</path>
+</paths>
+<msg></msg>
+</logentry>
+<logentry
+   revision="9255">
+<author>rvuillemot</author>
+<date>2012-03-31T14:28:15.996144Z</date>
+<paths>
+<path
+   kind=""
+   action="M">/articles/sediviz/infovis12/exploration.tex</path>
+<path
+   kind=""
+   action="M">/articles/sediviz/infovis12/design.tex</path>
+</paths>
+<msg>maj design</msg>
+</logentry>
+<logentry
+   revision="9254">
+<author>fekete</author>
+<date>2012-03-31T14:25:14.301211Z</date>
+<paths>
+<path
+   kind=""
+   action="M">/articles/ProxiVis/infovis2012/tex/conclusion.tex</path>
+<path
+   kind=""
+   action="M">/articles/ProxiVis/infovis2012/tex/results.tex</path>
+<path
+   kind=""
+   action="M">/articles/ProxiVis/infovis2012/evalproj.tex</path>
+<path
+   kind=""
+   action="M">/articles/ProxiVis/infovis2012/tex/discussion.tex</path>
+<path
+   kind=""
+   action="M">/articles/ProxiVis/infovis2012/tex/improvement.tex</path>
+</paths>
+<msg>almost done</msg>
+</logentry>
+<logentry
+   revision="9253">
+<author>anab</author>
+<date>2012-03-31T14:25:04.352161Z</date>
+<paths>
+<path
+   kind=""
+   action="M">/articles/uncertainLines/infovis2012/intuitivnessStudy.tex</path>
+</paths>
+<msg></msg>
+</logentry>
+<logentry
+   revision="9252">
+<author>huron</author>
+<date>2012-03-31T14:19:01.828444Z</date>
+<paths>
+<path
+   kind=""
+   action="M">/articles/sediviz/infovis12/exploration.tex</path>
+</paths>
+<msg>move generatve illust</msg>
+</logentry>
+<logentry
+   revision="9251">
+<author>huron</author>
+<date>2012-03-31T14:17:30.312367Z</date>
+<paths>
+<path
+   kind=""
+   action="M">/articles/sediviz/infovis12/exploration.tex</path>
+<path
+   kind=""
+   action="M">/articles/sediviz/infovis12/design.tex</path>
+</paths>
+<msg>move generatve illust</msg>
+</logentry>
+<logentry
+   revision="9250">
+<author>huron</author>
+<date>2012-03-31T14:15:35.709939Z</date>
+<paths>
+<path
+   kind=""
+   action="M">/articles/sediviz/infovis12/cases.tex</path>
+</paths>
+<msg>bubble t tv</msg>
+</logentry>
+<logentry
+   revision="9249">
+<author>huron</author>
+<date>2012-03-31T14:13:59.747468Z</date>
+<paths>
+<path
+   kind=""
+   action="M">/articles/sediviz/infovis12/cases.tex</path>
+</paths>
+<msg>bubble t tv</msg>
+</logentry>
+</log>

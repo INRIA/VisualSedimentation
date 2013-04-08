@@ -1,0 +1,61 @@
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <title>Simple Tweet reader</title>
+    <link type="text/css" href="sediMMS.css" rel="stylesheet"/>
+    <script type="text/javascript" src="../../js/_VisualSedimentation.js"></script>
+    <link href="jquery.tweet.css" rel="stylesheet"/>
+    <script src="jquery.tweet.js" charset="utf-8"></script>	
+    <style>
+        .query {
+            position: absolute;
+            margin-top:0; 
+            width:500px; 
+            height:90px;
+            overflow:hidden;
+            background-color:white;
+        }
+    </style>
+	</head>
+	<body>
+
+    <div id="container" style="position: absolute; margin-top:0; width:500px; height:90px;overflow:hidden;">
+		<div id="twitter" class="query" >Fetching Tweets..</div>
+	</div>
+  
+    <script>
+    var curr_tweet=0;
+    var tweets_to_display = Array();
+
+
+    // Periodically fetch new tweets
+    $.getJSON("../../datasets/one_tweet.json", function(data) {
+         
+        // add them to the tweets_to_display array
+           
+        tweets_to_display = data;
+    });
+
+
+    function display_tweet() {
+                $("#container")//.children(":first").hide('slow', function(){ $(this).remove(); });
+                        .children(":first").animate({height:'0px', width:'0px', marginTop:'200px', marginLeft:10+ "px"}, 500, 'linear', function() {
+                            $(this).remove();
+        })
+        .hide('slow', function(){ $(this).remove(); });
+
+        $("#container").prepend('<div id="twitter" class="query">'+tweets_to_display[0].text+'</div>');
+        console.log("appending", tweets_to_display[0].text)
+
+
+
+        tweets_to_display.shift();
+        setTimeout(function() {console.log(tweets_to_display.length, "tweets to display"); display_tweet(); }, 1000);
+    }
+
+    //display_tweet();
+    setTimeout(function() {console.log(tweets_to_display.length, "tweets to display"); display_tweet(); }, 1000);
+
+    </script>
+  </body>   
+</html>
