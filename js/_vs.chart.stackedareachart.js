@@ -62,6 +62,7 @@ $.fn._vs.chart.StackedAreaChart = function(_this,fn,options) {
                                                     }
         }
   
+  
         // Create lift 
        if(i<_this.settings.data.model.length){
           _this.chartPhySetup.grounds[i] = this.createMyChartBox (
@@ -70,7 +71,7 @@ $.fn._vs.chart.StackedAreaChart = function(_this,fn,options) {
                           _this.settings.chart.height+_this.settings.chart.y+_this.settings.sedimentation.aggregation.height,
                           colSize/2,
                           _this.settings.chart.height,
-                          "lift"+i,
+                          "lift",
                           "rgba(250,250,250,0)");
 
           // Move Lift to data

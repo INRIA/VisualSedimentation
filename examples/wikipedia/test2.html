@@ -1,0 +1,52 @@
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+
+
+    //test google feed 
+    // https://developers.google.com/feed/v1/devguide#hiworld
+    // world 
+    // national 
+    // business 
+    // technology 
+    // sports 
+    // entertainment 
+    // health 
+
+    // Wall street journal 
+    // Usa today 
+    // new york times 
+    // Los angeles times 
+    // Washington post 
+
+    google.load("feeds", "1");
+
+    function initialize() {
+
+      var feed = new google.feeds.Feed("http://fr.wikipedia.org/w/index.php?title=Les_Temps_difficiles&feed=atom&action=history");
+
+      feed.includeHistoricalEntries();
+      feed.setNumEntries(50);
+
+      feed.load(function(result) {
+        if (!result.error) {
+          console.log(result)
+          var container = document.getElementById("feed");
+          for (var i = 0; i < result.feed.entries.length; i++) {
+            var entry = result.feed.entries[i];
+            var div = document.createElement("div");
+            div.appendChild(document.createTextNode(entry.title));
+            container.appendChild(div);
+          }
+        }
+      });
+    }
+    google.setOnLoadCallback(initialize);
+
+    </script>
+  </head>
+  <body>
+    <div id="feed"></div>
+  </body>
+</html>

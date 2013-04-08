@@ -1,0 +1,185 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title> Wikipedia World Wide battle </title>
+    <script type="text/javascript" src="../lib/miniBuffer/dataPlayer.js"></script>
+    <script type="text/javascript" src="../lib/miniBuffer/miniBuffer2.js"></script>
+    <script type="text/javascript" src="../../js/_VisualSedimentation.js"></script>
+
+    <style>@import url(../../css/fan-of-mike-style.css);</style>
+   </head>
+   
+   <body>
+
+      <h1>Wikipedia Compare </h1>
+      
+      <!-- http://en.wikipedia.org/wiki/Special:Random -->
+
+      <!-- div container -->
+      <div id="msg">
+        Put two (or more) url of wikipedia article to compare their recent history edit :
+        <div>
+         page : <input id="page1" type="url" size="100" value="http://fr.wikipedia.org/wiki/Nicolas_Sarkozy"/><br>
+         page : <input id="page2" type="url" size="100" value="http://fr.wikipedia.org/wiki/Fran%C3%A7ois_Hollande" /><br>
+         page : <input id="page3" type="url" size="100"/><br>
+         page : <input id="page4" type="url" size="100"/><br>
+          <button type="button" class="css3button" onClick="startCompare()">compare</button>
+          <div id="load" style="visible:hiden;"> Please wait, ([*_*]) I'm loading the data ... </div>
+        </div>
+      </div>
+
+      <div id="myDemo"></div>
+      
+      
+      <!-- Create my visual sedimentation -->
+      <script type="text/javascript">
+        
+        var defaultUrls=[
+                        "http://fr.wikipedia.org/wiki/Nicolas_Sarkozy",
+                        "http://fr.wikipedia.org/wiki/Fran%C3%A7ois_Hollande",
+                        ]
+
+        var inputs  = ["page1","page2","page3","page4"]
+        var buffer  = []
+        var player  = []
+
+        var bufferSettingTemplate = {
+            // Query configuration
+            queryUrl:"http://rss.dev.fabelier.org/dq",
+            //queryUrl:"http://127.0.0.1:9616/dq",
+            queryParam:{url:null,nobuffer:Math.random()},
+            callback:true,
+            // data model 
+            idTocheck:"guid",
+            objectToBufferize:null,
+            delay:60*1000,    // Refresh, timing  
+            maxElement:1000, // not implemented yet
+            debug:true,
+            callback:{
+               update:function(e){
+                console.log("udpate url",e)
+              },
+              receive:function(e,self){
+                console.log("# miniBuffer : Callback receive : ",e.length," elements")
+                console.log(e)
+              },
+            }
+          }
+
+        function playerSettingTemplate (i) {
+          var template = { 
+            rate:1000,
+            callback:{}
+           } 
+          template.callback = function(e){
+               var size = Math.round(e.description.length/500)
+               console.log(e.title)
+               scene.addToken({
+                 category:i,
+                 size:size,
+                 author:e.author,
+                 label:e.title,
+                 link:e.link,
+               })
+               // Update legend
+               //$('#record').text((this.i+1)+" / "+e.length)
+             }
+           return template
+        }
+         
+
+        function startCompare(){
+          
+          console.log("flocculate")
+          scene.selectAll().flocculate()
+
+          for (var i = inputs.length - 1; i >= 0; i--) {
+
+            var urlInput = $("#"+inputs[i]).attr('value')
+            var urlRss   = encodeURIComponent(urlArticleToFeed(urlInput))
+
+            console.log(urlRss)
+            
+            // remove existing buffer and player 
+            if(buffer.length>0){ buffer=[] }
+
+            // create buffer setting 
+            // instance buffer object 
+            var bufferSetting = jQuery.extend(true, {}, bufferSettingTemplate);
+            bufferSetting.queryParam.url = urlRss
+            buffer[i] = new MiniBuffer(bufferSetting)  
+
+            // create player setting 
+            // instance player object 
+            var playerSetting = jQuery.extend(true, {}, playerSettingTemplate(i));
+            player[i] = new DataPlayer(buffer[i].getBuffer(), playerSetting)
+            // reload 
+
+          };
+        }
+
+
+        function cleanExisting(target){
+          for (var i = target.length - 1; i >= 0; i--) {
+            target[i]
+          };
+        }
+
+        function testURL(url){
+
+        }
+
+        function urlToTitle(url){
+          var article = url.substr(url.lastIndexOf("/")+1,url.length)
+          return article
+        }
+        function urlArticleToFeed (url){
+          // look at domain and article
+          var domain  = url.substr(7,2)
+          var article = url.substr(url.lastIndexOf("/")+1,url.length)
+          // delete anchor
+          if(article.search("#")!=-1) article = article.substr(0,article.lastIndexOf("#"))
+          // create new url folowing the pattern
+          var result = "http://"+domain+".wikipedia.org/w/index.php?title="+article+"&feed=atom&action=history";
+          console.log(result)
+          return result
+        }
+
+      // Visual Sedimentation Setting 
+      var setting = {
+            width:920,
+            height:500,
+            data:{
+               model:[
+                {label:"English"},
+                {label:"Deutch"},
+                {label:"French"},
+                {label:"Polish"},
+                {label:"Japanese"},
+              ],
+              stream:{
+                provider:'tokens',
+                refresh:1000,
+                now:-1,
+              },
+              sedimentation:{
+                token:{
+                  size:{original:5,
+                    minimum:10}
+                }
+              },
+              tokens:[]
+            },
+          options:{
+           layout:false,
+          }
+      }
+      // initialise it
+      var scene = $("#myDemo").vs(setting).data('visualSedimentation');
+
+
+
+      </script>
+
+  </body>   
+</html>

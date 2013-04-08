@@ -1,0 +1,233 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Birth and Death over the world today</title>
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-00706690-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+    <script type="text/javascript" src="../../js/_VisualSedimentation.js"></script>
+    <script type="text/javascript" src="../simple/custom_layout/_vs.chart.circlelayoutless.js"></script> 
+
+    <script type="text/javascript" src="../lib/utils.js"></script>
+    <style>@import url(../../css/fan-of-mike-style.css);</style>
+    <style>
+      .label{
+        position:relative;
+        float:left;
+        font-weight: 800;
+        padding-bottom: 10px;
+        text-align: center;
+      }
+      
+      .legend{
+        float:left;position:relative;text-align:left;
+      }
+
+      #suspensionMsg{
+       float:left;position:relative;text-align:left;width:800px; 
+      }
+
+      #population{
+        margin: 175px;
+        width:150;
+        height:150;
+        border:0px solid;
+        background-color: grey;
+        border-radius:75px;
+        -moz-border-radius:75px; /* Old Firefox */
+        z-index: 999;
+        position:absolute;
+      }
+      #birth,#death{
+        width:500;
+        text-align: center;
+        font-weight: bold;
+        font-size: 14px;
+      }
+      #death{
+        margin-top:500px 
+      }
+      #current{
+        margin: 175px;
+        width:150;
+        height:150;
+        padding-top: 70px;
+        width: 150px;
+        text-align: center;
+        color: black;
+        font-weight: bolder;
+        position:absolute;
+        z-index: 1000;
+      }
+
+    </style>
+  </head>
+    <!-- div container -->
+  
+  <header>‍
+    <a href="./">Overview</a>
+    <b><a style="margin-left:1em;" href="../index.html"> Examples</a></b>
+    <a style="margin-left:1em;" href="../../documentation/index.html">Documentation</a></b>
+    <a style="margin-left:1em;" href="https://github.com/INRIA/VisualSedimentation" target="_blank">Source</a>
+    <a style="margin-left:1em;" href="" target="_blank">Contact / Feedback</a>
+  </header>
+
+  <body>
+      <h1>Birth and death</h1>
+      <div style="padding-bottom:50px">
+        <div class="legend">Number of birth and death today ( Sources : 
+          <a href="http://www.worldometers.info/" target="_blank">wordlometers.info</a>). <br/>One colored token = 1 birth, one grey token = 1 death. </div>
+          <br/><br/><br/>
+          <div id="birth"></div>
+          <div id="sediviz"></div>
+          <div id="population"></div>
+          <div id="current">ici</div>
+          <div id="death"></div>
+        </div>
+      </div>
+
+    <!-- Script  -->
+  <script>
+
+
+      // Setting normal chart 
+      mySettings = {
+          width:500,
+          height:500,
+          data:{
+                model:
+                      [
+                        {label:"Column A"},
+                        {label:"Column B"}
+                      ],
+                strata:[
+                          [
+                            {init_value: 0, label: "Strata 1 col A"},
+                          ],[
+                            {init_value: 0, label: "Strata 1 col B"},
+                          ]    
+                        ],
+                stream:{ provider:'tokens',refresh:10000/6}
+              },
+          sedimentation:{
+            token:{
+              size:{original:5,minimum:3}
+            },
+          },
+          chart:{
+                 type:'CircleLayoutLess',
+                 spacer:2,
+                 radius:50,
+          },
+          options:{
+            layout:false
+          }
+        }
+    var worldPopulation = $("#sediviz").vs(mySettings).data('visualSedimentation');
+
+
+
+       var time = new Date(),secondsToday,secondsSinceNewYear
+       var Oldborn  = null;
+       var Olddeath = null;
+
+
+       function drawBorn(_this){
+          var colorPicker = _this.token.colorRange(Math.round(Math.random()*10))
+
+          var token = { 
+             x:250,
+             y:0,
+             size:20,
+             category:0,
+             fillStyle:colorPicker,
+             phy:{
+                 density:1,
+                 friction:0,
+                 restitution:0
+             },
+             targets:[{
+                 x: 250,
+                 y: 250
+             }],
+             callback:{
+              draw:function(token){
+                var size = token.attr("size")
+                token.attr("size",size*0.88)
+              }
+            },
+
+           }
+          _this.addToken(token);
+       }
+
+
+       function drawDeath(_this){
+          var token = { 
+             x:250,
+             y:300,
+             size:20,
+             category:0,
+             fillStyle:"grey",
+             phy:{
+                 density:1,
+                 friction:0,
+                 restitution:0
+             },
+             targets:[{
+                 x: 250,
+                 y: 500
+             }],
+             callback:{
+              draw:function(token){
+                var size = token.attr("size")
+                token.attr("size",size*0.9)
+              }
+            },
+
+           }
+          _this.addToken(token);
+       }
+
+
+
+
+       var clock = window.setInterval(
+                                      function (){
+                                           time = new Date()
+                                           previousYear = new Date(2010,12,0,06,0,0,00)
+                                           diffPreviousYear = time.getTime()-previousYear.getTime()
+                                           //console.log(diffPreviousYear)
+                                           secondsToday = (time.getHours()*60*60) + (time.getMinutes()*60) + time.getSeconds()
+                                           milliSecondsToday= (time.getHours()*60*60*1000) + (time.getMinutes()*60*1000) + time.getSeconds()*1000+time.getMilliseconds() 
+                                          
+                                          var born  = Math.round(milliSecondsToday*4.1984/1000)
+                                          var death = Math.round(milliSecondsToday*1.7931/1000)
+                                          var current= Math.round((diffPreviousYear* 2.4053/1000) + 6936712321)
+
+                                          $("#birth").text(utils.textFormating(born,",","birth"))
+                                          $("#current").text(utils.textFormating(current,",","Humans"))
+                                          $("#death").text(utils.textFormating(death,",","death"))
+
+                                          if(born!=Oldborn) drawBorn(worldPopulation)
+                                          if(death!=Olddeath) drawDeath(worldPopulation)
+                                          Oldborn = born
+                                          Olddeath = death
+                                         }
+                                         , 1); 
+
+
+
+  </script>
+
+  </body>
+</html>

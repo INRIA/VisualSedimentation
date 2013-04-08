@@ -1,0 +1,3392 @@
+{
+  "tokens": [
+    {
+      "created_at": "Wed, 13 Mar 2013 13:51:12 +0000",
+      "from_user": "Andrew_Mosher19",
+      "from_user_id": 941767592,
+      "from_user_id_str": "941767592",
+      "from_user_name": "SUDoughBoy19",
+      "geo": null,
+      "id": 311836847754072100,
+      "id_str": "311836847754072064",
+      "iso_language_code": "en",
+      "metadata": {
+        "result_type": "recent"
+      },
+      "profile_image_url": "http://a0.twimg.com/profile_images/3143536294/54e5c05f87a1c24dbcd3d722641f7560_normal.jpeg",
+      "profile_image_url_https": "https://si0.twimg.com/profile_images/3143536294/54e5c05f87a1c24dbcd3d722641f7560_normal.jpeg",
+      "source": "&lt;a href=&quot;http://twitter.com/download/iphone&quot;&gt;Twitter for iPhone&lt;/a&gt;",
+      "text": "RT @UnusualFactPage: Eating excessive amount of blue M&amp;Ms can turn your skin bright blue temporarily.",
+      "mmsid": 3,
+      "created_at_str": 1363182672000,
+      "_id": "514083e4ae30ae5b31000001"
+    },
+    {
+      "created_at": "Wed, 13 Mar 2013 13:50:31 +0000",
+      "from_user": "NoPiffTiff",
+      "from_user_id": 248046900,
+      "from_user_id_str": "248046900",
+      "from_user_name": "NoPiffTiff ❤",
+      "geo": null,
+      "id": 311836673724006400,
+      "id_str": "311836673724006401",
+      "iso_language_code": "en",
+      "metadata": {
+        "result_type": "recent"
+      },
+      "profile_image_url": "http://a0.twimg.com/profile_images/3337858009/4aaa0323cd2c2d7945e69e3d70da816f_normal.png",
+      "profile_image_url_https": "https://si0.twimg.com/profile_images/3337858009/4aaa0323cd2c2d7945e69e3d70da816f_normal.png",
+      "source": "&lt;a href=&quot;http://ubersocial.com&quot;&gt;UberSocial for Android&lt;/a&gt;",
+      "text": "RT @UnusualFactPage: Eating excessive amount of blue M&amp;Ms can turn your skin bright blue temporarily.",
+      "mmsid": 3,
+      "created_at_str": 1363182631000,
+      "_id": "514083bb74bd563731000001"
+    },
+    {
+      "created_at": "Wed, 13 Mar 2013 13:49:36 +0000",
+      "from_user": "CWcharlesworth",
+      "from_user_id": 163516288,
+      "from_user_id_str": "163516288",
+      "from_user_name": "Will Charlesworth ",
+      "geo": null,
+      "id": 311836443515441200,
+      "id_str": "311836443515441152",
+      "iso_language_code": "en",
+      "metadata": {
+        "result_type": "recent"
+      },
+      "profile_image_url": "http://a0.twimg.com/profile_images/3181288522/5f1963609caab94a50301c0c21da3785_normal.jpeg",
+      "profile_image_url_https": "https://si0.twimg.com/profile_images/3181288522/5f1963609caab94a50301c0c21da3785_normal.jpeg",
+      "source": "&lt;a href=&quot;http://twitter.com/download/iphone&quot;&gt;Twitter for iPhone&lt;/a&gt;",
+      "text": "Peanut M&amp;Ms: all the green tea in the world won't atone 4 my gluttony #somanycolours #handinbag",
+      "mmsid": 4,
+      "created_at_str": 1363182576000,
+      "_id": "5140837e3e9b73a92f000003"
+    },
+    {
+      "created_at": "Wed, 13 Mar 2013 13:45:49 +0000",
+      "from_user": "DollieeWorld",
+      "from_user_id": 474808789,
+      "from_user_id_str": "474808789",
+      "from_user_name": "QuilMoney $$$",
+      "geo": null,
+      "id": 311835491647496200,
+      "id_str": "311835491647496192",
+      "iso_language_code": "da",
+      "metadata": {
+        "result_type": "recent"
+      },
+      "profile_image_url": "http://a0.twimg.com/profile_images/3347514394/129ceb0a8e1a80c3d3b826e72baf23fc_normal.jpeg",
+      "profile_image_url_https": "https://si0.twimg.com/profile_images/3347514394/129ceb0a8e1a80c3d3b826e72baf23fc_normal.jpeg",
+      "source": "&lt;a href=&quot;http://twitter.com/download/android&quot;&gt;Twitter for Android&lt;/a&gt;",
+      "text": "M&amp;M's &amp; orange juice &gt;&gt;&gt;&gt;&gt;&gt;",
+      "mmsid": 5,
+      "created_at_str": 1363182349000,
+      "_id": "5140829d400926e22e000001"
+    },
+    {
+      "created_at": "Wed, 13 Mar 2013 13:42:20 +0000",
+      "from_user": "TheTigerLife",
+      "from_user_id": 430698422,
+      "from_user_id_str": "430698422",
+      "from_user_name": "Hal Young",
+      "geo": null,
+      "id": 311834613221838800,
+      "id_str": "311834613221838849",
+      "iso_language_code": "en",
+      "metadata": {
+        "result_type": "recent"
+      },
+      "profile_image_url": "http://a0.twimg.com/profile_images/3331668972/71ed74429d049e53c7b2ac1b9f78482e_normal.jpeg",
+      "profile_image_url_https": "https://si0.twimg.com/profile_images/3331668972/71ed74429d049e53c7b2ac1b9f78482e_normal.jpeg",
+      "source": "&lt;a href=&quot;http://twitter.com/download/android&quot;&gt;Twitter for Android&lt;/a&gt;",
+      "text": "Ryan got roasted on his birthday by the pharmacy they brought him a viagra bottle with blue M&amp;M's in it. #Roasted #23",
+      "mmsid": 3,
+      "created_at_str": 1363182140000,
+      "_id": "514081d1e586c32c2e000002"
+    },
+    {
+      "created_at": "Wed, 13 Mar 2013 13:39:00 +0000",
+      "from_user": "rhys_hadfield",
+      "from_user_id": 191525148,
+      "from_user_id_str": "191525148",
+      "from_user_name": "Rhys",
+      "geo": null,
+      "id": 311833777880068100,
+      "id_str": "311833777880068096",
+      "iso_language_code": "en",
+      "metadata": {
+        "result_type": "recent"
+      },
+      "profile_image_url": "http://a0.twimg.com/profile_images/2670509877/2f9f4c6d0188ab72b630822c997e827a_normal.jpeg",
+      "profile_image_url_https": "https://si0.twimg.com/profile_images/2670509877/2f9f4c6d0188ab72b630822c997e827a_normal.jpeg",
+      "source": "&lt;a href=&quot;http://twitter.com/download/iphone&quot;&gt;Twitter for iPhone&lt;/a&gt;",
+      "text": "RT @UnusualFactPage: Eating excessive amount of blue M&amp;Ms can turn your skin bright blue temporarily.",
+      "mmsid": 3,
+      "created_at_str": 1363181940000,
+      "_id": "514081051cb690702d000001"
+    },
+    {
+      "created_at": "Wed, 13 Mar 2013 13:37:52 +0000",
+      "from_user": "cyangetenuff",
+      "from_user_id": 49153423,
+      "from_user_id_str": "49153423",
+      "from_user_name": "Cli-Max",
+      "geo": null,
+      "id": 311833490943516700,
+      "id_str": "311833490943516672",
+      "iso_language_code": "en",
+      "metadata": {
+        "result_type": "recent"
+      },
+      "profile_image_url": "http://a0.twimg.com/profile_images/1196327795/229958786_normal.jpg",
+      "profile_image_url_https": "https://si0.twimg.com/profile_images/1196327795/229958786_normal.jpg",
+      "source": "&lt;a href=&quot;http://blackberry.com/twitter&quot;&gt;Twitter for BlackBerry®&lt;/a&gt;",
+      "text": "RT @UnusualFactPage: Eating excessive amount of blue M&amp;Ms can turn your skin bright blue temporarily.",
+      "mmsid": 3,
+      "created_at_str": 1363181872000,
+      "_id": "514080b471c64f272d000002"
+    },
+    {
+      "created_at": "Wed, 13 Mar 2013 13:33:55 +0000",
+      "from_user": "ShaveRhmn",
+      "from_user_id": 135452421,
+      "from_user_id_str": "135452421",
+      "from_user_name": "Shavira Lisdiany R",
+      "geo": null,
+      "id": 311832495270264800,
+      "id_str": "311832495270264832",
+      "iso_language_code": "en",
+      "metadata": {
+        "result_type": "recent"
+      },
+      "profile_image_url": "http://a0.twimg.com/profile_images/3371381965/7d400dfc90d96df0fd4092aa0e28f99b_normal.jpeg",
+      "profile_image_url_https": "https://si0.twimg.com/profile_images/3371381965/7d400dfc90d96df0fd4092aa0e28f99b_normal.jpeg",
+      "source": "&lt;a href=&quot;http://www.tweetdeck.com&quot;&gt;TweetDeck&lt;/a&gt;",
+      "text": ":0RT @UnusualFactPage Eating excessive amount of blue M&amp;Ms can turn your skin bright blue temporarily.",
+      "mmsid": 3,
+      "created_at_str": 1363181635000,
+      "_id": "51407fd33ab2db5e2c000002"
+    },
+    {
+      "created_at": "Wed, 13 Mar 2013 13:25:25 +0000",
+      "from_user": "fennykwaa",
+      "from_user_id": 584491023,
+      "from_user_id_str": "584491023",
+      "from_user_name": "Fennykwaa∞ ",
+      "geo": null,
+      "id": 311830356397522900,
+      "id_str": "311830356397522944",
+      "iso_language_code": "en",
+      "metadata": {
+        "result_type": "recent"
+      },
+      "profile_image_url": "http://a0.twimg.com/profile_images/3252095294/d8f2299d586666a2c824b7803e491aff_normal.jpeg",
+      "profile_image_url_https": "https://si0.twimg.com/profile_images/3252095294/d8f2299d586666a2c824b7803e491aff_normal.jpeg",
+      "source": "&lt;a href=&quot;http://blackberry.com/twitter&quot;&gt;Twitter for BlackBerry®&lt;/a&gt;",
+      "text": "RT @UnusualFactPage: Eating excessive amount of blue M&amp;Ms can turn your skin bright blue temporarily.",
+      "mmsid": 3,
+      "created_at_str": 1363181125000,
+      "_id": "51407dd514d8ba992a000001"
+    },
+    {
+      "created_at": "Wed, 13 Mar 2013 12:59:47 +0000",
+      "from_user": "bbbgtoby",
+      "from_user_id": 366058396,
+      "from_user_id_str": "366058396",
+      "from_user_name": "blahblahblahtoby",
+      "geo": null,
+      "id": 311823907084705800,
+      "id_str": "311823907084705792",
+      "iso_language_code": "en",
+      "metadata": {
+        "result_type": "recent"
+      },
+      "profile_image_url": "http://a0.twimg.com/profile_images/1523646595/Photo_on_2011-09-01_at_16.38_normal.jpg",
+      "profile_image_url_https": "https://si0.twimg.com/profile_images/1523646595/Photo_on_2011-09-01_at_16.38_normal.jpg",
+      "source": "&lt;a href=&quot;http://twitter.com/&quot;&gt;web&lt;/a&gt;",
+      "text": "So there I am at about 3 o'clock in the  morning looking for 1000 brown M&amp;Ms or Ozzy wouldn't go on stage #waynesworldquotes",
+      "mmsid": 6,
+      "created_at_str": 1363179587000,
+      "_id": "514077c6c169162825000001"
+    }
+  ],
+  "strata": [
+    [
+      {
+        "value": "function c() { return 0; }",
+        "label": "Strata_0_time_last5min",
+        "texture": {
+          "url": "img/redmmstexture.jpg",
+          "size": 0.5
+        }
+      },
+      {
+        "value": "function b() { return 0; }",
+        "label": "Strata_0_time_last5min",
+        "texture": {
+          "url": "img/redmmstexture.jpg",
+          "size": 1
+        }
+      },
+      {
+        "value": "function a() { return 0; }",
+        "label": "Strata_0_time_last5min",
+        "texture": {
+          "url": "img/redmmstexture.jpg",
+          "size": 2
+        }
+      }
+    ],
+    [
+      {
+        "value": "function c() { return 15; }",
+        "label": "Strata_1_time_last5min",
+        "texture": {
+          "url": "img/yellowmmstexture.jpg",
+          "size": 0.5
+        }
+      },
+      {
+        "value": "function b() { return 1; }",
+        "label": "Strata_1_time_last5min",
+        "texture": {
+          "url": "img/yellowmmstexture.jpg",
+          "size": 1
+        }
+      },
+      {
+        "value": "function a() { return 0; }",
+        "label": "Strata_1_time_last5min",
+        "texture": {
+          "url": "img/yellowmmstexture.jpg",
+          "size": 2
+        }
+      }
+    ],
+    [
+      {
+        "value": "function c() { return 7; }",
+        "label": "Strata_2_time_last5min",
+        "texture": {
+          "url": "img/bluemmstexture.jpg",
+          "size": 0.5
+        }
+      },
+      {
+        "value": "function b() { return 1; }",
+        "label": "Strata_2_time_last5min",
+        "texture": {
+          "url": "img/bluemmstexture.jpg",
+          "size": 1
+        }
+      },
+      {
+        "value": "function a() { return 0; }",
+        "label": "Strata_2_time_last5min",
+        "texture": {
+          "url": "img/bluemmstexture.jpg",
+          "size": 2
+        }
+      }
+    ],
+    [
+      {
+        "value": "function c() { return 70; }",
+        "label": "Strata_3_time_last5min",
+        "texture": {
+          "url": "img/greenmmstexture.jpg",
+          "size": 0.5
+        }
+      },
+      {
+        "value": "function b() { return 6; }",
+        "label": "Strata_3_time_last5min",
+        "texture": {
+          "url": "img/greenmmstexture.jpg",
+          "size": 1
+        }
+      },
+      {
+        "value": "function a() { return 2; }",
+        "label": "Strata_3_time_last5min",
+        "texture": {
+          "url": "img/greenmmstexture.jpg",
+          "size": 2
+        }
+      }
+    ],
+    [
+      {
+        "value": "function c() { return 12; }",
+        "label": "Strata_4_time_last5min",
+        "texture": {
+          "url": "img/orangemmstexture.jpg",
+          "size": 0.5
+        }
+      },
+      {
+        "value": "function b() { return 2; }",
+        "label": "Strata_4_time_last5min",
+        "texture": {
+          "url": "img/orangemmstexture.jpg",
+          "size": 1
+        }
+      },
+      {
+        "value": "function a() { return 0; }",
+        "label": "Strata_4_time_last5min",
+        "texture": {
+          "url": "img/orangemmstexture.jpg",
+          "size": 2
+        }
+      }
+    ],
+    [
+      {
+        "value": "function c() { return 8; }",
+        "label": "Strata_5_time_last5min",
+        "texture": {
+          "url": "img/brownmmstexture.jpg",
+          "size": 0.5
+        }
+      },
+      {
+        "value": "function b() { return 2; }",
+        "label": "Strata_5_time_last5min",
+        "texture": {
+          "url": "img/brownmmstexture.jpg",
+          "size": 1
+        }
+      },
+      {
+        "value": "function a() { return 0; }",
+        "label": "Strata_5_time_last5min",
+        "texture": {
+          "url": "img/brownmmstexture.jpg",
+          "size": 2
+        }
+      }
+    ]
+  ],
+  "stream": [
+    [],
+    [
+      {
+        "time_day": "2013-03-01T14:12:03.000Z",
+        "value": 1000000
+      },
+      {
+        "time_day": "2013-03-01T06:12:03.000Z",
+        "value": 6,
+        "mmsid": 1
+      },
+      {
+        "time_day": "2013-02-28T22:12:03.000Z",
+        "value": 17,
+        "mmsid": 1
+      },
+      {
+        "time_day": "2013-02-28T14:12:03.000Z",
+        "value": 16,
+        "mmsid": 1
+      },
+      {
+        "time_day": "2013-02-28T06:12:03.000Z",
+        "value": 7,
+        "mmsid": 1
+      },
+      {
+        "time_day": "2013-02-27T22:12:03.000Z",
+        "value": 23,
+        "mmsid": 1
+      },
+      {
+        "time_day": "2013-02-27T14:12:03.000Z",
+        "value": 20,
+        "mmsid": 1
+      },
+      {
+        "time_day": "2013-02-27T06:12:03.000Z",
+        "value": 8,
+        "mmsid": 1
+      },
+      {
+        "time_day": "2013-02-26T22:12:03.000Z",
+        "value": 21,
+        "mmsid": 1
+      },
+      {
+        "time_day": "2013-02-26T14:12:03.000Z",
+        "value": 21,
+        "mmsid": 1
+      },
+      {
+        "time_day": "2013-02-26T06:12:03.000Z",
+        "value": 10,
+        "mmsid": 1
+      },
+      {
+        "time_day": "2013-02-25T22:12:03.000Z",
+        "value": 26,
+        "mmsid": 1
+      },
+      {
+        "time_day": "2013-02-25T14:12:03.000Z",
+        "value": 18,
+        "mmsid": 1
+      },
+      {
+        "time_day": "2013-02-25T06:12:03.000Z",
+        "value": 10,
+        "mmsid": 1
+      },
+      {
+        "time_day": "2013-02-24T22:12:03.000Z",
+        "value": 30,
+        "mmsid": 1
+      },
+      {
+        "time_day": "2013-02-24T14:12:03.000Z",
+        "value": 31,
+        "mmsid": 1
+      },
+      {
+        "time_day": "2013-02-24T06:12:03.000Z",
+        "value": 11,
+        "mmsid": 1
+      },
+      {
+        "time_day": "2013-02-23T22:12:03.000Z",
+        "value": 25,
+        "mmsid": 1
+      },
+      {
+        "time_day": "2013-02-23T14:12:03.000Z",
+        "value": 11,
+        "mmsid": 1
+      },
+      {
+        "time_day": "2013-02-23T06:12:03.000Z",
+        "value": 11,
+        "mmsid": 1
+      },
+      {
+        "time_day": "2013-02-22T22:12:03.000Z",
+        "value": 34,
+        "mmsid": 1
+      },
+      {
+        "time_day": "2013-02-22T14:12:03.000Z",
+        "value": 25,
+        "mmsid": 1
+      },
+      {
+        "time_day": "2013-02-22T06:12:03.000Z",
+        "value": 6,
+        "mmsid": 1
+      },
+      {
+        "time_day": "2013-02-21T22:12:03.000Z",
+        "value": 26,
+        "mmsid": 1
+      },
+      {
+        "time_day": "2013-02-21T14:12:03.000Z",
+        "value": 27,
+        "mmsid": 1
+      },
+      {
+        "time_day": "2013-02-21T06:12:03.000Z",
+        "value": 19,
+        "mmsid": 1
+      },
+      {
+        "time_day": "2013-02-20T22:12:03.000Z",
+        "value": 53,
+        "mmsid": 1
+      },
+      {
+        "time_day": "2013-02-20T14:12:03.000Z",
+        "value": 42,
+        "mmsid": 1
+      },
+      {
+        "time_day": "2013-02-20T06:12:03.000Z",
+        "value": 18,
+        "mmsid": 1
+      },
+      {
+        "time_day": "2013-02-19T22:12:03.000Z",
+        "value": 45,
+        "mmsid": 1
+      },
+      {
+        "time_day": "2013-02-19T14:12:03.000Z",
+        "value": 31,
+        "mmsid": 1
+      },
+      {
+        "time_day": "2013-02-19T06:12:03.000Z",
+        "value": 15,
+        "mmsid": 1
+      },
+      {
+        "time_day": "2013-02-18T22:12:03.000Z",
+        "value": 94,
+        "mmsid": 1
+      },
+      {
+        "time_day": "2013-02-18T14:12:03.000Z",
+        "value": 44,
+        "mmsid": 1
+      },
+      {
+        "time_day": "2013-02-18T06:12:03.000Z",
+        "value": 21,
+        "mmsid": 1
+      },
+      {
+        "time_day": "2013-02-17T22:12:03.000Z",
+        "value": 41,
+        "mmsid": 1
+      },
+      {
+        "time_day": "2013-02-17T14:12:03.000Z",
+        "value": 33,
+        "mmsid": 1
+      },
+      {
+        "time_day": "2013-02-17T06:12:03.000Z",
+        "value": 17,
+        "mmsid": 1
+      },
+      {
+        "time_day": "2013-02-16T22:12:03.000Z",
+        "value": 45,
+        "mmsid": 1
+      },
+      {
+        "time_day": "2013-02-16T14:12:03.000Z",
+        "value": 48,
+        "mmsid": 1
+      },
+      {
+        "time_day": "2013-02-16T06:12:03.000Z",
+        "value": 8,
+        "mmsid": 1
+      },
+      {
+        "time_day": "2013-02-15T22:12:03.000Z",
+        "value": 28,
+        "mmsid": 1
+      },
+      {
+        "time_day": "2013-02-15T14:12:03.000Z",
+        "value": 30,
+        "mmsid": 1
+      },
+      {
+        "time_day": "2013-02-15T06:12:03.000Z",
+        "value": 13,
+        "mmsid": 1
+      },
+      {
+        "time_day": "2013-02-14T22:12:03.000Z",
+        "value": 48,
+        "mmsid": 1
+      },
+      {
+        "time_day": "2013-02-14T14:12:03.000Z",
+        "value": 77,
+        "mmsid": 1
+      },
+      {
+        "time_day": "2013-02-14T06:12:03.000Z",
+        "value": 26,
+        "mmsid": 1
+      },
+      {
+        "time_day": "2013-02-13T22:12:03.000Z",
+        "value": 43,
+        "mmsid": 1
+      },
+      {
+        "time_day": "2013-02-13T14:12:03.000Z",
+        "value": 38,
+        "mmsid": 1
+      },
+      {
+        "time_day": "2013-02-13T06:12:03.000Z",
+        "value": 19,
+        "mmsid": 1
+      },
+      {
+        "time_day": "2013-02-12T22:12:03.000Z",
+        "value": 43,
+        "mmsid": 1
+      },
+      {
+        "time_day": "2013-02-12T14:12:03.000Z",
+        "value": 34,
+        "mmsid": 1
+      },
+      {
+        "time_day": "2013-02-12T06:12:03.000Z",
+        "value": 8,
+        "mmsid": 1
+      },
+      {
+        "time_day": "2013-02-11T22:12:03.000Z",
+        "value": 31,
+        "mmsid": 1
+      },
+      {
+        "time_day": "2013-02-11T14:12:03.000Z",
+        "value": 35,
+        "mmsid": 1
+      },
+      {
+        "time_day": "2013-02-11T06:12:03.000Z",
+        "value": 10,
+        "mmsid": 1
+      },
+      {
+        "time_day": "2013-02-10T22:12:03.000Z",
+        "value": 18,
+        "mmsid": 1
+      },
+      {
+        "time_day": "2013-02-10T14:12:03.000Z",
+        "value": 41,
+        "mmsid": 1
+      },
+      {
+        "time_day": "2013-02-10T06:12:03.000Z",
+        "value": 8,
+        "mmsid": 1
+      },
+      {
+        "time_day": "2013-02-09T22:12:03.000Z",
+        "value": 28,
+        "mmsid": 1
+      },
+      {
+        "time_day": "2013-02-09T14:12:03.000Z",
+        "value": 17,
+        "mmsid": 1
+      },
+      {
+        "time_day": "2013-02-09T06:12:03.000Z",
+        "value": 6,
+        "mmsid": 1
+      },
+      {
+        "time_day": "2013-02-08T22:12:03.000Z",
+        "value": 24,
+        "mmsid": 1
+      },
+      {
+        "time_day": "2013-02-08T14:12:03.000Z",
+        "value": 28,
+        "mmsid": 1
+      },
+      {
+        "time_day": "2013-02-08T06:12:03.000Z",
+        "value": 12,
+        "mmsid": 1
+      },
+      {
+        "time_day": "2013-02-07T22:12:03.000Z",
+        "value": 27,
+        "mmsid": 1
+      },
+      {
+        "time_day": "2013-02-07T14:12:03.000Z",
+        "value": 14,
+        "mmsid": 1
+      },
+      {
+        "time_day": "2013-02-07T06:12:03.000Z",
+        "value": 3,
+        "mmsid": 1
+      },
+      {
+        "time_day": "2013-02-06T22:12:03.000Z",
+        "value": 34,
+        "mmsid": 1
+      },
+      {
+        "time_day": "2013-02-06T14:12:03.000Z",
+        "value": 33,
+        "mmsid": 1
+      },
+      {
+        "time_day": "2013-02-06T06:12:03.000Z",
+        "value": 9,
+        "mmsid": 1
+      },
+      {
+        "time_day": "2013-02-05T22:12:03.000Z",
+        "value": 31,
+        "mmsid": 1
+      },
+      {
+        "time_day": "2013-02-05T14:12:03.000Z",
+        "value": 30,
+        "mmsid": 1
+      },
+      {
+        "time_day": "2013-02-05T06:12:03.000Z",
+        "value": 12,
+        "mmsid": 1
+      },
+      {
+        "time_day": "2013-02-04T22:12:03.000Z",
+        "value": 48,
+        "mmsid": 1
+      },
+      {
+        "time_day": "2013-02-04T14:12:03.000Z",
+        "value": 82,
+        "mmsid": 1
+      },
+      {
+        "time_day": "2013-02-04T06:12:03.000Z",
+        "value": 59,
+        "mmsid": 1
+      },
+      {
+        "time_day": "2013-02-03T22:12:03.000Z",
+        "value": 339,
+        "mmsid": 1
+      },
+      {
+        "time_day": "2013-02-03T14:12:03.000Z",
+        "value": 16,
+        "mmsid": 1
+      },
+      {
+        "time_day": "2013-02-03T06:12:03.000Z",
+        "value": 9,
+        "mmsid": 1
+      },
+      {
+        "time_day": "2013-02-02T22:12:03.000Z",
+        "value": 19,
+        "mmsid": 1
+      },
+      {
+        "time_day": "2013-02-02T14:12:03.000Z",
+        "value": 12,
+        "mmsid": 1
+      },
+      {
+        "time_day": "2013-02-02T06:12:03.000Z",
+        "value": 4,
+        "mmsid": 1
+      },
+      {
+        "time_day": "2013-02-01T22:12:03.000Z",
+        "value": 12,
+        "mmsid": 1
+      },
+      {
+        "time_day": "2013-02-01T14:12:03.000Z",
+        "value": 16,
+        "mmsid": 1
+      },
+      {
+        "time_day": "2013-02-01T06:12:03.000Z",
+        "value": 0,
+        "mmsid": 1
+      },
+      {
+        "time_day": "2013-01-31T22:12:03.000Z",
+        "value": 0,
+        "mmsid": 1
+      },
+      {
+        "time_day": "2013-01-31T14:12:03.000Z",
+        "value": 0,
+        "mmsid": 1
+      },
+      {
+        "time_day": "2013-01-31T06:12:03.000Z",
+        "value": 0,
+        "mmsid": 1
+      },
+      {
+        "time_day": "2013-01-30T22:12:03.000Z",
+        "value": 0,
+        "mmsid": 1
+      },
+      {
+        "time_day": "2013-01-30T14:12:03.000Z",
+        "value": 0,
+        "mmsid": 1
+      },
+      {
+        "time_day": "2013-01-30T06:12:03.000Z",
+        "value": 0,
+        "mmsid": 1
+      },
+      {
+        "time_day": "2013-01-29T22:12:03.000Z",
+        "value": 0,
+        "mmsid": 1
+      },
+      {
+        "time_day": "2013-01-29T14:12:03.000Z",
+        "value": 0,
+        "mmsid": 1
+      },
+      {
+        "time_day": "2013-01-29T06:12:03.000Z",
+        "value": 0,
+        "mmsid": 1
+      },
+      {
+        "time_day": "2013-01-28T22:12:03.000Z",
+        "value": 0,
+        "mmsid": 1
+      },
+      {
+        "time_day": "2013-01-28T14:12:03.000Z",
+        "value": 0,
+        "mmsid": 1
+      },
+      {
+        "time_day": "2013-01-28T06:12:03.000Z",
+        "value": 0,
+        "mmsid": 1
+      },
+      {
+        "time_day": "2013-01-27T22:12:03.000Z",
+        "value": 0,
+        "mmsid": 1
+      },
+      {
+        "time_day": "2013-01-27T14:12:03.000Z",
+        "value": 0,
+        "mmsid": 1
+      }
+    ],
+    [],
+    [
+      {
+        "time_day": "2013-03-01T14:12:03.000Z",
+        "value": 1000000
+      },
+      {
+        "time_day": "2013-03-01T06:12:03.000Z",
+        "value": 3,
+        "mmsid": 2
+      },
+      {
+        "time_day": "2013-02-28T22:12:03.000Z",
+        "value": 6,
+        "mmsid": 2
+      },
+      {
+        "time_day": "2013-02-28T14:12:03.000Z",
+        "value": 4,
+        "mmsid": 2
+      },
+      {
+        "time_day": "2013-02-28T06:12:03.000Z",
+        "value": 3,
+        "mmsid": 2
+      },
+      {
+        "time_day": "2013-02-27T22:12:03.000Z",
+        "value": 15,
+        "mmsid": 2
+      },
+      {
+        "time_day": "2013-02-27T14:12:03.000Z",
+        "value": 12,
+        "mmsid": 2
+      },
+      {
+        "time_day": "2013-02-27T06:12:03.000Z",
+        "value": 6,
+        "mmsid": 2
+      },
+      {
+        "time_day": "2013-02-26T22:12:03.000Z",
+        "value": 18,
+        "mmsid": 2
+      },
+      {
+        "time_day": "2013-02-26T14:12:03.000Z",
+        "value": 15,
+        "mmsid": 2
+      },
+      {
+        "time_day": "2013-02-26T06:12:03.000Z",
+        "value": 2,
+        "mmsid": 2
+      },
+      {
+        "time_day": "2013-02-25T22:12:03.000Z",
+        "value": 19,
+        "mmsid": 2
+      },
+      {
+        "time_day": "2013-02-25T14:12:03.000Z",
+        "value": 6,
+        "mmsid": 2
+      },
+      {
+        "time_day": "2013-02-25T06:12:03.000Z",
+        "value": 4,
+        "mmsid": 2
+      },
+      {
+        "time_day": "2013-02-24T22:12:03.000Z",
+        "value": 13,
+        "mmsid": 2
+      },
+      {
+        "time_day": "2013-02-24T14:12:03.000Z",
+        "value": 5,
+        "mmsid": 2
+      },
+      {
+        "time_day": "2013-02-24T06:12:03.000Z",
+        "value": 4,
+        "mmsid": 2
+      },
+      {
+        "time_day": "2013-02-23T22:12:03.000Z",
+        "value": 11,
+        "mmsid": 2
+      },
+      {
+        "time_day": "2013-02-23T14:12:03.000Z",
+        "value": 14,
+        "mmsid": 2
+      },
+      {
+        "time_day": "2013-02-23T06:12:03.000Z",
+        "value": 4,
+        "mmsid": 2
+      },
+      {
+        "time_day": "2013-02-22T22:12:03.000Z",
+        "value": 11,
+        "mmsid": 2
+      },
+      {
+        "time_day": "2013-02-22T14:12:03.000Z",
+        "value": 13,
+        "mmsid": 2
+      },
+      {
+        "time_day": "2013-02-22T06:12:03.000Z",
+        "value": 4,
+        "mmsid": 2
+      },
+      {
+        "time_day": "2013-02-21T22:12:03.000Z",
+        "value": 10,
+        "mmsid": 2
+      },
+      {
+        "time_day": "2013-02-21T14:12:03.000Z",
+        "value": 14,
+        "mmsid": 2
+      },
+      {
+        "time_day": "2013-02-21T06:12:03.000Z",
+        "value": 1,
+        "mmsid": 2
+      },
+      {
+        "time_day": "2013-02-20T22:12:03.000Z",
+        "value": 18,
+        "mmsid": 2
+      },
+      {
+        "time_day": "2013-02-20T14:12:03.000Z",
+        "value": 14,
+        "mmsid": 2
+      },
+      {
+        "time_day": "2013-02-20T06:12:03.000Z",
+        "value": 1,
+        "mmsid": 2
+      },
+      {
+        "time_day": "2013-02-19T22:12:03.000Z",
+        "value": 19,
+        "mmsid": 2
+      },
+      {
+        "time_day": "2013-02-19T14:12:03.000Z",
+        "value": 13,
+        "mmsid": 2
+      },
+      {
+        "time_day": "2013-02-19T06:12:03.000Z",
+        "value": 4,
+        "mmsid": 2
+      },
+      {
+        "time_day": "2013-02-18T22:12:03.000Z",
+        "value": 15,
+        "mmsid": 2
+      },
+      {
+        "time_day": "2013-02-18T14:12:03.000Z",
+        "value": 14,
+        "mmsid": 2
+      },
+      {
+        "time_day": "2013-02-18T06:12:03.000Z",
+        "value": 2,
+        "mmsid": 2
+      },
+      {
+        "time_day": "2013-02-17T22:12:03.000Z",
+        "value": 21,
+        "mmsid": 2
+      },
+      {
+        "time_day": "2013-02-17T14:12:03.000Z",
+        "value": 9,
+        "mmsid": 2
+      },
+      {
+        "time_day": "2013-02-17T06:12:03.000Z",
+        "value": 4,
+        "mmsid": 2
+      },
+      {
+        "time_day": "2013-02-16T22:12:03.000Z",
+        "value": 11,
+        "mmsid": 2
+      },
+      {
+        "time_day": "2013-02-16T14:12:03.000Z",
+        "value": 11,
+        "mmsid": 2
+      },
+      {
+        "time_day": "2013-02-16T06:12:03.000Z",
+        "value": 7,
+        "mmsid": 2
+      },
+      {
+        "time_day": "2013-02-15T22:12:03.000Z",
+        "value": 11,
+        "mmsid": 2
+      },
+      {
+        "time_day": "2013-02-15T14:12:03.000Z",
+        "value": 9,
+        "mmsid": 2
+      },
+      {
+        "time_day": "2013-02-15T06:12:03.000Z",
+        "value": 5,
+        "mmsid": 2
+      },
+      {
+        "time_day": "2013-02-14T22:12:03.000Z",
+        "value": 18,
+        "mmsid": 2
+      },
+      {
+        "time_day": "2013-02-14T14:12:03.000Z",
+        "value": 12,
+        "mmsid": 2
+      },
+      {
+        "time_day": "2013-02-14T06:12:03.000Z",
+        "value": 10,
+        "mmsid": 2
+      },
+      {
+        "time_day": "2013-02-13T22:12:03.000Z",
+        "value": 26,
+        "mmsid": 2
+      },
+      {
+        "time_day": "2013-02-13T14:12:03.000Z",
+        "value": 8,
+        "mmsid": 2
+      },
+      {
+        "time_day": "2013-02-13T06:12:03.000Z",
+        "value": 7,
+        "mmsid": 2
+      },
+      {
+        "time_day": "2013-02-12T22:12:03.000Z",
+        "value": 21,
+        "mmsid": 2
+      },
+      {
+        "time_day": "2013-02-12T14:12:03.000Z",
+        "value": 17,
+        "mmsid": 2
+      },
+      {
+        "time_day": "2013-02-12T06:12:03.000Z",
+        "value": 5,
+        "mmsid": 2
+      },
+      {
+        "time_day": "2013-02-11T22:12:03.000Z",
+        "value": 24,
+        "mmsid": 2
+      },
+      {
+        "time_day": "2013-02-11T14:12:03.000Z",
+        "value": 9,
+        "mmsid": 2
+      },
+      {
+        "time_day": "2013-02-11T06:12:03.000Z",
+        "value": 4,
+        "mmsid": 2
+      },
+      {
+        "time_day": "2013-02-10T22:12:03.000Z",
+        "value": 17,
+        "mmsid": 2
+      },
+      {
+        "time_day": "2013-02-10T14:12:03.000Z",
+        "value": 10,
+        "mmsid": 2
+      },
+      {
+        "time_day": "2013-02-10T06:12:03.000Z",
+        "value": 5,
+        "mmsid": 2
+      },
+      {
+        "time_day": "2013-02-09T22:12:03.000Z",
+        "value": 10,
+        "mmsid": 2
+      },
+      {
+        "time_day": "2013-02-09T14:12:03.000Z",
+        "value": 14,
+        "mmsid": 2
+      },
+      {
+        "time_day": "2013-02-09T06:12:03.000Z",
+        "value": 7,
+        "mmsid": 2
+      },
+      {
+        "time_day": "2013-02-08T22:12:03.000Z",
+        "value": 19,
+        "mmsid": 2
+      },
+      {
+        "time_day": "2013-02-08T14:12:03.000Z",
+        "value": 12,
+        "mmsid": 2
+      },
+      {
+        "time_day": "2013-02-08T06:12:03.000Z",
+        "value": 8,
+        "mmsid": 2
+      },
+      {
+        "time_day": "2013-02-07T22:12:03.000Z",
+        "value": 20,
+        "mmsid": 2
+      },
+      {
+        "time_day": "2013-02-07T14:12:03.000Z",
+        "value": 15,
+        "mmsid": 2
+      },
+      {
+        "time_day": "2013-02-07T06:12:03.000Z",
+        "value": 4,
+        "mmsid": 2
+      },
+      {
+        "time_day": "2013-02-06T22:12:03.000Z",
+        "value": 30,
+        "mmsid": 2
+      },
+      {
+        "time_day": "2013-02-06T14:12:03.000Z",
+        "value": 10,
+        "mmsid": 2
+      },
+      {
+        "time_day": "2013-02-06T06:12:03.000Z",
+        "value": 9,
+        "mmsid": 2
+      },
+      {
+        "time_day": "2013-02-05T22:12:03.000Z",
+        "value": 20,
+        "mmsid": 2
+      },
+      {
+        "time_day": "2013-02-05T14:12:03.000Z",
+        "value": 11,
+        "mmsid": 2
+      },
+      {
+        "time_day": "2013-02-05T06:12:03.000Z",
+        "value": 4,
+        "mmsid": 2
+      },
+      {
+        "time_day": "2013-02-04T22:12:03.000Z",
+        "value": 20,
+        "mmsid": 2
+      },
+      {
+        "time_day": "2013-02-04T14:12:03.000Z",
+        "value": 13,
+        "mmsid": 2
+      },
+      {
+        "time_day": "2013-02-04T06:12:03.000Z",
+        "value": 6,
+        "mmsid": 2
+      },
+      {
+        "time_day": "2013-02-03T22:12:03.000Z",
+        "value": 10,
+        "mmsid": 2
+      },
+      {
+        "time_day": "2013-02-03T14:12:03.000Z",
+        "value": 4,
+        "mmsid": 2
+      },
+      {
+        "time_day": "2013-02-03T06:12:03.000Z",
+        "value": 1,
+        "mmsid": 2
+      },
+      {
+        "time_day": "2013-02-02T22:12:03.000Z",
+        "value": 8,
+        "mmsid": 2
+      },
+      {
+        "time_day": "2013-02-02T14:12:03.000Z",
+        "value": 15,
+        "mmsid": 2
+      },
+      {
+        "time_day": "2013-02-02T06:12:03.000Z",
+        "value": 1,
+        "mmsid": 2
+      },
+      {
+        "time_day": "2013-02-01T22:12:03.000Z",
+        "value": 1,
+        "mmsid": 2
+      },
+      {
+        "time_day": "2013-02-01T14:12:03.000Z",
+        "value": 3,
+        "mmsid": 2
+      },
+      {
+        "time_day": "2013-02-01T06:12:03.000Z",
+        "value": 1,
+        "mmsid": 2
+      },
+      {
+        "time_day": "2013-01-31T22:12:03.000Z",
+        "value": 8,
+        "mmsid": 2
+      },
+      {
+        "time_day": "2013-01-31T14:12:03.000Z",
+        "value": 0,
+        "mmsid": 2
+      },
+      {
+        "time_day": "2013-01-31T06:12:03.000Z",
+        "value": 0,
+        "mmsid": 2
+      },
+      {
+        "time_day": "2013-01-30T22:12:03.000Z",
+        "value": 0,
+        "mmsid": 2
+      },
+      {
+        "time_day": "2013-01-30T14:12:03.000Z",
+        "value": 0,
+        "mmsid": 2
+      },
+      {
+        "time_day": "2013-01-30T06:12:03.000Z",
+        "value": 0,
+        "mmsid": 2
+      },
+      {
+        "time_day": "2013-01-29T22:12:03.000Z",
+        "value": 0,
+        "mmsid": 2
+      },
+      {
+        "time_day": "2013-01-29T14:12:03.000Z",
+        "value": 0,
+        "mmsid": 2
+      },
+      {
+        "time_day": "2013-01-29T06:12:03.000Z",
+        "value": 0,
+        "mmsid": 2
+      },
+      {
+        "time_day": "2013-01-28T22:12:03.000Z",
+        "value": 0,
+        "mmsid": 2
+      },
+      {
+        "time_day": "2013-01-28T14:12:03.000Z",
+        "value": 0,
+        "mmsid": 2
+      },
+      {
+        "time_day": "2013-01-28T06:12:03.000Z",
+        "value": 0,
+        "mmsid": 2
+      },
+      {
+        "time_day": "2013-01-27T22:12:03.000Z",
+        "value": 0,
+        "mmsid": 2
+      },
+      {
+        "time_day": "2013-01-27T14:12:03.000Z",
+        "value": 0,
+        "mmsid": 2
+      }
+    ],
+    [],
+    [
+      {
+        "time_day": "2013-03-01T14:12:03.000Z",
+        "value": 1000000
+      },
+      {
+        "time_day": "2013-03-01T06:12:03.000Z",
+        "value": 13,
+        "mmsid": 3
+      },
+      {
+        "time_day": "2013-02-28T22:12:03.000Z",
+        "value": 21,
+        "mmsid": 3
+      },
+      {
+        "time_day": "2013-02-28T14:12:03.000Z",
+        "value": 21,
+        "mmsid": 3
+      },
+      {
+        "time_day": "2013-02-28T06:12:03.000Z",
+        "value": 10,
+        "mmsid": 3
+      },
+      {
+        "time_day": "2013-02-27T22:12:03.000Z",
+        "value": 42,
+        "mmsid": 3
+      },
+      {
+        "time_day": "2013-02-27T14:12:03.000Z",
+        "value": 258,
+        "mmsid": 3
+      },
+      {
+        "time_day": "2013-02-27T06:12:03.000Z",
+        "value": 14,
+        "mmsid": 3
+      },
+      {
+        "time_day": "2013-02-26T22:12:03.000Z",
+        "value": 35,
+        "mmsid": 3
+      },
+      {
+        "time_day": "2013-02-26T14:12:03.000Z",
+        "value": 54,
+        "mmsid": 3
+      },
+      {
+        "time_day": "2013-02-26T06:12:03.000Z",
+        "value": 19,
+        "mmsid": 3
+      },
+      {
+        "time_day": "2013-02-25T22:12:03.000Z",
+        "value": 38,
+        "mmsid": 3
+      },
+      {
+        "time_day": "2013-02-25T14:12:03.000Z",
+        "value": 58,
+        "mmsid": 3
+      },
+      {
+        "time_day": "2013-02-25T06:12:03.000Z",
+        "value": 24,
+        "mmsid": 3
+      },
+      {
+        "time_day": "2013-02-24T22:12:03.000Z",
+        "value": 50,
+        "mmsid": 3
+      },
+      {
+        "time_day": "2013-02-24T14:12:03.000Z",
+        "value": 106,
+        "mmsid": 3
+      },
+      {
+        "time_day": "2013-02-24T06:12:03.000Z",
+        "value": 58,
+        "mmsid": 3
+      },
+      {
+        "time_day": "2013-02-23T22:12:03.000Z",
+        "value": 299,
+        "mmsid": 3
+      },
+      {
+        "time_day": "2013-02-23T14:12:03.000Z",
+        "value": 1895,
+        "mmsid": 3
+      },
+      {
+        "time_day": "2013-02-23T06:12:03.000Z",
+        "value": 16,
+        "mmsid": 3
+      },
+      {
+        "time_day": "2013-02-22T22:12:03.000Z",
+        "value": 24,
+        "mmsid": 3
+      },
+      {
+        "time_day": "2013-02-22T14:12:03.000Z",
+        "value": 39,
+        "mmsid": 3
+      },
+      {
+        "time_day": "2013-02-22T06:12:03.000Z",
+        "value": 6,
+        "mmsid": 3
+      },
+      {
+        "time_day": "2013-02-21T22:12:03.000Z",
+        "value": 18,
+        "mmsid": 3
+      },
+      {
+        "time_day": "2013-02-21T14:12:03.000Z",
+        "value": 41,
+        "mmsid": 3
+      },
+      {
+        "time_day": "2013-02-21T06:12:03.000Z",
+        "value": 19,
+        "mmsid": 3
+      },
+      {
+        "time_day": "2013-02-20T22:12:03.000Z",
+        "value": 31,
+        "mmsid": 3
+      },
+      {
+        "time_day": "2013-02-20T14:12:03.000Z",
+        "value": 28,
+        "mmsid": 3
+      },
+      {
+        "time_day": "2013-02-20T06:12:03.000Z",
+        "value": 11,
+        "mmsid": 3
+      },
+      {
+        "time_day": "2013-02-19T22:12:03.000Z",
+        "value": 14,
+        "mmsid": 3
+      },
+      {
+        "time_day": "2013-02-19T14:12:03.000Z",
+        "value": 34,
+        "mmsid": 3
+      },
+      {
+        "time_day": "2013-02-19T06:12:03.000Z",
+        "value": 16,
+        "mmsid": 3
+      },
+      {
+        "time_day": "2013-02-18T22:12:03.000Z",
+        "value": 32,
+        "mmsid": 3
+      },
+      {
+        "time_day": "2013-02-18T14:12:03.000Z",
+        "value": 58,
+        "mmsid": 3
+      },
+      {
+        "time_day": "2013-02-18T06:12:03.000Z",
+        "value": 35,
+        "mmsid": 3
+      },
+      {
+        "time_day": "2013-02-17T22:12:03.000Z",
+        "value": 43,
+        "mmsid": 3
+      },
+      {
+        "time_day": "2013-02-17T14:12:03.000Z",
+        "value": 224,
+        "mmsid": 3
+      },
+      {
+        "time_day": "2013-02-17T06:12:03.000Z",
+        "value": 185,
+        "mmsid": 3
+      },
+      {
+        "time_day": "2013-02-16T22:12:03.000Z",
+        "value": 18,
+        "mmsid": 3
+      },
+      {
+        "time_day": "2013-02-16T14:12:03.000Z",
+        "value": 26,
+        "mmsid": 3
+      },
+      {
+        "time_day": "2013-02-16T06:12:03.000Z",
+        "value": 14,
+        "mmsid": 3
+      },
+      {
+        "time_day": "2013-02-15T22:12:03.000Z",
+        "value": 22,
+        "mmsid": 3
+      },
+      {
+        "time_day": "2013-02-15T14:12:03.000Z",
+        "value": 21,
+        "mmsid": 3
+      },
+      {
+        "time_day": "2013-02-15T06:12:03.000Z",
+        "value": 13,
+        "mmsid": 3
+      },
+      {
+        "time_day": "2013-02-14T22:12:03.000Z",
+        "value": 25,
+        "mmsid": 3
+      },
+      {
+        "time_day": "2013-02-14T14:12:03.000Z",
+        "value": 34,
+        "mmsid": 3
+      },
+      {
+        "time_day": "2013-02-14T06:12:03.000Z",
+        "value": 12,
+        "mmsid": 3
+      },
+      {
+        "time_day": "2013-02-13T22:12:03.000Z",
+        "value": 22,
+        "mmsid": 3
+      },
+      {
+        "time_day": "2013-02-13T14:12:03.000Z",
+        "value": 35,
+        "mmsid": 3
+      },
+      {
+        "time_day": "2013-02-13T06:12:03.000Z",
+        "value": 6,
+        "mmsid": 3
+      },
+      {
+        "time_day": "2013-02-12T22:12:03.000Z",
+        "value": 31,
+        "mmsid": 3
+      },
+      {
+        "time_day": "2013-02-12T14:12:03.000Z",
+        "value": 36,
+        "mmsid": 3
+      },
+      {
+        "time_day": "2013-02-12T06:12:03.000Z",
+        "value": 12,
+        "mmsid": 3
+      },
+      {
+        "time_day": "2013-02-11T22:12:03.000Z",
+        "value": 24,
+        "mmsid": 3
+      },
+      {
+        "time_day": "2013-02-11T14:12:03.000Z",
+        "value": 40,
+        "mmsid": 3
+      },
+      {
+        "time_day": "2013-02-11T06:12:03.000Z",
+        "value": 4,
+        "mmsid": 3
+      },
+      {
+        "time_day": "2013-02-10T22:12:03.000Z",
+        "value": 14,
+        "mmsid": 3
+      },
+      {
+        "time_day": "2013-02-10T14:12:03.000Z",
+        "value": 26,
+        "mmsid": 3
+      },
+      {
+        "time_day": "2013-02-10T06:12:03.000Z",
+        "value": 7,
+        "mmsid": 3
+      },
+      {
+        "time_day": "2013-02-09T22:12:03.000Z",
+        "value": 26,
+        "mmsid": 3
+      },
+      {
+        "time_day": "2013-02-09T14:12:03.000Z",
+        "value": 37,
+        "mmsid": 3
+      },
+      {
+        "time_day": "2013-02-09T06:12:03.000Z",
+        "value": 10,
+        "mmsid": 3
+      },
+      {
+        "time_day": "2013-02-08T22:12:03.000Z",
+        "value": 27,
+        "mmsid": 3
+      },
+      {
+        "time_day": "2013-02-08T14:12:03.000Z",
+        "value": 23,
+        "mmsid": 3
+      },
+      {
+        "time_day": "2013-02-08T06:12:03.000Z",
+        "value": 10,
+        "mmsid": 3
+      },
+      {
+        "time_day": "2013-02-07T22:12:03.000Z",
+        "value": 29,
+        "mmsid": 3
+      },
+      {
+        "time_day": "2013-02-07T14:12:03.000Z",
+        "value": 29,
+        "mmsid": 3
+      },
+      {
+        "time_day": "2013-02-07T06:12:03.000Z",
+        "value": 10,
+        "mmsid": 3
+      },
+      {
+        "time_day": "2013-02-06T22:12:03.000Z",
+        "value": 22,
+        "mmsid": 3
+      },
+      {
+        "time_day": "2013-02-06T14:12:03.000Z",
+        "value": 36,
+        "mmsid": 3
+      },
+      {
+        "time_day": "2013-02-06T06:12:03.000Z",
+        "value": 26,
+        "mmsid": 3
+      },
+      {
+        "time_day": "2013-02-05T22:12:03.000Z",
+        "value": 57,
+        "mmsid": 3
+      },
+      {
+        "time_day": "2013-02-05T14:12:03.000Z",
+        "value": 41,
+        "mmsid": 3
+      },
+      {
+        "time_day": "2013-02-05T06:12:03.000Z",
+        "value": 6,
+        "mmsid": 3
+      },
+      {
+        "time_day": "2013-02-04T22:12:03.000Z",
+        "value": 23,
+        "mmsid": 3
+      },
+      {
+        "time_day": "2013-02-04T14:12:03.000Z",
+        "value": 41,
+        "mmsid": 3
+      },
+      {
+        "time_day": "2013-02-04T06:12:03.000Z",
+        "value": 49,
+        "mmsid": 3
+      },
+      {
+        "time_day": "2013-02-03T22:12:03.000Z",
+        "value": 36,
+        "mmsid": 3
+      },
+      {
+        "time_day": "2013-02-03T14:12:03.000Z",
+        "value": 207,
+        "mmsid": 3
+      },
+      {
+        "time_day": "2013-02-03T06:12:03.000Z",
+        "value": 50,
+        "mmsid": 3
+      },
+      {
+        "time_day": "2013-02-02T22:12:03.000Z",
+        "value": 27,
+        "mmsid": 3
+      },
+      {
+        "time_day": "2013-02-02T14:12:03.000Z",
+        "value": 193,
+        "mmsid": 3
+      },
+      {
+        "time_day": "2013-02-02T06:12:03.000Z",
+        "value": 9,
+        "mmsid": 3
+      },
+      {
+        "time_day": "2013-02-01T22:12:03.000Z",
+        "value": 6,
+        "mmsid": 3
+      },
+      {
+        "time_day": "2013-02-01T14:12:03.000Z",
+        "value": 9,
+        "mmsid": 3
+      },
+      {
+        "time_day": "2013-02-01T06:12:03.000Z",
+        "value": 0,
+        "mmsid": 3
+      },
+      {
+        "time_day": "2013-01-31T22:12:03.000Z",
+        "value": 0,
+        "mmsid": 3
+      },
+      {
+        "time_day": "2013-01-31T14:12:03.000Z",
+        "value": 0,
+        "mmsid": 3
+      },
+      {
+        "time_day": "2013-01-31T06:12:03.000Z",
+        "value": 0,
+        "mmsid": 3
+      },
+      {
+        "time_day": "2013-01-30T22:12:03.000Z",
+        "value": 0,
+        "mmsid": 3
+      },
+      {
+        "time_day": "2013-01-30T14:12:03.000Z",
+        "value": 0,
+        "mmsid": 3
+      },
+      {
+        "time_day": "2013-01-30T06:12:03.000Z",
+        "value": 0,
+        "mmsid": 3
+      },
+      {
+        "time_day": "2013-01-29T22:12:03.000Z",
+        "value": 0,
+        "mmsid": 3
+      },
+      {
+        "time_day": "2013-01-29T14:12:03.000Z",
+        "value": 0,
+        "mmsid": 3
+      },
+      {
+        "time_day": "2013-01-29T06:12:03.000Z",
+        "value": 0,
+        "mmsid": 3
+      },
+      {
+        "time_day": "2013-01-28T22:12:03.000Z",
+        "value": 0,
+        "mmsid": 3
+      },
+      {
+        "time_day": "2013-01-28T14:12:03.000Z",
+        "value": 0,
+        "mmsid": 3
+      },
+      {
+        "time_day": "2013-01-28T06:12:03.000Z",
+        "value": 0,
+        "mmsid": 3
+      },
+      {
+        "time_day": "2013-01-27T22:12:03.000Z",
+        "value": 0,
+        "mmsid": 3
+      },
+      {
+        "time_day": "2013-01-27T14:12:03.000Z",
+        "value": 0,
+        "mmsid": 3
+      }
+    ],
+    [],
+    [
+      {
+        "time_day": "2013-03-01T14:12:03.000Z",
+        "value": 1000000
+      },
+      {
+        "time_day": "2013-03-01T06:12:03.000Z",
+        "value": 5,
+        "mmsid": 4
+      },
+      {
+        "time_day": "2013-02-28T22:12:03.000Z",
+        "value": 16,
+        "mmsid": 4
+      },
+      {
+        "time_day": "2013-02-28T14:12:03.000Z",
+        "value": 11,
+        "mmsid": 4
+      },
+      {
+        "time_day": "2013-02-28T06:12:03.000Z",
+        "value": 3,
+        "mmsid": 4
+      },
+      {
+        "time_day": "2013-02-27T22:12:03.000Z",
+        "value": 10,
+        "mmsid": 4
+      },
+      {
+        "time_day": "2013-02-27T14:12:03.000Z",
+        "value": 12,
+        "mmsid": 4
+      },
+      {
+        "time_day": "2013-02-27T06:12:03.000Z",
+        "value": 4,
+        "mmsid": 4
+      },
+      {
+        "time_day": "2013-02-26T22:12:03.000Z",
+        "value": 20,
+        "mmsid": 4
+      },
+      {
+        "time_day": "2013-02-26T14:12:03.000Z",
+        "value": 15,
+        "mmsid": 4
+      },
+      {
+        "time_day": "2013-02-26T06:12:03.000Z",
+        "value": 3,
+        "mmsid": 4
+      },
+      {
+        "time_day": "2013-02-25T22:12:03.000Z",
+        "value": 16,
+        "mmsid": 4
+      },
+      {
+        "time_day": "2013-02-25T14:12:03.000Z",
+        "value": 15,
+        "mmsid": 4
+      },
+      {
+        "time_day": "2013-02-25T06:12:03.000Z",
+        "value": 7,
+        "mmsid": 4
+      },
+      {
+        "time_day": "2013-02-24T22:12:03.000Z",
+        "value": 20,
+        "mmsid": 4
+      },
+      {
+        "time_day": "2013-02-24T14:12:03.000Z",
+        "value": 21,
+        "mmsid": 4
+      },
+      {
+        "time_day": "2013-02-24T06:12:03.000Z",
+        "value": 13,
+        "mmsid": 4
+      },
+      {
+        "time_day": "2013-02-23T22:12:03.000Z",
+        "value": 9,
+        "mmsid": 4
+      },
+      {
+        "time_day": "2013-02-23T14:12:03.000Z",
+        "value": 15,
+        "mmsid": 4
+      },
+      {
+        "time_day": "2013-02-23T06:12:03.000Z",
+        "value": 5,
+        "mmsid": 4
+      },
+      {
+        "time_day": "2013-02-22T22:12:03.000Z",
+        "value": 9,
+        "mmsid": 4
+      },
+      {
+        "time_day": "2013-02-22T14:12:03.000Z",
+        "value": 14,
+        "mmsid": 4
+      },
+      {
+        "time_day": "2013-02-22T06:12:03.000Z",
+        "value": 5,
+        "mmsid": 4
+      },
+      {
+        "time_day": "2013-02-21T22:12:03.000Z",
+        "value": 9,
+        "mmsid": 4
+      },
+      {
+        "time_day": "2013-02-21T14:12:03.000Z",
+        "value": 18,
+        "mmsid": 4
+      },
+      {
+        "time_day": "2013-02-21T06:12:03.000Z",
+        "value": 7,
+        "mmsid": 4
+      },
+      {
+        "time_day": "2013-02-20T22:12:03.000Z",
+        "value": 20,
+        "mmsid": 4
+      },
+      {
+        "time_day": "2013-02-20T14:12:03.000Z",
+        "value": 17,
+        "mmsid": 4
+      },
+      {
+        "time_day": "2013-02-20T06:12:03.000Z",
+        "value": 4,
+        "mmsid": 4
+      },
+      {
+        "time_day": "2013-02-19T22:12:03.000Z",
+        "value": 15,
+        "mmsid": 4
+      },
+      {
+        "time_day": "2013-02-19T14:12:03.000Z",
+        "value": 15,
+        "mmsid": 4
+      },
+      {
+        "time_day": "2013-02-19T06:12:03.000Z",
+        "value": 4,
+        "mmsid": 4
+      },
+      {
+        "time_day": "2013-02-18T22:12:03.000Z",
+        "value": 18,
+        "mmsid": 4
+      },
+      {
+        "time_day": "2013-02-18T14:12:03.000Z",
+        "value": 24,
+        "mmsid": 4
+      },
+      {
+        "time_day": "2013-02-18T06:12:03.000Z",
+        "value": 8,
+        "mmsid": 4
+      },
+      {
+        "time_day": "2013-02-17T22:12:03.000Z",
+        "value": 21,
+        "mmsid": 4
+      },
+      {
+        "time_day": "2013-02-17T14:12:03.000Z",
+        "value": 9,
+        "mmsid": 4
+      },
+      {
+        "time_day": "2013-02-17T06:12:03.000Z",
+        "value": 6,
+        "mmsid": 4
+      },
+      {
+        "time_day": "2013-02-16T22:12:03.000Z",
+        "value": 12,
+        "mmsid": 4
+      },
+      {
+        "time_day": "2013-02-16T14:12:03.000Z",
+        "value": 17,
+        "mmsid": 4
+      },
+      {
+        "time_day": "2013-02-16T06:12:03.000Z",
+        "value": 4,
+        "mmsid": 4
+      },
+      {
+        "time_day": "2013-02-15T22:12:03.000Z",
+        "value": 11,
+        "mmsid": 4
+      },
+      {
+        "time_day": "2013-02-15T14:12:03.000Z",
+        "value": 13,
+        "mmsid": 4
+      },
+      {
+        "time_day": "2013-02-15T06:12:03.000Z",
+        "value": 5,
+        "mmsid": 4
+      },
+      {
+        "time_day": "2013-02-14T22:12:03.000Z",
+        "value": 15,
+        "mmsid": 4
+      },
+      {
+        "time_day": "2013-02-14T14:12:03.000Z",
+        "value": 19,
+        "mmsid": 4
+      },
+      {
+        "time_day": "2013-02-14T06:12:03.000Z",
+        "value": 9,
+        "mmsid": 4
+      },
+      {
+        "time_day": "2013-02-13T22:12:03.000Z",
+        "value": 23,
+        "mmsid": 4
+      },
+      {
+        "time_day": "2013-02-13T14:12:03.000Z",
+        "value": 7,
+        "mmsid": 4
+      },
+      {
+        "time_day": "2013-02-13T06:12:03.000Z",
+        "value": 1,
+        "mmsid": 4
+      },
+      {
+        "time_day": "2013-02-12T22:12:03.000Z",
+        "value": 11,
+        "mmsid": 4
+      },
+      {
+        "time_day": "2013-02-12T14:12:03.000Z",
+        "value": 17,
+        "mmsid": 4
+      },
+      {
+        "time_day": "2013-02-12T06:12:03.000Z",
+        "value": 6,
+        "mmsid": 4
+      },
+      {
+        "time_day": "2013-02-11T22:12:03.000Z",
+        "value": 19,
+        "mmsid": 4
+      },
+      {
+        "time_day": "2013-02-11T14:12:03.000Z",
+        "value": 9,
+        "mmsid": 4
+      },
+      {
+        "time_day": "2013-02-11T06:12:03.000Z",
+        "value": 6,
+        "mmsid": 4
+      },
+      {
+        "time_day": "2013-02-10T22:12:03.000Z",
+        "value": 24,
+        "mmsid": 4
+      },
+      {
+        "time_day": "2013-02-10T14:12:03.000Z",
+        "value": 11,
+        "mmsid": 4
+      },
+      {
+        "time_day": "2013-02-10T06:12:03.000Z",
+        "value": 2,
+        "mmsid": 4
+      },
+      {
+        "time_day": "2013-02-09T22:12:03.000Z",
+        "value": 11,
+        "mmsid": 4
+      },
+      {
+        "time_day": "2013-02-09T14:12:03.000Z",
+        "value": 10,
+        "mmsid": 4
+      },
+      {
+        "time_day": "2013-02-09T06:12:03.000Z",
+        "value": 2,
+        "mmsid": 4
+      },
+      {
+        "time_day": "2013-02-08T22:12:03.000Z",
+        "value": 17,
+        "mmsid": 4
+      },
+      {
+        "time_day": "2013-02-08T14:12:03.000Z",
+        "value": 19,
+        "mmsid": 4
+      },
+      {
+        "time_day": "2013-02-08T06:12:03.000Z",
+        "value": 5,
+        "mmsid": 4
+      },
+      {
+        "time_day": "2013-02-07T22:12:03.000Z",
+        "value": 15,
+        "mmsid": 4
+      },
+      {
+        "time_day": "2013-02-07T14:12:03.000Z",
+        "value": 7,
+        "mmsid": 4
+      },
+      {
+        "time_day": "2013-02-07T06:12:03.000Z",
+        "value": 11,
+        "mmsid": 4
+      },
+      {
+        "time_day": "2013-02-06T22:12:03.000Z",
+        "value": 16,
+        "mmsid": 4
+      },
+      {
+        "time_day": "2013-02-06T14:12:03.000Z",
+        "value": 17,
+        "mmsid": 4
+      },
+      {
+        "time_day": "2013-02-06T06:12:03.000Z",
+        "value": 5,
+        "mmsid": 4
+      },
+      {
+        "time_day": "2013-02-05T22:12:03.000Z",
+        "value": 10,
+        "mmsid": 4
+      },
+      {
+        "time_day": "2013-02-05T14:12:03.000Z",
+        "value": 14,
+        "mmsid": 4
+      },
+      {
+        "time_day": "2013-02-05T06:12:03.000Z",
+        "value": 2,
+        "mmsid": 4
+      },
+      {
+        "time_day": "2013-02-04T22:12:03.000Z",
+        "value": 12,
+        "mmsid": 4
+      },
+      {
+        "time_day": "2013-02-04T14:12:03.000Z",
+        "value": 26,
+        "mmsid": 4
+      },
+      {
+        "time_day": "2013-02-04T06:12:03.000Z",
+        "value": 4,
+        "mmsid": 4
+      },
+      {
+        "time_day": "2013-02-03T22:12:03.000Z",
+        "value": 59,
+        "mmsid": 4
+      },
+      {
+        "time_day": "2013-02-03T14:12:03.000Z",
+        "value": 12,
+        "mmsid": 4
+      },
+      {
+        "time_day": "2013-02-03T06:12:03.000Z",
+        "value": 4,
+        "mmsid": 4
+      },
+      {
+        "time_day": "2013-02-02T22:12:03.000Z",
+        "value": 12,
+        "mmsid": 4
+      },
+      {
+        "time_day": "2013-02-02T14:12:03.000Z",
+        "value": 18,
+        "mmsid": 4
+      },
+      {
+        "time_day": "2013-02-02T06:12:03.000Z",
+        "value": 1,
+        "mmsid": 4
+      },
+      {
+        "time_day": "2013-02-01T22:12:03.000Z",
+        "value": 11,
+        "mmsid": 4
+      },
+      {
+        "time_day": "2013-02-01T14:12:03.000Z",
+        "value": 9,
+        "mmsid": 4
+      },
+      {
+        "time_day": "2013-02-01T06:12:03.000Z",
+        "value": 1,
+        "mmsid": 4
+      },
+      {
+        "time_day": "2013-01-31T22:12:03.000Z",
+        "value": 4,
+        "mmsid": 4
+      },
+      {
+        "time_day": "2013-01-31T14:12:03.000Z",
+        "value": 0,
+        "mmsid": 4
+      },
+      {
+        "time_day": "2013-01-31T06:12:03.000Z",
+        "value": 0,
+        "mmsid": 4
+      },
+      {
+        "time_day": "2013-01-30T22:12:03.000Z",
+        "value": 0,
+        "mmsid": 4
+      },
+      {
+        "time_day": "2013-01-30T14:12:03.000Z",
+        "value": 0,
+        "mmsid": 4
+      },
+      {
+        "time_day": "2013-01-30T06:12:03.000Z",
+        "value": 0,
+        "mmsid": 4
+      },
+      {
+        "time_day": "2013-01-29T22:12:03.000Z",
+        "value": 0,
+        "mmsid": 4
+      },
+      {
+        "time_day": "2013-01-29T14:12:03.000Z",
+        "value": 0,
+        "mmsid": 4
+      },
+      {
+        "time_day": "2013-01-29T06:12:03.000Z",
+        "value": 0,
+        "mmsid": 4
+      },
+      {
+        "time_day": "2013-01-28T22:12:03.000Z",
+        "value": 0,
+        "mmsid": 4
+      },
+      {
+        "time_day": "2013-01-28T14:12:03.000Z",
+        "value": 0,
+        "mmsid": 4
+      },
+      {
+        "time_day": "2013-01-28T06:12:03.000Z",
+        "value": 0,
+        "mmsid": 4
+      },
+      {
+        "time_day": "2013-01-27T22:12:03.000Z",
+        "value": 0,
+        "mmsid": 4
+      },
+      {
+        "time_day": "2013-01-27T14:12:03.000Z",
+        "value": 0,
+        "mmsid": 4
+      }
+    ],
+    [],
+    [
+      {
+        "time_day": "2013-03-01T14:12:03.000Z",
+        "value": 1000000
+      },
+      {
+        "time_day": "2013-03-01T06:12:03.000Z",
+        "value": 1,
+        "mmsid": 5
+      },
+      {
+        "time_day": "2013-02-28T22:12:03.000Z",
+        "value": 7,
+        "mmsid": 5
+      },
+      {
+        "time_day": "2013-02-28T14:12:03.000Z",
+        "value": 2,
+        "mmsid": 5
+      },
+      {
+        "time_day": "2013-02-28T06:12:03.000Z",
+        "value": 2,
+        "mmsid": 5
+      },
+      {
+        "time_day": "2013-02-27T22:12:03.000Z",
+        "value": 3,
+        "mmsid": 5
+      },
+      {
+        "time_day": "2013-02-27T14:12:03.000Z",
+        "value": 8,
+        "mmsid": 5
+      },
+      {
+        "time_day": "2013-02-27T06:12:03.000Z",
+        "value": 4,
+        "mmsid": 5
+      },
+      {
+        "time_day": "2013-02-26T22:12:03.000Z",
+        "value": 7,
+        "mmsid": 5
+      },
+      {
+        "time_day": "2013-02-26T14:12:03.000Z",
+        "value": 10,
+        "mmsid": 5
+      },
+      {
+        "time_day": "2013-02-26T06:12:03.000Z",
+        "value": 1,
+        "mmsid": 5
+      },
+      {
+        "time_day": "2013-02-25T22:12:03.000Z",
+        "value": 4,
+        "mmsid": 5
+      },
+      {
+        "time_day": "2013-02-25T14:12:03.000Z",
+        "value": 4,
+        "mmsid": 5
+      },
+      {
+        "time_day": "2013-02-25T06:12:03.000Z",
+        "value": 3,
+        "mmsid": 5
+      },
+      {
+        "time_day": "2013-02-24T22:12:03.000Z",
+        "value": 3,
+        "mmsid": 5
+      },
+      {
+        "time_day": "2013-02-24T14:12:03.000Z",
+        "value": 4,
+        "mmsid": 5
+      },
+      {
+        "time_day": "2013-02-24T06:12:03.000Z",
+        "value": 1,
+        "mmsid": 5
+      },
+      {
+        "time_day": "2013-02-23T22:12:03.000Z",
+        "value": 11,
+        "mmsid": 5
+      },
+      {
+        "time_day": "2013-02-23T14:12:03.000Z",
+        "value": 7,
+        "mmsid": 5
+      },
+      {
+        "time_day": "2013-02-23T06:12:03.000Z",
+        "value": 2,
+        "mmsid": 5
+      },
+      {
+        "time_day": "2013-02-22T22:12:03.000Z",
+        "value": 12,
+        "mmsid": 5
+      },
+      {
+        "time_day": "2013-02-22T14:12:03.000Z",
+        "value": 11,
+        "mmsid": 5
+      },
+      {
+        "time_day": "2013-02-22T06:12:03.000Z",
+        "value": 3,
+        "mmsid": 5
+      },
+      {
+        "time_day": "2013-02-21T22:12:03.000Z",
+        "value": 3,
+        "mmsid": 5
+      },
+      {
+        "time_day": "2013-02-21T14:12:03.000Z",
+        "value": 11,
+        "mmsid": 5
+      },
+      {
+        "time_day": "2013-02-21T06:12:03.000Z",
+        "value": 1,
+        "mmsid": 5
+      },
+      {
+        "time_day": "2013-02-20T22:12:03.000Z",
+        "value": 6,
+        "mmsid": 5
+      },
+      {
+        "time_day": "2013-02-20T14:12:03.000Z",
+        "value": 3,
+        "mmsid": 5
+      },
+      {
+        "time_day": "2013-02-20T06:12:03.000Z",
+        "value": 2,
+        "mmsid": 5
+      },
+      {
+        "time_day": "2013-02-19T22:12:03.000Z",
+        "value": 7,
+        "mmsid": 5
+      },
+      {
+        "time_day": "2013-02-19T14:12:03.000Z",
+        "value": 15,
+        "mmsid": 5
+      },
+      {
+        "time_day": "2013-02-19T06:12:03.000Z",
+        "value": 0,
+        "mmsid": 5
+      },
+      {
+        "time_day": "2013-02-18T22:12:03.000Z",
+        "value": 7,
+        "mmsid": 5
+      },
+      {
+        "time_day": "2013-02-18T14:12:03.000Z",
+        "value": 10,
+        "mmsid": 5
+      },
+      {
+        "time_day": "2013-02-18T06:12:03.000Z",
+        "value": 4,
+        "mmsid": 5
+      },
+      {
+        "time_day": "2013-02-17T22:12:03.000Z",
+        "value": 7,
+        "mmsid": 5
+      },
+      {
+        "time_day": "2013-02-17T14:12:03.000Z",
+        "value": 5,
+        "mmsid": 5
+      },
+      {
+        "time_day": "2013-02-17T06:12:03.000Z",
+        "value": 4,
+        "mmsid": 5
+      },
+      {
+        "time_day": "2013-02-16T22:12:03.000Z",
+        "value": 3,
+        "mmsid": 5
+      },
+      {
+        "time_day": "2013-02-16T14:12:03.000Z",
+        "value": 4,
+        "mmsid": 5
+      },
+      {
+        "time_day": "2013-02-16T06:12:03.000Z",
+        "value": 7,
+        "mmsid": 5
+      },
+      {
+        "time_day": "2013-02-15T22:12:03.000Z",
+        "value": 7,
+        "mmsid": 5
+      },
+      {
+        "time_day": "2013-02-15T14:12:03.000Z",
+        "value": 6,
+        "mmsid": 5
+      },
+      {
+        "time_day": "2013-02-15T06:12:03.000Z",
+        "value": 6,
+        "mmsid": 5
+      },
+      {
+        "time_day": "2013-02-14T22:12:03.000Z",
+        "value": 11,
+        "mmsid": 5
+      },
+      {
+        "time_day": "2013-02-14T14:12:03.000Z",
+        "value": 10,
+        "mmsid": 5
+      },
+      {
+        "time_day": "2013-02-14T06:12:03.000Z",
+        "value": 4,
+        "mmsid": 5
+      },
+      {
+        "time_day": "2013-02-13T22:12:03.000Z",
+        "value": 4,
+        "mmsid": 5
+      },
+      {
+        "time_day": "2013-02-13T14:12:03.000Z",
+        "value": 6,
+        "mmsid": 5
+      },
+      {
+        "time_day": "2013-02-13T06:12:03.000Z",
+        "value": 0,
+        "mmsid": 5
+      },
+      {
+        "time_day": "2013-02-12T22:12:03.000Z",
+        "value": 11,
+        "mmsid": 5
+      },
+      {
+        "time_day": "2013-02-12T14:12:03.000Z",
+        "value": 4,
+        "mmsid": 5
+      },
+      {
+        "time_day": "2013-02-12T06:12:03.000Z",
+        "value": 5,
+        "mmsid": 5
+      },
+      {
+        "time_day": "2013-02-11T22:12:03.000Z",
+        "value": 6,
+        "mmsid": 5
+      },
+      {
+        "time_day": "2013-02-11T14:12:03.000Z",
+        "value": 5,
+        "mmsid": 5
+      },
+      {
+        "time_day": "2013-02-11T06:12:03.000Z",
+        "value": 8,
+        "mmsid": 5
+      },
+      {
+        "time_day": "2013-02-10T22:12:03.000Z",
+        "value": 3,
+        "mmsid": 5
+      },
+      {
+        "time_day": "2013-02-10T14:12:03.000Z",
+        "value": 11,
+        "mmsid": 5
+      },
+      {
+        "time_day": "2013-02-10T06:12:03.000Z",
+        "value": 0,
+        "mmsid": 5
+      },
+      {
+        "time_day": "2013-02-09T22:12:03.000Z",
+        "value": 4,
+        "mmsid": 5
+      },
+      {
+        "time_day": "2013-02-09T14:12:03.000Z",
+        "value": 2,
+        "mmsid": 5
+      },
+      {
+        "time_day": "2013-02-09T06:12:03.000Z",
+        "value": 6,
+        "mmsid": 5
+      },
+      {
+        "time_day": "2013-02-08T22:12:03.000Z",
+        "value": 4,
+        "mmsid": 5
+      },
+      {
+        "time_day": "2013-02-08T14:12:03.000Z",
+        "value": 5,
+        "mmsid": 5
+      },
+      {
+        "time_day": "2013-02-08T06:12:03.000Z",
+        "value": 1,
+        "mmsid": 5
+      },
+      {
+        "time_day": "2013-02-07T22:12:03.000Z",
+        "value": 4,
+        "mmsid": 5
+      },
+      {
+        "time_day": "2013-02-07T14:12:03.000Z",
+        "value": 9,
+        "mmsid": 5
+      },
+      {
+        "time_day": "2013-02-07T06:12:03.000Z",
+        "value": 4,
+        "mmsid": 5
+      },
+      {
+        "time_day": "2013-02-06T22:12:03.000Z",
+        "value": 9,
+        "mmsid": 5
+      },
+      {
+        "time_day": "2013-02-06T14:12:03.000Z",
+        "value": 5,
+        "mmsid": 5
+      },
+      {
+        "time_day": "2013-02-06T06:12:03.000Z",
+        "value": 5,
+        "mmsid": 5
+      },
+      {
+        "time_day": "2013-02-05T22:12:03.000Z",
+        "value": 10,
+        "mmsid": 5
+      },
+      {
+        "time_day": "2013-02-05T14:12:03.000Z",
+        "value": 3,
+        "mmsid": 5
+      },
+      {
+        "time_day": "2013-02-05T06:12:03.000Z",
+        "value": 5,
+        "mmsid": 5
+      },
+      {
+        "time_day": "2013-02-04T22:12:03.000Z",
+        "value": 7,
+        "mmsid": 5
+      },
+      {
+        "time_day": "2013-02-04T14:12:03.000Z",
+        "value": 9,
+        "mmsid": 5
+      },
+      {
+        "time_day": "2013-02-04T06:12:03.000Z",
+        "value": 2,
+        "mmsid": 5
+      },
+      {
+        "time_day": "2013-02-03T22:12:03.000Z",
+        "value": 6,
+        "mmsid": 5
+      },
+      {
+        "time_day": "2013-02-03T14:12:03.000Z",
+        "value": 5,
+        "mmsid": 5
+      },
+      {
+        "time_day": "2013-02-03T06:12:03.000Z",
+        "value": 4,
+        "mmsid": 5
+      },
+      {
+        "time_day": "2013-02-02T22:12:03.000Z",
+        "value": 4,
+        "mmsid": 5
+      },
+      {
+        "time_day": "2013-02-02T14:12:03.000Z",
+        "value": 4,
+        "mmsid": 5
+      },
+      {
+        "time_day": "2013-02-02T06:12:03.000Z",
+        "value": 0,
+        "mmsid": 5
+      },
+      {
+        "time_day": "2013-02-01T22:12:03.000Z",
+        "value": 6,
+        "mmsid": 5
+      },
+      {
+        "time_day": "2013-02-01T14:12:03.000Z",
+        "value": 1,
+        "mmsid": 5
+      },
+      {
+        "time_day": "2013-02-01T06:12:03.000Z",
+        "value": 2,
+        "mmsid": 5
+      },
+      {
+        "time_day": "2013-01-31T22:12:03.000Z",
+        "value": 8,
+        "mmsid": 5
+      },
+      {
+        "time_day": "2013-01-31T14:12:03.000Z",
+        "value": 0,
+        "mmsid": 5
+      },
+      {
+        "time_day": "2013-01-31T06:12:03.000Z",
+        "value": 0,
+        "mmsid": 5
+      },
+      {
+        "time_day": "2013-01-30T22:12:03.000Z",
+        "value": 0,
+        "mmsid": 5
+      },
+      {
+        "time_day": "2013-01-30T14:12:03.000Z",
+        "value": 0,
+        "mmsid": 5
+      },
+      {
+        "time_day": "2013-01-30T06:12:03.000Z",
+        "value": 0,
+        "mmsid": 5
+      },
+      {
+        "time_day": "2013-01-29T22:12:03.000Z",
+        "value": 0,
+        "mmsid": 5
+      },
+      {
+        "time_day": "2013-01-29T14:12:03.000Z",
+        "value": 0,
+        "mmsid": 5
+      },
+      {
+        "time_day": "2013-01-29T06:12:03.000Z",
+        "value": 0,
+        "mmsid": 5
+      },
+      {
+        "time_day": "2013-01-28T22:12:03.000Z",
+        "value": 0,
+        "mmsid": 5
+      },
+      {
+        "time_day": "2013-01-28T14:12:03.000Z",
+        "value": 0,
+        "mmsid": 5
+      },
+      {
+        "time_day": "2013-01-28T06:12:03.000Z",
+        "value": 0,
+        "mmsid": 5
+      },
+      {
+        "time_day": "2013-01-27T22:12:03.000Z",
+        "value": 0,
+        "mmsid": 5
+      },
+      {
+        "time_day": "2013-01-27T14:12:03.000Z",
+        "value": 0,
+        "mmsid": 5
+      }
+    ],
+    [],
+    [
+      {
+        "time_day": "2013-03-01T14:12:03.000Z",
+        "value": 1000000
+      },
+      {
+        "time_day": "2013-03-01T06:12:03.000Z",
+        "value": 4,
+        "mmsid": 6
+      },
+      {
+        "time_day": "2013-02-28T22:12:03.000Z",
+        "value": 10,
+        "mmsid": 6
+      },
+      {
+        "time_day": "2013-02-28T14:12:03.000Z",
+        "value": 10,
+        "mmsid": 6
+      },
+      {
+        "time_day": "2013-02-28T06:12:03.000Z",
+        "value": 2,
+        "mmsid": 6
+      },
+      {
+        "time_day": "2013-02-27T22:12:03.000Z",
+        "value": 12,
+        "mmsid": 6
+      },
+      {
+        "time_day": "2013-02-27T14:12:03.000Z",
+        "value": 15,
+        "mmsid": 6
+      },
+      {
+        "time_day": "2013-02-27T06:12:03.000Z",
+        "value": 9,
+        "mmsid": 6
+      },
+      {
+        "time_day": "2013-02-26T22:12:03.000Z",
+        "value": 23,
+        "mmsid": 6
+      },
+      {
+        "time_day": "2013-02-26T14:12:03.000Z",
+        "value": 211,
+        "mmsid": 6
+      },
+      {
+        "time_day": "2013-02-26T06:12:03.000Z",
+        "value": 3,
+        "mmsid": 6
+      },
+      {
+        "time_day": "2013-02-25T22:12:03.000Z",
+        "value": 15,
+        "mmsid": 6
+      },
+      {
+        "time_day": "2013-02-25T14:12:03.000Z",
+        "value": 17,
+        "mmsid": 6
+      },
+      {
+        "time_day": "2013-02-25T06:12:03.000Z",
+        "value": 10,
+        "mmsid": 6
+      },
+      {
+        "time_day": "2013-02-24T22:12:03.000Z",
+        "value": 18,
+        "mmsid": 6
+      },
+      {
+        "time_day": "2013-02-24T14:12:03.000Z",
+        "value": 7,
+        "mmsid": 6
+      },
+      {
+        "time_day": "2013-02-24T06:12:03.000Z",
+        "value": 5,
+        "mmsid": 6
+      },
+      {
+        "time_day": "2013-02-23T22:12:03.000Z",
+        "value": 20,
+        "mmsid": 6
+      },
+      {
+        "time_day": "2013-02-23T14:12:03.000Z",
+        "value": 8,
+        "mmsid": 6
+      },
+      {
+        "time_day": "2013-02-23T06:12:03.000Z",
+        "value": 4,
+        "mmsid": 6
+      },
+      {
+        "time_day": "2013-02-22T22:12:03.000Z",
+        "value": 8,
+        "mmsid": 6
+      },
+      {
+        "time_day": "2013-02-22T14:12:03.000Z",
+        "value": 20,
+        "mmsid": 6
+      },
+      {
+        "time_day": "2013-02-22T06:12:03.000Z",
+        "value": 7,
+        "mmsid": 6
+      },
+      {
+        "time_day": "2013-02-21T22:12:03.000Z",
+        "value": 28,
+        "mmsid": 6
+      },
+      {
+        "time_day": "2013-02-21T14:12:03.000Z",
+        "value": 13,
+        "mmsid": 6
+      },
+      {
+        "time_day": "2013-02-21T06:12:03.000Z",
+        "value": 5,
+        "mmsid": 6
+      },
+      {
+        "time_day": "2013-02-20T22:12:03.000Z",
+        "value": 11,
+        "mmsid": 6
+      },
+      {
+        "time_day": "2013-02-20T14:12:03.000Z",
+        "value": 21,
+        "mmsid": 6
+      },
+      {
+        "time_day": "2013-02-20T06:12:03.000Z",
+        "value": 3,
+        "mmsid": 6
+      },
+      {
+        "time_day": "2013-02-19T22:12:03.000Z",
+        "value": 22,
+        "mmsid": 6
+      },
+      {
+        "time_day": "2013-02-19T14:12:03.000Z",
+        "value": 14,
+        "mmsid": 6
+      },
+      {
+        "time_day": "2013-02-19T06:12:03.000Z",
+        "value": 7,
+        "mmsid": 6
+      },
+      {
+        "time_day": "2013-02-18T22:12:03.000Z",
+        "value": 23,
+        "mmsid": 6
+      },
+      {
+        "time_day": "2013-02-18T14:12:03.000Z",
+        "value": 13,
+        "mmsid": 6
+      },
+      {
+        "time_day": "2013-02-18T06:12:03.000Z",
+        "value": 3,
+        "mmsid": 6
+      },
+      {
+        "time_day": "2013-02-17T22:12:03.000Z",
+        "value": 7,
+        "mmsid": 6
+      },
+      {
+        "time_day": "2013-02-17T14:12:03.000Z",
+        "value": 9,
+        "mmsid": 6
+      },
+      {
+        "time_day": "2013-02-17T06:12:03.000Z",
+        "value": 6,
+        "mmsid": 6
+      },
+      {
+        "time_day": "2013-02-16T22:12:03.000Z",
+        "value": 10,
+        "mmsid": 6
+      },
+      {
+        "time_day": "2013-02-16T14:12:03.000Z",
+        "value": 20,
+        "mmsid": 6
+      },
+      {
+        "time_day": "2013-02-16T06:12:03.000Z",
+        "value": 3,
+        "mmsid": 6
+      },
+      {
+        "time_day": "2013-02-15T22:12:03.000Z",
+        "value": 21,
+        "mmsid": 6
+      },
+      {
+        "time_day": "2013-02-15T14:12:03.000Z",
+        "value": 10,
+        "mmsid": 6
+      },
+      {
+        "time_day": "2013-02-15T06:12:03.000Z",
+        "value": 7,
+        "mmsid": 6
+      },
+      {
+        "time_day": "2013-02-14T22:12:03.000Z",
+        "value": 25,
+        "mmsid": 6
+      },
+      {
+        "time_day": "2013-02-14T14:12:03.000Z",
+        "value": 10,
+        "mmsid": 6
+      },
+      {
+        "time_day": "2013-02-14T06:12:03.000Z",
+        "value": 2,
+        "mmsid": 6
+      },
+      {
+        "time_day": "2013-02-13T22:12:03.000Z",
+        "value": 22,
+        "mmsid": 6
+      },
+      {
+        "time_day": "2013-02-13T14:12:03.000Z",
+        "value": 10,
+        "mmsid": 6
+      },
+      {
+        "time_day": "2013-02-13T06:12:03.000Z",
+        "value": 1,
+        "mmsid": 6
+      },
+      {
+        "time_day": "2013-02-12T22:12:03.000Z",
+        "value": 15,
+        "mmsid": 6
+      },
+      {
+        "time_day": "2013-02-12T14:12:03.000Z",
+        "value": 16,
+        "mmsid": 6
+      },
+      {
+        "time_day": "2013-02-12T06:12:03.000Z",
+        "value": 1,
+        "mmsid": 6
+      },
+      {
+        "time_day": "2013-02-11T22:12:03.000Z",
+        "value": 13,
+        "mmsid": 6
+      },
+      {
+        "time_day": "2013-02-11T14:12:03.000Z",
+        "value": 4,
+        "mmsid": 6
+      },
+      {
+        "time_day": "2013-02-11T06:12:03.000Z",
+        "value": 2,
+        "mmsid": 6
+      },
+      {
+        "time_day": "2013-02-10T22:12:03.000Z",
+        "value": 12,
+        "mmsid": 6
+      },
+      {
+        "time_day": "2013-02-10T14:12:03.000Z",
+        "value": 15,
+        "mmsid": 6
+      },
+      {
+        "time_day": "2013-02-10T06:12:03.000Z",
+        "value": 4,
+        "mmsid": 6
+      },
+      {
+        "time_day": "2013-02-09T22:12:03.000Z",
+        "value": 16,
+        "mmsid": 6
+      },
+      {
+        "time_day": "2013-02-09T14:12:03.000Z",
+        "value": 9,
+        "mmsid": 6
+      },
+      {
+        "time_day": "2013-02-09T06:12:03.000Z",
+        "value": 4,
+        "mmsid": 6
+      },
+      {
+        "time_day": "2013-02-08T22:12:03.000Z",
+        "value": 14,
+        "mmsid": 6
+      },
+      {
+        "time_day": "2013-02-08T14:12:03.000Z",
+        "value": 16,
+        "mmsid": 6
+      },
+      {
+        "time_day": "2013-02-08T06:12:03.000Z",
+        "value": 4,
+        "mmsid": 6
+      },
+      {
+        "time_day": "2013-02-07T22:12:03.000Z",
+        "value": 9,
+        "mmsid": 6
+      },
+      {
+        "time_day": "2013-02-07T14:12:03.000Z",
+        "value": 8,
+        "mmsid": 6
+      },
+      {
+        "time_day": "2013-02-07T06:12:03.000Z",
+        "value": 7,
+        "mmsid": 6
+      },
+      {
+        "time_day": "2013-02-06T22:12:03.000Z",
+        "value": 8,
+        "mmsid": 6
+      },
+      {
+        "time_day": "2013-02-06T14:12:03.000Z",
+        "value": 23,
+        "mmsid": 6
+      },
+      {
+        "time_day": "2013-02-06T06:12:03.000Z",
+        "value": 7,
+        "mmsid": 6
+      },
+      {
+        "time_day": "2013-02-05T22:12:03.000Z",
+        "value": 19,
+        "mmsid": 6
+      },
+      {
+        "time_day": "2013-02-05T14:12:03.000Z",
+        "value": 20,
+        "mmsid": 6
+      },
+      {
+        "time_day": "2013-02-05T06:12:03.000Z",
+        "value": 1,
+        "mmsid": 6
+      },
+      {
+        "time_day": "2013-02-04T22:12:03.000Z",
+        "value": 11,
+        "mmsid": 6
+      },
+      {
+        "time_day": "2013-02-04T14:12:03.000Z",
+        "value": 11,
+        "mmsid": 6
+      },
+      {
+        "time_day": "2013-02-04T06:12:03.000Z",
+        "value": 2,
+        "mmsid": 6
+      },
+      {
+        "time_day": "2013-02-03T22:12:03.000Z",
+        "value": 26,
+        "mmsid": 6
+      },
+      {
+        "time_day": "2013-02-03T14:12:03.000Z",
+        "value": 13,
+        "mmsid": 6
+      },
+      {
+        "time_day": "2013-02-03T06:12:03.000Z",
+        "value": 18,
+        "mmsid": 6
+      },
+      {
+        "time_day": "2013-02-02T22:12:03.000Z",
+        "value": 10,
+        "mmsid": 6
+      },
+      {
+        "time_day": "2013-02-02T14:12:03.000Z",
+        "value": 9,
+        "mmsid": 6
+      },
+      {
+        "time_day": "2013-02-02T06:12:03.000Z",
+        "value": 2,
+        "mmsid": 6
+      },
+      {
+        "time_day": "2013-02-01T22:12:03.000Z",
+        "value": 7,
+        "mmsid": 6
+      },
+      {
+        "time_day": "2013-02-01T14:12:03.000Z",
+        "value": 2,
+        "mmsid": 6
+      },
+      {
+        "time_day": "2013-02-01T06:12:03.000Z",
+        "value": 0,
+        "mmsid": 6
+      },
+      {
+        "time_day": "2013-01-31T22:12:03.000Z",
+        "value": 7,
+        "mmsid": 6
+      },
+      {
+        "time_day": "2013-01-31T14:12:03.000Z",
+        "value": 1,
+        "mmsid": 6
+      },
+      {
+        "time_day": "2013-01-31T06:12:03.000Z",
+        "value": 0,
+        "mmsid": 6
+      },
+      {
+        "time_day": "2013-01-30T22:12:03.000Z",
+        "value": 0,
+        "mmsid": 6
+      },
+      {
+        "time_day": "2013-01-30T14:12:03.000Z",
+        "value": 0,
+        "mmsid": 6
+      },
+      {
+        "time_day": "2013-01-30T06:12:03.000Z",
+        "value": 0,
+        "mmsid": 6
+      },
+      {
+        "time_day": "2013-01-29T22:12:03.000Z",
+        "value": 0,
+        "mmsid": 6
+      },
+      {
+        "time_day": "2013-01-29T14:12:03.000Z",
+        "value": 0,
+        "mmsid": 6
+      },
+      {
+        "time_day": "2013-01-29T06:12:03.000Z",
+        "value": 0,
+        "mmsid": 6
+      },
+      {
+        "time_day": "2013-01-28T22:12:03.000Z",
+        "value": 0,
+        "mmsid": 6
+      },
+      {
+        "time_day": "2013-01-28T14:12:03.000Z",
+        "value": 0,
+        "mmsid": 6
+      },
+      {
+        "time_day": "2013-01-28T06:12:03.000Z",
+        "value": 0,
+        "mmsid": 6
+      },
+      {
+        "time_day": "2013-01-27T22:12:03.000Z",
+        "value": 0,
+        "mmsid": 6
+      },
+      {
+        "time_day": "2013-01-27T14:12:03.000Z",
+        "value": 0,
+        "mmsid": 6
+      }
+    ],
+    []
+  ],
+  "time_now": 1362175923000,
+  "time_last5min": 1362175623000,
+  "time_last1hour": 1362172023000,
+  "time_last10hour": 1362136023000,
+  "total_mms": 353599
+}

@@ -1,0 +1,280 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Feeling the Crunch of the Deadline</title>
+    <script type="text/javascript">
+		  var _gaq = _gaq || [];
+		  _gaq.push(['_setAccount', 'UA-30706693-1']);
+		  _gaq.push(['_trackPageview']);
+		  (function() {
+		    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		  })();
+		</script>
+    <title>Feeling the Crunch of the Deadline</title>
+    <script type="text/javascript" src="../../js/_VisualSedimentation.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../js/lib/bootstrap/css/bootstrap.css"/>
+   	<style>@import url(../../css/fan-of-mike-style.css);</style>
+		<link href="sedivn.css" rel="stylesheet" type="text/css"/>	
+
+    <script type="text/javascript" src="../../js/lib/StreamPlayer/streamPlayer.js"></script>
+		<script type="text/javascript" src="utils.js"></script>
+		<script type="text/javascript" src="chart_sedivn.js"></script>
+		<script type="text/javascript" src="chart_distribution.js"></script>
+	</head>
+  <body>
+		<h1>Feeling the Crunch<br> of the Deadline</h1>
+			<p class="description">
+      	<b>What does it feel like to write Research articles?</b> This visualization communicates 20 days of work before a deadline. Each bin is a researcher and a falling circle is dropped once he/her updates his/her project (e.g. article, code) through a global SVN respository. The size of a circle is proportional to the number of modified files during the commit and circles disappear after one day. They are transformed into horizontal layers proportionnal to the number of previous commits and become darker over time. Sound is acute if the number of changed file is important.
+			</p>
+
+			<span id="simple-stream-player" >
+				<a id="btn-playpause" class="btn pause btn-mini" href="#" style="text-align:left">Pause&nbsp;<i class="icon-pause"></i></a>
+				<a id="btn-repeat" class="btn btn-mini" href="#" style="text-align:left">Restart&nbsp;<i class="icon-repeat"></i></a>
+				<a id="btn-sound" class="btn btn-mini sound" href="#" >Sound&nbsp;<i class="icon-volume-up"></i></a>
+			</span>
+
+			<div id="caption" style="width:250px"></div>
+			<p style="margin-top:0px; width:250px" class="noselect">
+				<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://www.visualsedimentation.org/examples/sedivn/sedivn.html" data-text="Feeling the Crunch of the Deadline" data-via="romsson">Tweet</a>
+				<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+				<br>
+				Created by <a href="http://romain.vuillemot.net/">Romain Vuillemot</a><br>
+				Built with <a href="http://www.visualsedimentation.org/">Visual Sedimentation</a><br>
+				Tested with <a href="http://chrome.google.com/">Google Chrome</a><br>
+			</p>
+
+			<div style="position:absolute; left:320px; top:0px; width:400px">
+     		<div id="barChartOverlay" style="position:absolute; top:180px;"></div> 
+     		<div id="barChart" style="padding-top:0px;"></div> 
+	  		<div id="distribution" style="position:absolute; top:380px"></div>
+				<div id="logs" style="position:absolute; top:570px">Commits' logs:<ul style="list-style-type: none; padding: 0px; "></ul></div>
+			</div>
+
+			<script type="text/javascript">    
+
+		    var entries, table, authors, a;
+				var TOGGLE_PLAY=true, PLAY_SOUND=true;
+				var sediBarChart;
+				var nb_previous_day,nb_previous_week,nb_all;
+				var min_time, max_time
+				var INCREMENT_UPDATE = 1000000;
+
+				function set_current_time(t) {
+						sediBarChart.selectAll().flocculate();
+						current_time = t;
+						prev_time = current_time;
+						sediBarChart.strata.update(sediBarChart);
+				}
+
+				d3.xml("datasets/aviz-svn-infovis12-anonym.xml", function(xml) {
+
+					entries = d3.select(xml).selectAll("logentry")[0];
+
+				 	authors = d3.keys(d3.nest()
+						.key(function(d) {return d3.select(d).select("author")[0][0].textContent;})
+						.map(entries));
+
+					min_time = d3.min(entries, function(data) {
+						return Date.parse(d3.select(data).select("date")[0][0].textContent);
+					});
+			
+
+					max_time = d3.max(entries, function(data) {
+					return Date.parse(d3.select(data).select("date")[0][0].textContent);
+					});	
+
+		      current_time=min_time;
+		      last_time=current_time;		
+
+					// Adding one extra day to make the tokens disappear
+					max_time += 1000 * 60 * 60 * 27;
+						
+					var max_paths =  d3.max(entries, function(data) {
+					  return parseInt(d3.select(data).select("paths")[0][0].textContent);
+					});
+
+					var token_scale = d3.scale.linear().domain([0, max_paths])
+														   .rangeRound([2, 20]);//mySettings.width/sediBarChart.settings.data.model.length]);
+
+					var nb_commits=[];
+
+					entries.map(function (data) {
+						var t = authors.indexOf(d3.select(data).select("author")[0][0].textContent);
+						if(typeof(nb_commits[t]) == 'undefined')
+								nb_commits[t] = 0;
+							nb_commits[t]++;
+					});
+											
+					max_commits =  d3.max(nb_commits, function(data) {
+		        return data;
+		      });
+
+				 // nb_last_hour=init_array(authors.length+1);
+				  nb_previous_day=init_array(authors.length+1);
+				  nb_previous_week=init_array(authors.length+1)
+				  nb_all=init_array(authors.length+1);
+
+					sediBarChart = chart_sedivn(xml);
+					distribBarChart = chart_distribution(xml);
+
+				// MAIN LOOP
+	      function update(once) {
+
+
+	      	if(typeof once == "undefined")
+	      		once = false;
+
+	      	if(current_time > max_time)
+						return;
+
+
+					if((TOGGLE_PLAY || once) && current_time <= max_time) {
+
+
+
+						d3.select("#current_time") //text(new Date(current_time));
+						.text(function() {
+							var ct = current_time - (max_time - 1 * 1000 * 60 * 60 * 26);
+
+							var cd = 1+ct/(1000 * 60 * 60 * 24);
+					
+							var ch = 24-(cd-Math.floor(cd))*24;
+
+							var sh="s", sd="s", leftover="left";
+
+							if(ct>0) {
+								cd--;
+								ch=Math.abs(24-ch);
+								leftover = "over";
+							} 
+							if(ch<2) sh = "";
+							if(cd<2) sd = "";
+
+							return Math.abs(Math.floor(cd)) +" day"+sd+" "+Math.floor(ch)+" hour"+sh+" "+leftover;
+					});
+
+					current_time+=INCREMENT_UPDATE;
+
+			  	//nb_last_hour=init_array(authors.length+1);
+			  	nb_previous_day=init_array(authors.length+1);
+			  	nb_previous_week=init_array(authors.length+1);
+			  	nb_all=init_array(authors.length+1);
+
+	  			var this_day = current_time - 1000 * 60 * 60* 24;
+	  			var previous_day = this_day - 1000 * 60 * 60 * 24;
+	  			var previous_week = previous_day - 1000 * 60 * 60 * 24 * 7;
+
+					// UPDATE TIME WINDOW
+					d3.select(".window").attr("width", x(new Date(current_time)));
+					d3.select("#current_time").attr("x", function() {
+						var pos_x = x(new Date(current_time));
+						if(pos_x < 400) {
+							return pos_x;
+						} else {
+							return pos_x-100;
+						}
+					});
+
+					//d3.select("#relative_time").attr("x", function() { return d3.select("#current_time").attr("x");})
+
+					// REMOVE TOKENS OLDER THAN ONE DAY OLD
+					for(var c=0; c<sediBarChart.settings.data.model.length; c++) {
+						var tks = sediBarChart.selectAll("category", c);
+						for(var t=0; t<tks.length; t++) {
+							if(tks[t].attr("t") < this_day)
+								tks[t].flocculate();
+						}
+					}
+
+					entries.filter(function(d, i) {
+
+						var dt = Date.parse(d3.select(d).select("date")[0][0].textContent);
+						var cat = authors.indexOf(d3.select(d).select("author")[0][0].textContent);
+
+						if((dt<current_time) && (dt>=last_time)) {
+
+							// ADD TOKEN FOR EACH NEW COMMIT
+							sediBarChart.addToken({
+								t:dt,
+								category: cat,
+								size: token_scale(parseInt(d3.select(d).select("paths")[0][0].textContent)),
+							}); 
+
+							// PLAY SOUND IF ENABLED
+							if(PLAY_SOUND)
+								_sndCollection[sound_scale(parseInt(d3.select(d).select("paths")[0][0].textContent))].play();
+							
+							// APPEND TO LOG LIST
+							$("#logs ul").prepend(
+								$('<li style="font-size:8px; line-height:10px">').append("<span style='color:lightgray'>["+d3.select(d).select("date")[0][0].textContent+"]</span> "+d3.select(d).select("author")[0][0].textContent + ": " + d3.select(d).select("msg")[0][0].textContent+"").delay(1000).fadeOut(1500, function() {})
+							);   
+
+							// HIGHLIGHT COLUMN TEXT
+							d3.select(".coltext_"+cat).style("font-size", 10).transition().duration(1000).style("font-size", 10);
+
+						} else if( (dt<this_day) && (dt>=previous_day)) {
+							nb_previous_day[cat]++;
+						} else if( (dt<previous_day) && (dt>=previous_week)) {
+							nb_previous_week[cat]++;
+						} else if( (dt<previous_week) )
+							nb_all[cat]++;
+//						else
+	//						nb_last_all[cat]++;
+					});
+					last_time=current_time;
+				}
+      }
+
+     sp = new StreamPlayer('simple-stream-player', {
+    			auto_start: true,
+          current_time: function() { 
+          },
+          current_speed: 50,
+          current_step: 100000,
+          max_time: 0,
+          updateCallback: function(a) {
+          	sediBarChart.strata.update(sediBarChart);
+          	update(a);
+          },
+          refreshCallback: function() {
+          },
+          playCallback: function() {
+          	TOGGLE_PLAY = !TOGGLE_PLAY
+          	d3.select("#btn-playpause").text("Pause  ").on("click", sp.pauseCallback)//.style("width", "60px");
+          	d3.select("#btn-playpause").append("i").attr("class", "icon-pause").style("margin-left", "0px");
+
+          },
+          pauseCallback: function() {
+          	TOGGLE_PLAY = !TOGGLE_PLAY;
+          	d3.select("#btn-playpause").text("Start  ").on("click", sp.playCallback)//.style("width", "60px");
+          	d3.select("#btn-playpause").append("i").attr("class", "icon-play").style("margin-left", "5.5px");
+						//d3.select(".icon-pause").on("click", sp.playCallback)
+          },
+          soundCallback: function() {
+          	PLAY_SOUND = !PLAY_SOUND;
+          	if(PLAY_SOUND) {
+          		d3.select("#btn-sound").text("Sound").on("click", sp.soundCallback)
+        	  	d3.select("#btn-sound").append("i").attr("class", "icon-volume-up").style("margin-left", "5.5px");
+          	} else {
+          		d3.select("#btn-sound").text("Sound").on("click", sp.soundCallback)
+        	  	d3.select("#btn-sound").append("i").attr("class", "icon-volume-off").style("margin-left", "5.5px");
+          	}
+          }
+        });
+
+				// INIT
+				d3.select("#btn-playpause").on("click", sp.pauseCallback)
+				d3.select("#btn-sound").on("click", sp.soundCallback)
+				d3.select("#btn-repeat").on("click", function() {
+					set_current_time(min_time);
+				  self.updateCallback(true);
+				})
+
+    });
+  	</script>
+  	<script type="text/javascript" src="chart_legends.js"></script>
+		<script type="text/javascript" src="sound.js"></script>
+  </body>   
+</html>

@@ -135,6 +135,10 @@ $.fn._vs.chart.CircleLayoutLess = function(_this,fn,options) {
               y:(_this.settings.sedimentation.incoming.point[i].y+(Math.random()*1)),
               size:_this.settings.sedimentation.token.size.original,
               category:i,
+<<<<<<< HEAD
+=======
+              strokeStyle:_this.token.colorRange(i),
+>>>>>>> 959082b084b0c774382582f05772b13ddcc14eaf
               phy:{
                   density:10,
                   friction:0,

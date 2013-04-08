@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<title>Visual Sedimentation - Documentation</title>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-30706693-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+<style>
+@import url(../css/fan-of-mike-style.css);
+td{
+	text-align: top;
+	vertical-align: top;
+}
+</style>
+
+<div id="body">
+
+<header>‍
+	<a style="margin-left:1em;" href="../index.html">Overview</a>
+	<a style="margin-left:1em;" href="../examples/index.html">Examples</a>
+	<b><a style="margin-left:1em;" >Documentation</a></b>
+	<a style="margin-left:1em;" href="learning.html">Learning</a>
+	<a style="margin-left:1em;" href="https://github.com/INRIA/VisualSedimentation" target="_blank">Source</a>
+	<a style="margin-left:1em;" href="https://groups.google.com/forum/?fromgroups#!forum/visualsedimentation" target="_blank">Contact / Feedback</a>
+</header>
+
+<h1>Visual Sedimentation</h1>
+<script src="../js/lib/d3/d3.v2.js"></script>
+<h2><a name="introduction" href="index.html">#</a> addToken()</h2>
+
+<h3>Examples</h3>
+<table>
+	<tr><td width="100px"><img src="../img/token1.png" /></td><td style="color:red;">a token is a representation of a datastream chunk</td></tr>
+	<tr><td ><img src="../img/tokenExemple1.png" /></td><td>
+		<pre><code>
+scene.addToken({
+   size:30,
+   category:1,
+   t:1360164350473,
+   texture:{src:'http://www.visualsedimentation.org/img/football.gif'},
+})</code></pre></td></tr>
+	<tr><td></td><td></td></tr>
+	<tr><td></td><td></td></tr>
+
+</table>
+
+<h3>Description</h3>
+<p>
+Add token push a token into the scene. A token is the minimal unit of represented data, according to the data flow type it's could be one tweet, one article entry, or a mail or others. Tokens have several attributes.
+</p>
+<h3>Syntax</h3>
+<pre><code>
+scene.addToken({
+   category:1
+})
+</code></pre>
+<h3>Parameters</h3>
+Parameter in <b>bold</b> are needed.
+<table>
+	<tr><td style="width:100px;font-weight:800;">category </td>	<td>number, corresponding to the datamodel (which column in the data set)</td></tr>
+	<tr><td>x </td>			<td>float, incomming x position (in pixel)</td></tr>
+	<tr><td>y </td>			<td>float, incomming y position (in pixel)</td></tr>
+	<tr><td>t </td>			<td>number, timestampe</td></tr>
+	<tr><td>size </td>		<td>number, diameter of the token (in pixel), if it's not defined, took the setting default size</td></tr>
+	<tr><td>fillStyle </td>	<td>a css color value, corresponding to the <a href="http://www.w3schools.com/tags/canvas_fillstyle.asp" target="_blank">html5 fillStyle</a></td></tr>
+	<tr><td>strokeStyle </td>	<td>a css color value, corresponding to the <a href="http://www.w3schools.com/tags/canvas_strokestyle.asp" target="_blank">html5 fillStyle</a></td></tr>
+	<tr><td>lineWidth </td>	<td>a number <a href="http://www.w3schools.com/tags/canvas_linewidth.asp" target="_blank">html5 lineWidth</a></td></tr>
+	<tr><td>texture </td>		<td>object formated as follow {src:"URI"}</td></tr>
+	<tr><td>callback </td>	<td>object formated as explain <a href="callback.html">here.</a> </td></tr>
+	<tr><td>phy </td>			<td>object formated as follow  <a href="physicalParameters.html">{density:10,friction:0,restitution:0}</a>, </td></tr>
+	<tr><td>impulse </td>		<td>object formated as follow <a href="impulse.html">impulse:{angle:95,power:10}</a>, </td></tr>
+	<tr><td><i>'custom' </i></td>		<td>You can extennd with attribute you want, if they don't have the same name than existing they will be accessible with   <a href="token.attr.html">attr</a> </td></tr>
+	<tr><td>target </td>		<td>Not implemented yet</td></tr>
+	<tr><td>trajectory </td>	<td>Not implemented yet</td></tr>
+</table>
+<h3>Return</h3>
+The token object. 
+<h3>Related</h3>
+<a href="token.attr.html">attr()</a>, <a href="token.selectAll.html">selectAll()</a>, <a href="callback.html">callback:{}</a>, <a href="physicalParameters.html">phy:{}</a>, <a href="impulse.html"> impulse:{} </a>, 
+
+</body>
+</html>

@@ -1,0 +1,209 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Stack Over Flow Example </title>
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-00706690-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+    <script type="text/javascript" src="../lib/utils.js"></script>
+    <script type="text/javascript" src="../../js/_VisualSedimentation.js"></script>
+    <style>@import url(../../css/fan-of-mike-style.css);</style>
+    <style>
+      .label{
+        position:relative;
+        float:left;
+        font-weight: 800;
+        padding-bottom: 10px;
+        text-align: center;
+      }
+      .legend{
+        float:left;position:relative;text-align:left;
+      }
+      #suspensionMsg{
+       float:left;position:relative;text-align:left;width:800px; 
+      }
+      #headerLabel{
+        height: 27px;
+      }
+
+    </style>
+  </head>
+    <!-- div container -->
+  
+  <header>‍
+    <a href="./">Overview</a>
+    <b><a style="margin-left:1em;" href="../index.html"> Examples</a></b>
+    <a style="margin-left:1em;" href="../../documentation/index.html">Documentation</a></b>
+    <a style="margin-left:1em;" href="https://github.com/INRIA/VisualSedimentation" target="_blank">Source</a>
+    <a style="margin-left:1em;" href="" target="_blank">Contact / Feedback</a>
+  </header>
+
+  <body>
+      <h1>Consumption / production </h1>
+      <div style="padding-bottom:50px">
+        <div class="legend">Live visualization of some world daily productions / consumption
+ statistics of car, bycilcles and computers sold.
+      </div><br>
+
+      <div id="headerLabel"></div>
+      <div id="demo"></div>
+      <div id="footerLabel"></div>
+
+
+     <script>
+
+     // Define data and legend 
+     // unit 
+     var oneDay  = 24*60*60
+     var oneYear = 365*24*60*60
+    
+     // data 
+     var data=[
+                /*
+                {
+                  label:"Bigmac sold",
+                  value:900000000/oneYear,
+                  unit:oneDay,
+                  legend:"Bigmac by Year",
+                  source:"http://www.bigmacmuseum.com/",
+                  ttl:0.993,
+                  old:null,
+                },
+                {
+                  label:"Coca Cola sold",
+                  value:1700000000/oneYear,
+                  unit:oneDay,
+                  legend:"litter by day",
+                  source:"http://www.coca-cola.co.uk/faq/products/how-many-cans-of-coca-cola-are-sold-worldwide-in-a-day.html",
+                  old:null,
+                  ttl:0.993,
+                },
+                */
+                {
+                  label:"Cars produced",
+                  value:0.0428,
+                  unit:oneDay,
+                  source:"http://www.worldometers.info/cars/",
+                 // size:30,
+                 // texture:"http://www.motorbeam.com/wp-content/uploads/Renault_Bajaj_Small_Car.jpg",
+                  old:null,
+                  ttl:0.993, //999 product cycle 
+                },
+                {
+                  label:"Bicycles produced",
+                  value:4.3237,
+                  unit:oneDay,
+                  source:"http://www.worldometers.info/bicycles/",
+                  //texture:"http://image.made-in-china.com/2f0j00SKsQUwotETqJ/700C-3k-38mm-Tubular-Full-Carbon-Bicycle-Wheels-with-Novatec-Hub-BX-W38T-.jpg",
+                  old:null,
+                  ttl:0.993, // product cycle ??
+                },
+                {
+                  label:"Computer sold",
+                  value:11.1618,
+                  unit:oneDay,
+                  source:"http://www.worldometers.info/computers/",
+                  //texture:"http://upload.wikimedia.org/wikipedia/commons/1/1a/Tatung-einstein-computer.png",
+                  old:null,
+                  ttl:0.993,
+                }
+        ]
+
+
+
+      // Setting normal chart 
+      sceneSetting = {
+        x:0,
+        y:0,
+        width:800,
+        height:500,
+        data:{
+              model:[],
+              stream:{}
+            },
+        sedimentation:{
+          token:{
+            size:{original:20,minimum:2}
+          },
+        }
+      }
+
+      // create column by datas  
+      for (var i = data.length - 1; i >= 0; i--) {
+        sceneSetting.data.model.push({label:data[i].label})
+      };
+
+      // customize tokens before create it  
+      function createToken(_this,i,data){
+         var token = { 
+            category:i,
+            callback:{
+             draw:function(token){
+               var size = token.attr("size")
+               token.attr("size",size*data.ttl)
+             }
+            }
+          }
+        if(typeof(data.texture)!="undefined"){
+         token.texture = {}
+         token.texture.src = data.texture
+        }
+        if(typeof(data.size)!="undefined"){
+          token.size = data.size
+        }
+        _this.addToken(token);
+      }
+
+      // setup the scene
+      var scene    = $("#demo").vs(sceneSetting).data('visualSedimentation');
+      //console.log(scene)
+
+      // setup the clock 
+      var time     = new Date(),secondsToday,secondsSinceNewYear
+
+      // start the clock 
+      var clock    = window.setInterval(
+                              function (){
+                                   time = new Date()
+                                   previousYear = new Date(2010,12,0,06,0,0,00)
+                                   diffPreviousYear = time.getTime()-previousYear.getTime()
+                                   //console.log(diffPreviousYear)
+                                   secondsToday = (time.getHours()*60*60) + (time.getMinutes()*60) + time.getSeconds()
+                                   milliSecondsToday= (time.getHours()*60*60*1000) + (time.getMinutes()*60*1000) + time.getSeconds()*1000+time.getMilliseconds() 
+                                  
+                                  for (var i = data.length - 1; i >= 0; i--) {
+                                    data[i].now = Math.round(milliSecondsToday*data[i].value/1000)
+                                    if(data[i].now!=data[i].old) createToken(scene,i,data[i])
+                                    data[i].old = data[i].now
+                                    //$("#birth").text(utils.textFormating(born,",","birth"))
+                                  };
+                                 }
+                                 , 1); 
+  
+    // add legends 
+    var labeling =function(setting,container){
+       //$('#'+container).append('<div class="label" style="width:100px;"> &nbsp;</div>');
+       var divWidth = Math.round(setting.width/setting.data.model.length)
+       //console.log("divWidth",divWidth)
+       for (var i = setting.data.model.length-1; i >= 0 ; i--) {
+         $('#'+container).append('<div class="label" style="width:'+divWidth+'px;">'+setting.data.model[i].label+'</div>');
+       }
+    }
+
+    labeling(sceneSetting,"headerLabel")
+
+
+
+</script>
+
+  </body>
+</html>

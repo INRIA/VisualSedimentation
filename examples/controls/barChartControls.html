@@ -1,0 +1,174 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Bar Chart by Visual Sedimentation</title>
+    <script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-30706693-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+    <script type="text/javascript" src="../../js/_VisualSedimentation.js"></script>
+    <style>@import url(../../css/fan-of-mike-style.css);</style>
+
+    <link rel="stylesheet" type="text/css" href="../../js/lib/StreamPlayer/css/streamPlayer.css"/>
+    <script type="text/javascript" src="../../js/lib/StreamPlayer/streamPlayer.js"></script>
+    <script type="text/javascript" src="tweets.json"></script>
+  </head>
+  <body>
+    <!-- div container -->
+    <header>‍
+    <a href="../../">Overview</a>
+    <b><a style="margin-left:1em;" href="../../index.html"> Examples</a></b>
+    <a style="margin-left:1em;" href="../../documentation/index.html">Documentation</a></b>
+    <a style="margin-left:1em;" href="https://github.com/INRIA/VisualSedimentation" target="_blank">Source</a>
+    <a style="margin-left:1em;" href="" target="_blank">Contact / Feedback</a>
+  </header>
+
+  <div id="player-controls"  style="position:absolute; margin-left:400px; margin-top:100px">
+    <div id="simple-stream-player">
+      <input type="button" class="command prev" value="prev" title="prev element"/> 
+      <input type="button" class="command fb" value="fb" title="fast backward"/>      
+      <input type="button" class="command stop" value="stop" title="stop"/>   
+      <input type="button" class="command pause" value="pause" title="play/pause"/>
+      <input type="button" class="command ff" value="fb" title="fast forward"/>   
+      <input type="button" class="command next" value="next" title="next element"/> 
+    </div>
+
+    <br/>
+    <form action="">
+      <input type="radio" name="freq" value="tweetsec" checked>One Tweet/<span id="current-speed">0</span>ms
+    </form>
+    <br/>
+    <div>Current Tweet #: <span id="current-time">0</span>/<span id="max-time">0</span></div>
+    <br/>
+    <div id="tweets-text"></div>
+  </div>
+    <script type="text/javascript">
+
+      function add_token(t) {
+        barChart.addToken({
+            timestamp:0,
+            x:mySettings.width/2,
+            y:0,
+            category: 0,
+            size:10,
+            value: 1,
+            tid:t,
+            callback:{}
+          }); 
+      }
+
+      // barChart.tokens.selectAll("tid", "269490391479377920")
+
+    // Pre-process Tweets
+    document.getElementById('max-time').innerHTML = tweets.length;
+    tweets.sort(function(a,b) { return new Date(a.created_at).getTime() - new Date(b.created_at).getTime()});
+
+    var sp = new StreamPlayer('simple-stream-player', {
+          current_time: function() { 
+            var div = document.getElementById('tweets-text');
+            return div.childNodes.length;
+          },
+          current_speed: 1000,
+          max_time: tweets.length,
+          updateCallback: function() {
+            var elem = document.createElement('div');
+            elem.innerHTML = tweets[this.current_time()].text;
+            document.getElementById('tweets-text').appendChild(elem);
+            var div = document.getElementById('tweets-text');
+            add_token(div.childNodes.length);//tweets[this.current_time()].created_at);
+          },
+          refreshCallback: function() {
+            document.getElementById('current-time').innerHTML = this.current_time();
+          },
+          playCallback: function() {},
+          pauseCallback: function() {},
+          stopCallback: function() {
+            var div = document.getElementById('tweets-text');
+            while(div.childNodes.length > 0) {
+              var lastChild = div.lastChild;
+              document.getElementById('tweets-text').removeChild(lastChild);
+            }
+            barChart.selectAll("category", 0).flocculate();
+          },
+          nextCallback: function(self) {
+            //var elem = document.createElement('div');
+            //elem.innerHTML = tweets[this.current_time()].text;
+           // document.getElementById('tweets-text').appendChild(elem);
+            self.updateCallback();
+          },
+          previousCallback: function(self) {
+            var div = document.getElementById('tweets-text');
+
+            var tokens = barChart.selectAll();
+            tokens.filter(function(d) { 
+              console.log(d.attr("tid"), div.childNodes.length, tokens.length);
+              if(d.attr("tid")==div.childNodes.length)  {
+                console.log("floccualte", d.attr("tid"));
+                d.flocculate(); 
+              }
+            })
+
+            if(div.childNodes.length > 0) {
+              var lastChild = div.lastChild;
+              document.getElementById('tweets-text').removeChild(lastChild);
+            }
+
+            // get the size of the data
+            // remove the data with index size-1
+          },
+          ffCallback: function() {
+            document.getElementById('current-speed').innerHTML = sp.current_speed;
+          },
+          fbCallback: function() {
+            document.getElementById('current-speed').innerHTML = sp.current_speed;
+          }
+        });
+        document.getElementById('current-speed').innerHTML = sp.current_speed;
+    </script>
+      <h1 id="myDemo">Bar Chart with some control</h1>
+      <script type="text/javascript">
+        
+      mySettings = {
+          width:300,
+          height:300,
+          data:{
+                "model":
+                        [
+                          {label:"Column A"}
+                        ],
+
+                "strata":[ []],
+              stream:{
+                      provider:'direct'
+                },
+              },
+          sedimentation:{
+            token:{
+              size:{original:6,minimum:2}
+            },
+            aggregation:{height:200},
+            suspension:{
+              decay:{power:1}
+            }
+          },
+          options:{
+            layout:false
+          },
+          chart:{
+          }
+
+        }
+      // Init the sedimentation
+      var barChart = $("#myDemo").vs(mySettings).data('visualSedimentation');
+    </script>
+  </body>   
+</html>

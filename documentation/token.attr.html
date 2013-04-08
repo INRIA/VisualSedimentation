@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<title>Visual Sedimentation - Documentation</title>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-30706693-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+<style>
+@import url(../css/fan-of-mike-style.css);
+td{
+	text-align: top;
+	vertical-align: top;
+}
+</style>
+
+<div id="body">
+
+<header>‍
+	<a style="margin-left:1em;" href="../index.html">Overview</a>
+	<a style="margin-left:1em;" href="../examples/index.html">Examples</a>
+	<b><a style="margin-left:1em;" >Documentation</a></b>
+	<a style="margin-left:1em;" href="learning.html">Learning</a>
+	<a style="margin-left:1em;" href="https://github.com/INRIA/VisualSedimentation" target="_blank">Source</a>
+	<a style="margin-left:1em;" href="https://groups.google.com/forum/?fromgroups#!forum/visualsedimentation" target="_blank">Contact / Feedback</a>
+</header>
+
+<h1>Visual Sedimentation</h1>
+<script src="../js/lib/d3/d3.v2.js"></script>
+<h2><a name="introduction" href="index.html">#</a> token.attr()</h2>
+
+<h3>Examples</h3>
+<table>
+	<tr><td ><img src="../img/tokenExemple1.png" /></td><td>
+		<pre><code>
+// add a token
+var mytoken = scene.addToken({category:1});
+// add texture baloon
+mytoken.attr('texture','{src:'http://www.visualsedimentation.org/img/football.gif'}');
+// set size at 30
+mytoken.attr('size',30);
+		</code></pre></td></tr>
+	<tr><td></td><td></td></tr>
+	<tr><td></td><td></td></tr>
+
+</table>
+
+<h3>Description</h3>
+<p>
+Token.attr(), is a getter and setter for tokens attributes.  
+If the first parameter alone, then attr(), return the attribute.
+If the first parameter and the second, then the token attribute named by the first parameter took the value of the second parameter. 
+Token.attr() is chainable.
+</p>
+<h3>Syntax</h3>
+<pre><code>
+token.attr('key') 		// return the key attribute
+token.attr('key',value)	// set the key withe value, and return the token 
+token.attr('key',value).attr('key2',value2) // possibility to chain 
+</code></pre>
+<h3>Parameters</h3>
+Parameter in <b>bold</b> are needed.
+<table>
+	<tr><td style="width:100px;font-weight:800;">key </td>	<td>corresponde to the <a href="token.html">token</a> attributes, or your custom one</td></tr>
+	<tr><td>value </td>	<td>value of the attribute</td></tr>
+
+</table>
+<h3>Return</h3>
+The token object, or the requested attribute. 
+<h3>Related</h3>
+<a href="tokenAttr.html">attr()</a>, <a href="selectAll.html">selectAll()</a>, <a href="callback.html">callback:{}</a>, <a href="physicalParameters.html">phy:{}</a>, <a href="impulse.html"> impulse:{} </a>, 
+
+</body>
+</html>

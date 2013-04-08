@@ -4,8 +4,12 @@ clojure-compiler.jar
 .svn
 /js/lib/tweet
 /datasets
+<<<<<<< HEAD
 /build
 /examples/sediMMS
+=======
+/examples/pdftribute
+>>>>>>> 959082b084b0c774382582f05772b13ddcc14eaf
 /examples/sedimotion
 /examples/uselections
 /examples/visualeditor
@@ -26,3 +30,4 @@ clojure-compiler.jar
 /OLD
 /latest
 /documentation/todo.doc.html
+/dev

@@ -32,6 +32,43 @@ $.fn._vs.strata = {
 
       if(typeof settings.data.strata != 'function') {
 
+<<<<<<< HEAD
+=======
+        // Serialized function in JSON
+        if(typeof(settings.data.strata == "object") && typeof(settings.data.strata[0]) != "undefined" && (typeof settings.data.strata[0][0].value != "undefined") && typeof(settings.data.strata[0][0].value == "string")) {
+
+             var NB_STRATA = settings.data.strata[0].length;
+
+            // Create default strata object
+            for (var i=0; i<settings.data.model.length; i++) {
+              _this.strata.stratas[i] = [];
+              // Create default strata object
+              for (var n=0; n<NB_STRATA; n++) {
+                (function(a,b) {
+                  var t=null;
+                  if( (typeof settings.data.strata[a] !="undefined") && (typeof settings.data.strata[a][b] !="undefined") && (typeof settings.data.strata[a][b].texture!="undefined"))
+                    t = settings.data.strata[a][b].texture;
+                     var defaultStrata = {};
+              
+                    defaultStrata = {
+                                label: settings.data.model[i].label+"_"+a,
+                                category: a,
+                                texture: t,
+                                value: function() { r=eval("f="+settings.data.strata[a][b].value); return r();}
+                              }
+                 
+                    
+                  _this.strata.stratas[a].push(defaultStrata); 
+                 })(i,n);
+              }
+            }
+          _this.strata.create_strata(_this);
+
+          return;
+        }
+                 
+
+>>>>>>> 959082b084b0c774382582f05772b13ddcc14eaf
         if(typeof(settings.data.strata[0]) != "undefined" && typeof(settings.data.strata[0][0]) != "undefined" && typeof(settings.data.strata[0][0].initValue != "undefined" ) ) {
 
           for (var c=0; c<settings.data.model.length; c++) {
@@ -117,10 +154,16 @@ $.fn._vs.strata = {
         return res;
       }
 
+<<<<<<< HEAD
       _this.settings.data.strata = function() {return fstrata()};
       _this.strata.stratas = _this.settings.data.strata();
 
                _this.strata.create_strata(_this);
+=======
+          _this.settings.data.strata = function() {return fstrata()};
+          _this.strata.stratas = _this.settings.data.strata();
+          _this.strata.create_strata(_this);
+>>>>>>> 959082b084b0c774382582f05772b13ddcc14eaf
 
          return;
         }
@@ -281,18 +324,60 @@ $.fn._vs.strata = {
                   h = _this.settings.sedimentation.aggregation.height;
               var color = _this.token.colorRange; 
 
+<<<<<<< HEAD
               // Create a .vis element that overlays the canvas
               var vis = d3.select("#"+_this.settings.DOMelement.id)
                 //.insert("div", ":first-child")
                 .append("div")
                   .attr("class", "vis")
                 //  .style("position", "relative")
+=======
+            if(typeof _this.settings.options.canvasFirst != "undefined" && _this.settings.options.canvasFirst == false) {
+
+              // Create a .vis element that overlays the canvas
+              var vis = d3.select("#"+_this.settings.DOMelement.id)
+                .insert("div", ":first-child")
+                  .style("position", "absolute")
+                  .attr("class", "vis")
                   .style("z-index", 10)
                 .append("svg")
                   .attr("width", _this.settings.width)
                   .attr("height", _this.settings.height)
                 .append("g")
                   .attr("transform", "translate(" + _this.settings.chart.x + "," + _this.settings.chart.y + ")");
+            } else {
+
+              var vis = d3.select("#"+_this.settings.DOMelement.id)
+                .append("div")
+                  .attr("class", "vis")
+>>>>>>> 959082b084b0c774382582f05772b13ddcc14eaf
+                  .style("z-index", 10)
+                .append("svg")
+                  .attr("width", _this.settings.width)
+                  .attr("height", _this.settings.height)
+                .append("g")
+                  .attr("transform", "translate(" + _this.settings.chart.x + "," + _this.settings.chart.y + ")");
+<<<<<<< HEAD
+=======
+            }
+
+              var sn = _this.strata.stratas[0].length, // number of layers
+                  sm = 20; // number of samples per layer
+                  smx = sm - 1, smy = 0;
+
+
+            var sum_strata = _this.strata.stratas.map(
+              function(d, i) { 
+                  for(var v=0, res=0; v<d.length; v++)
+                    res+=d[v].value(_this, i);
+                  return res;
+              });
+
+                  
+            var y = d3.scale.linear()
+                .domain([0, Math.max(d3.max(sum_strata), _this.settings.sedimentation.aggregation.maxData)]) 
+                .range([0, _this.settings.sedimentation.aggregation.height]);  
+>>>>>>> 959082b084b0c774382582f05772b13ddcc14eaf
 
               // Create a group layer that contains all the future strata groups .gpath
               var g = vis.selectAll("g.gcol")
@@ -300,12 +385,22 @@ $.fn._vs.strata = {
                   .enter()
                 .append("g")
                   .attr("transform", function(d, i) {
+<<<<<<< HEAD
                     return "translate("+(i*w)+", "+(_this.settings.chart.height-_this.settings.sedimentation.aggregation.height)+")";
                   }).attr("class", function(d,i) { return "gcol col_"+i;});;
 
               var sn = _this.strata.stratas[0].length, // number of layers
                   sm = 20; // number of samples per layer
                   smx = sm - 1, smy = 0;
+=======
+                    var align = _this.settings.sedimentation.aggregation.height;
+                    if(_this.settings.sedimentation.aggregation.invertStrata) {
+                      align =2*_this.settings.sedimentation.aggregation.height-y(sum_strata[i]);
+                    }
+                    return "translate("+(i*w)+", "+(_this.settings.chart.height-align)+")";
+                  }).attr("class", function(d,i) { return "gcol col_"+i;});;
+
+>>>>>>> 959082b084b0c774382582f05772b13ddcc14eaf
 
               // Group path for each strata group
               var gpath = g.selectAll(".gpath")
@@ -321,6 +416,7 @@ $.fn._vs.strata = {
                   })
                   .enter().append("g").attr("class", "gpath");
 
+<<<<<<< HEAD
             var sum_strata = _this.strata.stratas.map(
               function(d, i) { 
                   for(var v=0, res=0; v<d.length; v++)
@@ -331,6 +427,9 @@ $.fn._vs.strata = {
             var y = d3.scale.linear()
                 .domain([0, Math.max(d3.max(sum_strata), _this.settings.sedimentation.aggregation.maxData)]) 
                 .range([0, _this.settings.sedimentation.aggregation.height]);  
+=======
+
+>>>>>>> 959082b084b0c774382582f05772b13ddcc14eaf
 
             // Rectangular strata
             var area = d3.svg.area()
@@ -342,7 +441,11 @@ $.fn._vs.strata = {
                                 .attr("d", function(d,i) {
 
                                   _this.chartUpdate(i, -y(sum_strata[i])-(h-_this.settings.chart.height));
+<<<<<<< HEAD
                                   hh = _this.settings.chart.height-_this.chart.getPosition(_this)[d[0].col].y;
+=======
+                                  hh = 0;//_this.settings.chart.height-_this.chart.getPosition(_this)[d[0].col].y;
+>>>>>>> 959082b084b0c774382582f05772b13ddcc14eaf
                                   d.map(function(dd) {
                                     dd.offshit = hh;
                                     return dd;
@@ -362,6 +465,36 @@ $.fn._vs.strata = {
               .attr("class",  function(d,i) { return "gcol col_"+d[0].col+" layer_"+i;});
 
 
+<<<<<<< HEAD
+=======
+      // Textures
+      var patternWidth = w/1;
+      var patternHeight = patternWidth;        
+      
+      if(typeof _this.settings.data.strata != "undefined") {
+        for(var s=0; s<_this.settings.data.strata.length; s++) { 
+          for(var l=0; l<_this.settings.data.strata[s].length; l++) {          
+            if(_this.settings.data.strata[s][l].texture!=null) {
+
+              var pattern = vis.append('pattern')
+                  .attr('id','RectanglePattern_'+s+"_"+l)
+                  .attr('height', patternHeight)
+                  .attr('width', patternWidth)
+                  .attr('patternTransform', 'translate(0, 0) scale('+_this.settings.data.strata[s][l].texture.size+', '+_this.settings.data.strata[s][l].texture.size+') rotate(0)')
+                  .attr('patternUnits','userSpaceOnUse');
+                  
+              pattern.append('image')
+                  .attr('x', 0)
+                  .attr('y', 0)
+                  .attr('height', patternHeight)
+                  .attr('width', patternWidth)
+                  .attr('xlink:href', function() { return _this.settings.data.strata[s][l].texture.url;});    
+            }
+          }
+        }     
+      }
+
+>>>>>>> 959082b084b0c774382582f05772b13ddcc14eaf
             } else if(_this.settings.chart.type=='CircleLayout') {
 
 
@@ -448,7 +581,10 @@ $.fn._vs.strata = {
       // No strata or empty strata, so nothing happens
       if(typeof(_this.strata.stratas) == "undefined" || _this.strata.stratas.length == 0) {
         //TODO: create virtual strata to store all the flocculated ones
+<<<<<<< HEAD
        // console.log("update but nothing is done", _this.strata.stratas.length)
+=======
+>>>>>>> 959082b084b0c774382582f05772b13ddcc14eaf
         return;
       }
 
@@ -483,11 +619,15 @@ $.fn._vs.strata = {
                 .domain([0, Math.max(d3.max(sum_strata), _this.settings.sedimentation.aggregation.maxData)]) 
                 .range([0, _this.settings.sedimentation.aggregation.height]);  
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 959082b084b0c774382582f05772b13ddcc14eaf
             var vis = d3.select("#"+_this.settings.DOMelement.id)
 
             var g = vis.selectAll("g.gcol")
 
+<<<<<<< HEAD
             // Update the group data model
               var gpath = g.selectAll("path")
                  .data(function(d, i) {
@@ -524,6 +664,53 @@ $.fn._vs.strata = {
                 return area(d);
             });
 
+=======
+            if(_this.settings.sedimentation.aggregation.invertStrata) {
+                  g.transition().duration(100).attr("transform", function(d, i) {
+                    var align = _this.settings.sedimentation.aggregation.height;
+                     align =2*_this.settings.sedimentation.aggregation.height-y(sum_strata[i]);
+                    return "translate("+(i*w)+", "+(_this.settings.chart.height-(2*_this.settings.sedimentation.aggregation.height-y(sum_strata[i])))+")";
+                  });
+            }
+
+          // Update the group data model
+            var gpath = g.selectAll("path")
+               .data(function(d, i) {
+                  var sd = d3.layout.stack().offset("expand")(_this.strata.strata_layers(_this, d.length, sm, i));
+
+                  smy = d3.max(sd, function(d) {
+                    return d3.max(d, function(d) {
+                      return d.y0 + d.y;
+                    });
+                  });
+                  sd.map(function(d) {
+                    d.map(function(d) {
+                      d.col=i;
+                      return d;
+                    });
+                  }); // Put col # in data
+                  return sd;
+               });
+
+          if(_this.settings.chart.type=='StackedAreaChart') {
+            // Adding strata layers
+            var pathlayer = vis.selectAll("path")
+              .transition().duration(100).attr("d", function(d,i) {
+  
+                if(!_this.settings.sedimentation.aggregation.invertStrata) {
+                    _this.chartUpdate(i, -y(sum_strata[i])-(h-_this.settings.chart.height));
+                    hh = _this.settings.chart.height-_this.chart.getPosition(_this)[d[0].col].y;
+                } else {
+                    _this.chartUpdate(i, -2*h+_this.settings.chart.height);
+                    hh = y(sum_strata[d[0].col]);
+                }
+                d.map(function(dd) {
+                  dd.offshit = hh;
+                  return dd;
+                });
+              return area(d);
+            });
+>>>>>>> 959082b084b0c774382582f05772b13ddcc14eaf
           }
     }
     //return {};

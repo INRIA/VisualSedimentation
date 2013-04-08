@@ -158,13 +158,18 @@ var VisualSedimentation = function(element,options){
                           refresh:200
                          },
               accumulation:{height:null},   // pourcent ,adaptative
+<<<<<<< HEAD
               aggregation:{height:0, maxData:0},       // pourcent ,adaptative
+=======
+              aggregation:{height:0, maxData:0, invertStrata:false},       // pourcent ,adaptative
+>>>>>>> 959082b084b0c774382582f05772b13ddcc14eaf
           },
           options:{
                   refresh:1000/25,
                   panel:false,
                   scale:30,
                   layout:false,
+                  canvasFirst:true
                   }
           }
 
@@ -379,11 +384,16 @@ var VisualSedimentation = function(element,options){
  // --------------------------
    this.getBodyAtMouse=function (_this) {
 
-      var x = _this.mouse.x/_this.settings.options.scale
-      var y =_this.mouse.y/_this.settings.options.scale
+      var x         = _this.mouse.x/_this.settings.options.scale
+      var y         =_this.mouse.y/_this.settings.options.scale
       var mousePVec = new _this.phy.b2Vec2(x,y);
+<<<<<<< HEAD
       var aabb  = new _this.phy.b2AABB();
       var area = 0.01
+=======
+      var aabb      = new _this.phy.b2AABB();
+      var area      = 0.001
+>>>>>>> 959082b084b0c774382582f05772b13ddcc14eaf
 
       //console.log(_this.mouse.x,_this.mouse.y)
       aabb.lowerBound.Set(x - area, y - area);
@@ -405,22 +415,31 @@ var VisualSedimentation = function(element,options){
    function getBodyCB(fixture,_this,mousePVec) {
        //console.log("phy",phy)
       //console.log("fixture",fixture.m_userData.type,fixture)
+      //_this.mouse.elementpoi = fixture.GetBody()
+      _this.mouse.selectedToken = fixture;
 
       if(fixture.GetBody().GetType() != _this.phy.b2Body.b2_staticBody) {
-         //if(fixture.GetShape().TestPoint(fixture.GetBody().GetTransform(), mousePVec)) {
+         if(fixture.GetShape().TestPoint(fixture.GetBody().GetTransform(), mousePVec)) {
             _this.mouse.selectedToken = fixture;
             return false;
-         //}
+         }
       }
       return true;
    }
 
     this.handleMouseMove = function(e,_this) {
+<<<<<<< HEAD
        canvasPosition   = {}
        canvasPosition.y = _this.settings.DOMelement.offsetTop
        canvasPosition.x = _this.settings.DOMelement.offsetLeft
       _this.mouse.x = (e.clientX - (canvasPosition.x- this.getScrollPosition()[0]));
       _this.mouse.y = (e.clientY - (canvasPosition.y- this.getScrollPosition()[1]));
+=======
+       canvasPosition   = DOMabsOffset(_this.settings.DOMelement)
+       _this.mouse.x = (e.clientX - (canvasPosition.offsetLeft- this.getScrollPosition()[0]));
+       _this.mouse.y = (e.clientY - (canvasPosition.offsetTop- this.getScrollPosition()[1]));
+      //if( _this.mouse.isMouseDown){  console.log(_this.mouse.y,canvasPosition.y)}
+>>>>>>> 959082b084b0c774382582f05772b13ddcc14eaf
       //console.log("mouse",e.clientX,e.clientY )
       //console.log("mouse",canvasPosition.x,canvasPosition.y )
       //console.log("=",_this.mouse.x,_this.mouse.y)
@@ -437,14 +456,57 @@ var VisualSedimentation = function(element,options){
 
 
    function onDocumentMouseOver(e,_this) {
+<<<<<<< HEAD
      var s = _this.getBodyAtMouse(_this);
 
+=======
+     var s = _this.getBodyAtMouse(_this);   
+     //console.log(s)  
+>>>>>>> 959082b084b0c774382582f05772b13ddcc14eaf
         if(s!=null){
           if(typeof(s.m_userData)!="undefined"){
            if(typeof(s.m_userData.callback)!="undefined"){
             if(typeof(s.m_userData.callback.mouseover)=="function"){
                 var t = _this.select('ID',s.m_userData.ID)
+<<<<<<< HEAD
                 s.m_userData.callback.mouseover(t)  
+=======
+                s.m_userData.callback.mouseover(t)                
+            }
+
+            if(typeof(s.m_userData.callback.mouseout)=="function"){
+                //console.log("mouseout exist")
+                var t = _this.select('ID',s.m_userData.ID)
+                var mouseoutTrigger 
+                var rollOut = function(){
+                      var mt  = mouseoutTrigger
+                      var tt  = t
+                      var ici = _this
+                      var ss  = s
+                      return function(){
+                           var s = ici.getBodyAtMouse(ici);
+                           var mo = false;
+                           if(s!=null){
+                              if(typeof(s.m_userData)!="undefined"){
+                                  if(s.m_userData.ID==tt.attr('ID')){
+                                      mo=false
+                                  }else{
+                                    mo=true
+                                  }
+                              }else{
+                                mo=true
+                              }
+                           }else{
+                            mo=true;
+                           }
+                           if(mo){
+                            ss.m_userData.callback.mouseout(tt)
+                            clearInterval(mouseoutTrigger)
+                           }
+                      }
+                };
+                mouseoutTrigger = window.setInterval(rollOut(),100)
+>>>>>>> 959082b084b0c774382582f05772b13ddcc14eaf
             }
            }
           }
@@ -538,6 +600,19 @@ var VisualSedimentation = function(element,options){
 			   , this.settings.options.refresh);
 		 console.log("draw Init ")
      }
+
+
+     var DOMabsOffset = function(target){
+        var top = target.offsetTop;
+        var left = target.offsetLeft;
+         
+        while(target = target.offsetParent) {
+          top += target.offsetTop;
+          left += target.offsetLeft;
+        }
+         
+        return {offsetLeft:left, offsetTop:top};
+      };
 
     // GUID generator from : 
     // http://stackoverflow.com/questions/105034/how-to-create-a-guid-uuid-in-javascript

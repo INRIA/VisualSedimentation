@@ -1,0 +1,89 @@
+body {
+	font-family: "Helvetica Neue", Helvetica, sans-serif;
+	margin: 1em 4em 4em 2em;
+	font-size: 12px;
+	font-weight:200;
+	padding: 1em 3em;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  cursor: default;
+}
+
+svg .noselect {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  cursor: default;
+}
+
+h1 {
+	font-weight: 100; 
+	font-size: 20.5px;
+	letter-spacing: 2px;
+	line-height: 25px;
+}
+h2 {
+ 	font-size:15px; 
+ 	font-weight:200;
+} 
+.description {
+	opacity: 1; 
+	margin-top:20px;
+	left:70px; 
+	top: 60px; 
+	width:220px; 
+	font-size:12px;
+	text-align:left;
+	line-height: 16px;
+}
+.last {
+	font-weight: bold;
+}		
+.coltext {
+	font-weight: normal;
+	fill: black;
+}
+.current_time {
+	font-size:24px; 
+	color:gray;
+	font-weight:100;
+}
+.overlayBar {
+	fill:lightgray;
+	stroke:white;
+	stroke-width:5;
+	fill-opacity:0.2; 
+}
+
+rect.window {
+  stroke: lightSteelBlue;
+  stroke-opacity: 0.5;
+  fill: lightSteelBlue;
+  fill-opacity: 0.5;
+}
+
+path {
+  fill: steelblue;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.brush .extent {
+  stroke: #fff;
+  fill-opacity: .125;
+  shape-rendering: crispEdges;
+}

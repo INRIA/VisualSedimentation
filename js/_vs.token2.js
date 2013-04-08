@@ -35,6 +35,17 @@ $.fn._vs.token = {
         })
         return r
       }
+      
+      result.b2dObj  = function(key,value,param){
+        var r=[]
+        result.forEach(function(i){
+          //console.log(key,value,param)
+          q = i.myobj
+          //console.log("q",q)
+          r.push(q)
+        })
+        return r
+      }
 
       if(typeof(value) == "undefined" && typeof(key) == "undefined"){ 
         all =true
@@ -83,8 +94,13 @@ $.fn._vs.token = {
         */
 
         // Graphic Parameter
+<<<<<<< HEAD
         size:10,   fillStyle:'#000000',  strokeStyle:'#000000', lineWidth:0, texture:undefined,
         shape:'round', // square, round, ?? svg path with json serialisation {}
+=======
+        size:10,   fillStyle:'###',  strokeStyle:'rgba(0,0,0,0)', lineWidth:0, texture:undefined,
+        shape:{type:'round'}, // vertice, box, round, ?? svg path with json serialisation {}
+>>>>>>> 959082b084b0c774382582f05772b13ddcc14eaf
         
         userdata:{},
 
@@ -114,8 +130,15 @@ $.fn._vs.token = {
         if(typeof(token.setting.size)   =='undefined') {token.setting.size   = _this.settings.sedimentation.token.size.original}
         if(typeof(token.setting.targets)=='undefined') {token.setting.targets=[]}
         token.setting.ID = token.setting.ID = this.ID(_this)
+<<<<<<< HEAD
         if(typeof(token.setting.state)   =='undefined') {token.setting.state = 0}
       }
+=======
+        if(typeof(token.setting.state)  =='undefined') {token.setting.state  = 0}
+        if(typeof(token.setting.shape)  =='undefined') {token.setting.shape  = defaultTokenSetting.shape }
+      }
+
+>>>>>>> 959082b084b0c774382582f05772b13ddcc14eaf
       token.myobj =  this.create(_this,token.setting)
       //console.log("token.myobj",token.myobj)
 
@@ -159,6 +182,11 @@ $.fn._vs.token = {
                 this.myobj.m_shape.m_radius = value/this.myobj.m_userData.scale
             }
           }
+          token.b2dObj = function(){
+              if(this.myobj!=null && this.attr('state')<2){
+                return this.myobj
+              }
+          }
       
           token.texture = function(value){
             if (!arguments.length){return this.myobj.m_userData.texture.img.src;}
@@ -198,7 +226,20 @@ $.fn._vs.token = {
         fixDef.density      = 0.1;
         fixDef.friction     = 0.0;
         fixDef.restitution  = 0.0;
-        fixDef.shape        = new Box2D.Collision.Shapes.b2CircleShape(token.size/scale);
+        //console.log(token)
+
+        // round
+        if(token.shape.type == "round"){
+          fixDef.shape      = new Box2D.Collision.Shapes.b2CircleShape(token.size/scale);
+        // or polygon
+        }else if(token.shape.type == "polygons"){
+          //fixDef.shape      = new Box2D.Collision.Shapes.b2PolygonShape;
+          fixDef            = this.setPolygons(_this,token,fixDef)
+        }else if(token.shape.type == "box"){
+          fixDef.shape      = new Box2D.Collision.Shapes.b2PolygonShape;
+          //console.log(fixDef)
+          fixDef.shape.SetAsBox(token.shape.width/scale,token.shape.height/scale)
+        }
 
       var bodyDef           = new Box2D.Dynamics.b2BodyDef;
         bodyDef.type        = Box2D.Dynamics.b2Body.b2_dynamicBody;
@@ -217,8 +258,13 @@ $.fn._vs.token = {
       }
 
       if(typeof(token.fillStyle) =="undefined"){   token.fillStyle  = this.colorRange(token.category) }
+<<<<<<< HEAD
       if(typeof(token.stokeStyle)=="undefined"){   token.stokeStyle = this.colorRange(token.category) }
+=======
+      //if(typeof(token.stokeStyle)=="undefined"){   token.stokeStyle = "#000"}//"rgba(0,0,0,0.5)" }
+>>>>>>> 959082b084b0c774382582f05772b13ddcc14eaf
       if(typeof(token.lineWidth) =="undefined"){   token.lineWidth  = 0 }
+      if(typeof(token.type)  =="undefined"){       token.type="token"   }
       if(typeof(token.callback)  =="undefined"){   
         token.callback = {}
                    // {
@@ -274,6 +320,26 @@ $.fn._vs.token = {
                                  Math.sin(degrees * (Math.PI / 180)) * power),
                                  body.GetWorldCenter());
     },
+    
+
+    setPolygons:function (_this,token,fixDef){
+
+      fixDef.shape    = new Box2D.Collision.Shapes.b2PolygonShape;
+
+      if(token.shape.points==null){
+         token.shape.points = [{x: -1, y: -1}, {x: 1, y: -1}, {x: -1, y:-1},{x: 1, y:-1}]
+      };
+    
+      for (var i = 0; i < token.shape.points.length; i++) {
+          var vec = new Box2D.Common.Math.b2Vec2();
+          vec.Set(token.shape.points[i].x/scale, token.shape.points[i].y/scale);
+          token.shape.points[i] = vec;
+      }  
+
+      fixDef.shape.SetAsArray(token.shape.points, token.shape.points.length);
+      return fixDef;    
+    },
+
 
     createDataBarBall:function (_this, x, y,size,family) { 
       //console.log(Math.round(family)) ;
@@ -297,8 +363,23 @@ $.fn._vs.token = {
     },
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     // ....................................................................
-    // Physicals elements 
+    // OLD OLD OLD  Physicals elements 
     // !!!!!!!!!!!!!!!!!!   Have to clean 
     // ....................................................................
 
@@ -422,31 +503,6 @@ $.fn._vs.token = {
      f.m_userData     = {type:"box",familyID:null,fillColor:color}
     
      return b;
-    
-    },
-     
-    createPolygon:function (world,x,y,points,rotation,color){
-      
-      var bodyDef     = new b2BodyDef();
-      var fixDef      = new b2FixtureDef();
-        fixDef.density    = 0.1;
-        fixDef.friction   = 0.0;
-        fixDef.restitution  = 0.0;
-      if(points==null){var points = [{x: 0, y: 0}, {x: 1, y: 0}, {x: 0, y:2}]};
-    
-      for (var i = 0; i < points.length; i++) {
-          var vec = new b2Vec2();
-          vec.Set(points[i].x/scale, points[i].y/scale);
-          points[i] = vec;
-      }
-      
-      fixDef.shape    = new b2PolygonShape;
-      fixDef.shape.SetAsArray(points, points.length);
-      bodyDef.position.x  = x/scale;
-      bodyDef.position.y  = y/scale;
-      var myobj       = world.CreateBody(bodyDef).CreateFixture(fixDef);
-      myobj.m_userData  = {type:"Polygon",familyID:null,fillColor:color}
-      return bodyDef;
     
     },
 

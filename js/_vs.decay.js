@@ -12,6 +12,7 @@ $.fn._vs.decay = {
       var limit                = _this.settings.sedimentation.token.size.minimum
 
       if(power==null){var power = 0}
+        
         for(var b = 0; b < this.tokens.length; b++) {
           var tokenSize  = this.tokens[b].attr("size")
           if(power!=0){

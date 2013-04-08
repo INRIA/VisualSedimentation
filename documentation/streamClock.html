@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<title>Visual Sedimentation - Documentation</title>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-30706693-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<script type="text/javascript" src="../js/_VisualSedimentation.js"></script>
+
+<style>
+@import url(../css/fan-of-mike-style.css);
+td{
+	text-align: top;
+	vertical-align: top;
+}
+li{
+	width:500px;
+}
+#exemple1,#exemple2{
+	vertical-align:middle;
+	text-align:center;
+}
+</style>
+
+<div id="body">
+
+<header>‍
+	<a style="margin-left:1em;" href="../index.html">Overview</a>
+	<a style="margin-left:1em;" href="../examples/index.html">Examples</a>
+	<b><a style="margin-left:1em;" >Documentation</a></b>
+	<a style="margin-left:1em;" href="learning.html">Learning</a>
+	<a style="margin-left:1em;" href="https://github.com/INRIA/VisualSedimentation" target="_blank">Source</a>
+	<a style="margin-left:1em;" href="https://groups.google.com/forum/?fromgroups#!forum/visualsedimentation" target="_blank">Contact / Feedback</a>
+</header>
+
+<h1>Visual Sedimentation</h1>
+<h2><a name="introduction" href="index.html">#</a> setting.stream{}</h2>
+
+<h3>Examples</h3>
+<table>
+	<tr><td width="100px"><img src="../img/streamClock.png" /></td><td style="color:red;"> the stream define the interval of refresh, in case of a datastream simulator, it's the interval between two tokens</td></tr>
+	<tr><td id="exemple1">
+		null
+		<script>
+			var now = 0;
+			window.setInterval(
+				function(){
+					now++
+					$("#exemple1").text(now)
+				},100)
+		</script>
+	</td><td>
+		<pre><code>
+	setting.data.stream = {
+   		provider:"generator",
+   		now:0,
+  		refresh:100
+	}</code></pre>
+	</td></tr>
+	<tr><td id="exemple2">
+		null
+		<script>
+			var now2 = new Date().getTime();
+			window.setInterval(
+				function(){
+					now2++
+					$("#exemple2").text(now2)
+				},1000)
+		</script>
+	</td><td>
+		<pre><code>
+	setting.data.stream = {
+   		provider:"generator",
+   		now:<script>document.write(new Date().getTime())</script>,
+  		refresh:1000
+	}</code></pre>
+	</td></tr>
+</table>
+<h3>Description</h3>
+<p>
+Stream object permit to configure two things : <b>(1)</b> how data will be updated, <b>(2)</b> the clock of the visulization.<br/>
+For the data : 
+<ul>
+	<li>Stream provider includes a basic data stream generator (<i>provider:"generator"</i>) that will generate tokens all the time.This generator provides synthetic data mostly for testing the visualization. </li>
+	<li>If you defined it <i>provider:"tokens"</i>, it will play defined tokens in settings.data.tokens{}.</li>
+</ul>
+Clock defined each time the generator will be activate, it could be parametrized as follow :
+<ul>
+	<li>You could define the reference time of the visualization, for instance  <i>now:<script>document.write(new Date().getTime())</script></i> or <i>now:0</i>.
+	</li>
+	<li>And define the rate in which this time will be increment by one, for instance  <i>refresh:1000</i> will increment now each seconds </li>
+</ul>
+Stream have to be define at the setup of the infoviz.
+</p>
+<h3>Syntax</h3>
+<pre><code>
+setting.data.stream = {
+   provider:"generator",
+   now:0,
+   refresh:1000
+}
+</code></pre>
+<h3>Parameters</h3>
+<table>
+	<tr><td style="width:100px;">provider </td>	<td> "tokens", or "generator", (by default "generator")</td></tr>
+	<tr><td>refresh </td>			<td>refresh rate of the clock in milliseconds (by default 1000)</td></tr>
+	<tr><td>now </td>			<td>actual time of the visualization, will be increment by one at the refresh rate indicate below.</td></tr>
+</table>
+<h3>Return</h3>
+nothing. 
+<h3>Related</h3>
+<a href="settings.html">setting:{}</a>, <a href="data.html">data:{}</a>
+</body>
+</html>

@@ -1,0 +1,155 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Building a clock by Visual Sedimentation</title>
+    <script type="text/javascript">
+		  var _gaq = _gaq || [];
+		  _gaq.push(['_setAccount', 'UA-30706693-1']);
+		  _gaq.push(['_trackPageview']);
+
+		  (function() {
+		    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		  })();
+		</script>
+    <script type="text/javascript" src="../../js/_VisualSedimentation.js"></script>
+    <style>@import url(../../css/fan-of-mike-style.css);</style>
+   </head>
+   <body>
+    <header>‍
+    <a href="./">Overview</a>
+    <b><a style="margin-left:1em;" href="../index.html"> Examples</a></b>
+    <a style="margin-left:1em;" href="../../documentation/index.html">Documentation</a></b>
+    <a style="margin-left:1em;" href="https://github.com/INRIA/VisualSedimentation" target="_blank">Source</a>
+    <a style="margin-left:1em;" href="" target="_blank">Contact / Feedback</a>
+  </header>
+
+	<div id="body">
+		<h1>Building a clock by Visual Sedimentation</h1>
+
+		<p>Let's make a clock with the <a href="http://www.visualsedimentation.org/">Visual Sedimentation</a> toolkit. Before starting, here is the result we can expect:</p>
+
+		<div id="sediclock"></div>
+
+		<p>A quick explanation of what we have here: We start with the basic principle of a clock: it updates each unit of time (minute, second, millisecond, .. depending its time solution). We go with every second, the update being notified by a falling token, and the clock value as an underneath bar stacked-chart-like.</p>
+
+		<h2>A token for each second</h2>
+
+		<p>A very simple clock can be created just by adding tokens every second with thge following <code>update()</code> function.</p>
+
+<pre><code>
+function update() {
+
+  sediClock.addToken({
+    categorie:0,
+    x:mySettings.width/2,
+    y:0,
+    size: 10,
+    userdata:{nameofmytoken:""},
+    callback:{}
+  });
+  setTimeout(update, 1000);
+}
+</code></pre>
+
+ 	 <p>This results in the following chart:</p>
+
+ 	 
+		<div id="tokensecond"style="height:200px"></div>
+
+		<p>However, tokens quickly fill up the container. And eventually get out from the top if nothing is done to destroy them. In the above example, the timeout will not be repeated if more than 60 tokens already arrived (look at the source).</p>
+
+		<h2>Flocculation every minute</h2>
+
+		<p>To provent the token overflow problem, visual sedimentation has two mechanisms: either we destroy tokens over a period of time which free some space, such as every minute. Either tokens decay over time, which makes more space for the upcoming tokens.</p>
+
+		<p>Remoiving tokens is called "flocculating" in the metaphor's vocabulary. It is a two steps process:
+			<ul>
+				<li>Select all the interesting tokens: <code>var tokens = sediClock.selectAll("category", 0)</code>. In this case, they are selected by category.</li>
+				<li>Flocculate them: <code>tokens.flocculate();</code></li>
+			</ul>
+
+		<p>This is something we want to do every minute, i.e. when the number of seconds comes to 0 again.</p>
+
+<pre><code>
+  if(new Date().getSeconds() == 0) {
+    var tokens = sediClock.selectAll("category", 0);
+	  tokens.flocculate();
+  }
+</code></pre>
+
+		<div id="flocculationminute"style="height:200px"></div>
+
+		<p>Tokens can be customized such as with the <code>size: 10,</code> parameter or the category. Categories are helpfull in case of multiple dimensions to show. In our example, it can be different time resolution (adding tokens for milliseconds or hours) or time event.</p>
+
+		<h2>Introducing a data model</h2>
+
+		<p>Well, now we want to display the complete time (and not only its updates) as stacked layers in a bar chart bin. Consequently we need a mecahnism to transform month, days, hours and seconds as relative layers. This can be achieved using the strata object, which contains as many objects as strata (five in our case) and each size is relative to their current values:</p>
+
+<pre><code>
+  var d = new Date;
+
+  var fsec = d3.time.format("%S s"),
+    fmin = d3.time.format("%M m"),
+    fhou = d3.time.format("%H h"),
+    fwee = d3.time.format("%a"),
+    fdat = d3.time.format("%d d"),
+    fmon = d3.time.format("%b");  
+							
+  function days() {
+    return 32 - new Date(d.getYear(), d.getMonth(), 32).getDate();
+  }					
+
+  var second = (d.getSeconds() + d.getMilliseconds() / 1000) / 60,
+    minute = (d.getMinutes() + second) / 60,
+    hour = (d.getHours() + minute) / 24,
+    weekday = (d.getDay() + hour) / 7,
+    date = (d.getDate() - 1 + hour) / days(),
+    month = (d.getMonth() + date) / 12;		
+
+</code></pre>
+
+		<h2>Adding strata</h2>
+
+		<p>Strata are relative to the current time. In this case we have six strata, updated every second.</p>
+
+<pre><code>
+function fstrata() {
+
+  [..]
+
+  return [
+    [{value: month, text: fmon(d)},
+    {value: date, text: fdat(d)},
+    {value: weekday, text: fwee(d)},
+    {value: hour, text: fhou(d)},
+    {value: minute, text: fmin(d)},
+    {value: second, text: fsec(d)}    
+  ]];
+}
+</code></pre>
+
+		<p>Customization can be done with color and adding text labels.</p>
+
+<pre><code>
+  d3.selectAll("text")
+    .attr("x", function(d, i) { return d3.selectAll(".layer_"+i).node().getBBox().width/2; })
+    .attr("y", function(d, i) { return d3.selectAll(".layer_"+i).node().getBBox().y; })
+    .attr("dx", function(d, i) { return d3.selectAll(".layer_"+i).node().getBBox().x; })
+    .attr("dy",  function(d, i) { return d3.selectAll(".layer_"+i).node().getBBox().height/2; })
+    .attr("text-anchor", "middle")
+    .attr("class", "gtext")
+    .attr("fill", "white")
+    .text(function(d, i) {
+      return mySettings.data.strata[0][i].text;
+    });  
+</code></pre>
+		</div>
+
+		<script type="text/javascript" src="sediclock.js"></script>
+    <script type="text/javascript" src="tokensecond.js"></script>
+    <script type="text/javascript" src="flocculationminute.js"></script>
+</body>
+
+</html>

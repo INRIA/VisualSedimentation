@@ -1,0 +1,123 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"> 
+	<head>
+		<title>Stream Player</title>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+		<link rel="stylesheet" type="text/css" href="stream_player.css" />
+		<script type="text/javascript" src="stream_player.js"></script>
+		<style>
+			.command {
+				font-size: 1em;
+				color: transparent; /* Fix for Firefox */
+				/* border-style: none; */
+				/* border-width: 0; */
+				padding: 0 0 0 16px !important; /* Fix for Internet Explorer */
+				text-align: left;
+				width: 26px;
+				height: 26px;
+				line-height: 1 !important;
+				background: transparent url(play.png) no-repeat scroll 0 0;
+				overflow: hidden;
+				cursor: pointer;
+			}
+			
+			.play {
+					background: transparent url(play.png) no-repeat scroll 0 0;
+			}
+			
+			.pause {
+				background: transparent url(pause.png) no-repeat scroll 0 0;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>Stream PlayerExample </h1>
+
+		<div id="simple-stream-player"	>
+			<input type="button" class="play" title="play"/>
+			<input type="button" class="stop" value="stop" />
+			<input type="button" class="fb" value="ff" />			
+			<input type="button" class="fb" value="fb" />						
+			<span>Current value: <label id="current_time">0</label> </span>
+			<span>Buffered items: <label id="current_time">0</label></span>			
+		</div>
+		
+
+		<script type="text/javascript">
+		/*
+		TODO:
+		-ajuster la taille des images play dans le style
+		-mettre un style pour chacun des différents boutons
+		-loop feature
+		-keyboard binding
+		-que signifie "lire" un stream?
+		--aller chercher les données à l'exterieur?
+		--afficher grâchce à une fonction de callback?
+		-->Tout mettre dans une fonction..
+		-chargement progressif du buffer type bubble-t
+		-fonction de flush pour revenir au dernier moment
+		--en gros vider le buffer, mais laisser la possibilité de faire ça progressivement
+		
+		
+/*
+function updateSlider() {
+	
+}
+
+start_time
+current_time
+	
+shift_time
+end_time
+
+flush()
+play()
+pause()
+stop()
+speed()
+
+*/
+
+		*/		
+		
+			new StreamPlayer('simple-stream-player', {
+				horizontal: false,
+				vertical: true,
+				buffer_size: 0,
+				current_time: 0,
+				start_time: 0,
+				auto_start: false,
+				auto_buffer: false,
+				//yPrecision: content.offsetHeight,
+				stream_source: function() { return {value: (new Date).getTime()/100, label: (new Date).getTime()/100}; },
+				updates_freq: 100, // check if data are new or not
+				playCallback: function(self) {
+					//var current_time = stream_source();
+					//console.log(current_time);
+					
+					//setInterval(playStream, freq_updates);
+					console.log(this.options.stream_source().value);
+					
+					// var handle = wrapper.getElementsByTagName('div')[0];
+					console.log("UPDATE!");
+					// if(!handle || handle.className.search(/(^|\s)handle(\s|$)/) == -1)					
+					
+					// should be binded to the play button (class .play)
+					// toggle the class with .pause
+					
+					// Que fait-on à chaque update de temps?
+					//var margin = y * (content.offsetHeight - mask.offsetHeight);
+					//content.style.marginTop = String(-margin) + 'px';
+				},
+				pauseCallback: function() {
+					
+					alert("pause");
+				},
+				stopCallback: function() {
+					console.log("STOP");
+				}
+			});
+			
+		</script>
+	</body>
+</html>

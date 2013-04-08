@@ -1,0 +1,44 @@
+.command {
+	font-size: 1em;
+	color: transparent; /* Fix for Firefox */
+	/* border-style: none; */
+	/* border-width: 0; */
+	padding: 0 0 0 16px !important; /* Fix for Internet Explorer */
+	text-align: left;
+	width: 26px;
+	height: 26px;
+	line-height: 1 !important;
+	background: transparent url(../img/play.png) no-repeat scroll 0 0;
+	overflow: hidden;
+	cursor: pointer;
+}
+.play {
+	background: transparent url(../img/play.png) no-repeat scroll 0 0;
+}
+.pause {
+	background: transparent url(../img/pause.png) no-repeat scroll 0 0;
+}
+.stop {
+	background: transparent url(../img/stop.png) no-repeat scroll 0 0;
+}
+.fb {
+	background: transparent url(../img/fb.png) no-repeat scroll 0 0;
+}
+.ff {
+	background: transparent url(../img/ff.png) no-repeat scroll 0 0;
+}
+.prev {
+	background: transparent url(../img/prev.png) no-repeat scroll 0 0;
+}
+.next {
+	background: transparent url(../img/next.png) no-repeat scroll 0 0;
+}
+.soundon {
+	background: transparent url(../img/soundon.png) no-repeat scroll 0 0;
+}
+.soundoff {
+	background: transparent url(../img/soundoff.png) no-repeat scroll 0 0;
+}
+.disabled {
+	opacity:0.5;
+}

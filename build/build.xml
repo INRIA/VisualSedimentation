@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="Visual Sedimentation" default="dev" basedir="../">
+	<description>
+		Concatenate and minify Visual Sedimentation JS 
+	</description>
+    
+    <target name="-load.properties">
+        <property name="lib.name" 	 value="vs"/>
+        <property name="lib.version" value="0.1"/>
+        <property name="min.dir" 	 value="js/min"/>
+		<property name="js.dir"      value="js/" />
+		<property name="jsLib"   	 value="js/lib" />
+		<property name="concat.dir"  value="js/concat" />
+		<property name="yui.app"     value="build/yuicompressor-2.4.jar" />
+    </target>
+
+    <target name="cleanBefore" depends="-load.properties">
+        <delete dir="${min.dir}/${lib.name}.${lib.version}.js"/>
+        <delete dir="${concat.dir}"/>
+    </target>
+
+	<target name="init" depends="-load.properties">
+        <mkdir dir="${min.dir}"/>
+        <mkdir dir="${concat.dir}"/>
+	</target>
+
+	<target name="concat" depends="-load.properties">
+		<concat destfile="${concat.dir}/${lib.name}.${lib.version}.js" encoding="UTF-8" >
+			
+		<!-- Hearder and licence stuff -->
+			<filelist id="header" dir="${js.dir}">	
+    			<file name="_vs.hearder.js"/>
+    		</filelist>
+
+   		<!-- not clean I know , include all needed library, jquery, d3, box2d = 200ko -->
+			<filelist id="library" dir="${js.dir}/lib">
+    			<file name="jQuery/jquery-1.4.2.min.js"/>
+    			<file name="d3/d3.v2.js"/>
+    			<file name="Box2DWeb/Box2DWeb-2.1.a.3.min.js"/>
+    		</filelist>
+
+    	<!-- include our files 		-->
+			<filelist 
+   					id    ="Vs" 
+    				dir   ="${js.dir}"
+    				files ="_vs.js,
+							_vs.phy.js,
+							_vs.chart.js,
+							_vs.draw.js,
+							_vs.token2.js,
+							_vs.stream.js,
+							_vs.decay.js,
+							_vs.flocculate.js,
+							_vs.aggregate.js,
+							_vs.chart.stackedareachart.js,
+							_vs.chart.circlelayout.js"
+    		/> 
+			<!-- include all file of a rep 
+			<fileset dir="${js.dir}">
+				<include name="*.js" />
+				<exclude name="lib/**" />
+			</fileset>
+			-->
+		</concat>
+	</target>
+
+	<!-- minify wity YUI -->
+	<target name="min" depends="-load.properties">
+		<apply executable="java" parallel="false" dest="${min.dir}" taskname="yui">
+			<fileset dir="${concat.dir}" includes="${lib.name}.${lib.version}.js" />
+			<arg line="-jar"></arg>
+			<arg path="${yui.app}"></arg>
+			<arg line="-v"></arg>
+			<srcfile/>
+			<arg line="-o"></arg>
+			<mapper type="glob" from="*.js" to="*-min.js"></mapper>
+			<targetfile/>
+		</apply>
+	</target>
+
+    <target name="cleanAfter" depends="-load.properties">
+        <delete dir="${concat.dir}"/>
+    </target>
+
+
+ <target name="dev" depends="cleanBefore, init, concat, min, cleanAfter">
+ </target>
+
+</project>

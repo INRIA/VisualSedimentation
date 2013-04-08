@@ -1,0 +1,121 @@
+html {
+	min-width: 1040px;
+}
+
+body {
+	font-family: "Helvetica Neue", Helvetica, sans-serif;
+	margin: 1em auto 4em auto;
+	position: relative;
+	width: 860px;
+  	background-repeat:no-repeat;
+}
+
+.twitter-share-button {
+	position:absolute;
+	margin-left: 30px;
+}
+
+.noselect {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  cursor: default;
+}
+
+.description {
+	opacity: 1; 
+	margin-top:10px;
+	left:70px; 
+	top: 60px; 
+	width:220px; 
+	font-size:12px;
+	text-align:left;
+	line-height: 16px;
+}
+
+.button-mms {
+	width:30px;
+	height:30px;
+	background-color:red;
+	color:white; 
+	-moz-border-radius: 25px; 
+	padding:5px; 
+	border-radius: 25px;
+}
+
+.btn {
+	-moz-border-radius: 25px;
+	border-radius: 25px;
+	height:25px;
+	width:10px;
+}
+
+h1 {
+	font-size: 60px;
+	font-weight: 100;
+	letter-spacing: 2px;
+	margin: .3em 0 .1em 0;
+	margin-top:-70px;
+	line-height: 65px;
+}			
+
+header aside {
+	margin-top: 88px;
+}
+
+header aside,
+footer aside {
+	color: #636363;
+	text-align: right;
+}
+
+aside {
+	font-size: small;
+	right: 0;
+	position: absolute;
+	width: 200px;
+	margin-top:50px;
+}
+
+.rule line {
+	stroke: #fff;
+	stroke-opacity: .5;
+	shape-rendering: crispEdges;
+}
+
+.rule:first-child line {
+	stroke: #000;
+	stroke-opacity: 1;
+}		
+
+.rule text {
+	font-size: 12; 
+	font-family: Helvetica, sans-serif;
+	color:red;
+}
+
+.ticker-container {
+	position: absolute; 
+	margin-top:-90; 
+	width:500px; 
+	height:90px;
+	overflow:hidden;
+}
+
+.circle {
+	border-radius: 50px; // Chrome & IE9
+	-moz-border-radius: 50px; // Firefox
+	-webkit-border-radius: 50px; // Safari 
+	height:90px;
+	width:100px;
+	background:#dedede;
+}
+
+#ticker {
+	font-size: 14; 
+
+}
