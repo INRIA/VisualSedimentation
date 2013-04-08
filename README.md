@@ -1,6 +1,7 @@
 VisualSedimentation
 ===================
 
+
 ![Bar chart](https://raw.github.com/INRIA/VisualSedimentation/master/img/barchart.png)
 ![Pie chart](https://raw.github.com/INRIA/VisualSedimentation/master/img/sediviz-piechart.png)
 ![Bubble chart](https://raw.github.com/INRIA/VisualSedimentation/master/img/bubblechart.png)
