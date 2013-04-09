@@ -158,11 +158,7 @@ var VisualSedimentation = function(element,options){
                           refresh:200
                          },
               accumulation:{height:null},   // pourcent ,adaptative
-<<<<<<< HEAD
-              aggregation:{height:0, maxData:0},       // pourcent ,adaptative
-=======
               aggregation:{height:0, maxData:0, invertStrata:false},       // pourcent ,adaptative
->>>>>>> 959082b084b0c774382582f05772b13ddcc14eaf
           },
           options:{
                   refresh:1000/25,
@@ -387,13 +383,8 @@ var VisualSedimentation = function(element,options){
       var x         = _this.mouse.x/_this.settings.options.scale
       var y         =_this.mouse.y/_this.settings.options.scale
       var mousePVec = new _this.phy.b2Vec2(x,y);
-<<<<<<< HEAD
-      var aabb  = new _this.phy.b2AABB();
-      var area = 0.01
-=======
       var aabb      = new _this.phy.b2AABB();
       var area      = 0.001
->>>>>>> 959082b084b0c774382582f05772b13ddcc14eaf
 
       //console.log(_this.mouse.x,_this.mouse.y)
       aabb.lowerBound.Set(x - area, y - area);
@@ -428,18 +419,10 @@ var VisualSedimentation = function(element,options){
    }
 
     this.handleMouseMove = function(e,_this) {
-<<<<<<< HEAD
-       canvasPosition   = {}
-       canvasPosition.y = _this.settings.DOMelement.offsetTop
-       canvasPosition.x = _this.settings.DOMelement.offsetLeft
-      _this.mouse.x = (e.clientX - (canvasPosition.x- this.getScrollPosition()[0]));
-      _this.mouse.y = (e.clientY - (canvasPosition.y- this.getScrollPosition()[1]));
-=======
        canvasPosition   = DOMabsOffset(_this.settings.DOMelement)
        _this.mouse.x = (e.clientX - (canvasPosition.offsetLeft- this.getScrollPosition()[0]));
        _this.mouse.y = (e.clientY - (canvasPosition.offsetTop- this.getScrollPosition()[1]));
       //if( _this.mouse.isMouseDown){  console.log(_this.mouse.y,canvasPosition.y)}
->>>>>>> 959082b084b0c774382582f05772b13ddcc14eaf
       //console.log("mouse",e.clientX,e.clientY )
       //console.log("mouse",canvasPosition.x,canvasPosition.y )
       //console.log("=",_this.mouse.x,_this.mouse.y)
@@ -456,21 +439,13 @@ var VisualSedimentation = function(element,options){
 
 
    function onDocumentMouseOver(e,_this) {
-<<<<<<< HEAD
-     var s = _this.getBodyAtMouse(_this);
 
-=======
      var s = _this.getBodyAtMouse(_this);   
-     //console.log(s)  
->>>>>>> 959082b084b0c774382582f05772b13ddcc14eaf
         if(s!=null){
           if(typeof(s.m_userData)!="undefined"){
            if(typeof(s.m_userData.callback)!="undefined"){
             if(typeof(s.m_userData.callback.mouseover)=="function"){
                 var t = _this.select('ID',s.m_userData.ID)
-<<<<<<< HEAD
-                s.m_userData.callback.mouseover(t)  
-=======
                 s.m_userData.callback.mouseover(t)                
             }
 
@@ -506,7 +481,6 @@ var VisualSedimentation = function(element,options){
                       }
                 };
                 mouseoutTrigger = window.setInterval(rollOut(),100)
->>>>>>> 959082b084b0c774382582f05772b13ddcc14eaf
             }
            }
           }

@@ -94,14 +94,8 @@ $.fn._vs.token = {
         */
 
         // Graphic Parameter
-<<<<<<< HEAD
-        size:10,   fillStyle:'#000000',  strokeStyle:'#000000', lineWidth:0, texture:undefined,
-        shape:'round', // square, round, ?? svg path with json serialisation {}
-=======
         size:10,   fillStyle:'###',  strokeStyle:'rgba(0,0,0,0)', lineWidth:0, texture:undefined,
-        shape:{type:'round'}, // vertice, box, round, ?? svg path with json serialisation {}
->>>>>>> 959082b084b0c774382582f05772b13ddcc14eaf
-        
+        shape:{type:'round'}, // vertice, box, round, ?? svg path with json serialisation {}        
         userdata:{},
 
         // Interactions callbacks 
@@ -130,15 +124,10 @@ $.fn._vs.token = {
         if(typeof(token.setting.size)   =='undefined') {token.setting.size   = _this.settings.sedimentation.token.size.original}
         if(typeof(token.setting.targets)=='undefined') {token.setting.targets=[]}
         token.setting.ID = token.setting.ID = this.ID(_this)
-<<<<<<< HEAD
-        if(typeof(token.setting.state)   =='undefined') {token.setting.state = 0}
-      }
-=======
         if(typeof(token.setting.state)  =='undefined') {token.setting.state  = 0}
         if(typeof(token.setting.shape)  =='undefined') {token.setting.shape  = defaultTokenSetting.shape }
       }
 
->>>>>>> 959082b084b0c774382582f05772b13ddcc14eaf
       token.myobj =  this.create(_this,token.setting)
       //console.log("token.myobj",token.myobj)
 
@@ -258,11 +247,7 @@ $.fn._vs.token = {
       }
 
       if(typeof(token.fillStyle) =="undefined"){   token.fillStyle  = this.colorRange(token.category) }
-<<<<<<< HEAD
-      if(typeof(token.stokeStyle)=="undefined"){   token.stokeStyle = this.colorRange(token.category) }
-=======
       //if(typeof(token.stokeStyle)=="undefined"){   token.stokeStyle = "#000"}//"rgba(0,0,0,0.5)" }
->>>>>>> 959082b084b0c774382582f05772b13ddcc14eaf
       if(typeof(token.lineWidth) =="undefined"){   token.lineWidth  = 0 }
       if(typeof(token.type)  =="undefined"){       token.type="token"   }
       if(typeof(token.callback)  =="undefined"){   
