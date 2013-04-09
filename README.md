@@ -13,7 +13,7 @@ Visual sedimentation is a javascript visualizations library for streaming data, 
 * [Introduction](http://visualsedimentation.org)
 * [Exemples](http://www.visualsedimentation.org/examples/) 
 * [Api references](http://www.visualsedimentation.org/documentation/) 
-* [Mailing liste](https://groups.google.com/forum/?fromgroups#!forum/visualsedimentation)
+* [Mailing list](https://groups.google.com/forum/?fromgroups#!forum/visualsedimentation)
 * [Roadmap and Todo](https://github.com/INRIA/VisualSedimentation/wiki/RoadMap)
 * [News on Twitter feed](https://twitter.com/sediviz)
 
@@ -63,8 +63,8 @@ Copyright 2010, The Dojo Foundation
 
 Visual Sedimentation is under CeCILL-B licence. "B" means BSD.
 Copyright 2013, by Samuel Huron & Romain Vuillemot :
-* Licence texte in french: <http://www.cecill.info/licences/Licence_CeCILL-B_V1-fr.txt>
-* Licence texte in english: <http://www.cecill.info/licences/Licence_CeCILL-B_V1-en.txt>
+* Licence text in french: <http://www.cecill.info/licences/Licence_CeCILL-B_V1-fr.txt>
+* Licence text in english: <http://www.cecill.info/licences/Licence_CeCILL-B_V1-en.txt>
 
 ## Forging 
 
