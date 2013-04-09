@@ -19,6 +19,6 @@ This file report modifications and features additions arround versions.
 * ADD new exemples : stackoverflow, sedivn, sedimms, wikipedia(not finish)
 * ADD slides tutorials 
 
-## Next versions
+## Next version
 
 *
