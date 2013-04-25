@@ -87,15 +87,9 @@ $.fn._vs.draw = {
     s.m_userData.x  = b.GetWorldCenter().x*scale
     s.m_userData.y  = b.GetWorldCenter().y*scale
 
-    //
-    // Call back draw 
-    if(typeof(s.m_userData.callback)!="undefined"){
-        if(typeof(s.m_userData.callback.draw)=="function"){
-               var t = _this.select('ID',s.m_userData.ID)
-               s.m_userData.callback.draw(t)  
-        }
-    }
 
+
+    if(typeof(s)!="undefined"){
     switch (s.GetType()){
       case 0:  // round
 
@@ -229,7 +223,19 @@ $.fn._vs.draw = {
       break;
       _this.ctx.fillStyle = "rgb(0,0,0)";  
     }
+   }
 
+    // Call back draw 
+    if(typeof(s.m_userData.callback)!="undefined"){
+        if(typeof(s.m_userData.callback.draw)=="function"){
+               var t = _this.select('ID',s.m_userData.ID)
+               s.m_userData.callback.draw(t)  
+        }
+    }
+
+    //if(s.m_userData.fillStyle=="black"){
+    //  console.log(s.m_userData.cycle,"",s)
+    //}
   }
 }
 
