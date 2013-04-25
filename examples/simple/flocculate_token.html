@@ -115,13 +115,14 @@
       console.log("select all tokens : ",selectAllTokens)
 
 
-      function testSelect(key,value){
-        // select it 
+      function focculateSelect(key,value){
+
+        // select the tokens you want to flocculate 
         var selectMyClassTokens = barChart.selectAll(key,value);
         console.log("selectMyClassTokens",selectMyClassTokens)
-        
-        // and make it bigger
+        // flocculate the token 
         selectMyClassTokens.flocculate()
+        // update the stratas
         barChart.strata.update(barChart);
       }
 
@@ -134,15 +135,15 @@
       <button  type="button" onclick="barChart.addToken({size:10,category:2,name:'Obama'})" accesskey="m"> ↓ no name</button>
     </div>
       <div>
-      <button  type="button" onclick="testSelect('id','myId')" accesskey="b">
+      <button  type="button" onclick="focculateSelect('id','myId')" accesskey="b">
         flocculate id="myId" 
       </button>
 
-      <button  type="button" onclick="testSelect('class','myClass')" accesskey="n">
+      <button  type="button" onclick="focculateSelect('class','myClass')" accesskey="n">
          flocculate  class="myClass" 
       </button>
 
-      <button  type="button" onclick="testSelect()" accesskey="m">
+      <button  type="button" onclick="focculateSelect()" accesskey="m">
         flocculate all
       </button>
     </div>
