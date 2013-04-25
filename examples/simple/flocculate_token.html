@@ -116,11 +116,10 @@
 
 
       function focculateSelect(key,value){
-        
+
         // select the tokens you want to flocculate 
         var selectMyClassTokens = barChart.selectAll(key,value);
         console.log("selectMyClassTokens",selectMyClassTokens)
-        
         // flocculate the token 
         selectMyClassTokens.flocculate()
         // update the stratas
