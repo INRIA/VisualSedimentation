@@ -109,7 +109,11 @@ $.fn._vs.token = {
 
      var result = null;
      var myobj = null
-     var token = function (){}
+     var token = {}
+     
+     token.toString = function() {
+         return "Token ID="+this.setting.ID;
+     }
 
      //console.log(element)
      if(typeof(element)=='undefined'){
