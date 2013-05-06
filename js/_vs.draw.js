@@ -197,7 +197,7 @@ $.fn._vs.draw = {
 
         // pour le debug mode
         if(_this.settings.options.layout==true){
-          _this.ctx.lineWidth   = 0.1;
+          _this.ctx.lineWidth   = .25;
           _this.ctx.strokeStyle ="rgb(0,0,0)"
           _this.ctx.stroke();
 
