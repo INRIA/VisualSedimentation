@@ -4,7 +4,7 @@ $.fn._vs.chart.StackedAreaChart = function(_this,fn,options) {
   var mouseJointTest;
 
   this.init = function (_this){
-    console.log('StackedAreaChart Init')
+    //console.log('StackedAreaChart Init')
     gravity                 = new _this.phy.b2Vec2(0.001, 10);
     _this.world.m_gravity   = gravity;
     _this.chartPhySetup     = {grounds:[],wall:[]}
@@ -16,7 +16,7 @@ $.fn._vs.chart.StackedAreaChart = function(_this,fn,options) {
 
     // Ground 
     var spacer = _this.settings.chart.spacer;
-    console.log(_this.settings.chart)
+    //console.log(_this.settings.chart)
   
     // Bounds for bar chart 
     var colSize     = (_this.settings.chart.width/_this.settings.data.model.length)
@@ -25,7 +25,7 @@ $.fn._vs.chart.StackedAreaChart = function(_this,fn,options) {
     
     // height of lift 
     var agreHeight  =  _this.settings.chart.height - _this.settings.sedimentation.aggregation.height
-    console.log(agreHeight)
+    //console.log(agreHeight)
 
     var tdv = 0; 
     for (var i = 0; i <_this.settings.data.model.length; i++) { 
@@ -52,7 +52,7 @@ $.fn._vs.chart.StackedAreaChart = function(_this,fn,options) {
                           "wall",
                           _this.settings.chart.wallColor);
 
-        console.log(colXpos,colYpos)
+        //console.log(colXpos,colYpos)
   
         // Fix incomming points for tokens 
         if(i<_this.settings.data.model.length){

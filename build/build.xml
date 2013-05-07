@@ -51,7 +51,8 @@
 							_vs.stream.js,
 							_vs.decay.js,
 							_vs.flocculate.js,
-							_vs.aggregate.js,
+                            _vs.aggregate.js,
+			                _vs.strata.js,
 							_vs.chart.stackedareachart.js,
 							_vs.chart.circlelayout.js"
     		/> 

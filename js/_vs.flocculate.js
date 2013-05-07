@@ -5,11 +5,11 @@ $.fn._vs.flocculate = {
     buffer:[], 
 
     init:function(_this){
-      console.log("init flocculate",_this)
+      //console.log("init flocculate",_this)
       // create one buffer by data model (categorys)
       for (var i =0; i<_this.settings.data.model.length; i++) {
         this.buffer[i] = []
-        console.log(i)
+        //console.log(i)
       };
     },
 
@@ -64,9 +64,9 @@ $.fn._vs.flocculate = {
 
     all:function(_this) {
       // TODO destroy all 
-      console.log(_this.settings.data)
+      //console.log(_this.settings.data)
       for (var i = _this.decay.tokens - 1; i >= 0; i--) {
-        console.log(_this.decay.tokens)
+        //console.log(_this.decay.tokens)
         this.update(_this,i,_this.tokens.length);      
       };
     },
@@ -75,7 +75,7 @@ $.fn._vs.flocculate = {
        if(flocullateBuffer.length>0){
          if (chart.flocullate.strategy=="Size" 
            && flocullateBuffer.length>=chart.flocullate.bufferSize){
-           console.log(flocullateBuffer.length);
+           //console.log(flocullateBuffer.length);
            flocullateByArray(flocullateBuffer);
 
          }else if (chart.flocullate.strategy=="Time") {
