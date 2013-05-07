@@ -52,27 +52,11 @@ $.fn._vs.draw = {
       ctx.stroke();
       ctx.restore();  
     },
-    clippedBackgroundImage:function( ctx, img,x,y ){
-      ctx.save(); 
-      ctx.clip(); 
-      //console.log(img)
-      ctx.drawImage(img,
-                    x-(img.height/2),
-                    y-(img.width/2),
-                    img.width,
-                    img.height);
-      ctx.restore(); 
-    },
-    haveTexture:function(s){
-      var result = false
-      if(typeof(s.m_userData.texture)!="undefined"){
-        if(typeof(s.m_userData.texture.img)!="undefined"){
-          if(s.m_userData.texture.img.complete){
-            result = true
-          }
-        }
+    showTexture:function( s, ctx ){
+      if (typeof(s.m_userData.texture) !== "undefined" && typeof(s.m_userData.texture.pattern) !== "undefined") {
+          ctx.fillStyle = s.m_userData.texture.pattern;
+          ctx.fill();
       }
-      return result
     },
     
     drawShape: function (_this,s) {
@@ -128,11 +112,6 @@ $.fn._vs.draw = {
           
           _this.ctx.arc(0, 0,h, 0, Math.PI*2, true); 
 
-          if(this.haveTexture(s)){
-              this.clippedBackgroundImage(_this.ctx,s.m_userData.texture.img
-                                          ,0
-                                          ,0);
-          }
           _this.ctx.closePath();
 
           if(_this.settings.options.layout==true){
@@ -140,12 +119,13 @@ $.fn._vs.draw = {
             _this.ctx.lineWidth   = 0.5
             _this.ctx.stroke();
           }else{
-            if(!this.haveTexture(s))_this.ctx.fill();
+             _this.ctx.fill();
              _this.ctx.stroke();
+             this.showTexture(s, _this.ctx);
 
           }
 
-          _this.ctx.restore();  
+          _this.ctx.restore();
 
         }
 
@@ -182,7 +162,6 @@ $.fn._vs.draw = {
         if(typeof(s.m_userData.lineWidth)!="undefined"){  _this.ctx.lineWidth   = s.m_userData.lineWidth 
         } else{   _this.ctx.lineWidth = 0}
 
-
         for (var i = 0; i < s.m_shape.m_vertices.length; i++) {
           var points = s.m_shape.m_vertices;
           //var this = {x:0,y:0}
@@ -193,7 +172,11 @@ $.fn._vs.draw = {
           _this.ctx.lineTo(( points[0].x) * scale, ( points[0].y) * scale);
         }
         _this.ctx.closePath();
-        _this.ctx.fill(); 
+        
+        
+        _this.ctx.fill();
+        
+        this.showTexture(s, _this.ctx);
 
         // pour le debug mode
         if(_this.settings.options.layout==true){

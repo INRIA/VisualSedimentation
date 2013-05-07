@@ -183,10 +183,14 @@ $.fn._vs.token = {
       
           token.texture = function(value){
             if (!arguments.length){return this.myobj.m_userData.texture.img.src;}
-             console.log("texture",value)
-             this.myobj.m_userData.texture={}
-             this.myobj.m_userData.texture.img = new Image();
-             this.myobj.m_userData.texture.img.src = value
+             console.log("texture",value);
+             var tx = {};
+             tx.img = new Image();
+             tx.img.onload = function() {
+                 tx.pattern = document.createElement('canvas').getContext('2d').createPattern(tx.img, 'repeat');
+             }
+             tx.img.src = value;
+             this.myobj.m_userData.texture = tx;
           }
 
       //console.log("token",token)
@@ -242,8 +246,12 @@ $.fn._vs.token = {
       this.myobj = _this.world.CreateBody(bodyDef).CreateFixture(fixDef)
 
       if(typeof(token.texture)!="undefined"){
-        token.texture.img = new Image();
-        token.texture.img.src = token.texture.src
+        var tx = token.texture;
+        tx.img = new Image();
+        tx.img.onload = function() {
+           tx.pattern = document.createElement('canvas').getContext('2d').createPattern(tx.img, 'repeat');
+        }
+        tx.img.src = tx.src;
       }
       
       if(typeof(token.impulse)!="undefined"){
