@@ -98,6 +98,8 @@ button.css3button:hover {
 </header>
 
 <h1>Visual Sedimentation</h1>
+<iframe width="420" height="315" src="//www.youtube.com/embed/jVjN4LM7qKc?rel=0&autoplay=1" frameborder="0" allowfullscreen></iframe>
+
 <div id="examples" style="width:700px;"></div>
 
 <script src="http://d3js.org/d3.v2.js"></script>
@@ -134,7 +136,7 @@ function shuffle(array) {
 
   return array;
 }
-
+/*
 d3.select("#examples").selectAll(".example")
     .data(shuffle(examples).slice(0, 4))
   .enter().append("a")
@@ -142,8 +144,9 @@ d3.select("#examples").selectAll(".example")
     .attr("href", function(d) { return d.url; })
   .append("img")
     .attr("src", function(d) { return "img/" + d.name + ".png"; });
-
+*/
 </script>
+
 
 <div style="float:left;width:370px">
 <p><b>VisualSedimentation.js</b> is a JavaScript library for visualizing streaming data, inspired by the process of physical <a href="http://en.wikipedia.org/wiki/Sedimentation" target="_blank">sedimentation</a>. <b>Visual Sedimentation</b> is built on top of existing toolkits such as <a href="http://d3js.org/" target="_blank">D3.js</a> (to manipulate documents based on data), <a href="http://jquery.com/" target="_blank">jQuery</a> (to facilitate HTML and Javascript development) and <a href="http://code.google.com/p/box2dweb/" target="_blank">Box2DWeb</a> (for physical world simulation).
@@ -163,12 +166,16 @@ d3.select("#examples").selectAll(".example")
 
 <div style="clear:both;width:900px">
 <p>
-    <a href="https://github.com/INRIA/VisualSedimentation/archive/master.zip" target="_blank">
-      <button type="button" name="" value="" class="css3button" onClick="pageTracker._trackEvent('Goals','{DOWNLOAD}');'">Download last version</button>
+    <a href="https://github.com/INRIA/VisualSedimentation/archive/master.zip" target="_blank" onClick="pageTracker._trackEvent('Goals','{DOWNLOAD}');'">
+      <button type="button" name="" value="" class="css3button" >Download last version</button>
     </a>
     
-    <a href="https://github.com/INRIA/VisualSedimentation" target="_blank">
-      <button type="button" name="" value="" class="css3button" onClick="pageTracker._trackEvent('Goals','{SOURCES}');">Sources</button>
+    <a href="http://hal.inria.fr/docs/00/84/62/60/PDF/visual_sedimentation_camera_ready3.pdf" target="_blank" onClick="pageTracker._trackEvent('Goals','{PAPER}');">
+      <button type="button" name="" value="" class="css3button" >Download paper</button>
+    </a>
+
+    <a href="https://github.com/INRIA/VisualSedimentation" target="_blank" onClick="pageTracker._trackEvent('Goals','{SOURCES}');">
+      <button type="button" name="" value="" class="css3button" >Sources</button>
     </a>
 </p>
 </div>
@@ -180,9 +187,37 @@ d3.select("#examples").selectAll(".example")
 
 This library is part of <a href="http://www.aviz.fr/Research/VisualSedimentation" target="_blank">AVIZ INRIA</a> and
 <a href="http://www.iri.centrepompidou.fr/" target="_blank"> IRI</a> research project :
-<p><div><b><a href="http://hal.inria.fr/docs/00/73/40/84/PDF/visual-sedimentation-final.pdf" target="_blank">"Towards Visual Sedimentation"</a></b> Samuel Huron, Romain Vuillemot, Jean-Daniel Fekete, <i>Poster at Infovis, 2012</i></div></p>
+<p><div>
+  # <b><a href="http://hal.inria.fr/docs/00/84/62/60/PDF/visual_sedimentation_camera_ready3.pdf">"Visual Sedimentation"</a></b> Samuel Huron, Romain Vuillemot, Jean-Daniel Fekete, <i>IEEE Vis, 2013 - (Best poster)</i>
+
+<br/>
+
+  # <b><a href="http://hal.inria.fr/docs/00/73/40/84/PDF/visual-sedimentation-final.pdf" target="_blank">"Towards Visual Sedimentation"</a></b> Samuel Huron, Romain Vuillemot, Jean-Daniel Fekete, <i>Poster at Infovis, 2012</i>
+
+</div></p>
 
 <pre><code>
+%% http://hal.inria.fr/hal-00846260
+@article{huron:hal-00846260,
+    hal_id = {hal-00846260},
+    url = {http://hal.inria.fr/hal-00846260},
+    title = {{Visual Sedimentation}},
+    author = {Huron, Samuel and Vuillemot, Romain and Fekete, Jean-Daniel},
+    abstract = {{We introduce Visual Sedimentation, a novel design metaphor for visualizing data streams directly inspired by the physical process of sedimentation. Visualizing data streams (e. g., Tweets, RSS, Emails) is challenging as incoming data arrive at unpredictable rates and have to remain readable. For data streams, clearly expressing chronological order while avoiding clutter, and keeping aging data visible, are important. The metaphor is drawn from the real-world sedimentation processes: objects fall due to gravity, and aggregate into strata over time. Inspired by this metaphor, data is visually depicted as falling objects using a force model to land on a surface, aggregating into strata over time. In this paper, we discuss how this metaphor addresses the specific challenge of smoothing the transition between incoming and aging data. We describe the metaphor's design space, a toolkit developed to facilitate its implementation, and example applications to a range of case studies. We then explore the generative capabilities of the design space through our toolkit. We finally illustrate creative extensions of the metaphor when applied to real streams of data.}},
+    keywords = {Design, information visualization, dynamic visualization, dynamic data, data stream, real time, metaphor.},
+    language = {Anglais},
+    affiliation = {AVIZ - INRIA Saclay - Ile de France , Institut de Recherche et d'Innovation - IRI},
+    publisher = {IEEE},
+    journal = {IEEE Transactions on Visualization and Computer Graphics},
+    note = {CIFRE ANRT N\degre 2010/1534, CINEGIFT DGCIS project },
+    audience = {internationale },
+    collaboration = {France Televisions Innovation, Allo Cine, Google },
+    year = {2013},
+    month = Nov,
+    pdf = {http://hal.inria.fr/hal-00846260/PDF/visual\_sedimentation\_camera\_ready3.pdf},
+}
+
+
 @article{huron2012towards,
 title={Towards Visual Sedimentation},
 author={Huron, S. and Vuillemot, R. and Fekete, J.D. and others},
