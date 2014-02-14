@@ -13,6 +13,7 @@ Visual sedimentation is a javascript visualizations library for streaming data, 
 * [Introduction](http://visualsedimentation.org)
 * [Examples](http://www.visualsedimentation.org/examples/) 
 * [Api references](http://www.visualsedimentation.org/documentation/) 
+* [Publication](http://hal.inria.fr/index.php?view_this_doc=hal-00846260&extended_view=1&version=1&halsid=b8pagf8u57b3qdurmesutapfa0)
 * [Mailing list](https://groups.google.com/forum/?fromgroups#!forum/visualsedimentation)
 * [Roadmap and Todo](https://github.com/INRIA/VisualSedimentation/wiki/RoadMap)
 * [News on Twitter feed](https://twitter.com/sediviz)
