@@ -91,3 +91,7 @@ Visual sedimentation was forging inside :
 * INRIA AVIZ team <http://aviz.fr/>
 * IRI Centre Pompidou team <http://www.iri.centrepompidou.fr/>
 
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/INRIA/visualsedimentation/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
